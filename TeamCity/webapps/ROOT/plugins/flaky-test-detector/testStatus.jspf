@@ -1,0 +1,52 @@
+<%-- included from flakyReason_DifferentStatusAtSameVcsChange.jspf and flakyReason_FlippedInBuildWithoutChanges.jsp --%>
+<%@ taglib prefix="tt" tagdir="/WEB-INF/tags/tests" %>
+
+<c:choose>
+
+  <%--@elvariable id="flakyTestRuns" type="java.util.Map<java.lang.Long, java.util.Map<java.lang.Long, java.util.Map<jetbrains.buildServer.serverSide.flakyTestDetector.opendata.TestStatusInfo, jetbrains.buildServer.serverSide.TestRunEx>>>"--%>
+  <%--@elvariable id="testNameId" type="java.lang.Long"--%>
+  <%--@elvariable id="buildId" type="java.lang.Long"--%>
+  <%--@elvariable id="testStatus" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.TestStatusInfo"--%>
+  <c:when test="${not empty flakyTestRuns and not empty testNameId and not empty buildId and not empty testStatus}">
+    <table class="testStatus">
+      <tbody>
+        <tr>
+          <td class="testStatus">
+            <jsp:include page="testStatus_${testStatus.name}.jsp"/>
+          </td>
+          <td class="testStatus">
+            <c:set var="testRun" value="${flakyTestRuns[testNameId][buildId][testStatus]}"/>
+            <c:choose>
+              <c:when test="${not empty testRun}">
+                <tt:testStatus testRun="${testRun}"/>
+              </c:when>
+              <c:otherwise>
+                <%-- Build is inaccessible (was removed or insufficient permissions) --%>
+                <c:choose>
+                  <c:when test="${testStatus eq 'SUCCESS'}">
+                    <span class="success">OK</span>
+                  </c:when>
+                  <c:when test="${testStatus eq 'FAILURE' or testStatus eq 'FLAKY_FAILURE'}">
+                    <span class="failure">Failure</span>
+                  </c:when>
+                  <c:when test="${testStatus eq 'IGNORED'}">
+                    <span>Ignored</span>
+                  </c:when>
+                  <c:otherwise>
+                    <span><c:out value="${testStatus.name}"/></span>
+                  </c:otherwise>
+                </c:choose>
+              </c:otherwise>
+            </c:choose>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </c:when>
+
+  <c:otherwise>
+    <%-- Never --%>
+    <span>Unknown</span>
+  </c:otherwise>
+
+</c:choose>

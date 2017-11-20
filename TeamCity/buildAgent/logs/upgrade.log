@@ -1,0 +1,51 @@
+[2017-09-22 22:18:13,853]  DEBUG - dServer.agent.lock.LockManager - Lock file: /Users/nsharma/Downloads/TeamCity/buildAgent/logs/buildAgent.properties.lock 
+[2017-09-22 22:18:13,854]  DEBUG - dServer.agent.lock.LockManager - Using no lock 
+[2017-09-22 22:18:13,858]   INFO - r.agent.upgrade.UpgradeRunBase - ===================================================== 
+[2017-09-22 22:18:13,858]   INFO - r.agent.upgrade.UpgradeRunBase - Start agent upgrade. 
+[2017-09-22 22:18:13,858]   INFO - r.agent.upgrade.UpgradeRunBase - Agent home folder: /Users/nsharma/Downloads/TeamCity/buildAgent 
+[2017-09-22 22:18:13,858]   INFO - r.agent.upgrade.UpgradeRunBase - Run command line (arguments separated with '|'): /bin/sh|./agent.sh|stop|kill| (at /Users/nsharma/Downloads/TeamCity/buildAgent/bin) 
+[2017-09-22 22:18:13,917]   INFO - .agent.run.ProcessOutputLogger - Stopping TeamCity build agent... 
+[2017-09-22 22:18:13,953]   INFO - .agent.run.ProcessOutputLogger - Stopping buildAgent [65484] 
+[2017-09-22 22:18:14,997]   INFO - .agent.run.ProcessOutputLogger - Stopped 
+[2017-09-22 22:18:15,000]   WARN - .agent.run.ProcessOutputLogger - rm: ../logs/buildAgent.pid: No such file or directory 
+[2017-09-22 22:18:15,001]   INFO - r.agent.upgrade.UpgradeRunBase - Process exited with code: 0 
+[2017-09-22 22:18:15,017]   INFO - er.agent.upgrade.UpdateChecker - Update files check succeeded 
+[2017-09-22 22:18:15,022]   INFO - ver.agent.upgrade.AgentUpgrade - Start upgrade at Fri Sep 22 22:18:15 EDT 2017 
+[2017-09-22 22:18:15,027]   INFO - ver.agent.upgrade.AgentUpgrade - ===> Backup current agent 
+[2017-09-22 22:18:15,027]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: AgentRootFilesFolder [.] --> backup 
+[2017-09-22 22:18:15,028]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: FilesOnlyUpgradeFolder [bin] --> backup 
+[2017-09-22 22:18:15,030]  DEBUG - buildServer.agent.LauncherUtil - Set executable bit for /Users/nsharma/Downloads/TeamCity/buildAgent/backup/bin/agent.sh 
+[2017-09-22 22:18:15,038]  DEBUG - buildServer.agent.LauncherUtil - Set executable bit for /Users/nsharma/Downloads/TeamCity/buildAgent/backup/bin/findJava.sh 
+[2017-09-22 22:18:15,044]  DEBUG - buildServer.agent.LauncherUtil - Set executable bit for /Users/nsharma/Downloads/TeamCity/buildAgent/backup/bin/install.sh 
+[2017-09-22 22:18:15,051]  DEBUG - buildServer.agent.LauncherUtil - Set executable bit for /Users/nsharma/Downloads/TeamCity/buildAgent/backup/bin/mac.launchd.sh 
+[2017-09-22 22:18:15,059]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: SimpleUpgradeFolder [lib] --> backup 
+[2017-09-22 22:18:15,174]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: NoBackupUpgradeFolder [plugins] --> backup 
+[2017-09-22 22:18:15,175]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: NoBackupUpgradeFolder [tools] --> backup 
+[2017-09-22 22:18:15,175]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: LauncherFolder [launcher] --> backup 
+[2017-09-22 22:18:15,214]   INFO - ver.agent.upgrade.AgentUpgrade - ===> Upgrade agent 
+[2017-09-22 22:18:15,214]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: AgentRootFilesFolder [.] --> upgrade 
+[2017-09-22 22:18:15,217]   INFO - t.upgrade.AgentRootFilesFolder - Version file: /Users/nsharma/Downloads/TeamCity/buildAgent/update/teamcity-agent.xml 
+[2017-09-22 22:18:15,217]   INFO - t.upgrade.AgentRootFilesFolder - Version file dest path: /Users/nsharma/Downloads/TeamCity/buildAgent/system/.teamcity-agent/teamcity-agent.xml 
+[2017-09-22 22:18:15,217]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: FilesOnlyUpgradeFolder [bin] --> upgrade 
+[2017-09-22 22:18:15,220]  DEBUG - buildServer.agent.LauncherUtil - Set executable bit for /Users/nsharma/Downloads/TeamCity/buildAgent/bin/agent.sh 
+[2017-09-22 22:18:15,225]  DEBUG - buildServer.agent.LauncherUtil - Set executable bit for /Users/nsharma/Downloads/TeamCity/buildAgent/bin/findJava.sh 
+[2017-09-22 22:18:15,231]  DEBUG - buildServer.agent.LauncherUtil - Set executable bit for /Users/nsharma/Downloads/TeamCity/buildAgent/bin/install.sh 
+[2017-09-22 22:18:15,236]  DEBUG - buildServer.agent.LauncherUtil - Set executable bit for /Users/nsharma/Downloads/TeamCity/buildAgent/bin/mac.launchd.sh 
+[2017-09-22 22:18:15,242]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: SimpleUpgradeFolder [lib] --> upgrade 
+[2017-09-22 22:18:15,281]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: NoBackupUpgradeFolder [plugins] --> upgrade 
+[2017-09-22 22:18:16,160]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: NoBackupUpgradeFolder [tools] --> upgrade 
+[2017-09-22 22:18:16,160]  DEBUG - er.agent.upgrade.UpgradeFolder - UpgradeFolder: LauncherFolder [launcher] --> upgrade 
+[2017-09-22 22:18:16,202]   INFO - r.agent.upgrade.LauncherFolder - File /Users/nsharma/Downloads/TeamCity/buildAgent/launcher/conf/wrapper.conf exists. 
+[2017-09-22 22:18:16,203]   INFO - r.agent.upgrade.LauncherFolder - File /Users/nsharma/Downloads/TeamCity/buildAgent/backup/launcher/conf/wrapper.conf exists. 
+[2017-09-22 22:18:16,203]   INFO - r.agent.upgrade.LauncherFolder - Move file /Users/nsharma/Downloads/TeamCity/buildAgent/launcher/conf/wrapper.conf to /Users/nsharma/Downloads/TeamCity/buildAgent/launcher/conf/wrapper.conf.template 
+[2017-09-22 22:18:16,212]   INFO - ver.agent.upgrade.AgentUpgrade - Finish upgrade at Fri Sep 22 22:18:16 EDT 2017 
+[2017-09-22 22:18:16,212]   INFO - r.agent.upgrade.UpgradeRunBase - Run command line (arguments separated with '|'): /bin/sh|./agent.sh|start| (at /Users/nsharma/Downloads/TeamCity/buildAgent/bin) 
+[2017-09-22 22:18:16,229]   INFO - .agent.run.ProcessOutputLogger - Starting TeamCity build agent... 
+[2017-09-22 22:18:16,235]   INFO - .agent.run.ProcessOutputLogger - Java executable is found in '/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre'. 
+[2017-09-22 22:18:16,373]   INFO - .agent.run.ProcessOutputLogger - Starting TeamCity Build Agent Launcher... 
+[2017-09-22 22:18:16,373]   INFO - .agent.run.ProcessOutputLogger - Agent home directory is /Users/nsharma/Downloads/TeamCity/buildAgent 
+[2017-09-22 22:18:16,438]   INFO - .agent.run.ProcessOutputLogger - Current Java runtime version is 1.8  
+[2017-09-22 22:18:16,441]   INFO - .agent.run.ProcessOutputLogger - Lock file: /Users/nsharma/Downloads/TeamCity/buildAgent/logs/buildAgent.properties.lock  
+[2017-09-22 22:18:16,441]   INFO - .agent.run.ProcessOutputLogger - Using no lock  
+[2017-09-22 22:18:16,461]   INFO - .agent.run.ProcessOutputLogger - Done [65603], see log at /Users/nsharma/Downloads/TeamCity/buildAgent/logs/teamcity-agent.log 
+[2017-09-22 22:18:16,462]   INFO - r.agent.upgrade.UpgradeRunBase - Process exited with code: 0 

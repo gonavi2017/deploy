@@ -1,0 +1,409 @@
+@import url("../settingsTable.css");
+@import url("../vcsTable.css");
+
+#all-projects {
+  margin-top: 1em;
+}
+
+#all-projects .expand_collapse {
+  margin-bottom: 1em;
+}
+
+h2 {
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+h2.noBorder {
+  padding-top: 0;
+  border: none;
+}
+
+p.sectionDescription {
+  margin: 0 0 1em;
+  padding: 0;
+
+  font-style: italic;
+}
+
+#content {
+  margin-top: 1em;
+}
+
+td.copy,
+td.move {
+  width: 5%;
+  text-align: center;
+  font-size: 70%;
+  border-left: 1px solid #ccc;
+}
+
+p.createProject {
+  margin-top: 0;
+}
+
+tr.buildConfigurationRow td.addBuildConfiguration {
+  border-right: none;
+}
+
+table.settings td {
+  padding-left: 1em;
+  border-right: 1px solid #ccc;
+}
+
+table.settings td.edit {
+  padding-left: .5em;
+}
+
+table.settings th.name,
+table.settings th.runner {
+  background-color: #f5f5f5;
+  width: auto;
+  padding-left: 1em;
+  border-right: 1px solid #ccc;
+  text-align: left;
+  font-size: 90%;
+}
+
+table.settings th.usedIn {
+  width: 25%;
+}
+
+table.settings th.vcsRootScope {
+  width: 15%;
+}
+
+/* Project hierarchy tree-table */
+.projectHierarchy tr.project,
+.projectHierarchy tr.build_type,
+.projectHierarchy tr.vcsRoot,
+.projectHierarchy tr.template {
+  border-bottom: 1px solid #EEE;
+}
+
+.projectHierarchy td.edit {
+  width: 60px;
+  text-align: left;
+}
+
+.projectHierarchy .hl {
+  background: #FF0;
+}
+
+.configurationSection #subprojects,
+.configurationSection #configurations,
+.configurationSection #templates {
+  margin-top: 10px;
+}
+
+.vcsRootsSection,
+.errorSection,
+.templatesSection {
+  background-color: #f5f5f5;
+  margin-top: 0.5em;
+  padding: 3px;
+}
+
+.vcsRootsSection .attentionComment,
+.templatesSection .attentionComment {
+  background-color: #ffffcc;
+  border: none;
+}
+
+.vcsRootsSection ul,
+.templatesSection ul {
+  margin: 0;
+  padding: 0 0 0 0.5em;
+  list-style: none;
+}
+
+#copyProjectFormDialog.wide,
+#regenerateFormDialog {
+  width: 55em;
+}
+
+#copyBuildTypeFormDialog label, #copyTemplateFormDialog label {
+  width: 8em;
+}
+
+#generateTokenFormDialog {
+  width: 45em;
+}
+
+#generateTokenFormDialog label {
+  width: 8em;
+}
+
+#generateTokenFormDialog .mono {
+  margin-left: .5em;
+  margin-top: .5em;
+}
+
+#moveProjectFormDialog label {
+  display: inline-block;
+  width: 9em;
+  line-height: 2em;
+  white-space: nowrap;
+}
+
+#moveProjectFormDialog table {
+  width: 100%;
+}
+
+span.templateUsage {
+  float: right;
+}
+
+#templateUsagesPopup {
+  width: 30em;
+}
+
+/* sidebar */
+
+#admin-container {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-sidebar,
+.admin-content {
+  vertical-align: top;
+}
+
+.admin-sidebar {
+  width: 16%;
+  min-width: 204px;
+  padding: 0 20px 10px 0;
+  box-sizing: content-box;
+}
+
+.admin-sidebar .item,
+.admin-sidebar .category {
+  padding: 0.2em 0;
+}
+
+.admin-sidebar .category:first-child {
+  padding-top: 0;
+}
+
+.admin-sidebar .item {
+  max-width: 240px;
+  padding-left: 20px;
+  white-space: nowrap;
+}
+
+.admin-sidebar .item.active {
+  background: #E9F3FD;
+  font-weight: bold;
+}
+
+.admin-sidebar .item:hover {
+  background: #E9F3FD;
+}
+
+.admin-sidebar .item a {
+  display: block;
+  text-decoration: none;
+}
+
+.admin-sidebar .stepLink {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 1px;
+}
+
+.admin-sidebar .item + .category {
+  margin-top: 10px;
+}
+
+.admin-sidebar .usefulLinks {
+  max-width: 240px;
+}
+
+/* copy project */
+
+table.copyProject {
+  width: 100%;
+}
+
+.copyProject th {
+  width: 8em;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: top;
+}
+
+.copyProject .subprojects th {
+  vertical-align: top;
+}
+
+.copyProject .subprojects textarea {
+  width: 100%;
+  height: 8em;
+}
+.copyProject .subprojects textarea.gt-5 {
+  height: 12em;
+}
+.copyProject .subprojects textarea.gt-10 {
+  height: 16em;
+}
+.copyProject .subprojects textarea.gt-15 {
+  height: 20em;
+}
+
+.copyProject label {
+  float: none;
+  width: auto;
+  white-space: nowrap;
+}
+
+.copyProject input {
+  width: 100%;
+}
+
+.copyProject .error {
+  margin: 0;
+}
+
+
+.configurationSection .shift {
+  margin-left: 1em;
+}
+
+.configurationSection .runner {
+  vertical-align: top;
+}
+
+.configurationSection div.shift {
+  display: inline-block;
+}
+
+a.regenerate {
+  margin-left: 0.5em;
+}
+
+.copyProject a.regenerate {
+  float: right;
+}
+
+/* Regenerate dialog */
+
+table.regenerate th {
+  width: 6em;
+}
+
+.regenerate input {
+  width: 21em;
+}
+
+/* Common style for E-mail header in tables with users */
+.allEmails {
+  float: left;
+  margin-top: 3px;
+  margin-right: 3px;
+
+}
+
+div.nextStepHint {
+  padding: 1em;
+  background-color: #E9F3FD;
+}
+
+.nextStepHint p.sectionDescription {
+  font-style: normal;
+}
+
+/* Parameters table */
+
+table.parametersTable {
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+table.parametersTable th {
+  background-color: #f5f5f5;
+  text-align: left;
+  font-weight: normal;
+  border: 1px solid #ccc;
+}
+
+table.parametersTable th,
+table.parametersTable td {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: .3em 0 .3em 0.3em;
+  vertical-align: top;
+}
+
+table.parametersTable td.edit {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+table.parametersTable tr td.contentDisabled {
+  color: #888;
+}
+
+table.parametersTable tr td.contentDisabled * {
+  color: #888;
+}
+
+.admin-content .section {
+  clear: both;
+  margin-top: 40px;
+}
+.admin-content .section.noMargin {
+  margin-top: 0;
+}
+.admin-content .section.smallMargin {
+  margin-top: 2em;
+}
+.admin-content .section .grayNote {
+  margin-bottom: 10px;
+}
+
+.buildTypeContent .parametersTable td,
+.buildTypeContent .parametersTable th,
+.projectContent .parametersTable td,
+.projectContent .parametersTable th {
+  padding: 5px 10px;
+}
+
+.tc-icon_folders.tc-icon_folders_insert-artifacts {
+  position: absolute;
+  right: -16px;
+  top: 1px;
+  cursor: pointer;
+}
+
+textarea#artifactPaths {
+  white-space: pre;
+  overflow: auto;
+  word-wrap: normal;
+  overflow-wrap: normal;
+}
+
+#maxBuilds {
+  width: 4em;
+  font-size: 90%;
+}
+
+.admin-sidebar.compact .item {
+  max-width: 240px;
+  padding-left: 5px;
+  margin-left: -5px;
+}
+
+.admin-sidebar.compact .category:first-child{
+  display: none;
+}
+
+.admin-sidebar.compact #projectTabsContainer .tabs li{
+  padding-left: 5px;
+  margin-left: -5px;
+}

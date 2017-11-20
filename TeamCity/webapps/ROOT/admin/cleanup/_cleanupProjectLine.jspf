@@ -1,0 +1,59 @@
+<%--@elvariable id="diskUsageData" type="java.util.Map<jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageProjectRow>"--%>
+<%@ page import="jetbrains.buildServer.serverSide.impl.cleanup.HistoryRetentionPolicy" %>
+<tr>
+
+  <%@ include file="_cleanupProjectCell.jspf" %>
+
+  <td class="buildType">
+  <c:choose>
+    <c:when test="${project.rootProject}">
+      <em>&lt;Default cleanup rules for all projects&gt;</em>
+    </c:when>
+    <c:otherwise>
+      <em>&lt;Default cleanup rules for all configurations of this project and sub projects&gt;</em>
+    </c:otherwise>
+  </c:choose>
+  </td>
+
+  <c:set var="inheritedPolicies" value="${project.inheritedCleanupPolicies}"/>
+  <c:set var="inheritedOptions" value="${project.inheritedCleanupOptions}"/>
+  <c:set var="ownCleanupPolicies" value="${project.ownCleanupPolicies}"/>
+  <c:set var="ownOptions" value="${project.ownCleanupOptions}"/>
+
+  <c:set var="onclick">
+    BS.CleanupPolicyDialog.showForProject('${project.projectId}', 'Edit Clean-up Rules for <bs:escapeForJs text="${project.fullName}" forHTMLAttribute="true"/>',
+    { <%@ include file="_cleanupPoliciesJson.jspf" %> },
+    [ <%@ include file="_cleanupLevelsJson.jspf" %> ],
+    <c:choose>
+    <c:when test="${project.rootProject}">
+    null,
+    '${ownOptions['preventDependenciesArtifactsFromCleanup']}'
+    </c:when>
+    <c:otherwise>
+      {<c:if test="${fn:length(inheritedPolicies) > 0}">
+        <c:forEach items="${inheritedPolicies}" var="defPolicy" varStatus="defPolicyI"><c:set var="defPolDescr"><c:out value="${defPolicy.description}"/></c:set>
+          ${defPolicy.cleanupLevel}:'<bs:escapeForJs text="${defPolDescr}"/>'<c:if test="${not defPolicyI.last}">,</c:if></c:forEach>
+      </c:if>},
+      '<c:if test="${not empty ownOptions['preventDependenciesArtifactsFromCleanup']}">${ownOptions['preventDependenciesArtifactsFromCleanup']}</c:if>'
+    </c:otherwise>
+    </c:choose>
+    );
+  </c:set>
+
+  <%@ include file="_cleanupSetEditableVars.jspf" %>
+
+  <td class="description ${editableHighlight}" ${editableOnClick}>
+    <admin:cleanupPoliciesList cleanupPolicies="${project.cleanupPolicies}" parentPolicies="${inheritedPolicies}" useNormalForOther="${project.rootProject}"/>
+    <c:choose>
+      <c:when test="${project.rootProject}">
+        <admin:cleanupPreventDependencies prevent="${ownOptions['preventDependenciesArtifactsFromCleanup']}"/>
+      </c:when>
+      <c:otherwise>
+        <admin:cleanupPreventDependencies prevent="${ownOptions['preventDependenciesArtifactsFromCleanup']}" parentPrevent="${inheritedOptions['preventDependenciesArtifactsFromCleanup']}"/>
+      </c:otherwise>
+    </c:choose>
+  </td>
+
+  <%@ include file="_cleanupLastEditCell.jspf" %>
+</tr>
+

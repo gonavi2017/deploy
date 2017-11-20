@@ -1,0 +1,55 @@
+/* install tool/version dialog */
+.InstallDialogFormDialog {
+  width: 42em;
+}
+
+#toolVersion, #toolType {
+  width: 30em;
+}
+
+.download-upload-container {
+  display: table-row;
+}
+
+.download-container,
+.upload-container {
+  display: table-cell;
+  padding: 0.5em;
+}
+
+/* tools list */
+
+.tool-name {
+  margin: 1.5em 0 0;
+}
+
+.settings.installed-versions {
+  width: 80%;
+}
+
+.installed-version .installed-version__usages,
+.installed-version .installed-version__action {
+  padding: 0.5em;
+}
+
+.installed-version .installed-version__name {
+  width: 80%;
+  padding: 0.5em 1em;
+}
+
+.installed-version .installed-version__usages {
+  white-space: nowrap;
+}
+
+.btUsages .btUsages__list {
+  min-height: 100px;
+  max-height: 40vh;
+  overflow-y: scroll;
+}
+.btUsages:only-of-type  .btUsages__list {
+  max-height: 75vh;
+}
+
+#error_tool_upload {
+  word-break: break-all;
+}

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2000-2016 JetBrains s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<dsl-extension kind="vcs" type="mercurial" generateDslJar="true">
+  <class name="HgVcsRoot">
+    <description>
+      Mercurial [VCS root](https://confluence.jetbrains.com/display/TCDL/Mercurial)
+    </description>
+  </class>
+  <params>
+    <param name="repositoryPath" dslName="url">
+      <description>
+        Mercurial repository URL
+      </description>
+    </param>
+    <param name="branchName" dslName="branch">
+      <description>
+        Default branch name
+      </description>
+    </param>
+    <param name="teamcity:branchSpec" dslName="branchSpec">
+      <description>
+        [Branch specification](https://confluence.jetbrains.com/display/TCDL/Working+with+Feature+Branches#WorkingwithFeatureBranches-branchSpec)
+        to use in VCS root
+      </description>
+    </param>
+    <param name="useTagsAsBranches" type="boolean">
+      <description>
+        Allows to use tags in branch specification. By default, tags are ignored.
+      </description>
+    </param>
+    <param name="detectSubrepoChanges" type="boolean">
+      <description>
+        Whether TeamCity should detect changes in submodules
+      </description>
+    </param>
+    <param name="tagUsername" dslName="userForTags">
+      <description>
+        A custom username for tags. Format: User Name &lt;email&gt;
+      </description>
+    </param>
+    <param name="uncompressedTransfer" type="boolean">
+      <description>
+        Whether the "--uncompressed" option should be added to the "hg clone" command.
+        It is enabled by default.
+      </description>
+    </param>
+    <param name="hgCommandPath" dslName="hgPath">
+      <description>
+        [Path](https://confluence.jetbrains.com/display/TCDL/Mercurial#Mercurial-hgDetection) to hg executable
+      </description>
+    </param>
+    <param name="customHgConfig">
+      <description>
+        Mercurial configuration options to be applied to the repository in the
+        standard [format](https://www.selenic.com/mercurial/hgrc.5.html)
+      </description>
+    </param>
+    <param name="username" dslName="userName">
+      <description>
+        A username for mercurial connection
+      </description>
+    </param>
+    <param name="secure:password" dslName="password">
+      <description>
+        A password for mercurial connection
+      </description>
+    </param>
+    <param name="purgePolicy" type="PurgePolicy">
+      <description>
+        Specifies whether TeamCity should run the [hg purge](https://www.mercurial-scm.org/wiki/PurgeExtension) command and what files should be purged
+        @see PurgePolicy
+      </description>
+    </param>
+    <param name="useSharedMirrors" dslName="useMirrors" type="boolean">
+      <description>
+        When set to true, TeamCity creates a local agent mirror first (under agent's system/mercurial directory) and then clones to the
+        build [checkout directory](https://confluence.jetbrains.com/display/TCDL/Build+Checkout+Directory) from this local mirror.
+        This option speeds up clean checkout, because only the build working directory is cleaned.
+        Also, if a single root is used in several build configurations, a clone will be faster.
+      </description>
+    </param>
+  </params>
+  <types>
+    <enum name="PurgePolicy">
+      <description>
+        Defines [hg purge](https://www.mercurial-scm.org/wiki/PurgeExtension) settings
+      </description>
+      <option name="DONT_RUN">
+        <description>
+          Don't run the "hg purge"
+        </description>
+      </option>
+      <option name="PURGE_UNKNOWN">
+        <description>
+          Purge unknown files and empty directories
+        </description>
+      </option>
+      <option name="PURGE_ALL">
+        <description>
+          Purge unknown files, empty directories, and ignored files. Runs "hg purge --all".
+        </description>
+      </option>
+    </enum>
+  </types>
+</dsl-extension>

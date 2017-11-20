@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="projectFeature" type="IssueTracker" generateDslJar="true" applicable="params['type'] == 'tfs'">
+  <class name="TfsIssueTracker">
+    <description>
+      Project feature enabling integration with [Team Foundation Work Items](https://confluence.jetbrains.com/display/TCDL/Team+Foundation+Work+Items) as an issue tracker
+    </description>
+  </class>
+  <init>
+    <param name="type" value="tfs" />
+  </init>
+  <function name="tfsIssueTracker">
+    <description>
+      Enables integration with [Team Foundation Work Items](https://confluence.jetbrains.com/display/TCDL/Team+Foundation+Work+Items)
+    </description>
+  </function>
+  <params>
+    <param name="name" dslName="displayName">
+      <description>
+        Issue tracker integration display name
+      </description>
+    </param>
+    <param name="host">
+      <description>
+        TFS URL in the following format:
+        * TFS 2010+: http(s)://{host}:{port}/tfs/{collection}/{project}
+        * Visual Studio Team Services: https://{account}.visualstudio.com/{project}
+      </description>
+    </param>
+    <param name="username" dslName="userName">
+      <description>
+        A username for TFS connection
+      </description>
+    </param>
+    <param name="secure:password" dslName="password">
+      <description>
+        A password for TFS connection
+      </description>
+    </param>
+    <param name="pattern">
+      <description>
+        A [java regular expression](http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html) to find the work item id
+        in a commit message
+      </description>
+    </param>
+  </params>
+</dsl-extension>

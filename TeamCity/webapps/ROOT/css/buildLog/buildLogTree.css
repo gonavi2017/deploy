@@ -1,0 +1,197 @@
+.rTree .open > .msg > .ts,
+.rTree .closed > .msg > .ts {
+  background: no-repeat right -18px;
+  cursor: pointer;
+}
+
+.rTree .open > .msg > .ts {
+  background-image: url(../../img/tree/minus.gif);
+}
+
+.rTree .closed > .msg > .ts {
+  background-image: url(../../img/tree/plus.gif);
+}
+
+.rTree.console_mod .open > .msg > .ts,
+.rTree.console_mod .closed > .msg > .ts {
+  background: none;
+  padding-right: 0;
+}
+
+.console_mod .ts::after {
+  margin-left: 6px;
+}
+
+.console_mod .l2 .ts::after {
+  margin-left: 26px;
+}
+.console_mod .l3 .ts::after {
+  margin-left: 46px;
+}
+.console_mod .l4 .ts::after {
+  margin-left: 66px;
+}
+.console_mod .l5 .ts::after {
+  margin-left: 86px;
+}
+.console_mod .l6 .ts::after {
+  margin-left: 106px;
+}
+.console_mod .l7 .ts::after {
+  margin-left: 126px;
+}
+.console_mod .l8 .ts::after {
+  margin-left: 146px;
+}
+.console_mod .l9 .ts::after {
+  margin-left: 166px;
+}
+.console_mod .l10 .ts::after {
+  margin-left: 186px;
+}
+.console_mod .l11 .ts::after {
+  margin-left: 206px;
+}
+.console_mod .l12 .ts::after {
+  margin-left: 226px;
+}
+.console_mod .l13 .ts::after {
+  margin-left: 246px;
+}
+.console_mod .l14 .ts::after {
+  margin-left: 266px;
+}
+.console_mod .l15 .ts::after {
+  margin-left: 286px;
+}
+.console_mod .l16 .ts::after {
+  margin-left: 306px;
+}
+.console_mod .l17 .ts::after {
+  margin-left: 326px;
+}
+.console_mod .l18 .ts::after {
+  margin-left: 346px;
+}
+.console_mod .l19 .ts::after {
+  margin-left: 366px;
+}
+.console_mod .l20 .ts::after {
+  margin-left: 386px;
+}
+.console_mod .l21 .ts::after {
+  margin-left: 406px;
+}
+.console_mod .l22 .ts::after {
+  margin-left: 426px;
+}
+.console_mod .l23 .ts::after {
+  margin-left: 446px;
+}
+.console_mod .l24 .ts::after {
+  margin-left: 466px;
+}
+.console_mod .l25 .ts::after,
+.console_mod .lDeep .ts::after {
+  margin-left: 486px;
+}
+
+.rTree.console_mod .open > .msg > .ts::after,
+.rTree.console_mod .closed > .msg > .ts::after {
+  font-family: fontAwesome;
+  margin-right: 4px;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rTree.console_mod .open > .msg > .ts::after {
+  content: "\f117";
+}
+
+.rTree.console_mod .closed > .msg > .ts::after {
+  content: "\f116";
+}
+
+.rTree .leaf > .msg > .ts,
+.rTree .emptyOpen > .msg > .ts,
+.rTree .emptyClosed > .msg > .ts {
+  background: none;
+}
+
+.rTree .leaf:hover,
+.rTree:not(.console_mod) .leaf:hover > .msg:not(.focus) > .mark,
+.rTree .open:hover,
+.rTree .closed:hover,
+.rTree .withPopup,
+.rTree .hover .mark {
+  background-color: #F5F5F5;
+}
+
+.rTree.console_mod .leaf:hover,
+.rTree.console_mod .open:hover,
+.rTree.console_mod .closed:hover,
+.rTree.console_mod .withPopup,
+.rTree.console_mod .hover .mark {
+  background-color: #404040;
+}
+
+.rTree .focus,
+.rTree .focus .mark {
+  background-color: #FFC;
+}
+
+.rTree.console_mod .focus,
+.rTree.console_mod .focus .mark {
+  background-color: #998;
+  width: 100%;
+}
+
+.rTree.console_mod .focus .time,
+.rTree.console_mod .focus .internal_msg {
+  color: #3f3f3f;
+}
+
+.rTree.console_mod .focus a {
+  color: #073D7D;
+}
+
+/* pC = popupContent */
+.rTree .pC {
+  display: none;
+}
+
+.messagePopup {
+  padding: 2px;
+}
+
+.messagePopup .messages {
+  margin: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+.buildLogPopup li {
+  line-height: 1.6;
+}
+
+.buildLogPopupLink {
+  white-space: nowrap;
+}
+
+.stickyBar {
+  background-color: white;
+}
+
+.stickyBar > .actionBar {
+  margin: 0px;
+}
+
+.partialLogWarn {
+  background: #ffc;
+  padding: 8px;
+}
+
+.continueLog {
+  padding-top: 8px;
+  padding-bottom: 16px;
+}

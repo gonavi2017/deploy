@@ -1,0 +1,11 @@
+/*
+ * Referenced from testDetailsExtension.jsp
+ */
+
+.flaky-analysis-result {
+  padding: 0.5em 1em;
+  border-width: 0;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  display: block;
+}

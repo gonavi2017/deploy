@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+  <description>TeamCity responsibility-related functions library</description>
+  <display-name>TeamCity responsibility-related functions</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>resp</short-name>
+  <uri>/WEB-INF/functions/resp</uri>
+
+  <function>
+    <description>Returns whether the responsibility is active.</description>
+    <name>isActive</name>
+    <function-class>jetbrains.buildServer.web.functions.user.ResponsibilityFunctions</function-class>
+    <function-signature>boolean isActive(jetbrains.buildServer.responsibility.ResponsibilityEntry)</function-signature>
+  </function>
+
+  <function>
+    <description>Returns whether the responsibility is fixed.</description>
+    <name>isFixed</name>
+    <function-class>jetbrains.buildServer.web.functions.user.ResponsibilityFunctions</function-class>
+    <function-signature>boolean isFixed(jetbrains.buildServer.responsibility.ResponsibilityEntry)</function-signature>
+  </function>
+
+  <function>
+    <description>Returns whether specified user is responsible.</description>
+    <name>isUserResponsible</name>
+    <function-class>jetbrains.buildServer.web.functions.user.ResponsibilityFunctions</function-class>
+    <function-signature>boolean
+      isUserResponsible(jetbrains.buildServer.responsibility.ResponsibilityEntry,jetbrains.buildServer.users.User)
+    </function-signature>
+  </function>
+
+  <function>
+    <description>Returns whether specified user fixed the entry.</description>
+    <name>isUserFixed</name>
+    <function-class>jetbrains.buildServer.web.functions.user.ResponsibilityFunctions</function-class>
+    <function-signature>boolean
+      isUserFixed(jetbrains.buildServer.responsibility.ResponsibilityEntry,jetbrains.buildServer.users.User)
+    </function-signature>
+  </function>
+
+  <function>
+    <description>Returns whether the responsibility entry has a non-empty comment.</description>
+    <name>hasComment</name>
+    <function-class>jetbrains.buildServer.web.functions.user.ResponsibilityFunctions</function-class>
+    <function-signature>boolean hasComment(jetbrains.buildServer.responsibility.ResponsibilityEntry)</function-signature>
+  </function>
+
+  <function>
+    <description>Returns whether the responsibility entry has a responsible user.</description>
+    <name>hasResponsible</name>
+    <function-class>jetbrains.buildServer.web.functions.user.ResponsibilityFunctions</function-class>
+    <function-signature>boolean hasResponsible(jetbrains.buildServer.responsibility.ResponsibilityEntry)</function-signature>
+  </function>
+
+  <function>
+    <description>Returns whether the responsibility entry has a reporter user.</description>
+    <name>hasReporter</name>
+    <function-class>jetbrains.buildServer.web.functions.user.ResponsibilityFunctions</function-class>
+    <function-signature>boolean hasReporter(jetbrains.buildServer.responsibility.ResponsibilityEntry)</function-signature>
+  </function>
+</taglib>

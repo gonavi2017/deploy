@@ -1,0 +1,21 @@
+<%--@elvariable id="testBean" type="jetbrains.buildServer.web.problems.STestBean"--%><c:set var="btTooltip" value=""
+/><c:if test="${not empty testBean and testBean.buildTypeCount >= 1}"
+  ><c:set var="i" value="${singleBuildTypeContext ? 1 : 0}"
+  /><c:set var="btTooltip" value=""
+  /><c:set var="details" value="${testBean.detailsPerBuildType}"
+  /><c:forEach var="bt" begin="${i}" items="${testBean.buildTypes}"
+    ><c:set var="btDetail" value="${details[bt]}"
+    /><c:set var="status" value="${btDetail.first}"
+    /><c:set var="_build" value="${btDetail.second}"
+    /><c:set var="btTooltip"
+      >${btTooltip}${empty btTooltip ? '' : '<br/>'} <bs:responsibleIcon responsibility="${bt.responsibilityInfo}"/><bs:buildTypeLinkFull buildType="${bt}"
+      /><c:if test="${not empty status}"> - test ${status.failed ? 'failed' : status.successful ? 'successful' : 'ignored' } in <bs:buildLink build="${_build}">build #<c:out value="${_build.buildNumber}"/></bs:buildLink></c:if
+    ></c:set
+  ></c:forEach
+></c:if
+><c:if test="${empty btTooltip}">${innerText}</c:if
+><c:if test="${not empty btTooltip}"
+  ><bs:simplePopup controlId="tltip${util:uniqueId()}" popup_options="shift: {x: -100, y: 20}"
+    ><jsp:attribute name="content"><span class="failedInPopup">${btTooltip}</span></jsp:attribute><jsp:body>${innerText}</jsp:body
+  ></bs:simplePopup
+></c:if>

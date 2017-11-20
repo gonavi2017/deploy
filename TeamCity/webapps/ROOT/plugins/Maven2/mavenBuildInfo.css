@@ -1,0 +1,105 @@
+#mavenBuildInfoHead {
+  background-color: #f4f5f7;
+  border: 1px solid #e3e9ef;
+  padding: .5em 1em;
+  width: 100%;
+}
+
+#mavenBuildInfoHead .col {
+  vertical-align: top;
+  text-align: left;
+}
+
+#mavenBuildInfoHead .col.first {
+  width: 35%;
+}
+
+#mavenBuildInfoHead table.header-maven {
+  width: 100%;
+}
+
+#mavenBuildInfoHead table.header-maven td.first {
+  width: 12em;
+}
+
+#mavenBuildInfoHead td,
+#mavenBuildInfoHead table.header-maven {
+  padding: 0;
+  border: none;
+  border-collapse: collapse;
+}
+
+#maven-projects-header {
+  font-size: 120%;
+  margin: 1.5em 0 .5em;
+}
+
+#maven-projects-header span {
+  font-weight: bold;
+}
+
+#maven-projects {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mavenBuildInfoIndexes {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.mavenBuildInfoIndexes .header {
+}
+
+.mavenBuildInfoIndexes .cell {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.mavenBuildInfoIndexes .selected {
+  font-weight: bold;
+}
+
+.mavenBuildInfoIndexes .unselected {
+  background-color: #F4F5F7;
+}
+
+.left-pane {
+  width: 30%;
+  vertical-align: top;
+  padding: 0.5em 0 0.5em 0.5em;
+  background-color: #F4F5F7;
+}
+
+.left-pane .item {
+  padding-left: 0.5em;
+}
+
+.left-pane .selected {
+  background-color: white;
+}
+
+.right-pane {
+  width: 70%;
+  vertical-align: top;
+  padding-left: 0.5em;
+  background-color: white;
+}
+
+.right-pane.empty {
+  background-color: #F4F5F7;
+  padding: 1em;
+  border-left: 3px solid #FFF;
+  font-size: 300%;
+  color: #d3d3d3;
+  text-align: center;
+}
+
+.right-pane table.settings {
+  width: 100%;
+  margin-top: 0;
+}
+
+.right-pane table.settings td {
+  padding: 0.3em 0.5em;
+}

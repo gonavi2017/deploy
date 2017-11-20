@@ -1,0 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%--@elvariable id="t0" type="java.lang.Long"--%>
+<c:set var="t1"><%= System.nanoTime() %></c:set>
+<span id="time-statistics" class="hidden"><fmt:formatNumber value="${(t1 - t0) / 1e6}" maxFractionDigits="3"/> ms</span>
+<script type="application/javascript">
+  (function() {
+    BS.Log.info("Flaky test analysis loaded in " + $j("#time-statistics").text());
+  })();
+</script>

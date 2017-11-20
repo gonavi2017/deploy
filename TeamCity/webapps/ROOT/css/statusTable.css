@@ -1,0 +1,40 @@
+.statusBlockContainer {
+  left: 0 !important;
+  min-width: 990px;
+  padding: 3px;
+}
+
+table.statusTable {
+  width: 100%;
+  padding: .35em 0;
+}
+
+.statusTable .takeResponsibility {
+  position: relative;
+  left: -3px;
+}
+
+.statusTable .responsible span.responsibilityMessage {
+  padding: 0 4px;
+  margin-bottom: 5px;
+}
+
+.failureStatusBlock {
+  background-color: #fef7f7;
+  border: #f36b59 solid 1px;
+}
+
+.successStatusBlock {
+  background-color: #f5fbf7;
+  border: #3db65e solid 1px;
+}
+
+.unknownStatusBlock {
+  background-color: #f5f5f5;
+  border: #DDD solid 1px;
+}
+
+.queuedStatusBlock {
+  background-color: #f1f4f7;
+  border: #e3e9ef solid 1px;
+}

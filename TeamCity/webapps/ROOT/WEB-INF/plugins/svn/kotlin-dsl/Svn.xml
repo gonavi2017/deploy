@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="vcs" type="svn" generateDslJar="true">
+  <class name="SvnVcsRoot">
+    <description>
+      A Subversion [VCS root](https://confluence.jetbrains.com/display/TCDL/Subversion)
+    </description>
+  </class>
+  <params>
+    <param name="url">
+      <description>
+        Subversion server URL
+      </description>
+    </param>
+    <param name="user" dslName="userName">
+      <description>
+        A username for Subversion connection
+      </description>
+    </param>
+    <param name="secure:svn-password" dslName="password">
+      <description>
+        A password for Subversion connection
+      </description>
+    </param>
+    <param name="svn-config-directory" dslName="configDir">
+      <description>
+        Custom Subversion configuration directory to use
+      </description>
+    </param>
+    <param name="svn-use-default-config-directory" dslName="useDefaultConfigDir" type="boolean" trueValue="true" falseValue="">
+      <description>
+        Whether the default Subversion configuration directory should be used
+      </description>
+    </param>
+    <param name="externals-mode" dslName="externalsMode" type="ExternalsMode">
+      <description>
+        A mode of externals support
+        @see ExternalsMode
+      </description>
+    </param>
+    <param name="enable-unsafe-ssl" dslName="enableNonTrustedSSL" type="boolean" trueValue="true" falseValue="">
+      <description>
+        Whether TeamCity should accept non-trusted SSL certificates from Subversion server
+      </description>
+    </param>
+    <param name="teamcitySshKey" dslName="uploadedKey">
+      <description>
+        Name of the uploaded [SSH key](https://confluence.jetbrains.com/display/TCDL/SSH+Keys+Management) to use for connections via SSH.
+      </description>
+    </param>
+    <param name="ssh-key-file" dslName="customSshKey">
+      <description>
+        A path to SSH key on the TeamCity server machine to use
+      </description>
+    </param>
+    <param name="secure:ssh-passphrase" dslName="passphrase">
+      <description>
+        A passphrase for SSH key if it is encrypted
+      </description>
+    </param>
+    <param name="ssh-port" dslName="sshPort" type="int">
+      <description>
+        SSH port to use
+      </description>
+    </param>
+    <param name="working-copy-format" dslName="workingCopyFormat" type="WorkingCopyFormat">
+      <description>
+        Subversion working copy format to use
+        @see WorkingCopyFormat
+      </description>
+    </param>
+    <param name="labelingPatterns" dslName="labelingRules">
+      <description>
+        [Labeling patterns](https://confluence.jetbrains.com/display/TCDL/VCS+Labeling#VCSLabeling-SubversionLabelingRules) to use
+      </description>
+    </param>
+    <param name="labelingMessage" dslName="labelingMessage">
+      <description>
+        A message to use for labeling
+      </description>
+    </param>
+  </params>
+  <types>
+    <enum name="ExternalsMode">
+      <description>Subversion externals mode</description>
+      <option name="FULL_SUPPORT" value="externals-full">
+        <description>Detect changes and checkout sources from externals</description>
+      </option>
+      <option name="CHECKOUT" value="externals-checkout">
+        <description>
+          Checkout sources from externals, ignore changes
+        </description>
+      </option>
+      <option name="DISABLED" value="externals-none">
+        <description>
+          Don't detect changes and don't checkout sources from externals
+        </description>
+      </option>
+    </enum>
+    <enum name="WorkingCopyFormat">
+      <description>
+        A Subversion working copy format
+      </description>
+      <option name="v1_8" value="1.8"/>
+      <option name="v1_7" value="1.7"/>
+      <option name="v1_6" value="1.6"/>
+      <option name="v1_5" value="1.5"/>
+      <option name="v1_4" value="1.4"/>
+    </enum>
+  </types>
+</dsl-extension>

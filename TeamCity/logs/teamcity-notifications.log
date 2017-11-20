@@ -1,0 +1,7 @@
+[2017-09-22 22:17:12,471]   INFO - jabber.JabberNotificatorConfig - Loading configuration file: /Users/nsharma/.BuildServer/config/_notifications/jabber/jabber-config.xml 
+[2017-09-22 22:17:20,850]   INFO - n.email.EMailNotificatorConfig - Loading configuration file: /Users/nsharma/.BuildServer/config/_notifications/email/email-config.xml 
+[2017-09-24 19:26:57,541]   INFO - n.email.EMailNotificatorConfig - Loading configuration file: /Users/nsharma/.BuildServer/config/_notifications/email/email-config.xml 
+[2017-09-24 19:27:01,456]   INFO - jabber.JabberNotificatorConfig - Loading configuration file: /Users/nsharma/.BuildServer/config/_notifications/jabber/jabber-config.xml 
+[2017-09-24 19:28:45,516]   WARN - ication.email.EMailNotificator - Failed to send email notification with subject 'Reset your TeamCity password' to address 'navnidhi@gmail.com', error: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: mail, 25; timeout 60000;
+  nested exception is:
+	java.net.UnknownHostException: mail 

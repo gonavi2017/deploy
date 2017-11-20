@@ -1,0 +1,40 @@
+<%-- included from flakyReason_DifferentStatusAtSameVcsChange.jsp --%>
+<%@ include file="/include.jsp"%>
+
+<tr>
+  <%--@elvariable id="build" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.BuildInfo"--%>
+  <c:set var="buildId" value="${build.id}"/>
+
+  <td class="differentStatusAtSameVcsChange">
+    <%--@elvariable id="flakyReason" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.DifferentStatusAtSameVcsChange"--%>
+    <c:set var="testNameId" value="${flakyReason.testNameId}"/>
+    <c:set var="testStatus" value="${build.testStatus}"/>
+    <%@ include file="testStatus.jspf"%>
+  </td>
+  <td class="differentStatusAtSameVcsChange">
+    <span class="preserveWhiteSpace"> in </span>
+  </td>
+
+  <%--@elvariable id="builds" type="java.util.Map<java.lang.Long, jetbrains.buildServer.serverSide.SBuild>"--%>
+  <c:set var="sBuild" value="${builds[buildId]}"/>
+  <%--@elvariable id="sBuild" type="jetbrains.buildServer.serverSide.SBuild"--%>
+  <c:choose>
+    <c:when test="${not empty sBuild}">
+      <td class="differentStatusAtSameVcsChange">
+        <bs:buildTypeLinkFull buildType="${sBuild.buildType}"
+                              dontShowProjectName="${true}"
+                              popupMode="${true}"
+                              popupNoProject="${true}"/>
+      </td>
+      <c:set var="_currBuild" value="${sBuild}"/>
+      <%@ include file="/change/_relatedBuildTDs.jspf" %>
+    </c:when>
+    <c:otherwise>
+      <td class="differentStatusAtSameVcsChange">
+        <%-- Build is inaccessible (was removed or insufficient permissions) --%>
+        <c:set var="buildIdPopup"><bs:tooltipAttrs text="id = ${buildId}"/></c:set>
+        <span class="inaccessible" ${buildIdPopup}>an inaccessible build</span>
+      </td>
+    </c:otherwise>
+  </c:choose>
+</tr>

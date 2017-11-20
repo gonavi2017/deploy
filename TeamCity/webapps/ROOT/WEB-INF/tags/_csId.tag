@@ -1,0 +1,1 @@
+<%@ attribute name="changeStatus" type="jetbrains.buildServer.vcs.ChangeStatus" required="true" %>${changeStatus.change.id}_${changeStatus.change.personal}

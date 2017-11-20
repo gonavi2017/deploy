@@ -1,0 +1,27 @@
+<c:set var="key"><bs:_csId changeStatus="${changeStatus}"/></c:set>
+
+<bs:projectHierarchy treeId="compilationErrors_${key}" rootProjects="${changeDetailsBean.compilationErrors}"
+                     tableClass="modificationBuilds" tableBuildTypeClass="buildTypeProblem"  showRootProjects="false"
+                     linksToAdminPage="false" showResponsibilityInfo="true" collapsible="false" collapsedByDefault="false" showCounters="false" tableSubProjectClass="modificationBuilds">
+    <jsp:attribute name="projectHTML">
+      <td></td>
+    </jsp:attribute>
+    <jsp:attribute name="buildTypeHTML">
+        <c:set var="build" value="${changeDetailsBean.firstBuilds[buildType]}"/>
+        <bs:buildRow build="${build}" showBuildNumber="true" showStatus="true" showChanges="true" showStartDate="true"/>
+    </jsp:attribute>
+</bs:projectHierarchy>
+
+
+<c:set var="buildTypesMap" value="${changeDetailsBean.otherErrorsMap}"/>
+<bs:projectHierarchy treeId="otherErrors_${key}" rootProjects="${changeDetailsBean.otherErrors}"
+                     tableClass="modificationBuilds" tableBuildTypeClass="buildTypeProblem" showRootProjects="false"
+                     linksToAdminPage="false" showResponsibilityInfo="true" collapsible="false" collapsedByDefault="false" showCounters="false">
+    <jsp:attribute name="projectHTML">
+      <td></td>
+    </jsp:attribute>
+    <jsp:attribute name="buildTypeHTML">
+        <c:set var="build" value="${buildTypesMap[buildType]}"/>
+        <bs:buildRow build="${build}" showBuildNumber="true" showStatus="true" showChanges="true" showStartDate="true"/>
+    </jsp:attribute>
+</bs:projectHierarchy>

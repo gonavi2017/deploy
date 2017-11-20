@@ -1,0 +1,36 @@
+<props:hiddenProperty name="mstest_enable" value="checked"/>
+<tr class="js_testsetting MSTest advancedSetting">
+  <th><label for="${msTestMetadata}">MSTest metadata:</label></th>
+  <td><props:textProperty name="${msTestMetadata}" className="longField"/>
+    <span class="error" id="error_${msTestMetadata}"></span>
+    <span class="smallNote">Enter a value for <i>/testmetadata:</i> argument</span>
+    <props:multilineProperty name="${msTestTestlist}"
+                             className="longField"
+                             linkTitle="Testlist from metadata to run"
+                             note="Every line will be translated into <i>/testlist:</i> argument"
+                             expanded="${true}" rows="3" cols="49"/>
+  </td>
+</tr>
+
+<tr class="js_testsetting MSTest advancedSetting">
+  <th class=""><label for="${msTestTest}">Test:</label></th>
+  <td class="">
+    <props:multilineProperty name="${msTestTest}"
+                             className="longField"
+                             linkTitle="Edit tests"
+                             note="Names of individual tests to run. Each line will be translated into <i>/test:</i> argument"
+                             rows="3" cols="49"/>
+    <props:checkboxProperty name="${msTestUnique}"/>
+    <label for="${msTestUnique}">Run the test only if one unique match is found for any specified test in <i>test</i> section</label>
+    <span class="error" id="error_${msTestUnique}"></span>
+  </td>
+</tr>
+
+<tr class="js_testsetting MSTest advancedSetting">
+  <th><label for="${msTestResult}">Results file:</label></th>
+  <td>
+    <props:textProperty name="${msTestResult}" className="longField"/>
+    <span class="error" id="error_${msTestResult}"></span>
+    <span class="smallNote">Enter a value for <i>/resultsfile:file</i> command line argument</span>
+  </td>
+</tr>

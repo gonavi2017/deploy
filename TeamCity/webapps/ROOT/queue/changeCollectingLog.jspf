@@ -1,0 +1,16 @@
+<%@include file="/include-internal.jsp"%>
+<c:set var="collectedMessages" value="${promotionDetailsBean.changeCollectMessages}"/>
+<c:if test="${intprop:getBoolean('teamcity.ui.queuedBuild.showLog') and fn:length(collectedMessages) > 0}">
+  <div class="changesCollectingLog">
+    Changes collecting log:
+
+    <table class="changesTable">
+      <c:forEach items="${promotionDetailsBean.changeCollectMessages}" var="msg">
+        <tr>
+          <td><bs:out resolverContext="${promotion}" value="${msg.text}"/> </td>
+          <td><bs:date value="${msg.timestamp}"/> </td>
+        </tr>
+      </c:forEach>
+    </table>
+  </div>
+</c:if>

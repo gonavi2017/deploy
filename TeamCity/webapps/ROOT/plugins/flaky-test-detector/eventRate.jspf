@@ -1,0 +1,9 @@
+<%-- included from testHistoryExtension.jsp --%>
+<%@ include file="/include-internal.jsp"%>
+
+<%--@elvariable id="eventRate" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.EventRate"--%>
+<td class="numeric" <bs:tooltipAttrs text="${eventRate.description}"/>>
+  <c:set var="flipRatePercent"><fmt:formatNumber value="${eventRate.value * 100}" maxFractionDigits="0"/></c:set>
+  <c:set var="failure" value="${eventRate.value gt 0}"/>
+  <span class="${failure ? "failure red-text" : ""}">${failure and (flipRatePercent eq 0) ? "&lt; 1" : flipRatePercent}%</span>
+</td>

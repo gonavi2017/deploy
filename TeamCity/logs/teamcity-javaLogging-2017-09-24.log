@@ -1,0 +1,20 @@
+Sep 24, 2017 7:26:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing AtmosphereFramework
+Sep 24, 2017 7:26:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: No Spring WebApplicationInitializer types detected on classpath
+Sep 24, 2017 7:26:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'buildServer'
+Sep 24, 2017 7:26:55 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.11 12/09/2011 10:27 AM'
+Sep 24, 2017 7:27:17 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+Sep 24, 2017 7:27:17 PM com.sun.jersey.server.impl.application.DeferredResourceConfig$ApplicationHolder <init>
+INFO: Instantiated the Application class jetbrains.buildServer.server.rest.jersey.ExtensionsAwareResourceConfig
+Sep 24, 2017 7:27:18 PM com.sun.jersey.api.wadl.config.WadlGeneratorLoader loadWadlGenerator
+INFO: Loading wadlGenerator com.sun.jersey.server.wadl.generators.WadlGeneratorApplicationDoc
+Sep 24, 2017 7:27:18 PM com.sun.jersey.api.wadl.config.WadlGeneratorLoader loadWadlGenerator
+INFO: Loading wadlGenerator jetbrains.buildServer.server.rest.jersey.WadlGenerator$PatchedWadlGenerator
+Sep 24, 2017 7:27:18 PM com.sun.jersey.api.wadl.config.WadlGeneratorLoader loadWadlGenerator
+INFO: Loading wadlGenerator com.sun.jersey.server.wadl.generators.resourcedoc.WadlGeneratorResourceDocSupport
+Sep 24, 2017 7:28:11 PM org.apache.jasper.compiler.TldLocationsCache tldScanJar
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.

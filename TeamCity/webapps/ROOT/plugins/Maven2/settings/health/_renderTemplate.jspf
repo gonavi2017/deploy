@@ -1,0 +1,17 @@
+<%--@elvariable id="buildConfigSteps" type="java.util.ArrayList<jetbrains.buildServer.controllers.admin.projects.ConfigurationStep>"--%>
+<%--@elvariable id="pageUrl" type="java.lang.String"--%>
+<%--@elvariable id="target" type="jetbrains.buildServer.serverSide.BuildTypeTemplate"--%>
+<authz:authorize projectId="${target.parentProject.externalId}" allPermissions="EDIT_PROJECT">
+  <jsp:attribute name="ifAccessGranted">
+    <admin:editBuildTypeNavSteps settings="${target}"/>
+    <admin:editTemplateLink templateId="${target.externalId}"
+                            step="${buildConfigSteps[2].stepId}"
+                            cameFromUrl="${pageUrl}">
+      <bs:out value="${target.fullName}"/>
+    </admin:editTemplateLink>
+  </jsp:attribute>
+  <jsp:attribute name="ifAccessDenied">
+    <bs:out value="${target.fullName}"/>
+  </jsp:attribute>
+</authz:authorize>
+<%@include file="_renderErrors.jspf"%>

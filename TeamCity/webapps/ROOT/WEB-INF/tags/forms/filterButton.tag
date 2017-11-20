@@ -1,0 +1,1 @@
+<input class="btn btn_mini" type="submit" name="submitFilter" value="Filter"/>

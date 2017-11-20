@@ -1,0 +1,46 @@
+/*
+ * Referenced from analysis.jsp
+ */
+
+div.actionBar td {
+  margin-bottom: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
+  white-space: nowrap;
+  width: 1%;
+}
+
+div.actionBar td.spacer {
+  width: 100%;
+}
+
+table.analysis td.highlight {
+  cursor: inherit;
+}
+
+/*
+ * The 1st column with checkboxes.
+ */
+table.analysis th.select, table.analysis td.select {
+  width: 1%;
+}
+
+table.analysis td.select {
+  vertical-align: top;
+}
+
+tr.focus {
+  background-color: #ffffcc;
+}
+
+table.highlightable tr:hover > td.highlight table th {
+  background-color: #ffffcc;
+}
+
+/*
+ * <tt:testNameWithPopup/>: not a hyperlink but is normally underlined on hover.
+ * Investigate/Mute dialog is affected by the same issue.
+ */
+table.analysis td.testName .testNamePopup .hoverable:hover {
+  text-decoration: none;
+}

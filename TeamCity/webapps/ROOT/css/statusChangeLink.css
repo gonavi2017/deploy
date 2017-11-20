@@ -1,0 +1,60 @@
+/*
+   Used for change responsibility links
+*/
+
+
+.statusChangeLink-normal,
+.statusChangeLink-failed {
+  padding: 1px 3px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.statusChangeLink-normal:after,
+.statusChangeLink-failed:after {
+  content: "...";
+}
+
+.statusChangeLink-normal {
+  color: #42AA52;
+}
+
+.statusChangeLink-normal:hover {
+  text-decoration: none;
+  background-color: #42AA52;
+  color: white;
+}
+
+.statusChangeLink-failed {
+  margin-bottom: 4px;
+  color: #ED2C10;
+}
+
+.statusChangeLink-failed:hover {
+  background-color: #ED2C10;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.changeBuildStatus-errorText {
+  color: #ED2C10;
+}
+
+.changeBuildStatus-warningText {
+  color: #C47003;
+}
+
+.changeBuildStatus-notificationNote {
+  color: #808080;
+  font-style: italic;
+}
+
+.changeBuildStatus-why {
+  display: none;
+}
+
+.changeBuildStatus-reason {
+  line-height: 2;
+  font-weight: bolder;
+}

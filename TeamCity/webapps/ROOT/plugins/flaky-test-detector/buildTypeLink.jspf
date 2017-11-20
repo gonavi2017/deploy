@@ -1,0 +1,43 @@
+<%@ include file="/include-internal.jsp"%>
+<%--@elvariable id="buildTypeId" type="java.lang.String"--%>
+<%--@elvariable id="branchDisplayName" type="java.lang.String"--%>
+<%--@elvariable id="flakyBuildTypes" type="java.util.Map<java.lang.String, jetbrains.buildServer.serverSide.SBuildType>"--%>
+<c:set var="sBuildType" value="${flakyBuildTypes[buildTypeId]}"/>
+<%--@elvariable id="sBuildType" type="jetbrains.buildServer.serverSide.SBuildType"--%>
+<c:choose>
+
+  <c:when test="${not empty sBuildType}">
+    <c:set var="containerId" value="${util:uniqueId()}"/>
+    <span class="${not empty branchDisplayName ? "branch default" : ""}" id="${containerId}">
+      <bs:buildTypeLink buildType="${sBuildType}" classes="js_ignore-branch"/>
+      <c:if test="${not empty branchDisplayName}">
+        <c:set var="branch" value="${vcsBranchManager[branchDisplayName]}"/>
+        <%--@elvariable id="branch" type="jetbrains.buildServer.serverSide.Branch"--%>
+        <bs:branchLink branch="${branch}" buildType="${sBuildType}" classes="js_ignore-branch"/>
+        <script type="application/javascript">
+          (function() {
+            /*
+             * Inject the branch parameter into the build type link.
+             */
+            var /**HTMLAnchorElement*/ buildTypeLink = $j("#${containerId} a.buildTypeName.js_ignore-branch").get(0);
+            var /**String*/ oldBaseUrl = BS.Branch.baseUrl;
+            BS.Branch.baseUrl = buildTypeLink.href;
+            buildTypeLink.href = "#";
+            BS.Branch.setLink(buildTypeLink,
+                              "${sBuildType.externalId}",
+                              "${sBuildType.project.externalId}",
+                              "<bs:escapeForJs forHTMLAttribute="${false}" text="${branch.name}"/>");
+            BS.Branch.baseUrl = oldBaseUrl;
+          })();
+        </script>
+      </c:if>
+    </span>
+  </c:when>
+
+  <c:otherwise>
+    <%-- Configuration is inaccessible (was removed or insufficient permissions) --%>
+    <c:set var="buildTypeIdPopup"><bs:tooltipAttrs text="id = ${buildTypeId}"/></c:set>
+    <span class="inaccessible" ${buildTypeIdPopup}>Inaccessible build configuration</span>
+  </c:otherwise>
+
+</c:choose>

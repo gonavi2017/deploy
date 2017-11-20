@@ -1,0 +1,49 @@
+.perforceJobs {
+  min-width: 20em;
+  padding-top: 5px;
+}
+
+.perforceJobLine {
+  white-space: nowrap;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.perforceJobDesc {
+  white-space: nowrap;
+  padding: 0 5px 5px;
+  margin-bottom: 5px;
+
+  border-bottom: 1px solid #cecece;
+}
+
+.perforceJobDesc:last-of-type {
+  border-bottom: none;
+}
+
+.popupLink .jobIcon {
+  width: 12px;
+  height: 12px;
+
+  margin-bottom: -2px;
+  font-size: 13px;
+
+  display: inline-block;
+  text-decoration: none;
+}
+.popupLink .jobIcon:before {
+  text-decoration: none;
+}
+
+span.jobsToggler .toggle {
+  width: 0;
+  visibility: hidden;
+}
+
+.perforceJobLabel {
+  padding-left: 7px;
+}
+
+span.jobsToggler .perforceJobLabel {
+  display: none;
+}

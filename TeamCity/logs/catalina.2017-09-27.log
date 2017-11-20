@@ -1,0 +1,59 @@
+Sep 27, 2017 9:33:19 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-nio-8111"]
+Sep 27, 2017 9:33:22 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesJdbc
+SEVERE: The web application [] registered the JDBC driver [org.hsqldb.jdbc.JDBCDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesJdbc
+SEVERE: The web application [] registered the JDBC driver [org.hsqldb1.jdbcDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [Thread-3] but has failed to stop it. This is very likely to create a memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [TeamCity Diagnostics Service 1] but has failed to stop it. This is very likely to create a memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [Flush Web UI Updates 1] but has failed to stop it. This is very likely to create a memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [jetbrains.buildServer.util.ThreadStat$1] (value [jetbrains.buildServer.util.ThreadStat$1@3b7d948a]) and a value of type [jetbrains.buildServer.util.ThreadStatNoOp] (value [jetbrains.buildServer.util.ThreadStatNoOp@230883e9]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@683ddb1f]) and a value of type [jetbrains.buildServer.util.NamedThreadFactory$1] (value [jetbrains.buildServer.util.NamedThreadFactory$1@3f33cb56]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [jetbrains.buildServer.util.ThreadStat$1] (value [jetbrains.buildServer.util.ThreadStat$1@3b7d948a]) and a value of type [jetbrains.buildServer.util.ThreadStatNoOp] (value [jetbrains.buildServer.util.ThreadStatNoOp@230883e9]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [jetbrains.buildServer.util.ThreadStat$1] (value [jetbrains.buildServer.util.ThreadStat$1@3b7d948a]) and a value of type [jetbrains.buildServer.util.ThreadStatNoOp] (value [jetbrains.buildServer.util.ThreadStatNoOp@230883e9]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-nio-8111"]
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase loadClass
+INFO: Illegal access: this web application instance has been stopped already.  Could not load jetbrains.buildServer.push.impl.atmosphere.AtmosphereFrameworkSpringConfig$FakeBroadcasterCache.  The eventual following stack trace is caused by an error thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access, and has no functional impact.
+java.lang.IllegalStateException
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1777)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1735)
+	at org.atmosphere.util.IOUtils.loadClass(IOUtils.java:308)
+	at org.atmosphere.cpr.BroadcasterConfig.configureBroadcasterCache(BroadcasterConfig.java:126)
+	at org.atmosphere.cpr.BroadcasterConfig.init(BroadcasterConfig.java:118)
+	at org.atmosphere.util.SimpleBroadcaster.createBroadcasterConfig(SimpleBroadcaster.java:53)
+	at org.atmosphere.cpr.DefaultBroadcaster.initialize(DefaultBroadcaster.java:126)
+	at org.atmosphere.cpr.DefaultBroadcasterFactory.createBroadcaster(DefaultBroadcasterFactory.java:138)
+	at org.atmosphere.cpr.DefaultBroadcasterFactory.lookup(DefaultBroadcasterFactory.java:219)
+	at org.atmosphere.cpr.DefaultBroadcasterFactory.lookup(DefaultBroadcasterFactory.java:193)
+	at org.atmosphere.cpr.DefaultBroadcasterFactory.lookup(DefaultBroadcasterFactory.java:188)
+	at jetbrains.buildServer.push.impl.atmosphere.BroadcastersManager.getBroadcasterFor(BroadcastersManager.java:14)
+	at jetbrains.buildServer.push.impl.atmosphere.AtmosphereHandler.broadcast(AtmosphereHandler.java:58)
+	at jetbrains.buildServer.push.impl.atmosphere.AtmosphereHandler$1.send(AtmosphereHandler.java:1)
+	at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopic.lambda$sendLastMessage$0(DefaultTopicsRegistry.java:17)
+	at jetbrains.buildServer.util.NamedThreadFactory.executeWithNewThreadName(NamedThreadFactory.java:71)
+	at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopic.sendLastMessage(DefaultTopicsRegistry.java:14)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.concurrent.ConcurrentHashMap$KeySpliterator.forEachRemaining(ConcurrentHashMap.java:3527)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopicsFlushProcessor.flush(DefaultTopicsRegistry.java:30)
+	at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopicsFlushProcessor.lambda$start$0(DefaultTopicsRegistry.java:23)
+	at java.lang.Thread.run(Thread.java:745)
+
+Sep 27, 2017 9:33:22 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-nio-8111"]

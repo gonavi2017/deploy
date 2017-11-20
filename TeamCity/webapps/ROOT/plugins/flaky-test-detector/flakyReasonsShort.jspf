@@ -1,0 +1,13 @@
+<%-- included from analysis.jsp and testDetailsExtension.jsp --%>
+<%@ include file="/include.jsp"%>
+
+<%--@elvariable id="flakyTest" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.TestInfo"--%>
+<c:set var="flakyReasons" value="${flakyTest.flakyReasons}"/>
+<%--@elvariable id="flakyReasons" type="java.util.List<jetbrains.buildServer.serverSide.flakyTestDetector.opendata.FlakyReason>"--%>
+<div class="flakyReason">
+  <c:forEach var="flakyReason" items="${flakyReasons}">
+    <div>
+      <c:out value="${flakyReason.text}"/>
+    </div>
+  </c:forEach>
+</div>

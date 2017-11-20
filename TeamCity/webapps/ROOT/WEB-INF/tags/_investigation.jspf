@@ -1,0 +1,11 @@
+<%@ taglib prefix="resp" tagdir="/WEB-INF/tags/responsible" %><%@
+    taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"
+
+%><c:if test="${buildData.responsibleNeeded and not buildData.buildStatus.successful}">
+  <tr>
+    <td class="st">Investigation:</td>
+    <td colspan="3" class="st">
+      <resp:responsible buildData="${buildData}" server="${serverTC}" currentUser="${currentUser}"/>
+    </td>
+  </tr>
+</c:if>

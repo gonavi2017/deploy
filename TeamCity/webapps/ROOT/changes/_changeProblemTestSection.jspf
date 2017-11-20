@@ -1,0 +1,13 @@
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<tt:_testGroupForChange testList="${test.newFailedTests}" defaultOption="bt" withoutActions="true"
+                        maxCount="15" id="changeProblems_${modification.id}"/>
+
+<c:if test="${test.hasFailedTests}">
+  <div class="moreBlock">
+    <bs:modificationLink modification="${modification}" tab="vcsModificationTests">
+      See information about all failed tests in related builds &raquo;
+    </bs:modificationLink>
+  </div>
+</c:if>
+

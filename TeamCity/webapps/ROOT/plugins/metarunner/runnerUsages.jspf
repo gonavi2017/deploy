@@ -1,0 +1,72 @@
+<%@ page import="jetbrains.buildServer.controllers.admin.projects.BuildConfigurationSteps" %>
+<%@ include file="/include-internal.jsp" %>
+<%@ taglib prefix="admin" tagdir="/WEB-INF/tags/admin" %>
+<jsp:useBean id="it" scope="request" type="jetbrains.buildServer.runners.metaRunner.ui.model.MetaSpecBean"/>
+
+<c:choose>
+  <c:when test="${not it.hasUsages}">
+    No usages
+  </c:when>
+  <c:otherwise>
+    <c:if test="${fn:length(it.usedBuildTypes) gt 0}">
+      <strong>${fn:length(it.usedBuildTypes)}</strong> build configuration<bs:s val="${fn:length(it.usedBuildTypes)}"
+        /><c:if test="${fn:length(it.usedBuildTypeTemplates) gt 0 or fn:length(it.usedMetaRunners) gt 0}">, </c:if>
+    </c:if>
+
+    <c:if test="${fn:length(it.usedBuildTypeTemplates) gt 0}">
+      <strong>${fn:length(it.usedBuildTypeTemplates)}</strong> template<bs:s val="${fn:length(it.usedBuildTypeTemplates)}"
+        /><c:if test="${fn:length(it.usedMetaRunners) gt 0}">, </c:if>
+    </c:if>
+
+    <c:if test="${fn:length(it.usedMetaRunners) gt 0}">
+      <strong>${fn:length(it.usedMetaRunners)}</strong> meta-runner<bs:s val="${fn:length(it.usedMetaRunners)}"/>
+    </c:if>
+
+    <bs:simplePopup controlId="metaRunnerUsagesPopup_${it.runType}">
+      <jsp:attribute name="content">
+      <c:if test="${fn:length(it.usedBuildTypes) gt 0}">
+        <div class="usage">Meta-runner used in <strong>${fn:length(it.usedBuildTypes)}</strong> build configuration<bs:s val="${fn:length(it.usedBuildTypes)}"/></div>
+        <ul class="menuList">
+          <c:forEach items="${it.usedBuildTypes}" var="bt">
+            <authz:authorize allPermissions="EDIT_PROJECT" projectId="${bt.projectId}">
+            <jsp:attribute name="ifAccessGranted">
+              <c:set var="editLink"><admin:editBuildTypeLink buildTypeId="${bt.externalId}" step="<%=BuildConfigurationSteps.BUILD_STEPS_STEP_ID%>" withoutLink="true"/></c:set>
+              <l:li title="Edit build configuration"><a href="${editLink}" title="Edit build configuration"><c:out value="${bt.fullName}"/></a></l:li>
+            </jsp:attribute>
+            <jsp:attribute name="ifAccessDenied">
+              <li><c:out value="${bt.fullName}"/></li>
+            </jsp:attribute>
+            </authz:authorize>
+          </c:forEach>
+        </ul>
+      </c:if>
+
+      <c:if test="${fn:length(it.usedBuildTypeTemplates) gt 0}">
+        <div class="usage">Meta-runner used in <strong>${fn:length(it.usedBuildTypeTemplates)}</strong> template<bs:s val="${fn:length(it.usedBuildTypeTemplates)}"/></div>
+        <ul class="menuList">
+          <c:forEach items="${it.usedBuildTypeTemplates}" var="tmpl">
+            <authz:authorize allPermissions="EDIT_PROJECT" projectId="${tmpl.projectId}">
+            <jsp:attribute name="ifAccessGranted">
+              <c:set var="editLink"><admin:editTemplateLink templateId="${tmpl.externalId}" step="<%=BuildConfigurationSteps.BUILD_STEPS_STEP_ID%>" withoutLink="true"/></c:set>
+              <l:li title="Edit build configuration"><a href="${editLink}" title="Edit build configuration"><c:out value="${tmpl.fullName}"/></a></l:li>
+            </jsp:attribute>
+            <jsp:attribute name="ifAccessDenied">
+              <li><c:out value="${tmpl.fullName}"/></li>
+            </jsp:attribute>
+            </authz:authorize>
+          </c:forEach>
+        </ul>
+      </c:if>
+
+      <c:if test="${fn:length(it.usedMetaRunners) gt 0}">
+        <div class="usage">Meta-runner used in <strong>${fn:length(it.usedMetaRunners)}</strong> meta-runner<bs:s val="${fn:length(it.usedMetaRunners)}"/></div>
+        <ul class="menuList">
+          <c:forEach items="${it.usedMetaRunners}" var="mr">
+            <li><c:out value="${mr.runTypeInfo.displayName}"/></li>
+          </c:forEach>
+        </ul>
+      </c:if>
+      </jsp:attribute>
+    </bs:simplePopup>
+  </c:otherwise>
+</c:choose>

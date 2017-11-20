@@ -1,0 +1,12 @@
+<c:set var="editable" value="${false}"/>
+<c:set var="editableHighlight" value=""/>
+<c:set var="editableOnClick" value=""/>
+<c:if test="${not project.readOnly}">
+<authz:authorize projectId="${project.projectId}" anyPermission="CONFIGURE_SERVER_DATA_CLEANUP, CHANGE_CLEANUP_RULES">
+  <jsp:attribute name="ifAccessGranted">
+    <c:set var="editable" value="${true}"/>
+    <c:set var="editableHighlight" value="highlight"/>
+    <c:set var="editableOnClick" value=' onclick="${onclick}" '/>
+  </jsp:attribute>
+</authz:authorize>
+</c:if>

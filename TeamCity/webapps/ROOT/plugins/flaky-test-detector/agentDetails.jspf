@@ -1,0 +1,47 @@
+<%-- included from agentStatistics.jspf --%>
+<%@ include file="/include-internal.jsp"%>
+
+<%--@elvariable id="agent" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.AgentWithRate"--%>
+<%--@elvariable id="sAgent" type="jetbrains.buildServer.serverSide.BuildAgentEx"--%>
+<%--@elvariable id="osIconVisible" type="boolean"--%>
+<c:set var="osIconVisible" value="${empty osIconVisible ? true : osIconVisible}"/>
+
+<c:if test="${not empty agent}">
+  <c:choose>
+
+    <c:when test="${not empty sAgent and sAgent.id ne -1}">
+      <c:choose>
+        <c:when test="${osIconVisible}">
+          <authz:authorize anyPermission="VIEW_AGENT_DETAILS">
+            <jsp:attribute name="ifAccessDenied">
+              <span class="icon icon16 os-icon"></span>
+            </jsp:attribute>
+          </authz:authorize>
+        </c:when>
+        <c:otherwise>
+          <span class="icon icon16 os-icon"></span>
+        </c:otherwise>
+      </c:choose>
+      <bs:agentDetailsFullLink agent="${sAgent}"
+                               doNotShowOutdated="${true}"
+                               doNotShowPoolInfo="${true}"
+                               showCloudIcon="${false}"
+                               doNotShowOSIcon="${!osIconVisible}"/>
+    </c:when>
+
+    <c:when test="${not empty sAgent and sAgent.id eq -1}">
+      <!-- Unregistered agents (#registered property
+           can't be used as it's also false for
+           disconnected agents). -->
+      <span class="icon icon16 os-icon"></span>
+      <span><c:out value="${agent.name}"/> (<span class="agent unavailable red-text">unregistered</span>)</span>
+    </c:when>
+
+    <c:otherwise>
+      <!-- Never -->
+      <span class="icon icon16 os-icon"></span>
+      <span><c:out value="${agent.name}"/></span>
+    </c:otherwise>
+
+  </c:choose>
+</c:if>

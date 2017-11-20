@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="Maven2" generateDslJar="true">
+  <class name="MavenBuildStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/Maven) running maven
+    </description>
+  </class>
+  <function name="maven">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/Maven) running maven
+    </description>
+  </function>
+  <params>
+    <param name="goals" description="Space-separated list of goals to execute"/>
+    <param name="pomLocation">
+      <description>Path to POM file. Should be relative to the checkout directory.</description>
+    </param>
+    <param name="runnerArgs" description="Additional Maven command line parameters."/>
+    <param name="maven.path" dslName="mavenVersion" type="compound">
+      <description>Maven version to use</description>
+      <option name="default" value="%teamcity.tool.maven.AUTO%">
+        <deprecated replaceWith="auto()">Please use auto() instead</deprecated>
+        <description>
+          In TeamCity 10.0 the meaning of this option was: Maven version specified in M2_HOME environment variable, if the environment variable is empty, then the Maven version 3.0.5.
+          In TeamCity 2017.1 this option is renamed to auto(), please use it instead.
+          If you want to always use the default Maven version provided by TeamCity server, switch to defaultProvidedVersion().
+          @see auto
+          @see defaultProvidedVersion
+        </description>
+      </option>
+      <option name="auto" value="%teamcity.tool.maven.AUTO%">
+        <description>
+          Maven version specified by the M2_HOME environment variable.
+          If the environment variable is empty, then the default Maven version provided by TeamCity server will be used.
+        </description>
+      </option>
+      <option name="defaultProvidedVersion" value="%teamcity.tool.maven.DEFAULT%">
+        <description>The default Maven version provided by TeamCity server</description>
+      </option>
+      <option name="custom">
+        <description>The custom Maven version found at the specified path</description>
+        <param name="maven.path" dslName="path">
+          <description>The path to a custom Maven installation</description>
+        </param>
+      </option>
+      <option name="bundled_2" value="%teamcity.tool.maven%">
+        <description>Use maven 2 bundled with TeamCity</description>
+      </option>
+      <option name="bundled_3_0" value="%teamcity.tool.maven3%">
+        <description>Use maven 3.0.5 bundled with TeamCity</description>
+      </option>
+      <option name="bundled_3_1" value="%teamcity.tool.maven3_1%">
+        <description>Use maven 3.1.1 bundled with TeamCity</description>
+      </option>
+      <option name="bundled_3_2" value="%teamcity.tool.maven3_2%">
+        <description>Use maven 3.2.5 bundled with TeamCity</description>
+      </option>
+      <option name="bundled_3_3" value="%teamcity.tool.maven3_3%">
+        <description>Use maven 3.3.9 bundled with TeamCity</description>
+      </option>
+    </param>
+    <param name="userSettingsSelection">
+      <description>Use one of the predefined settings files or provide a custom path. By default, the standard Maven settings file location is used.</description>
+    </param>
+    <param name="userSettingsPath" description="The path to a user settings file"/>
+    <param name="useOwnLocalRepo" description="Use own local artifact repository" type="boolean"/>
+    <param name="isIncremental" description="Enable incremental building" type="boolean"/>
+    <param name="target.jdk.home" dslName="jdkHome">
+      <description>
+        A path to [JDK](https://confluence.jetbrains.com/display/TCDL/Predefined+Build+Parameters#PredefinedBuildParameters-DefiningJava-relatedEnvironmentVariables) to use.
+        By default the JAVA_HOME environment variable or the agent's own Java is used.
+      </description>
+    </param>
+    <param name="jvmArgs">
+      <description>
+        Space-separated list of additional arguments for JVM
+      </description>
+    </param>
+  </params>
+</dsl-extension>

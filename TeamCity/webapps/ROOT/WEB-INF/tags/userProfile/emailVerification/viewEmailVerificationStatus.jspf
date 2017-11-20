@@ -1,0 +1,12 @@
+<%--Display verification status only--%>
+<c:set var="viewEmailVerificationStatusBean" value="${profileForm.extensions['viewEmailVerificationStatusBean']}"/>
+<%--@elvariable id="viewEmailVerificationStatusBean" type="jetbrains.buildServer.controllers.emailVerification.EmailVerificationViewBean"--%>
+
+<c:choose>
+  <c:when test="${not viewEmailVerificationStatusBean.verified}">
+    <span class="notVerified red-text">Not verified</span>
+  </c:when>
+  <c:otherwise>
+    <span class="verified"><span class="icon-ok"></span>&nbsp;Verified</span>
+  </c:otherwise>
+</c:choose>

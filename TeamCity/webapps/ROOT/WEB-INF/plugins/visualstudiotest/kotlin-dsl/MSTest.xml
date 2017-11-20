@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="VisualStudioTest" generateDslJar="true" applicable="params['vstest_engine'] == 'MSTest'">
+  <class name="MSTestStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/Visual+Studio+Tests) running MSTest tests
+    </description>
+  </class>
+  <init>
+    <param name="mstest_enable" value="checked" />
+    <param name="dotNetTestRunner.Type" value="GenericProcess" />
+    <param name="vstest_engine" value="MSTest" />
+  </init>
+  <function name="mstest">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/Visual+Studio+Tests) running MSTest tests
+    </description>
+  </function>
+  <params>
+    <param name="vstest_runner_path" dslName="mstestPath">
+      <description>
+        A path to test engine. TeamCity detects test engine installation on the agent,
+        to run the detected engine use the following paths:
+
+        * MSTest 2017 - "%teamcity.dotnet.mstest.15.0%"
+        * MSTest 2015 - "%teamcity.dotnet.mstest.14.0%"
+        * MSTest 2013 - "%teamcity.dotnet.mstest.12.0%"
+        * MSTest 2012 - "%teamcity.dotnet.mstest.11.0%"
+        * MSTest 2010 - "%teamcity.dotnet.mstest.10.0%"
+        * MSTest 2008 - "%teamcity.dotnet.mstest.9.0%"
+        * MSTest 2005 - "%teamcity.dotnet.mstest.8.0%"
+
+        Or specify a custom path to the test engine on a build agent machine.
+      </description>
+    </param>
+    <param name="vstest_include" dslName="includeTestFileNames">
+      <description>
+        Newline-separated list of assemblies to be included in test run.
+        [Wildcards](https://confluence.jetbrains.com/display/TCDL/Wildcards) are supported.
+      </description>
+    </param>
+    <param name="vstest_exclude" dslName="excludeTestFileNames">
+      <description>
+        Newline-separated list of assemblies to be excluded from test run.
+        [Wildcards](https://confluence.jetbrains.com/display/TCDL/Wildcards) are supported.
+      </description>
+    </param>
+    <param name="vstest_runsettings" dslName="runSettings">
+      <description>
+        A path to run settings configuration file
+      </description>
+    </param>
+    <param name="mstest_metadata" dslName="metadata">
+      <description>
+        A value for the /testmetadata: argument
+      </description>
+    </param>
+    <param name="mstest_testlist" value="testList">
+      <description>
+        Newline-separated list of testlist names from metadata to run.
+        Every line will be translated into the [/testlist:](https://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx#testlist) argument.
+      </description>
+    </param>
+    <param name="mstest_test" dslName="testsToRun">
+      <description>
+        Newline-separated list of individual tests to run.
+        Each test nae will be translated into the [/test:](https://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx#test) argument.
+      </description>
+    </param>
+    <param name="mstest_unique" dslName="runIfUniqueMatchFound" type="boolean" trueValue="true" falseValue="">
+      <description>
+        When set to true, TeamCity will run the test only if a unique match is found for any specified test name in the testsToRun property
+        @see testsToRun
+      </description>
+    </param>
+    <param name="mstest_result" dslName="resultsFile">
+      <description>
+        A value for the [/resultsfile:](https://msdn.microsoft.com/en-us/library/ms182489(VS.80).aspx#resultsfile) command line argument
+      </description>
+    </param>
+    <param name="vstest_cmdline" dslName="args">
+      <description>
+        Additional parameters to add to the command line for MSTest
+      </description>
+    </param>
+  </params>
+</dsl-extension>

@@ -1,0 +1,133 @@
+/*--------------- create project page styles*/
+.disabledConfigurationSection {
+  margin-top: 10px;
+}
+
+/*--------------- edit project page styles*/
+div.editProjectPage {
+  margin: 0;
+  padding: 0;
+}
+
+.editProjectPage td.name,
+.editProjectPage th.name {
+  width: 50%;
+}
+
+ul.vcsPluginsList {
+  list-style: none;
+  margin-left: 0;
+  padding: 0.7em 0 0 0;
+}
+
+ul.vcsPluginsList li {
+  background: url("../../img/add.png") no-repeat center left;
+  display: inline;
+  margin: 0 0.9em 0 0;
+  padding-left: 1em;
+}
+
+ul.vcsPluginsList li a {
+  white-space: nowrap;
+  padding: 0 0 0 5px;
+  font-weight: bold;
+}
+
+div.unusedVcsRoots {
+  padding-top: 0.5em;
+}
+
+/*--------------- versioned settings */
+
+table.synchronizationMode {
+  margin: 1em 0;
+}
+
+table.synchronizationMode td {
+  padding: 4px;
+}
+
+#versionedSettingsEnabledSection > td {
+  padding-left: 24px;
+}
+
+#buildSettingsModeHelpBlock {
+  padding-top: 0px;
+}
+
+#buildSettingsModeHelpBlock > div {
+  width: 50em;
+}
+
+#buildSettingsModeNote {
+
+}
+
+#versionedSettingSaveRow td {
+  padding-top: 10px;
+}
+
+div.parentProjectNote {
+  margin-top: 1em;
+}
+/*--------------- sidebar tabs */
+
+#projectTabsContainer .tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#projectTabsContainer .tabs li {
+  float: none;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0.2em 0 0.2em 20px;
+}
+
+#projectTabsContainer .tabs li p {
+  margin: 0;
+  padding: 0;
+}
+
+#projectTabsContainer .tabs li:hover {
+  background: #E9F3FD;
+}
+
+#projectTabsContainer .tabs li.selected {
+  background: #E9F3FD;
+  font-weight: bold;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#projectTabsContainer .tabs li.selected a,
+#projectTabsContainer .tabs li.selected .tabCounter {
+  color: #1564c2;
+  position: static;
+}
+
+.editProjectPage #sortableList {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.editProjectPage #sortableList .draggable {
+  font-weight: bold;
+  padding-left: 32px;
+}
+
+#subprojects td.draggable {
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+#subprojects td.reorderHandle,
+#subprojects th.reorderHandle {
+  border-right: none;
+}
+
+#subprojects th.name {
+  border-left: none;
+}

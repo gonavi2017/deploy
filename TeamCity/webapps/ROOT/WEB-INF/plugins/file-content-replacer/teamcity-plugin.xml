@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<teamcity-plugin xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation = "urn:schemas-jetbrains-com:teamcity-plugin-v1-xml">
+  <info>
+    <name>file-content-replacer</name>
+    <display-name>General purpose file content replacer</display-name>
+    <version>47070</version>
+    <description><![CDATA[General purpose file content replacer
+      which also includes a specialized AssemblyInfo patcher for Visual Studio projects]]></description>
+    <vendor>
+      <name>JetBrains, s.r.o.</name>
+      <url>http://www.jetbrains.com</url>
+    </vendor>
+  </info>
+  <deployment use-separate-classloader = "true"/>
+</teamcity-plugin>

@@ -1,0 +1,18 @@
+<style type="text/css">
+  #buildFeaturesDialog {
+    width: 60em;
+  }
+
+  .runnerFormTable.featureDetails th {
+    width: 30%;
+    white-space: nowrap;
+  }
+
+  .runnerFormTable.featureDetails td {
+    padding-right: 1.8em;
+  }
+
+  .runnerFormTable.featureDetails .completionIconWrapper {
+    white-space: nowrap;
+  }
+</style>

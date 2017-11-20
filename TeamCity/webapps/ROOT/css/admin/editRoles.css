@@ -1,0 +1,21 @@
+.rolesTable tr.role {
+  background-color: #f5f5f5;
+}
+
+.rolesTable span.roleName {
+  font-weight: bold;
+}
+
+.rolesTable span.includeRole {
+  padding-right: 2em;
+}
+
+.rolesTable td.remove {
+  width: 5%;
+  text-align: center;
+  border-left: 1px solid #ccc;
+}
+
+.rolesTable td.addPermission {
+  border-right: none;
+}

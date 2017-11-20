@@ -1,0 +1,2 @@
+<bs:buildTypeLink buildType="${_buildType}" title="Go to build configuration page"/>
+<%@include file="_buildTypesTooltip.jspf"%>

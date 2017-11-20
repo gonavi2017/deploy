@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+    default-autowire="constructor"
+    >
+
+  <bean id="agentPluginsPublisher" class="jetbrains.buildServer.plugins.agent.AgentPluginsPublisher"/>
+  <bean id="pluginJarSearcher" class="jetbrains.buildServer.web.plugins.files.ServerPluginsFilesLookup"/>
+  <bean id="unpackingPluginJarSearcher" class="jetbrains.buildServer.web.plugins.files.ServerPluginUnpacker"/>
+  <bean id="resourceUnpackerPlugin" class="jetbrains.buildServer.web.plugins.unpacker.PluginResourceUnpacker"/>
+  <bean id="pluginJspManager" class="jetbrains.buildServer.web.plugins.jsp.PluginJspManager"/>
+  <bean id="pluginJspProvider" class="jetbrains.buildServer.web.plugins.jsp.PluginJspProvider"/>
+  <bean id="pluginLocationProvider" class="jetbrains.buildServer.web.plugins.jsp.PluginLocationProvider"/>
+  <bean id="pluginXmlParser" class="jetbrains.buildServer.plugins.xml.ServerPluginXmlParserImpl"/>
+
+  <!-- setup -->
+  <bean class="jetbrains.buildServer.web.plugins.ServerPluginPaths"/>
+  <bean class="jetbrains.buildServer.web.plugins.PluginManagerConfigurator"/>
+
+  <!--web UI -->
+  <bean class="jetbrains.buildServer.web.plugins.web.PluginsAdminPage" init-method="register"/>
+
+  <!-- agent plugins -->
+  <bean class="jetbrains.buildServer.web.plugins.agent.AgentPluginsController"/>
+
+  <!-- update folder -->
+  <bean class="jetbrains.buildServer.controllers.UpdatesDownloadController"/>
+
+  <!-- Health Report -->
+  <bean class="jetbrains.buildServer.web.plugins.report.ServerPluginsHealthReport"/>
+  <bean class="jetbrains.buildServer.web.plugins.report.IncorrectPluginReportPageExtension" init-method="register"/>
+</beans>

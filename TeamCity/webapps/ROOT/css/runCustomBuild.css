@@ -1,0 +1,224 @@
+/*
+ * Copyright 2000-2017 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* -------- styles for the Run Custom Build Dialog ---- */
+
+#runBuildDialog {
+  width: 54em;
+}
+
+#runCustomBuildDiv {
+  overflow: auto;
+  max-height: 500px;
+}
+
+#runCustomBuildContentDiv {
+  overflow: auto;
+  max-height: 450px;
+  width: 99%;
+}
+
+#runBuild .runnerFormTable {
+  margin-top: 1em;
+}
+
+#runBuild .runnerFormTable td,
+#runBuild .runnerFormTable th {
+  padding: 4px;
+}
+
+#runBuild .runnerFormTable td.paramsCell {
+  padding: 2px;
+}
+
+#runBuild table.plain {
+  width: 95%;
+}
+
+#runBuild table.plain th {
+  text-align: left;
+}
+
+#runBuild .buildParameters {
+  width: 660px;
+  margin: 1em 0 0.5em;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+#runBuild .buildParameters td {
+  padding: 4px;
+  vertical-align: top;
+  text-align: left;
+}
+
+#runBuild .buildParameters .paramName {
+  width: 25%;
+  padding-left: 2em;
+  padding-right: 6px;
+}
+
+#runBuild .buildParameters .addParam td {
+  padding-bottom: 1.5em;
+}
+
+#runBuild .buildParameters .paramName input {
+  height: 1.25em;
+}
+
+#runBuild .buildParameters .paramValue {
+  width: 65%;
+  padding-right: 20px;
+}
+
+#runBuild .buildParameters .paramValue input,
+#runBuild .buildParameters .paramValue textarea {
+  width: 100%;
+}
+
+/* Modified parameter - highlighted table row */
+#runBuild .modifiedParam td {
+  background: #FFC;
+}
+
+#computedRevisions input {
+  width: 100%;
+}
+
+#runBuild td {
+  white-space: normal;
+}
+
+#runBuild .buildParameters td.edit {
+  width: 7em;
+  font-size: 9pt;
+  white-space: nowrap;
+}
+
+#runBuild .buildParameters td.edit a {
+  display: inline-block;
+  margin-left: .5em;
+}
+
+#runBuild .buildParameters td.noBorder {
+  border-bottom: none;
+}
+
+/* Modified parameter - highlighted Parameters tab */
+#runBuild li.modifiedParam {
+  background-image: none;
+  background-color: #ffc;
+}
+
+#runBuild li.modifiedParam.selected {
+  background-image: -webkit-linear-gradient(#ffffcc, #ffffff);
+  background-image: linear-gradient(#ffffcc, #ffffff);
+}
+
+#runBuild table.settings th {
+  background-color: #f5f5f5;
+}
+
+#runBuild .note {
+  white-space: normal;
+  margin-bottom: 0.5em;
+  font-style: italic;
+}
+
+#selectedChangeInfo {
+  white-space: normal;
+}
+
+#runBuild .attentionComment {
+  margin-top: 0.5em;
+  white-space: normal;
+}
+
+#runBuild table.artifactBuildTypes td {
+  padding: 5px 2px 5px 2px;
+}
+
+#runBuild .lastChangeTo {
+  margin-bottom: .5em;
+}
+
+#runBuild #branchFilter select {
+  width: 15em;
+}
+
+/* Build promotion */
+
+.promoteBuildContainer {
+  max-height: 600px;
+  overflow: auto;
+}
+
+table.promoteBuild {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.promoteBuild td {
+  padding: 4px;
+}
+
+table.promoteBuild td.runButton {
+  white-space: nowrap;
+  text-align: right;
+  vertical-align: top;
+}
+
+table.promoteBuild td.header {
+  font-weight: bold;
+}
+
+table.promoteBuild td.header .archived_project {
+  font-weight: normal;
+  font-style: italic;
+  color: #808080;
+}
+
+table.promoteBuild td.header .buildType_description {
+  font-weight: normal;
+  color: #808080;
+}
+
+table.promoteBuild td.noBorder {
+  border-bottom: none;
+}
+
+table.promoteBuild tr:nth-last-of-type(1) td {
+  border-bottom: none;
+}
+
+table.promoteBuild tr.archived {
+  display: none;
+}
+
+table.promoteBuild td.groupName {
+  font-weight: bold;
+  color: #151515;
+  padding-top: 0px;
+  border-bottom: 0px;
+}
+
+table.promoteBuild td.last {
+  padding-bottom: 12px;
+}
+
+div.showArchived {
+  margin-top: 10px;
+}

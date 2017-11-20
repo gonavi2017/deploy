@@ -1,0 +1,5 @@
+<c:forEach items="${runTypes}" var="runTypeInfo">
+  <c:if test="${fn:indexOf(runTypeInfo.displayName, 'obsolete runner') == -1 or runTypeInfo.key == buildForm.buildRunnerBean.runTypeInfoKey}">
+    <forms:option value="${runTypeInfo.key}" selected="${runTypeInfo.key == buildForm.buildRunnerBean.runTypeInfoKey}"><c:out value="${runTypeInfo.displayName}"/></forms:option>
+  </c:if>
+</c:forEach>

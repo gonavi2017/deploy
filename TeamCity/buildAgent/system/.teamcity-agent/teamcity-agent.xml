@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agent agent-version="47070">
+  <core>
+    <file name="buildAgent.zip" hash="SHA-125ygNXnaTT78gtfBl/iWg59L5QY=" />
+  </core>
+  <plugins>
+    <file name="agentSystemInfo.zip" hash="SHA-1pERGIvB3a95Zl1R91S3CfcomLy8=" />
+    <file name="amazonEC2.zip" hash="SHA-1oRyoka89cnINdiz27Jm0Wau3qeo=" />
+    <file name="ant-net-tasks.zip" hash="SHA-1YM2Pr8gZnzayoeKjO3wiJjBwLFo=" />
+    <file name="ant.zip" hash="SHA-1O93swCSmjScY2huyhy+/hSvYRHc=" />
+    <file name="antPlugin.zip" hash="SHA-14a5eCJ4g2B1Qo06cuPOGTnqlHVU=" />
+    <file name="clearcase-agent.zip" hash="SHA-1MJShZ3g8WOX89eerXtLfaRn60fg=" />
+    <file name="cloud-vmware-agent.zip" hash="SHA-1udx2I3F3cWx6IuIwPQGAUz0iSKc=" />
+    <file name="commandLineRunner.jar" hash="SHA-1Lr0B2TkvbbuG16ekVKXX8v4oZDQ=" />
+    <file name="coveragePlugin.zip" hash="SHA-1tZHte50JaEhy4ZaoEfMRR8VwCeg=" />
+    <file name="crashDetector.zip" hash="SHA-17IBtG09RayoRQrs/gv+Of984Hjw=" />
+    <file name="cvsAgent.zip" hash="SHA-1wkA3bS+rHdyEo+FmkX272bCWpCE=" />
+    <file name="deploy-runner-agent.zip" hash="SHA-1+K/dz5W2AIhqvGjTrsnd98v06fI=" />
+    <file name="dotCover.zip" hash="SHA-1HwuhlCexpf0NmTa9CUmBsqd9Rm8=" />
+    <file name="dotNetPlugin.zip" hash="SHA-1btE0ArffIo4oO6SKle3ZOYvyfOI=" />
+    <file name="dotNetRunners.zip" hash="SHA-1EHsHmaIKmYqa90CYXShVw3klc6s=" />
+    <file name="dotnet-tools-agent.zip" hash="SHA-1W0cmczbz5HBcrLs5vttx+W37bSk=" />
+    <file name="duplicatePlugin.zip" hash="SHA-1ce3Upe11b9eRXlTXS4Ud0Zgb4tg=" />
+    <file name="environment-fetcher-agent.jar" hash="SHA-1djdoSvpCH+ObeD7bwkGR4Wgs3Nk=" />
+    <file name="file-content-replacer.zip" hash="SHA-1WhFSLnYKFHM70KgFF5AzbB0bC1E=" />
+    <file name="fxcop.zip" hash="SHA-1aDaBZ4iDu8iA0BAP2/JAHJxePpM=" />
+    <file name="gant.zip" hash="SHA-1DYHGYG/+1GPcHiA/yPq5rtEXd5A=" />
+    <file name="gantPlugin.zip" hash="SHA-1ef3lDLEJMiAJqorBPo4yJUm7MHg=" />
+    <file name="gradle-runner.zip" hash="SHA-1JLAzvua+ZJgsHoRBKZwDrNROaVI=" />
+    <file name="idea-runner.zip" hash="SHA-1kRs9jZ0w8hM3N6VTxiR7wlIWjc0=" />
+    <file name="idea.zip" hash="SHA-1uUXJNcaB+ZWTCrpAx1jTxjRzOPs=" />
+    <file name="inspectionPlugin.zip" hash="SHA-1CEqzD1Xhy7+2yH/TxdlE6fkgJ9k=" />
+    <file name="jacoco.zip" hash="SHA-1tv6VgBPKl6oQkvLQ/Vf/tHG9xyY=" />
+    <file name="java-dowser.zip" hash="SHA-1j81rXBktoIjq9X1rCHk1AAWA9SY=" />
+    <file name="jetbrains.git.zip" hash="SHA-1wOhvcwYsKiWPE0XqKJSTRZa2JPM=" />
+    <file name="jps.zip" hash="SHA-1r6PSRPzcNXinGSc6kNf3I0r3Ww4=" />
+    <file name="junitPlugin.zip" hash="SHA-1DWv8eq02ekH4bmErjLrTzw50oB4=" />
+    <file name="jvm-update.zip" hash="SHA-1xsmzoLPLqr9anC31gBHHFSZO3Ks=" />
+    <file name="maven.zip" hash="SHA-1dQIgsnG4xrWSJxJ2nfp6aXYcvcc=" />
+    <file name="maven3.zip" hash="SHA-1VYrF/Z7amGwBDJtYtVMGEP1O5rY=" />
+    <file name="maven3_1.zip" hash="SHA-1MiZz/go2OIn/m/Z1suQ6Lweudd0=" />
+    <file name="maven3_2.zip" hash="SHA-1a6xZzSYczQeMgm8UIA+Yn4FITSU=" />
+    <file name="maven3_3.zip" hash="SHA-1phhog5zxeHNvYjjLtr4b2FQ8asM=" />
+    <file name="mavenPlugin.zip" hash="SHA-1drjIeYhjOZsk2TwLmM3OxVVPQ4g=" />
+    <file name="mercurial.zip" hash="SHA-1H2wCPUORRCX/7mM5RS631jzSgMM=" />
+    <file name="meta-runner.zip" hash="SHA-1wL8C7T5pJ2vYUWAwGFhdsko6OzU=" />
+    <file name="nuget-agent.zip" hash="SHA-11C5ZVUCM/B166jvVNfC6XRaIKfw=" />
+    <file name="perfmon-agent.zip" hash="SHA-1dCJ2/t2nLwtUwBSwOsMPKBgKuKI=" />
+    <file name="perforce-agent.zip" hash="SHA-1h48m7BQ19N99ZQLoM2eoFBtQNDY=" />
+    <file name="powershell-agent.zip" hash="SHA-18ZbM67BkmTHBKa1LA2X3rLDr4gE=" />
+    <file name="rake-runner.zip" hash="SHA-16UFft0xNIQiwR0dtrYKq0qAPJ1c=" />
+    <file name="remoteAccess.zip" hash="SHA-1XD3EXWvOpMN43yaJpyyCh0YU12o=" />
+    <file name="sbt-runner-agent.zip" hash="SHA-17pPoxbDNcBwOc3xR40X6Ph4Q0iU=" />
+    <file name="ssh-manager.jar" hash="SHA-1J4bulyW3SZJvC8u17SkXLHf6GKA=" />
+    <file name="stacktracesPlugin.zip" hash="SHA-16Q/ANnbKZHEAzLxr0HAEJ1PYzWA=" />
+    <file name="svnAgent.zip" hash="SHA-17N8irEU6j/TVpC6WSZTd4QSUy7g=" />
+    <file name="swabra.zip" hash="SHA-1f9KByEzIpQvd6Vby/50t0kkf+ww=" />
+    <file name="testNGPlugin.zip" hash="SHA-1xeC+FNCmDKq9pg3LLkDSk4b0uq0=" />
+    <file name="tfs-agent.zip" hash="SHA-1snKJMnGnWEvt8gl+3Jd4AG2gTVE=" />
+    <file name="visualstudiotest-agent.zip" hash="SHA-1MNQT7OruQlDtlySCK1LpIx+ctO8=" />
+    <file name="xcode-runner.zip" hash="SHA-1yj40nyhB/aY6IG+oo9nhGuVWZSw=" />
+    <file name="xml-report-plugin.zip" hash="SHA-1GXh8/BIQrlGNkS9y7HJQkqUb8ZI=" />
+  </plugins>
+</agent>
+

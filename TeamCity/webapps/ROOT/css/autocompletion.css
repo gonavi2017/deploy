@@ -1,0 +1,38 @@
+/* jQuery UI autocomplete */
+.ui-autocomplete {
+  max-height: 39ex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font: 1em/1.5 "Helvetica Neue", Arial, sans-serif;
+}
+
+/* IE < 8 */
+* html .ui-autocomplete {
+  height: 39ex;
+}
+
+.ui-autocomplete-nothing {
+  margin-left: .8em;
+  padding-left: .2em;
+  font: italic 1em/1.5 "Helvetica Neue", Arial, sans-serif;
+}
+
+.ui-menu-separator {
+  font: italic bold 1em/1.5 "Helvetica Neue", Arial, sans-serif;
+}
+
+.ui-autocomplete-matched-part {
+  font-weight: bold;
+}
+
+.ui-autocomplete-meta-info {
+  float: right;
+  margin-left: 1em;
+  font-size: 80%;
+  font-style: italic;
+}
+
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active {
+  margin: 0; /* To avoid jumping lines while selecting them */
+}

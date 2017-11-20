@@ -1,0 +1,83 @@
+<%--@elvariable id="title" type="java.lang.String"--%>
+<%--@elvariable id="reportTabsForm" type="jetbrains.buildServer.controllers.admin.reportTabs.EditReportTabsForm"--%>
+<%--@elvariable id="project" type="jetbrains.buildServer.serverSide.SProject"--%>
+
+<bs:modalDialog formId="editProjectReportTab" title="${title}" action="${action}" dialogClass="modalDialog_large"
+                saveCommand="BS.ProjectReportTabDialog.save();"
+                closeCommand="BS.ProjectReportTabDialog.close();">
+  <input name="tabType" type="hidden" value="PROJECT_REPORT_TAB"/>
+  <table class="editTabSettingsTable">
+    <tr>
+      <th><label for="tabTitle">Tab Title: <l:star/></label></th>
+      <td>
+        <forms:textField maxlength="100" className="longField" name="tabTitle"/>
+        <span class="error" id="error_projectTabTitle"></span>
+      </td>
+    </tr>
+    <tr id="artifactsRow">
+      <th><label for="buildTypeId">Get artifacts from: <l:star/></label></th>
+      <td>
+        <forms:select name="buildTypeId" id="buildTypeId" className="longField" enableFilter="true" onchange="BS.ProjectReportTabDialog.updateFieldVisibility();">
+          <c:forEach items="${reportTabsForm.buildTypes}" var="bean">
+            <forms:projectOptGroup project="${bean.project}" classes="user-depth-${bean.limitedDepth}">
+              <c:forEach var="buildType" items="${bean.buildTypes}">
+                <forms:option value="${buildType.externalId}"
+                              title="${buildType.fullName}"
+                              className="user-depth-${bean.limitedDepth + 1}">
+                  <c:out value="${buildType.name}"/>
+                </forms:option>
+              </c:forEach>
+              <c:if test="${empty bean.buildTypes}"><forms:option value="" className="user-delete" disabled="true">&nbsp;</forms:option></c:if>
+            </forms:projectOptGroup>
+          </c:forEach>
+        </forms:select>
+        <forms:select name="archivedBuildTypes" id="archivedBuildTypes" style="display:none"></forms:select>
+        <span class="error" id="error_buildTypeId"></span>
+        <bs:smallNote>Build configuration that produces artifact with the report</bs:smallNote>
+      </td>
+    </tr>
+
+    <tr id="revisionRulesRow">
+      <th></th>
+      <td>
+        <select id="revisionRules" class="longField"
+                onchange="BS.ProjectReportTabDialog.updateFieldVisibility(); BS.VisibilityHandlers.updateVisibility('editProjectReportTab');">
+          <forms:buildAnchorOptions/>
+        </select>
+        <div id="buildNumberField" class="buildNumberPattern">
+          <div><label for="buildNumberPattern">Build number: <l:star/></label></div>
+          <forms:textField name="buildNumberPattern" maxlength="100" className="longField"/><bs:help file="Build+Number"/>
+          <span class="error" id="error_buildNumberPattern"></span>
+        </div>
+        <div id="buildTagField" class="buildNumberPattern">
+          <div><label for="buildTag">Build tag: <l:star/></label></div>
+          <forms:textField name="buildTag" maxlength="100" className="longField"/>
+          <div id="buildTagList" class="longField">Available tags: <span id="buildTagListSpan"></span></div>
+          <span class="error" id="error_buildTag"></span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th><label for="tabStartPage">Start page:</label></th>
+      <td>
+        <forms:textField className="longField projectReportTabParam js_dynamicSource" name="tabStartPage" id="projectTabStartPage"/>
+        <bs:smallNote>Relative path from the root of build's artifacts to a start page of the generated report.</bs:smallNote>
+        <bs:smallNote>To reference a file from an archive, use the <b>[path-to-archive]![relative-path]</b> syntax.</bs:smallNote>
+      </td>
+    </tr>
+
+  </table>
+  <div class="saveButtonsBlock">
+    <forms:submit name="editReportTab" label="Save"/>
+    <forms:cancel onclick="BS.ProjectReportTabDialog.close()"/>
+    <input type="hidden" name="projectId" value="${project.externalId}"/>
+    <forms:saving id="saving_projectReportTab"/>
+  </div>
+</bs:modalDialog>
+
+<script type="text/javascript">
+  $j(document).ready(function() {
+    BS.AvailableParams.attachPopups('projectId=${project.externalId}', 'projectReportTabParam');
+  });
+</script>

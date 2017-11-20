@@ -1,0 +1,204 @@
+html, body {
+  overflow: hidden;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.ring-diff__menu {
+  padding: 5px 10px;
+  border-top: 1px solid #FFF;
+
+  background-color: #F5F5F5;
+  background-image: -webkit-linear-gradient(top, #F5F5F5, #EEE);
+  background-image: linear-gradient(to bottom, #F5F5F5, #EEE);
+}
+
+/* Header - filename, prev/next navigation, close button */
+.diff-header__filename {
+  position: relative;
+  padding: 2px 0 3px 6px;
+
+  border-bottom: 1px solid #FFF;
+  background-color: #959ba4;
+
+  color: #151515;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.diff-header__close {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 5px;
+  width: 16px;
+  height: 16px;
+
+  color: #FFF;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+a.diff-header__close:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.diff-header__prevnext {
+  position: relative;
+  top: 2px;
+  margin-right: 15px;
+
+  line-height: 1px;
+}
+
+.diff-header__prevnext__link {
+  margin: 0 0 0 4px;
+  padding: 0;
+
+  color: #FFF;
+  font-size: 24px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+a.diff-header__prevnext__link:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.diff-header__prevnext__link img {
+  vertical-align: middle;
+}
+
+.diff-header__prevnext__link_disabled {
+  opacity: 0.5;
+}
+
+.diff-header__filename .fileNamePopup {
+  color: #FFF;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+/* Change description */
+.diff-header__desc {
+  position: relative;
+  padding: 5px 250px 5px 10px;
+
+  border-bottom: 1px solid #E3E9EF;
+  background-color: #f5f5f5;
+
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.diff-header__buttonbar {
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+
+  background: #F5F5F5;
+}
+
+.diff-header__buttonbar__ide {
+  margin-left: 1em;
+  padding-left: 15px;
+}
+
+.diff-header__buttonbar__ide a,
+.diff-header__buttonbar__ide a:hover {
+  color: #151515;
+}
+
+.diff-header__desc__text {
+  height: 20px;
+  overflow: hidden;
+}
+
+/* Toolbar - prev/next change, copy to clipboard */
+.diff-header__toolbar {
+  height: 18px;
+  margin: 0;
+  padding: 5px 0;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #E3E9EF;
+
+  background-color: #F5F5F5;
+  background-image: -webkit-linear-gradient(top, #F5F5F5, #EEE);
+  background-image: linear-gradient(to bottom, #F5F5F5, #EEE);
+
+  font-size: 90%;
+}
+
+.diff-header__toolbar .clipboard {
+  color: #151515;
+}
+
+.diff-header__toolbar .column-before {
+  display: inline-block;
+  position: absolute;
+
+  vertical-align: middle;
+}
+
+.diff-header__toolbar .column-before .clipboard {
+  float: left;
+  margin-left: 10px;
+}
+
+.diff-header__toolbar .column-before .legend {
+  float: right;
+  margin-right: 10px;
+}
+
+.diff-header__toolbar .column-before .personal-build {
+  background-color: #ffc;
+  float: right;
+  margin-right: 10px;
+  padding: 0 4px;
+}
+
+.diff-header__toolbar .column-after {
+  display: inline-block;
+  position: absolute;
+
+  vertical-align: middle;
+}
+
+.diff-header__toolbar .column-after .clipboard {
+  float: right;
+  margin-right: 10px;
+}
+
+.diff-layout {
+  position: absolute;
+  top: 85px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #E3E9EF;
+}
+
+.diff-layout .ring-diff__plain-editor {
+  height: 100%;
+}
+
+.diff-layout .ring-diff__plain-editor .CodeMirror {
+  height: 100%;
+}
+
+
+.diff-images {
+  width: 100%;
+}
+
+.diff-images td {
+  width: 50%;
+}
+
+.diff-spinner {
+  margin-top: 1em;
+  text-align: center;
+}

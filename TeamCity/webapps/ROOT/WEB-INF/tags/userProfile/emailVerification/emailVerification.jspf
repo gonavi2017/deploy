@@ -1,0 +1,11 @@
+<jsp:useBean id="profileForm" type="jetbrains.buildServer.controllers.profile.ProfileForm"/>
+
+<c:choose>
+  <c:when test="${profileForm.extensions['editEmailVerificationStatusBean'] != null}">
+    <%@ include file="verifyEmailControls.jspf" %>
+  </c:when>
+
+  <c:when test="${profileForm.extensions['viewEmailVerificationStatusBean'] != null}">
+    <%@ include file="viewEmailVerificationStatus.jspf" %>
+  </c:when>
+</c:choose>

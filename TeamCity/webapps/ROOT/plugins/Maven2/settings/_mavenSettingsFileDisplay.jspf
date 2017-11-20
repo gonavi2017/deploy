@@ -1,0 +1,44 @@
+<%--@elvariable id="project" type="jetbrains.buildServer.serverSide.SProject"--%>
+<div class="headMessage">
+  <span style="font-weight: bold; padding-right: 2em">
+    <c:out value="${file}"/>
+  </span>
+  <span class="fileOperations">
+    <a href="${homeUrl}">&laquo; All files</a>
+    <authz:authorize projectId="${project.externalId}" allPermissions="EDIT_PROJECT">
+      <jsp:attribute name="ifAccessGranted">
+          <span class="separator">|</span>
+          <i class="icon-trash"></i>
+          <a href="#" onclick="BS.MavenSettings.deleteSettings('${project.externalId}', '${file}', false, '${homeUrl}')"
+             title='Remove this file'> Delete</a>
+      </jsp:attribute>
+    </authz:authorize>
+  </span>
+</div>
+
+<%--@elvariable id="fileContent" type="java.lang.String"--%>
+<pre class="fileContent">
+  <c:out value="${fileContent}"/>
+</pre>
+
+<%--@elvariable id="fileHighlight" type="java.lang.Boolean"--%>
+<c:if test="${fileHighlight}">
+  <script type="text/javascript">
+    (function() {
+      var msie = false, msie9 = false;
+      /*@cc_on
+       msie = true;
+       @if (@_jscript_version >= 9)
+       msie9 = true;
+       @end
+       @*/
+
+      if (!msie || msie && msie9) {
+        var fileContent = $j(".fileContent");
+        if (fileContent.length > 0) {
+          hljs.highlightBlock(fileContent.get(0));
+        }
+      }
+    })();
+  </script>
+</c:if>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="BuildServer"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         metadata-complete="true">
+  <display-name>Jetbrains TeamCity</display-name>
+
+  <servlet>
+    <servlet-name>buildServer</servlet-name>
+    <servlet-class>jetbrains.buildServer.maintenance.TeamCityDispatcherServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <description>Support maintenance screens when TeamCity server is starting up.</description>
+    <servlet-name>MaintenanceServlet</servlet-name>
+    <servlet-class>jetbrains.buildServer.maintenance.StartupServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>realJspServlet</servlet-name>
+    <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+  </servlet>
+
+  <error-page>
+    <error-code>503</error-code>
+    <location>/mnt/welcome</location>
+  </error-page>
+
+  <error-page>
+    <error-code>500</error-code>
+    <location>/mnt/welcome</location>
+  </error-page>
+
+  <error-page>
+    <error-code>410</error-code>
+    <location>/mnt/welcome</location>
+  </error-page>
+
+  <error-page>
+    <error-code>401</error-code>
+    <location>/unauthorized.html</location>
+  </error-page>
+
+  <filter>
+    <filter-name>delegatingFilter</filter-name>
+    <filter-class>jetbrains.buildServer.web.DelegatingFilter</filter-class>
+  </filter>
+
+  <filter>
+    <filter-name>disableBrowserCacheFilter</filter-name>
+    <filter-class>jetbrains.buildServer.web.DisableBrowserCacheFilter</filter-class>
+  </filter>
+
+  <filter>
+    <filter-name>disableUrlSessionIdFilter</filter-name>
+    <filter-class>jetbrains.buildServer.web.DisableSessionIdFromUrlFilter</filter-class>
+  </filter>
+
+  <filter>
+     <filter-name>responseFragmentFilter</filter-name>
+     <filter-class>jetbrains.buildServer.web.ResponseFragmentFilter</filter-class>
+  </filter>
+
+  <filter>
+     <filter-name>jspPrecompilerFilter</filter-name>
+     <filter-class>jetbrains.buildServer.web.jsp.JspPrecompilerFilter</filter-class>
+  </filter>
+
+  <!-- PRECOMPILED JSPS -->
+
+  <servlet-mapping>
+    <servlet-name>MaintenanceServlet</servlet-name>
+    <url-pattern>/mnt/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>realJspServlet</servlet-name>
+    <url-pattern>*.jspws</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>*.html</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/maintenance/ajax/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>*.jsp</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>*.jspx</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/update/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/chart.png</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/RPC2</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/repository/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/get/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/builds/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/httpAuth/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/guestAuth/*</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/res/*</url-pattern>
+  </servlet-mapping>
+
+  <!--
+  URLs starting with /app/ are reserved for plugins or controllers that want to handle all requests,
+       not only requests to .html and .jsp
+  -->
+  <servlet-mapping>
+    <servlet-name>buildServer</servlet-name>
+    <url-pattern>/app/*</url-pattern>
+  </servlet-mapping>
+
+  <filter-mapping>
+    <filter-name>disableBrowserCacheFilter</filter-name>
+    <url-pattern>/update/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>responseFragmentFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>delegatingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>disableUrlSessionIdFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>jspPrecompilerFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <mime-mapping>
+    <extension>com</extension>
+    <mime-type>application/octet-stream</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>dll</extension>
+    <mime-type>application/octet-stream</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>msi</extension>
+    <mime-type>application/octet-stream</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>obj</extension>
+    <mime-type>application/octet-stream</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>pdb</extension>
+    <mime-type>application/octet-stream</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>dmg</extension>
+    <mime-type>application/octet-stream</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>nupkg</extension>
+    <mime-type>application/zip</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>chm</extension>
+    <mime-type>application/x-chm</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>url</extension>
+    <mime-type>application/internet-shortcut</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>docx</extension>
+    <mime-type>application/vnd.openxmlformats-officedocument.wordprocessingml.document</mime-type>
+  </mime-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!--JSPServlet options. Use all standard JSPServlet parameters with prefix jsp:-->
+  <context-param>
+      <param-name>jsp:development</param-name>
+      <param-value>false</param-value>
+  </context-param>
+  <context-param>
+      <param-name>jsp:checkInterval</param-name>
+      <param-value>0</param-value>
+  </context-param>
+  <context-param>
+      <param-name>jsp:fork</param-name>
+      <param-value>false</param-value>
+  </context-param>
+  <context-param>
+      <param-name>jsp:xpoweredBy</param-name>
+      <param-value>false</param-value>
+  </context-param>
+  <context-param>
+      <param-name>jsp:suppressSmap</param-name>
+      <param-value>true</param-value>
+  </context-param>
+  <context-param>
+      <!-- trimSpaces is not supported by TeamCity -->
+      <param-name>jsp:trimSpaces</param-name>
+      <param-value>false</param-value>
+  </context-param>
+  <context-param>
+      <param-name>jsp:dumpSmap</param-name>
+      <param-value>false</param-value>
+  </context-param>
+  <context-param>
+      <param-name>jsp:classdebuginfo</param-name>
+      <param-value>false</param-value>
+  </context-param>
+  <context-param>
+      <param-name>jsp:jspIdleTimeout</param-name>
+      <param-value>3600</param-value> <!-- unload jsp if it was not used for one hour -->
+  </context-param>
+  <context-param>
+      <param-name>jsp:tagpoolMaxSize</param-name> <!-- reduces server memory usage -->
+      <param-value>0</param-value>
+  </context-param>
+
+  <context-param>
+    <description>List of MIME types for which TeamCity should return "Content-Disposition: attachment"</description>
+    <param-name>attachmentMimeTypes</param-name>
+    <param-value>
+      application/zip
+      application/vnd.openxmlformats-officedocument.wordprocessingml.document
+    </param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>jetbrains.buildServer.web.TCServletContextListener</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>org.atmosphere.cpr.SessionSupport</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>jetbrains.buildServer.web.util.SessionLifecycleDiagnosticListener</listener-class>
+  </listener>
+
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/runtimeError.html</location>
+  </error-page>
+
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+
+</web-app>

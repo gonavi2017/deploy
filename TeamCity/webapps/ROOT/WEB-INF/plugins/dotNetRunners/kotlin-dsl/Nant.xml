@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="NAnt" generateDslJar="true">
+  <class name="NAntStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/NAnt) running NAnt scripts
+    </description>
+  </class>
+  <function name="nant">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/NAnt) running NAnt scripts
+      @see NAntStep
+    </description>
+  </function>
+  <params>
+    <param name="use-custom-build-file" dslName="mode" type="compound">
+      <description>
+        Specifies what Nant script will be executed
+      </description>
+      <option name="nantFile" value="">
+        <description>
+          Executes the NAnt script at the given path
+        </description>
+        <param name="build-file-path" dslName="path">
+          <description>
+            A path to NAnt script
+          </description>
+        </param>
+      </option>
+      <option name="nantScript" value="true">
+        <description>
+          Executes the NAnt script with the given content
+        </description>
+        <param name="build-file" dslName="content">
+          <description>
+            NAnt script content
+          </description>
+        </param>
+      </option>
+    </param>
+    <param name="NAntHome" dslName="nantHome">
+      <description>
+        A path to NAnt home directory
+      </description>
+    </param>
+    <param name="target-list" dslName="targets">
+      <description>
+        Space-separated list of NAnt targets to execute
+      </description>
+    </param>
+    <param name="teamcity.build.workingDir" dslName="workingDir">
+      <description>
+        [Build working directory](https://confluence.jetbrains.com/display/TCDL/Build+Working+Directory) for ant script,
+        specify it if it is different from the [checkout directory](https://confluence.jetbrains.com/display/TCDL/Build+Checkout+Directory).
+      </description>
+    </param>
+    <param name="targetframework" dslName="targetFramework" type="TargetFramework">
+      <description>
+        A required target framework (a shortcut for -t: option of NAnt.exe).
+        @see TargetFramework
+      </description>
+    </param>
+    <param name="runnerArgs" dslName="args">
+      <description>
+        Space-separated list of additional arguments for NAnt.exe.
+      </description>
+    </param>
+    <param name="teamcity.tests.runRiskGroupTestsFirst" dslName="reduceTestFeedback" type="boolean" trueValue="recentlyFailed" falseValue="">
+      <description>
+        Whether TeamCity should run recently failed tests first to reduce test feedback
+      </description>
+    </param>
+  </params>
+  <types>
+    <enum name="TargetFramework">
+      <description>Target Framework version</description>
+      <option name="UNSPECIFIED" value="unspecified"/>
+      <option name="NET_1_0" value="net-1.0"/>
+      <option name="NET_1_1" value="net-1.1"/>
+      <option name="NET_2_0" value="net-2.0"/>
+      <option name="NET_3_5" value="net-3.5"/>
+      <option name="NET_4_0" value="net-4.0"/>
+      <option name="MONO_1_0" value="mono-1.0"/>
+      <option name="MONO_2_0" value="mono-2.0"/>
+      <option name="MONO_3_5" value="mono-3.5"/>
+      <option name="NETCF_1_0" value="netcf-1.0"/>
+      <option name="NETCF_2_0" value="netcf-2.0"/>
+      <option name="SSCLI_1_0" value="sscli-1.0"/>
+      <option name="SILVERLIGHT_2_0" value="silverlight-2.0"/>
+      <option name="MOONLIGHT_2_0" value="moonlight-2.0"/>
+    </enum>
+    <enum name="RuntimeVersion">
+      <option name="AUTO" value="auto"/>
+      <option name="v2_0" value="v2.0"/>
+      <option name="v4_0" value="v4.0"/>
+    </enum>
+  </types>
+</dsl-extension>

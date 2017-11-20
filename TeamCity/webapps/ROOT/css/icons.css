@@ -1,0 +1,1093 @@
+.icon {
+  vertical-align: baseline;
+}
+/*
+ * `icon` and `icon_before` should not be used on the same node
+ * (the latter is not block with modifier, underscore is used to avoid clashes with fontAwesome)
+ * `icon16` is modifier for both `icon` and `icon_before`
+ */
+.icon,
+.tc-icon,
+.build-status-icon,
+.icon_before:before,
+.tc-icon_before:before,
+.tc-icon_after:after {
+  display: inline-block;
+  background-color: transparent;
+  background-image: url(../webComponents/teamcity-elements/icons/teamcity-sprite.png);
+  background-repeat: no-repeat;
+  background-size: 240px 532px;
+}
+
+.icon.icon16,
+.tc-icon.icon16,
+.build-status-icon,
+.icon_before.icon16:before,
+.tc-icon_before.icon16:before,
+.tc-icon_after.icon16:after {
+  width: 16px;
+  height: 16px;
+
+  outline: none;
+  vertical-align: text-bottom;
+}
+
+.icon_before:before,
+.tc-icon_before:before,
+.tc-icon_after:after {
+  content: '';
+}
+
+img.icon {
+  vertical-align: text-bottom;
+}
+
+.handle.handle_collapsed,
+.blockHeader.collapsed:before,
+.tc-icon_before.handle_collapsed:before {
+  background-position: -173px -16px;
+}
+
+.handle.handle_expanded,
+.blockHeader.expanded:before,
+.tc-icon_before.handle_expanded:before {
+  background-position: -175px 4px;
+}
+
+/*
+ * "expanded_light" and "collapsed_light" do not include any padding information
+ * for the enclosing element, so should be used in conjunction with "expanded"
+ * and "collapsed", respectively, e.g.:
+ *
+ * <div class="blockHeader expanded expanded_light"/>
+ */
+.handle.handle_collapsed_light,
+.blockHeader.collapsed_light:before {
+  background-position: -213px -16px;
+}
+
+.handle.handle_expanded_light,
+.blockHeader.expanded_light:before {
+  background-position: -195px 4px;
+}
+
+.icon_before.attentionComment:before,
+.tc-icon_before.attentionComment:before,
+.icon_before.tc-icon_attention:before,
+.tc-icon_before.tc-icon_attention:before,
+.tc-icon_attention_yellow,
+.icon.yellowTriangle,
+.tc-icon.yellowTriangle {
+  background-position: -180px -80px;
+  vertical-align: bottom;
+}
+
+.tc-icon.tc-icon_attention {
+  height: 14px;
+  vertical-align: text-bottom;
+}
+
+.tc-icon_attention.tc-icon_attention_yellow {
+  background-position: -180px -80px;
+}
+.tc-icon_attention.tc-icon_attention_red {
+  background-position: 0px -103px;
+}
+
+.tc-icon_before.attentionRed:before,
+.icon_before.attentionRed:before {
+  background-position: 0 -103px;
+  vertical-align: bottom;
+}
+
+/*--------------- project and buildConf icons */
+
+.buildType-icon:before {
+  background-position: -97px 3px;
+}
+
+.project-icon:before {
+  background-position: -97px -17px;
+}
+
+.template_link:before,
+.buildTypeTemplate-icon:before {
+  background-position: -97px -37px;
+}
+
+.buildType-icon_failing.buildType-icon:before,
+#mainNavigation .failed .buildType-icon:before {
+  background-position: -117px 3px;
+}
+
+.project-icon_failing.project-icon:before {
+  background-position: -117px -17px;
+}
+
+.buildType-icon_successful.buildType-icon:before,
+#mainNavigation .successful .buildType-icon:before {
+  background-position: -137px 3px;
+}
+
+.project-icon_successful.project-icon:before {
+  background-position: -137px -17px;
+}
+
+.vcsRoot_link:before {
+  background-position: -157px 3px;
+}
+
+.tableCaption .buildType-icon {
+  margin-left: 5px;
+}
+
+.bp,
+.build-status-icon {
+  margin-bottom: 1px;
+}
+
+#allPopupImg {
+  float: left;
+  position: relative;
+  top: 4px;
+}
+
+.icon.icon_popup,
+span.pc .toggle {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-bottom: -2px;
+  background-position: -140px -140px;
+}
+
+span.pc_white .toggle {
+  background-position: -120px -140px;
+}
+
+span.pc_grey .toggle {
+  background-position: -160px -140px;
+}
+
+span.pc_right .toggle {
+  background-position: -220px -140px;
+}
+
+#allPopupImg.hovered,
+.icon.icon_popup:hover,
+span.pc .toggle:hover,
+span.pc_grey .toggle:hover {
+  background-position: -180px -140px;
+}
+
+span.pc_right .toggle:hover {
+  background-position: -200px -140px;
+}
+
+.icon16_pinned_no {
+  background-position: 0 -180px;
+}
+
+.icon16_pinned_yes {
+  background-position: -20px -180px;
+}
+
+.icon16_asterisk {
+  background-position: 0 -120px;
+}
+
+.icon16_watched {
+  background-position: -160px -60px;
+  margin-top: 4px;
+}
+
+.icon16_watched.icon16_watched_no {
+  background-position: -160px -60px;
+  margin-top: 4px;
+  opacity: 0.3;
+}
+
+.build-status-icon_failed {
+  background-position: 0 -20px;
+}
+.build-status-icon_failed_small {
+  background-position: 0 -20px;  /*will update shortly with new icon*/
+}
+.build-status-icon_gray {
+  background-position: 0 -280px;
+}
+.build-status-icon_successful {
+  background-position: -20px 0;
+}
+.build-status-icon_successful_small {
+  background-position: -40px 0;
+}
+.build-status-icon_cancelled,
+.tc-icon_cancelled {
+  background-position: -20px -280px;
+}
+.build-status-icon_error {
+  background-position: 0 -20px;
+}
+.build-status-icon_error-small {
+  background-position: -40px -20px;
+}
+.build-status-icon_fixed-test-resp {
+  background-position: 0 -60px;
+}
+.build-status-icon_ignored {
+  background-position: -40px -280px;
+}
+.build-status-icon_paused {
+  background-position: -60px -280px;
+}
+.build-status-icon_pending {
+  background-position: -80px -280px;
+}
+
+.tc-icon_attention_red,
+.build-status-icon_red-sign {
+  background-position: 0 -100px;
+}
+
+.build-status-icon_running-green-transparent,
+.build-status-icon_running-red-transparent,
+.build-status-icon_my-running,
+.build-status-icon_my-running-failing,
+.build-status-icon_personal-running,
+.build-status-icon_personal-running-failing {
+  background-size: 13px 13px;
+}
+
+#restPageTitle .build-status-icon_running-green-transparent,
+#restPageTitle .build-status-icon_running-red-transparent,
+#restPageTitle .build-status-icon_my-running,
+#restPageTitle .build-status-icon_my-running-failing,
+#restPageTitle .build-status-icon_personal-running,
+#restPageTitle .build-status-icon_personal-running-failing {
+  background-size: 17px 15px;
+}
+
+
+.build-status-icon_my-running,
+.build-status-icon_my-running-failing,
+.build-status-icon_personal-running,
+.build-status-icon_personal-running-failing {
+  margin-bottom: 0px;
+}
+
+#mainNavigation .build-status-icon_my-running,
+#mainNavigation .build-status-icon_my-running-failing,
+#mainNavigation .build-status-icon_personal-running,
+#mainNavigation .build-status-icon_personal-running-failing,
+#mainNavigation .build-status-icon_running-green-transparent,
+#mainNavigation .build-status-icon_running-red-transparent {
+  margin-bottom: -2px;
+}
+
+.build-status-icon_running-green-transparent {
+  background-image: url(../webComponents/teamcity-elements/icons/green-loader.gif);
+}
+.build-status-icon_running-red-transparent {
+  background-image: url(../webComponents/teamcity-elements/icons/red-loader.gif);
+}
+
+.build-status-icon_empty {
+  background-position: -240px -532px;
+}
+
+.tc-icon_success,
+.build-status-icon_success {
+  background-position: -20px 0;
+}
+.build-status-icon_success-small {
+  background-position: -100px -280px;
+}
+
+.build-status-icon_my {
+  background-position: 0 -300px;
+}
+.build-status-icon_my-cancelled {
+  background-position: -20px -300px;
+}
+.build-status-icon_my-crashed {
+  background-position: -80px -300px;
+}
+.build-status-icon_my-finished {
+  background-position: -40px -300px;
+}
+.build-status-icon_my-finished-failed {
+  background-position: -60px -300px;
+}
+.build-status-icon_my-pending {
+  background-position: -100px -300px;
+}
+
+.build-status-icon_personal {
+  background-position: 0 -320px;
+}
+.build-status-icon_personal-cancelled {
+  background-position: -20px -320px;
+}
+.build-status-icon_personal-crashed {
+  background-position: -80px -320px;
+}
+.build-status-icon_personal-finished {
+  background-position: -40px -320px;
+}
+.build-status-icon_personal-finished-failed {
+  background-position: -60px -320px;
+}
+.build-status-icon_personal-pending {
+  background-position: -100px -320px;
+}
+
+
+#restPageTitle .build-status-icon_my {
+  background-position: -120px -302px;
+}
+#restPageTitle .build-status-icon_my-cancelled {
+  background-position: -140px -302px;
+}
+#restPageTitle .build-status-icon_my-crashed {
+  background-position: -200px -302px;
+}
+#restPageTitle .build-status-icon_my-finished {
+  background-position: -160px -302px;
+}
+#restPageTitle .build-status-icon_my-finished-failed {
+  background-position: -180px -302px;
+}
+#restPageTitle .build-status-icon_my-pending {
+  background-position: -220px -302px;
+}
+
+#restPageTitle .build-status-icon_personal {
+  background-position: -120px -322px;
+}
+#restPageTitle .build-status-icon_personal-cancelled {
+  background-position: -140px -322px;
+}
+#restPageTitle .build-status-icon_personal-crashed {
+  background-position: -200px -322px;
+}
+#restPageTitle .build-status-icon_personal-finished {
+  background-position: -160px -322px;
+}
+#restPageTitle .build-status-icon_personal-finished-failed {
+  background-position: -180px -322px;
+}
+#restPageTitle .build-status-icon_personal-pending {
+  background-position: -220px -322px;
+}
+
+
+
+.build-status-icon_my-running {
+  background-image: url(../webComponents/teamcity-elements/icons/my_running.gif);
+}
+.build-status-icon_my-running-failing {
+  background-image: url(../webComponents/teamcity-elements/icons/my_runningFailing.gif);
+}
+
+.build-status-icon_personal-running {
+  background-image: url(../webComponents/teamcity-elements/icons/personal_running.gif);
+}
+.build-status-icon_personal-running-failing {
+  background-image: url(../webComponents/teamcity-elements/icons/personal_runningFailing.gif);
+}
+
+#restPageTitle .build-status-icon_my-running {
+  background-image: url(../webComponents/teamcity-elements/icons/title_my_running.gif);
+}
+#restPageTitle .build-status-icon_my-running-failing {
+  background-image: url(../webComponents/teamcity-elements/icons/title_my_runningFailing.gif);
+}
+
+#restPageTitle .build-status-icon_personal-running {
+  background-image: url(../webComponents/teamcity-elements/icons/title_personal_running.gif);
+}
+#restPageTitle .build-status-icon_personal-running-failing {
+  background-image: url(../webComponents/teamcity-elements/icons/title_personal_runningFailing.gif);
+}
+
+.build-status-icon.build-status-icon_running-green-transparent,
+.build-status-icon.build-status-icon_running-red-transparent,
+.build-status-icon.build-status-icon_my-running,
+.build-status-icon.build-status-icon_my-running-failing,
+.build-status-icon.build-status-icon_personal-running,
+.build-status-icon.build-status-icon_personal-running-failing {
+  vertical-align: middle;
+}
+
+.tc-icon__tick,
+.tc-icon_before.tc-icon__tick:before {
+  background-position: -200px -59px;
+}
+
+/* 8th row */
+.tc-icon_github {
+  background-position: 0px -140px;
+}
+.tc-icon_github_disabled {
+  background-position: -20px -140px;
+}
+
+.tc-icon_github-enterprise {
+  background-position: -40px -140px;
+}
+.tc-icon_github-enterprise_disabled {
+  background-position: -60px -140px;
+}
+
+.tc-icon_bitbucket {
+  background-position: -80px -139px;
+}
+.tc-icon_bitbucket_disabled {
+  background-position: -100px -139px;
+}
+/* 8th row end*/
+/* 9th row */
+.tc-icon.os-icon {
+  height: 16px;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+.os-icon_win {
+  background-position: 0px -160px;
+}
+
+.os-icon_mac {
+  background-position: -20px -160px;
+}
+
+.os-icon_lin {
+  background-position: -39px -160px;
+}
+
+.os-icon_bsd {
+  background-position: -60px -160px;
+}
+
+.os-icon_sol {
+  background-position: -80px -160px;
+}
+
+.os-icon_oux {
+  background-position: -99px -160px;
+}
+/* 9th row end */
+/* 18th row */
+.tc-icon_group {
+  background-position: -20px -340px;
+}
+
+.tc-icon_group_current {
+  background-position: -0px -340px;
+}
+/* 18th row end */
+/* 19th row */
+.commentIcon,
+.tc-icon_comment,
+.tc-icon_after.commentIcon:after {
+  background-position: -20px -360px;
+}
+
+.commentIcon:not(.tc-icon_switch) {
+  vertical-align: middle;
+}
+
+.commentIcon:hover,
+.tc-icon_comment:hover {
+  background-position: 0 -360px;
+}
+
+.tc-icon_params {
+  background-position: -38px -354px;
+}
+
+.tc-icon_params:hover {
+  background-position: -58px -354px;
+}
+
+.tc-icon_test-history,
+.tc-icon_before.tc-icon_test-history:before {
+  background-position: -78px -358px;
+}
+
+.tc-icon_copy,
+.tc-icon_before.tc-icon_copy:before {
+  background-position: -100px -358px;
+  cursor: pointer;
+}
+
+.feedbackLink:before {
+  background-position: -120px -356px;
+}
+
+.tc-icon_patch,
+.tc-icon_before.tc-icon_patch:before,
+.tc-icon_build-log,
+.tc-icon_before.tc-icon_build-log:before {
+  background-position: -140px -357px;
+}
+
+.icon_open-in-ide,
+.tc-icon_IDE,
+.tc-icon_before.tc-icon_IDE:before {
+  background-position: -160px -357px;
+}
+
+.tc-icon_run-build-changes {
+  background-position: -180px -357px;
+}
+
+.icon.externalFileLink {
+  background-position: -200px -360px;
+  margin-bottom: -1px !important;
+}
+
+.icon.externalFileLink_white {
+  background-position: -220px -360px;
+  margin-bottom: -1px !important;
+}
+/* 19th row end */
+
+.pinLink {
+  outline: none;
+}
+
+.pinLink .icon16_pinned_no {
+  opacity: 0.6;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+
+.pinLink.btn .pinLinkImage,
+.pinLink:hover .icon16_pinned_no {
+  opacity: 0.99;
+}
+
+.icon.icon16.bp {
+  width: 19px;
+}
+
+.summaryLink .icon.icon16.bp {
+  width: 16px;
+}
+
+.bp {
+  background-position: 0 -20px;
+}
+
+.bp.internal {
+  background-position: 0 -100px;
+}
+
+.bp.internal.new {
+  background-position: -20px -100px;
+}
+
+.bp.test.new {
+  background-position: 1px -120px;
+}
+
+.bp.new {
+  background-position: -20px -20px;
+}
+
+.bp.fixed {
+  background-position: 0 -60px;
+}
+
+.bp.fixed.new {
+  background-position: -20px -60px;
+}
+
+.bp.taken {
+  background-position: 0 -40px;
+}
+
+.bp.taken.new {
+  background-position: -20px -40px;
+}
+
+.bp.muted {
+  background-position: 0 -80px;
+}
+
+.bp.muted.new {
+  background-position: -40px -80px;
+}
+
+.bp.muted.red {
+  background-position: -20px -80px;
+}
+
+.bp.muted.red.new {
+  background-position: -60px -80px;
+}
+
+.bp.asterisk {
+  background-position: 0 -120px;
+}
+
+.bp.flaky {
+  background-position: -20px -120px;
+}
+
+.bp.flaky.new {
+  background-position: -40px -120px;
+}
+
+.groupHeader.blockExpanded .bp.arrow {
+  background-position: -180px 0;
+  margin-bottom: -2px;
+}
+
+.groupHeader.blockCollapsed .bp.arrow {
+  background-position: -180px -20px;
+}
+
+a.expandable,
+a.collapsable {
+  padding-right: 1.3em;
+  padding-bottom: 0;
+  text-decoration: none;
+}
+
+a.expandable:hover,
+a.collapsable:hover {
+  background-color: white;
+  border-bottom: none;
+  color: #3356C0;
+}
+
+a.expandable:active,
+a.collapsable:active {
+  background: none;
+  border-bottom: none;
+  color: #3356C0;
+}
+
+.tc-icon_breadcrumb,
+.tc-icon_after.tc-icon_breadcrumb:after {
+  background-position: -176px -100px;
+}
+
+.tc-icon_breadcrumb_siblings_small,
+.tc-icon_after.tc-icon_breadcrumb_siblings_small:after {
+  background-position: -180px -120px;
+  width: 8px;
+  height: 8px;
+  margin-top: -1px;
+}
+
+.tc-icon_breadcrumb_siblings,
+.tc-icon_after.tc-icon_breadcrumb_siblings:after {
+  background-position: -220px 7px;
+  margin-left: 1px;
+}
+/* 20th row */
+.tc-icon_help_small {
+  background-position: 0 -380px;
+}
+
+.tc-icon_help,
+.helpLink:before {
+  background-position: -19px -379px;
+}
+
+.tc-icon_help_grey {
+  background-position: -40px -380px;
+}
+
+.tc-icon_help_disabled {
+  background-position: -20px -380px;
+}
+
+.newVersionLink:before {
+  background-position: -79px -379px;
+}
+
+.tc-icon_subrepo {
+  background-position: -100px -379px;
+}
+
+.tc-icon_feed {
+  background-position: -120px -379px;
+}
+/* 20th row end */
+/* 21st row */
+.addNew:before {
+  background-position: 0 -397px;
+}
+
+.tc-icon_star {
+  background-position: -20px -397px;
+}
+
+.icon16_link {
+  background-position: -40px -400px;
+}
+
+.icon16_tags {
+  background-position: -60px -400px;
+}
+
+.tc-icon_cog {
+  background-position: -79px -399px;
+}
+
+.cloudIcon {
+  margin-right: 3px;
+  background-position: -100px -397px;
+}
+
+.tc-icon_branch,
+.tc-icon_before.tc-icon_branch:before {
+  background-position: -120px -398px;
+}
+
+.tc-icon_branch_disabled {
+  background-position: -140px -398px;
+}
+
+.tc-icon_graph,
+.tc-icon_before.tc-icon_graph:before {
+  background-position: -158px -398px;
+}
+
+.tc-icon_wand {
+  background-position: -180px -400px;
+}
+
+.tc-icon_folders {
+  background-position: -200px -398px;
+}
+/* 22nd row */
+.collapser.collapser_collapsed:before {
+  background-position: 2px -417px;
+}
+
+.collapser.collapser_expanded:before {
+  background-position: -17px -417px;
+}
+
+.tc-icon_x {
+  background-position: -40px -417px;
+}
+
+.icon_collapse-all {
+  background-position: -59px -419px;
+}
+
+.icon_expand-all {
+  background-position: -79px -418px;
+}
+
+.tc-icon_move-top,
+.tc-icon_move-top.tc-icon_move-top_inactive {
+  background-position: -100px -419px;
+  cursor: pointer;
+}
+
+.tc-icon_move-top.tc-icon_move-top_disabled {
+  background-position: -120px -419px;
+  cursor: auto;
+}
+
+.tc-icon_move-top:hover,
+.tc-icon_move-top.tc-icon_move-top_active {
+  background-position: -140px -419px;
+}
+
+.tc-icon_top {
+  background-position: -160px -420px;
+}
+
+.tc-icon_draggable,
+.tc-icon_before.tc-icon_draggable:before,
+.draggable:before {
+  background-position: -177px -420px;
+}
+
+.tc-icon_download,
+.tc-icon_before.tc-icon_download:before {
+  background-position: -200px -420px;
+  vertical-align: bottom;
+}
+
+.tc-icon_download_white {
+  background-position: -220px -420px;
+}
+/* 22nd row end */
+
+.icon.tc-icon_switch,
+.icon_before.tc-icon_switch:before {
+  width: 20px;
+  height: 12px;
+}
+
+.icon.tc-icon_switch_on,
+.icon_before.tc-icon_switch_on:before,
+.icon.tc-icon_switch_enabled,
+.icon_before.tc-icon_switch_enabled:before {
+  background-position: -180px -40px;
+  cursor: pointer;
+}
+.icon.tc-icon_switch_off,
+.icon_before.tc-icon_switch_off:before,
+.icon.tc-icon_switch_disabled,
+.icon_before.tc-icon_switch_disabled:before {
+  background-position: -200px -40px;
+  cursor: pointer;
+}
+
+.icon.tc-icon_switch_error,
+.icon_before.tc-icon_switch_error:before {
+  background-position: -220px -40px;
+}
+
+/*
+  switch icon with comment
+  e.g. icon.icon16.tc-icon_switch.tc-icon_switch_enabled.tc-icon_after.commentIcon
+  i.e. switch icon in element and commentIcon in its :after pseudo-element
+ */
+.tc-icon_switch.commentIcon {
+  margin-right: 16px;
+}
+.tc-icon_switch.commentIcon:after {
+  margin-left: 22px;
+}
+
+
+.ua-ie9-below #loadingWarning .ring-loader-inline, .loader{
+  background-image: url(../webComponents/teamcity-elements/icons/loader.gif);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  margin-top: 0;
+  display: inline-block;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 200 / 100),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+
+  .icon,
+  .tc-icon,
+  .build-status-icon,
+  .icon_before:before,
+  .tc-icon_before:before,
+  .tc-icon_after:after {
+    background-image: url(../webComponents/teamcity-elements/icons/teamcity-sprite@2x.png);
+  }
+
+  .build-status-icon_running-green-transparent {
+    background-image: url(../webComponents/teamcity-elements/icons/green-loader@2x.gif);
+  }
+  .build-status-icon_running-red-transparent {
+    background-image: url(../webComponents/teamcity-elements/icons/red-loader@2x.gif);
+  }
+
+  .build-status-icon_my-running {
+    background-image: url(../webComponents/teamcity-elements/icons/my_running@2x.gif);
+  }
+  .build-status-icon_my-running-failing {
+    background-image: url(../webComponents/teamcity-elements/icons/my_runningFailing@2x.gif);
+  }
+
+  .build-status-icon_personal-running {
+    background-image: url(../webComponents/teamcity-elements/icons/personal_running@2x.gif);
+  }
+  .build-status-icon_personal-running-failing {
+    background-image: url(../webComponents/teamcity-elements/icons/personal_runningFailing@2x.gif);
+  }
+
+  #restPageTitle .build-status-icon_my-running {
+    background-image: url(../webComponents/teamcity-elements/icons/title_my_running@2x.gif);
+  }
+  #restPageTitle .build-status-icon_my-running-failing {
+    background-image: url(../webComponents/teamcity-elements/icons/title_my_runningFailing@2x.gif);
+  }
+
+  #restPageTitle .build-status-icon_personal-running {
+    background-image: url(../webComponents/teamcity-elements/icons/title_personal_running@2x.gif);
+  }
+  #restPageTitle .build-status-icon_personal-running-failing {
+    background-image: url(../webComponents/teamcity-elements/icons/title_personal_runningFailing@2x.gif);
+  }
+
+  .ua-ie9-below #loadingWarning .ring-loader-inline, .loader {
+    background-image: url(../webComponents/teamcity-elements/icons/loader@2x.gif);
+  }
+
+}
+
+.testActionsPopup .icon16.tc-icon_before:before,
+.problemPopup .icon16.tc-icon_before:before {
+  width: 19px;
+  margin-right: 3px;
+}
+
+#restPageTitle .icon,
+#restPageTitle .tc-icon,
+#restPageTitle .build-status-icon,
+#restPageTitle .icon_before:before,
+#restPageTitle .tc-icon_before:before,
+#restPageTitle .tc-icon_after:after,
+#restPageTitle .buildTypeTemplate-icon,
+#restPageTitle .buildTypeTemplate-icon:before{
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+#restPageTitle .project-icon:before {
+  background-position: 0px -240px;
+}
+
+#restPageTitle .buildType-icon:before {
+  background-position: 0px -220px;
+}
+
+#restPageTitle .buildTypeTemplate-icon,
+#restPageTitle .buildTypeTemplate-icon:before{
+  background-position: -60px -220px;
+}
+
+#restPageTitle .build-status-icon_failed,
+#restPageTitle .build-status-icon_failed:before{
+  background-position: 0 -260px;
+  margin-right: 2px;
+}
+
+#restPageTitle .build-status-icon_successful,
+#restPageTitle .build-status-icon_successful:before{
+  background-position: -20px -260px;
+  margin-right: 2px;
+}
+
+#restPageTitle .failed .buildType-icon,
+#restPageTitle .failed .buildType-icon:before{
+  background-position: -40px -220px;
+}
+
+#restPageTitle .successful .buildType-icon,
+#restPageTitle .successful .buildType-icon:before{
+  background-position: -20px -220px;
+}
+
+#restBreadcrumbs .contentWrapper .icon16.hasSiblings{
+  cursor: pointer;
+}
+
+#restPageTitle .contentWrapper:hover .project-icon.hasSiblings:before {
+  background-position: -120px -240px;
+}
+
+#restPageTitle .contentWrapper:hover .buildType-icon.hasSiblings:before {
+  background-position: -120px -220px;
+}
+
+#restPageTitle .contentWrapper:hover .buildTypeTemplate-icon.hasSiblings,
+#restPageTitle .contentWrapper:hover .buildTypeTemplate-icon.hasSiblings:before{
+  background-position: -60px -240px;
+}
+
+#restPageTitle .failed .contentWrapper:hover .buildType-icon.hasSiblings,
+#restPageTitle .failed .contentWrapper:hover .buildType-icon.hasSiblings:before{
+  background-position: -160px -220px;
+}
+
+#restPageTitle .successful .contentWrapper:hover .buildType-icon.hasSiblings,
+#restPageTitle .successful .contentWrapper:hover .buildType-icon.hasSiblings:before{
+  background-position: -140px -220px;
+}
+
+#restNavigation .contentWrapper:hover .project-icon.hasSiblings,
+#restNavigation .contentWrapper:hover .project-icon.hasSiblings:before{
+  background-position: -117px -77px;
+}
+
+#restNavigation .contentWrapper:hover .buildType-icon.hasSiblings,
+#restNavigation .contentWrapper:hover .buildType-icon.hasSiblings:before{
+  background-position: -97px -77px;
+}
+
+.branchNameSelector_placeholder .branch{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  left: 4px;
+  background-position: -120px -397px;
+}
+
+.branchNameSelector_placeholder .branch.loading{
+  background-position: -140px -139px;
+}
+
+.tc-icon_tfs {
+  background-position: -60px -440px;
+}
+.tc-icon_tfs_disabled {
+  background-position: -80px -440px;
+}
+
+.tc-icon_edit,
+.tc-icon_edit_gray:hover {
+  background-position: 0px -440px;
+  margin-bottom: -1px;
+}
+.tc-icon_edit_disabled,
+.tc-icon_edit_gray {
+  background-position: -20px -440px;
+  margin-bottom: -1px;
+}
+
+.tc-icon_build-chain {
+  background-position: -160px -40px;
+  position: relative;
+  top: 2px;
+}
+
+.tc-icon_composite-build {
+  background-position: -160px -80px;
+  position: relative;
+  top: 2px;
+}
+
+/*editing notification rules form (temporary solution to show loading)*/
+#selectorWrapper iron-list, #sbtSelector iron-list{
+  background-image: url(../webComponents/teamcity-elements/icons/teamcity-sprite.png);
+  background-position: 0 487px;
+  background-size: 240px 532px;
+  background-repeat: no-repeat;
+}
+
+#selectorWrapper iron-list.nothing_found, #sbtSelector iron-list.nothing_found{
+  background: none;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 200 / 100),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  #selectorWrapper iron-list, #sbtSelector iron-list{
+    background-image: url(../webComponents/teamcity-elements/icons/teamcity-sprite@2x.png);
+  }
+
+}
+

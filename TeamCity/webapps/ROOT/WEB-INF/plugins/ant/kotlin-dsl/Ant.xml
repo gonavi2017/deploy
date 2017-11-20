@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="Ant" generateDslJar="true">
+  <class name="AntBuildStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/Ant) running ant script
+    </description>
+  </class>
+  <function name="ant">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/Ant) running ant script
+      @see AntBuildStep
+    </description>
+  </function>
+  <params>
+    <param name="use-custom-build-file" dslName="mode" type="compound">
+      <description>
+        Specifies what ant script will be executed
+      </description>
+      <option name="antFile" value="">
+        <description>
+          Executes the ant script at the given path
+        </description>
+        <param name="build-file-path" dslName="path">
+          <description>
+            A path to ant script
+          </description>
+        </param>
+      </option>
+      <option name="antScript" value="true">
+        <description>
+          Executes the ant script with the given content
+        </description>
+        <param name="build-file" dslName="content">
+          <description>
+            Ant script content
+          </description>
+        </param>
+      </option>
+    </param>
+    <param name="teamcity.build.workingDir" dslName="workingDir">
+      <description>
+        [Build working directory](https://confluence.jetbrains.com/display/TCDL/Build+Working+Directory) for ant script,
+        specify it if it is different from the [checkout directory](https://confluence.jetbrains.com/display/TCDL/Build+Checkout+Directory).
+      </description>
+    </param>
+    <param name="target" dslName="targets">
+      <description>
+        Space-separated list of ant targets to execute
+      </description>
+    </param>
+    <param name="ant.home" dslName="antHome">
+      <description>
+        Path to ant distribution on the agent, specify it when you want to use custom ant
+        instead of the bundled ant 1.9.7
+      </description>
+    </param>
+    <param name="runnerArgs" dslName="antArguments">
+      <description>
+        Space-separated list of additional arguments for ant
+      </description>
+    </param>
+    <param name="target.jdk.home" dslName="jdkHome">
+      <description>
+        Custom [JDK](https://confluence.jetbrains.com/display/TCDL/Predefined+Build+Parameters#PredefinedBuildParameters-DefiningJava-relatedEnvironmentVariables) to use.
+        The default is JAVA_HOME environment variable or the agent's own Java.
+      </description>
+    </param>
+    <param name="jvmArgs">
+      <description>
+        Space-separated list of additional arguments for JVM
+      </description>
+    </param>
+    <param name="teamcity.tests.runRiskGroupTestsFirst" dslName="reduceTestFeedback" type="TestPolicy">
+      <description>
+        Whether TeamCity should reorder tests to reduce test feedback
+        @see TestPolicy
+      </description>
+    </param>
+  </params>
+  <types>
+    <enum name="TestPolicy">
+      <description>
+        Tests reordering policy
+      </description>
+      <option name="DISABLED" value="">
+        <description>
+          Do not reorder tests
+        </description>
+      </option>
+      <option name="RECENTLY_FAILED" value="recentlyFailed">
+        <description>
+          Run recently failed tests first
+        </description>
+      </option>
+      <option name="RECENTLY_FAILED_AND_MODIFIED" value="recentlyFailed,newAndModified">
+        <description>
+          Run recently failed, new, and modified tests first
+        </description>
+      </option>
+      <option name="MODIFIED" value="newAndModified">
+        <description>
+          Run new and modified tests first
+        </description>
+      </option>
+    </enum>
+  </types>
+</dsl-extension>

@@ -1,0 +1,664 @@
+import jetbrains.buildServer.ComparisonFailureData
+import jetbrains.buildServer.ComparisonFailureUtil
+import jetbrains.buildServer.agent.AgentRuntimeProperties
+import jetbrains.buildServer.gradle.GradleRunnerConstants
+import jetbrains.buildServer.gradle.agent.GradleBuildProblem
+import jetbrains.buildServer.messages.serviceMessages.*
+import org.gradle.api.tasks.testing.*
+
+import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.ConcurrentMap
+import java.util.concurrent.atomic.AtomicBoolean
+
+/*
+* Copyright 2000-2013 JetBrains s.r.o.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+initscript {
+  dependencies {
+    def teamCityInitLib = System.getenv("TEAMCITY_BUILD_INIT_PATH")
+    logger.info "Init lib: ${teamCityInitLib}"
+    def classPathFiles = teamCityInitLib.split(File.pathSeparator)
+    classpath files(classPathFiles)
+  }
+}
+
+public class DependencyBasedTestRun {
+
+  def logger
+
+  public DependencyBasedTestRun(Logger logger) {
+    this.logger = logger
+  }
+
+  public def configureGradle(Gradle gradle) {
+    def rootProject = gradle.rootProject
+    def incrementalOption = System.getenv(GradleRunnerConstants.ENV_INCREMENTAL_PARAM);
+    logger.debug("Received following incremental setting: ${incrementalOption}")
+
+    switch(incrementalOption) {
+      case GradleRunnerConstants.ENV_INCREMENTAL_VALUE_SKIP:
+        logger.debug("Incremental building is enabled, but full rebuild is forced");
+        gradle.startParameter.taskNames = ["build"];
+        break;
+
+      case GradleRunnerConstants.ENV_INCREMENTAL_VALUE_PROCEED:
+        logger.debug("Will look for affected projects")
+        def modifiedProjects = findAffectedProjects(rootProject);
+        if (modifiedProjects.empty) {
+          logger.debug("No affected projects found. Running full build.")
+          gradle.startParameter.taskNames = ["build"]
+        } else {
+          gradle.startParameter.taskNames = modifiedProjects.collect { it + ":buildDependents" }
+          logger.debug("Will start with following tasks: ${gradle.startParameter.taskNames}")
+        }
+        break;
+
+      default:
+        logger.debug("Incremental building is not enabled");
+    }
+  }
+
+
+  private def findAffectedProjects(Project project) {
+
+    if (project.teamcity.containsKey(AgentRuntimeProperties.CHANGED_FILES_FILE_PARAM)) {
+      def changedFiles = readChangedFiles(project.teamcity);
+      def sourceSetsToProject = readSourceSets(project);
+
+      logger.debug("Modified Files: ${changedFiles}")
+      logger.debug("SourceSets to Project: ${sourceSetsToProject}")
+
+      def changedProjects = []
+      changedFiles.each { path ->
+        sourceSetsToProject.findAll({
+          path.startsWith(it.key)
+        }).collect(changedProjects) {it.value}
+      }
+
+      logger.debug("Changes detected in following projects:")
+      logger.debug("${changedProjects}")
+
+      return changedProjects
+    }
+  }
+
+  private def readSourceSets(Project proj) {
+    def result = [:]
+    proj.allprojects {
+      def collectRelativePath = { File file ->
+        def path = proj.relativePath(file.getAbsolutePath()).replace('\\','/')
+        result[path] = project.getPath()
+      }
+      if (delegate.hasProperty("sourceSets")) {
+        sourceSets*.allSource.srcDirs*.each collectRelativePath
+        sourceSets*.resources.srcDirs*.each collectRelativePath
+      }
+    }
+    return result
+  }
+
+  private def readChangedFiles(Map TCProps) {
+    String filename = TCProps["teamcity.build.changedFiles.file"]
+
+    def lines = new File(filename).readLines()
+    def personalMatch = /(.*):(.*):<personal>/
+    def allMatch = /(.*):(.*):(.*)/
+
+    if (lines.any { it ==~ personalMatch }) {
+      return lines.grep(~personalMatch).collect {
+        (it =~ personalMatch)[0][1]
+      }
+    } else {
+      return lines.collect {
+        (it =~ allMatch)[0][1]
+      }
+    }
+  }
+}
+
+public class TeamcityPropertiesListener implements ProjectEvaluationListener {
+
+  AtomicBoolean initScriptStartReported = new AtomicBoolean(false);
+
+  def logger;
+
+  public TeamcityPropertiesListener(Logger log) {
+    logger = log
+  }
+
+  public void beforeEvaluate(Project project) {
+    loadProps(project);
+    // Marker for TeamCity listener that shows that init script started to execute successfully
+    if (initScriptStartReported.compareAndSet(false, true)) {
+      logger.lifecycle(GradleRunnerConstants.STARTING_TEAMCITY_BUILD_PREFIX + project.teamcity["build.number"])
+    }
+  }
+
+  public void afterEvaluate(Project project, ProjectState projectState) {
+    if (project.hasProperty("teamcity")) {
+      loadTestJvmArgs(project);
+    }
+  }
+
+  private def loadTestJvmArgs(Project project) {
+    String jvmArgs = (String) project.teamcity["gradle.test.jvmargs"]
+    TaskCollection<Test> testTasks = project.getTasks().withType(Test.class)
+    if (jvmArgs != null && testTasks != null) {
+      for (Test task: testTasks) {
+        final String[] arguments = jvmArgs.split("\n");
+        task.jvmArgs(arguments);
+      }
+    }
+  }
+
+
+  private void loadProps(Project p) {
+    String propsFilePath = System.getProperty(AgentRuntimeProperties.AGENT_BUILD_PARAMS_FILE_PROP);
+    if (null == propsFilePath) {
+      propsFilePath = System.getenv(AgentRuntimeProperties.AGENT_BUILD_PARAMS_FILE_ENV);
+    }
+
+    if (null != propsFilePath) {
+      File propsFile = p.file(propsFilePath);
+      Properties props = new Properties();
+      InputStream inStream = null;
+
+      try {
+        inStream = new FileInputStream(propsFile);
+        props.load(inStream);
+      } catch (FileNotFoundException e) {
+        logger.error(e.getMessage(), e);
+      } catch (IOException e) {
+        logger.error(e.getMessage(), e);
+      } finally {
+        if (null != inStream) {
+          try {
+            inStream.close();
+          } catch (IOException e) {
+            Logger.log(LogLevel.ERROR, "Failed to close file stream!", e);
+          }
+        }
+      }
+
+      addCustomProperties(p, props)
+    } else {
+      addCustomProperties(p, new HashMap())
+    }
+  }
+
+  private void addCustomProperties(Project p, Map props) {
+    if (p.hasProperty("ext")) {
+      props.each { k,v -> p.ext.set(k, v)}
+      p.ext.teamcity = props
+    } else {
+      p.setProperty("teamcity", props)
+    }
+  }
+}
+
+public class TeamcityTaskListener implements TaskExecutionListener, TaskActionListener {
+  public static final String DEFAULT_FLOW_ID_PREFIX = "%%teamcity%%-"
+
+  def taskMessages = new ConcurrentHashMap<Task, TeamCityOutputListener>()
+  def blockOpenMessagesCache = new ConcurrentHashMap<Task, ServiceMessage>()
+  def logger
+  boolean isParallelExec
+  def flowIdPrefix = DEFAULT_FLOW_ID_PREFIX;
+
+  public TeamcityTaskListener(Logger log, boolean parallelExec) {
+    logger = log;
+    isParallelExec = parallelExec;
+  }
+
+  String getProjectFlowId(project) {
+    return String.valueOf(project.getPath().hashCode());
+  }
+
+  public void beforeExecute(Task task) {
+    ServiceMessage message;
+    if (task instanceof AbstractCompile) {
+      TeamCityOutputListener errorListener = taskMessages.get(task);
+      if (null == errorListener) {
+        // during the tasks execution service messages generated by us can be caught by TeamCityOutputListener
+        // to prevent this we add flowIdPrefix to their flowId attribute and this allows TeamCityOutputListener class to exclude them
+        errorListener = new TeamCityOutputListener("flowId='" + flowIdPrefix);
+        taskMessages.put(task, errorListener);
+      }
+      errorListener.reset();
+      task.getLogging().addStandardOutputListener(errorListener);
+      task.getLogging().addStandardErrorListener(errorListener);
+      message = addFlowId(task, new CompilationStarted(task.getPath()));
+    } else {
+      message = addFlowId(task, new BlockOpened(task.getPath()));
+    }
+
+    def oldMessage = popFromBlockOpenCache(task)
+    if (oldMessage != null) {
+      logger.debug("Unexpected BlockOpen message cache content: key=[${task.getPath()}] value=[${oldMessage}]");
+      logger.lifecycle(message.asString());
+    }
+    logger.debug("BeforeExecute: storing message: key=[${task.getPath()}] value=[${message.asString().substring(2)}]");
+    blockOpenMessagesCache.put(task, message);
+  }
+
+
+  public void afterExecute(Task task, TaskState taskState) {
+    try {
+      if (handleTaskSkippedState(task, taskState)) {
+        return;
+      }
+
+      handleTaskFinishedState(task, taskState)
+    } finally {
+      taskMessages.remove(task);
+    }
+  }
+
+  private void handleTaskFinishedState(Task task, TaskState taskState) {
+    ServiceMessage blockCloseMessage;
+    if (task instanceof AbstractCompile) {
+      Throwable failure = taskState.getFailure();
+      if (null != failure) {
+        final TeamCityOutputListener outputListener = taskMessages.get(task);
+        outputListener.getMessages().each { message ->
+          logger.lifecycle(addFlowId(task, new Message(message, "ERROR", null)).asString()); // compilation failure
+        }
+      }
+      blockCloseMessage = addFlowId(task, new CompilationFinished(task.getPath()));
+    } else {
+      blockCloseMessage = addFlowId(task, new BlockClosed(task.getPath()));
+    }
+    logger.lifecycle(blockCloseMessage.asString());
+  }
+
+  /**
+   * Handle possible task up-to-date skip.
+   * Checks if task was skipped. If so, reposts sequence of BlockOpened-BlockClosed messages with proper text
+   * Otherwise, prints BlockOpened message, if it was not printed yet.
+   * @param task
+   * @param taskState
+   * @return true if task was skipped.
+   */
+  private boolean handleTaskSkippedState(Task task, TaskState taskState) {
+    def message = popFromBlockOpenCache(task);
+    def skipped = false;
+    if (message != null) {
+      if (taskState.getSkipped()) {
+        logger.debug("No actions were executed for task [${task}]. Task was skipped because [${taskState.getSkipMessage()}].")
+        def text;
+
+        if (message instanceof CompilationStarted) {
+          text = ((CompilationStarted)message).getCompilerName();
+        } else {
+          text = ((BlockOpened)message).getBlockName();
+        }
+
+        text += " ${taskState.getSkipMessage()}";
+
+        if (message instanceof CompilationStarted) {
+          logger.lifecycle(addFlowId(task, new CompilationStarted(text)).asString());
+          logger.lifecycle(addFlowId(task, new CompilationFinished(text)).asString());
+        } else {
+          logger.lifecycle(addFlowId(task, new BlockOpened(text)).asString());
+          logger.lifecycle(addFlowId(task, new BlockClosed(text)).asString());
+        }
+
+        skipped = true;
+      } else {
+        logger.debug("No actions were executed for task [${task}]. But task was not skipped, sending blockOpenmessage [${message.asString().substring(2)}]")
+        logger.lifecycle(message.asString())
+      }
+    }
+    skipped
+  }
+
+  private ServiceMessage popFromBlockOpenCache(Task task) {
+    ServiceMessage message = blockOpenMessagesCache.get(task);
+    blockOpenMessagesCache.remove(task);
+    return message
+  }
+
+  void beforeActions(final Task task) {
+    ServiceMessage message = popFromBlockOpenCache(task);
+    if (message != null) {
+      logger.debug("BeforeActions: task [${task}]. Sending blockOpen message [${message.asString().substring(2)}]")
+      logger.lifecycle(message.asString());
+    } else {
+      logger.debug("BeforeActions: null message for task [${task}]. Will not send service message")
+    }
+  }
+
+  void afterActions(final Task task) {
+    // do nothing
+  }
+
+  ServiceMessage addFlowId(task, message) {
+    if (isParallelExec) {
+      message.setFlowId(flowIdPrefix + String.valueOf(task.getPath().hashCode()))
+    }
+    return message
+  }
+
+  private class TeamCityOutputListener implements StandardOutputListener {
+    private volatile StringBuffer text = new StringBuffer()
+    private String ignoreMarker
+
+    TeamCityOutputListener(final String ignoreMarker) {
+      this.ignoreMarker = ignoreMarker
+    }
+
+    public void onOutput(CharSequence chars) {
+      def str = chars.toString();
+      if (str.contains(ignoreMarker)) return;
+      text.append(str)
+    }
+
+    public Collection<String> getMessages() {
+      def lines = text.toString().split('\\r?\\n');
+      def res = []
+      for (line in lines) {
+        def trimmed = line.trim();
+        if (trimmed.length() > 0) {
+          res.add(line);
+        }
+      }
+      return res;
+    }
+
+    public void reset() {
+      text = new StringBuffer()
+    }
+  }
+}
+
+public class TeamcityTestListener {
+  def logger
+  Test baseTask
+  boolean isParallelBuild
+  private String projectFlowId
+  ConcurrentMap<TestDescriptor, List> testOutputs = new ConcurrentHashMap()
+
+  boolean skipStdErr = false
+  boolean skipStdOut = false
+
+  public TeamcityTestListener(log, task, isParallel) {
+    logger = log
+    isParallelBuild = isParallel
+    projectFlowId = TeamcityTaskListener.DEFAULT_FLOW_ID_PREFIX + String.valueOf(task.project.getPath().hashCode())
+  }
+
+  String getFlowId(TestDescriptor descriptor) {
+    return projectFlowId + "-" + System.identityHashCode(descriptor);
+  }
+
+  /**
+   * Called before a test suite is started.
+   * @param suite The suite whose tests are about to be executed.
+   */
+  public void beforeSuite(TestDescriptor suite) {
+    if (suite.getParent() == null) return;
+
+    if (suite.getParent().getParent() == null) {
+      logger.lifecycle("##teamcity[flowStarted flowId='${getFlowId(suite)}' parent='${projectFlowId}']");
+      return;
+    }
+
+    def flowId = findFlowIdOfTopmostSuite(suite); // all suites should have the same flow id, otherwise they won't be stacked properly on server
+    ServiceMessage msg = new TestSuiteStarted(suite.getName());
+    msg.setFlowId(flowId);
+    logger.lifecycle(msg.asString());
+  }
+
+  /**
+   * Called after a test suite is finished.
+   * @param suite The suite whose tests have finished being executed.
+   * @param result The aggregate result for the suite.
+   */
+  public void afterSuite(TestDescriptor suite, TestResult result) {
+    if (suite.getParent() == null) return;
+
+    if (suite.getParent().getParent() == null) {
+      logger.lifecycle("##teamcity[flowFinished flowId='${getFlowId(suite)}']");
+      return;
+    }
+
+    def flowId = findFlowIdOfTopmostSuite(suite);
+    ServiceMessage msg = new TestSuiteFinished(suite.getName());
+    msg.setFlowId(flowId);
+    logger.lifecycle(msg.asString());
+  }
+
+  private String findFlowIdOfTopmostSuite(TestDescriptor testDescriptor) {
+    def parent = testDescriptor.getParent();
+    if (parent == null) {
+      return projectFlowId;
+    }
+
+    def parents = []
+    while (parent != null) {
+      parents.add(parent);
+      parent = parent.getParent();
+    }
+
+    // there will be at least one element in the list
+    return getFlowId(parents[parents.size()-1]);
+  }
+
+  /**
+   * Called before a test is started.
+   * @param testDescriptor The test which is about to be executed.
+   */
+  public void beforeTest(TestDescriptor testDescriptor) {
+    def flowId = getFlowId(testDescriptor)
+    logger.lifecycle("##teamcity[flowStarted flowId='${flowId}' parent='${findFlowIdOfTopmostSuite(testDescriptor)}']");
+
+    String testName = getTestName(testDescriptor)
+    ServiceMessage msg = new TestStarted(testName, false, null);
+    msg.setFlowId(flowId);
+    logger.lifecycle(msg.asString());
+  }
+
+  /**
+   * Called after a test is finished.
+   * @param testDescriptor The test which has finished executing.
+   * @param result The test result.
+   */
+  public void afterTest(TestDescriptor testDescriptor, TestResult result) {
+    String testName = getTestName(testDescriptor);
+    def flowId = getFlowId(testDescriptor);
+
+    def outputs = testOutputs.remove(testDescriptor);
+    if (outputs != null) {
+      synchronized (outputs) {
+        flushOutputs(testDescriptor, outputs);
+      }
+    }
+
+    ServiceMessage msg;
+    switch (result.getResultType()) {
+      case org.gradle.api.tasks.testing.TestResult.ResultType.FAILURE:
+        ComparisonFailureData cfd = ComparisonFailureUtil.extractComparisonFailure(result.getException());
+        if (cfd != null) {
+          msg = new TestFailed(testName, result.getException(), cfd.getActual(), cfd.getExpected());
+        } else {
+          msg = new TestFailed(testName, result.getException());
+        }
+        msg.setFlowId(flowId);
+        logger.lifecycle(msg.asString());
+        break;
+      case org.gradle.api.tasks.testing.TestResult.ResultType.SKIPPED:
+        msg = new TestIgnored(testName, "");
+        msg.setFlowId(flowId);
+        logger.lifecycle(msg.asString());
+        break;
+    };
+
+    final int duration = (int) (result.getEndTime() - result.getStartTime());
+    msg = new TestFinished(testName, duration);
+    msg.setFlowId(flowId);
+    logger.lifecycle(msg.asString());
+
+    logger.lifecycle("##teamcity[flowFinished flowId='${flowId}']");
+  }
+
+  public void onOutput(testDescriptor, outputEvent) {
+    if (testDescriptor.getClassName() == null) {
+      // this is not a real test output
+      return;
+    }
+
+    def outputs = testOutputs.get(testDescriptor);
+    if (outputs == null) {
+      outputs = [];
+      def prev = testOutputs.putIfAbsent(testDescriptor, outputs)
+      if (prev != null) {
+        outputs = prev
+      }
+    }
+
+    synchronized (outputs) {
+      outputs.add(outputEvent);
+
+      if (outputs.size() > 100) {
+        flushOutputs(testDescriptor, outputs)
+        outputs.clear();
+      }
+    }
+  }
+
+  private void flushOutputs(TestDescriptor testDescriptor, List outputs) {
+    def testName = getTestName(testDescriptor)
+    def flowId = getFlowId(testDescriptor)
+
+    StringBuilder stdout = new StringBuilder()
+    StringBuilder stderr = new StringBuilder()
+
+    for (oe in outputs) {
+      switch (oe.getDestination()) {
+        case TestOutputEvent.Destination.StdErr:
+          if (!skipStdErr) stderr.append(oe.message);
+          break
+        case TestOutputEvent.Destination.StdOut:
+          if (!skipStdOut) stdout.append(oe.message);
+          break
+      }
+    }
+
+    if (stdout.length() > 0) {
+      def msg = new TestStdOut(testName, stdout.toString() - ~/\r?\n\z/)
+      msg.addTag(ServiceMessage.PARSE_SERVICE_MESSAGES_INSIDE_TAG)
+      msg.setFlowId(flowId)
+      logger.lifecycle(msg.asString())
+    }
+
+    if (stderr.length() > 0) {
+      def msg = new TestStdErr(testName, stderr.toString() - ~/\r?\n\z/)
+      msg.addTag(ServiceMessage.PARSE_SERVICE_MESSAGES_INSIDE_TAG)
+      msg.setFlowId(flowId)
+      logger.lifecycle(msg.asString())
+    }
+  }
+
+  private String getTestName(TestDescriptor testDescriptor) {
+    return testDescriptor.getClassName() + "." + testDescriptor.getName()
+  }
+
+  def testListenerDelegate = [
+          beforeSuite: { suite ->
+            this.beforeSuite(suite)
+          },
+
+          afterSuite: { suite, result ->
+            this.afterSuite(suite, result)
+          },
+
+          beforeTest: { testDescriptor ->
+            this.beforeTest(testDescriptor)
+          },
+
+          afterTest: { testDescriptor, result ->
+            this.afterTest(testDescriptor, result)
+          }]
+
+  def testOutputDelegate = [
+          onOutput: { testDescriptor, outputEvent ->
+            this.onOutput(testDescriptor, outputEvent)
+          }]
+
+}
+
+public class TeamcityExceptionsListener extends BuildAdapter {
+  def logger
+
+  public TeamcityExceptionsListener(Logger log) {
+    logger = log
+  }
+
+  void buildFinished(BuildResult result) {
+    def failure = result.getFailure()
+    if (failure != null) {
+      while (!(failure instanceof org.gradle.api.tasks.TaskExecutionException) && failure != failure.getCause() && failure.getCause() != null) {
+        failure = failure.getCause()
+      }
+      def message;
+      if (failure instanceof org.gradle.api.tasks.TaskExecutionException && failure.getCause() != null) {
+        message = "${failure.getMessage()} ${failure.getCause().getClass().getName()}: ${failure.getCause().getMessage()}"
+      } else {
+        message = "${failure.getClass().getName()}: ${failure.getMessage()}"
+      }
+      if (message.contains("There were failing tests") || message.contains("Compilation failed") || message.contains("Compilation error")) {
+        // do not report tests and compilation failures as build problems, as they are logged separately
+        return
+      }
+      logger.warn(new GradleBuildProblem(message).asString());
+    }
+  }
+}
+
+
+def isParallelExec = (gradle.startParameter.hasProperty("parallelThreadCount") && gradle.startParameter.parallelThreadCount != 0) ||
+                     (gradle.startParameter.hasProperty("parallelProjectExecutionEnabled") && gradle.startParameter.parallelProjectExecutionEnabled);
+def testOutputListenerClass = null
+try {
+  testOutputListenerClass = Class.forName("org.gradle.api.tasks.testing.TestOutputListener", false, getClass().getClassLoader());
+} catch (ClassNotFoundException e) {
+  logger.debug("Could not load TestOutputListener class. Test output will not be available")
+}
+
+gradle.addListener(new TeamcityPropertiesListener(logger))
+gradle.addListener(new TeamcityExceptionsListener(logger))
+gradle.useLogger(new TeamcityTaskListener(logger, isParallelExec))
+gradle.projectsEvaluated {
+  new DependencyBasedTestRun(logger).configureGradle(it)
+  it.rootProject.allprojects { Project p ->
+    p.tasks.withType(Test.class).each { Test testTask ->
+      def testListener = new TeamcityTestListener(logger, testTask, isParallelExec)
+      testTask.addTestListener(testListener.testListenerDelegate as TestListener)
+      if (testOutputListenerClass != null) {
+        testTask.addTestOutputListener(testListener.testOutputDelegate.asType(testOutputListenerClass))
+        testListener.skipStdOut = Boolean.valueOf(System.properties["teamcity.ignoreTestStdOut"])
+        testListener.skipStdErr = Boolean.valueOf(System.properties["teamcity.ignoreTestStdErr"])
+      }
+    }
+  }
+
+  it.rootProject.getTasksByName("junitPlatformTest", true).each { task ->
+    task.outputs.files.each { file ->
+      def message = new ServiceMessage("importData", [ "type" : "junit", "path": "$file.absolutePath/*.xml".toString()])
+      println(message.asString())
+    }
+  }
+}

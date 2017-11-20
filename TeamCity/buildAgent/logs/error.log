@@ -1,0 +1,4 @@
+Unable to locate agent port file: /Users/nsharma/Downloads/TeamCity/buildAgent/logs/buildAgent.xmlRpcPort 
+Agent is not running? 
+Too long run time, unexpected exit. Restarting. Run time was : 266820.038 sec. 
+Failed to shutdown agent gracefully: Connection refused (Connection refused) 

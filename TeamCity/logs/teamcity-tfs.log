@@ -1,0 +1,2 @@
+[2017-09-27 21:33:22,427]   INFO - vcs.tfs.pool.TfsPoolTerminator - Terminating TFS .net sessions 
+[2017-09-27 21:33:22,429]   INFO - s.java.TfsJavaRunnerTerminator - Terminating TFS java sessions 

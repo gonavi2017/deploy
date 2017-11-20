@@ -1,0 +1,858 @@
+[2017-09-22 22:16:23,460]   INFO -  jetbrains.buildServer.STARTUP - Path to the startup configuration file: /Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-startup.properties 
+[2017-09-22 22:16:23,548]   INFO -  jetbrains.buildServer.STARTUP - 
+
+
+
+
+
+ 
+[2017-09-22 22:16:23,548]   INFO -  jetbrains.buildServer.STARTUP - =========================================================== 
+[2017-09-22 22:16:23,548]   INFO -  jetbrains.buildServer.STARTUP - Starting TeamCity server 
+[2017-09-22 22:16:23,869]   INFO -  jetbrains.buildServer.STARTUP - TeamCity version: 2017.1.4 (build 47070), data format version 812 
+[2017-09-22 22:16:23,875]   INFO -  jetbrains.buildServer.STARTUP - OS: Mac OS X, version 10.12.6, x86_64, Current user: nsharma, Time zone: EDT (UTC-04:00) 
+[2017-09-22 22:16:23,875]   INFO -  jetbrains.buildServer.STARTUP - Java: 1.8.0_121, Java HotSpot(TM) 64-Bit Server VM (25.121-b13, mixed mode), Java(TM) SE Runtime Environment (1.8.0_121-b13), Oracle Corporation; JVM parameters: -Djava.util.logging.config.file=/Users/nsharma/Downloads/TeamCity/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Xmx512m -Dteamcity.configuration.path=../conf/teamcity-startup.properties -Dlog4j.configuration=file:/Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-server-log4j.xml -Dteamcity_logs=../logs/ -Djava.awt.headless=true -Dtomcat.util.http.parser.HttpParser.requestTargetAllow={} -Djava.endorsed.dirs=/Users/nsharma/Downloads/TeamCity/endorsed -Dcatalina.base=/Users/nsharma/Downloads/TeamCity -Dcatalina.home=/Users/nsharma/Downloads/TeamCity -Djava.io.tmpdir=/Users/nsharma/Downloads/TeamCity/temp 
+[2017-09-22 22:16:23,875]   INFO -  jetbrains.buildServer.STARTUP - Garbage collection: PS Scavenge, PS MarkSweep 
+[2017-09-22 22:16:23,875]   INFO -  jetbrains.buildServer.STARTUP - Web server version: Apache Tomcat/7.0.79 
+[2017-09-22 22:16:28,879]   INFO -  jetbrains.buildServer.STARTUP - Server IP address: 192.168.1.6 
+[2017-09-22 22:16:28,881]   INFO -  jetbrains.buildServer.STARTUP - Web server ports: 8111 (protocol: org.apache.coyote.http11.Http11NioProtocol, scheme: http), 8105 (shutdown port) 
+[2017-09-22 22:16:28,881]   INFO -  jetbrains.buildServer.STARTUP - Context path: "/", servlet real path: "/Users/nsharma/Downloads/TeamCity/webapps/ROOT/" 
+[2017-09-22 22:16:28,881]   INFO -  jetbrains.buildServer.STARTUP - TeamCity server work mode: Main TeamCity Server 
+[2017-09-22 22:16:28,888]   INFO -  jetbrains.buildServer.STARTUP - Version file lock was successfully obtained: /Users/nsharma/Downloads/TeamCity/webapps/ROOT/BUILD_47070 
+[2017-09-22 22:16:28,902]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Looking for the TeamCity Data Directory 
+[2017-09-22 22:16:28,902]   INFO -  jetbrains.buildServer.STARTUP - The TeamCity Data Directory path is determined using the user home directory 
+[2017-09-22 22:16:28,909]   INFO -  jetbrains.buildServer.STARTUP - The TeamCity Data Directory "/Users/nsharma/.BuildServer" doesn't exist 
+[2017-09-22 22:16:28,909]   INFO -  jetbrains.buildServer.STARTUP - Asking user to select the TeamCity Data Directory path from UI 
+[2017-09-22 22:16:28,922]   INFO -  jetbrains.buildServer.STARTUP - Startup confirmation is required. Open TeamCity web page in the browser. Server is running at http://localhost:8111 
+[2017-09-22 22:16:28,923]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Confirming TeamCity first start (administrator login is required to proceed) 
+[2017-09-22 22:16:44,536]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Initializing the TeamCity Data Directory 
+[2017-09-22 22:16:44,537]   INFO -  jetbrains.buildServer.STARTUP - The TeamCity Data Directory path configured by the user from the UI: '/Users/nsharma/.BuildServer' 
+[2017-09-22 22:16:44,537]   INFO -  jetbrains.buildServer.STARTUP - Creating Data Directory: /Users/nsharma/.BuildServer 
+[2017-09-22 22:16:44,571]   INFO -  jetbrains.buildServer.STARTUP - Startup configuration file is created: /Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-startup.properties 
+[2017-09-22 22:16:44,572]   INFO -  jetbrains.buildServer.STARTUP - The TeamCity Data Directory path '/Users/nsharma/.BuildServer' is stored in '/Users/nsharma/Downloads/TeamCity/conf/teamcity-startup.properties' 
+[2017-09-22 22:16:44,573]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Setting up database connection (administrator login is required to proceed) 
+[2017-09-22 22:16:51,352]   INFO -  jetbrains.buildServer.STARTUP - Generated JDBC connection string: jdbc:hsqldb:file:$TEAMCITY_SYSTEM_PATH/buildserver 
+[2017-09-22 22:16:51,352]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Creating a new database 
+[2017-09-22 22:16:51,353]   INFO -  jetbrains.buildServer.STARTUP - Creating a new database 
+[2017-09-22 22:16:51,855]   INFO -  jetbrains.buildServer.STARTUP - JDBC driver version: 2.3 (HSQL Database Engine Driver) 
+[2017-09-22 22:16:51,855]   INFO -  jetbrains.buildServer.STARTUP - Database system version: 2.3.2 (HSQL Database Engine) 
+[2017-09-22 22:16:51,855]   INFO -  jetbrains.buildServer.STARTUP - Connected to the database successfully 
+[2017-09-22 22:16:51,870]   INFO -  jetbrains.buildServer.STARTUP - Using schema: PUBLIC 
+[2017-09-22 22:16:51,874]   INFO -  jetbrains.buildServer.STARTUP - Schema contains no tables. 
+[2017-09-22 22:16:51,874]   INFO -  jetbrains.buildServer.STARTUP - Creating database schema 
+[2017-09-22 22:16:52,135]   INFO -  jetbrains.buildServer.STARTUP - Using schema: PUBLIC 
+[2017-09-22 22:16:52,139]   INFO -  jetbrains.buildServer.STARTUP - Schema contains 137 tables. 
+[2017-09-22 22:16:52,140]   INFO -  jetbrains.buildServer.STARTUP - Database version is 812 
+[2017-09-22 22:16:52,148]   INFO -  jetbrains.buildServer.STARTUP - Created a new database.properties file with settings specified from Web UI. 
+[2017-09-22 22:16:52,148]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Initializing TeamCity server components 
+[2017-09-22 22:16:52,240]   INFO -  jetbrains.buildServer.STARTUP - Starting the main application 
+[2017-09-22 22:16:52,340]   INFO - ebDispatcherApplicationContext - Refreshing jetbrains.buildServer.maintenance.WebDispatcherApplicationContext@452fc72a: startup date [Fri Sep 22 22:16:52 EDT 2017]; root of context hierarchy 
+[2017-09-22 22:16:52,381]   INFO - MainTeamCityApplicationContext - Refreshing WebApplicationContext for namespace 'buildServer-servlet': startup date [Fri Sep 22 22:16:52 EDT 2017]; parent: jetbrains.buildServer.maintenance.WebDispatcherApplicationContext@452fc72a 
+[2017-09-22 22:17:01,128]   INFO -   jetbrains.buildServer.SERVER - Loading history of VCS changes... 
+[2017-09-22 22:17:01,165]   INFO -   jetbrains.buildServer.SERVER - Done loading history of VCS changes: 0 changes loaded in 31ms 
+[2017-09-22 22:17:01,412]   INFO -   jetbrains.buildServer.SERVER - Build history cache size is set to 10000 entries 
+[2017-09-22 22:17:01,483]   INFO -   jetbrains.buildServer.SERVER - Loading test names index from database... 
+[2017-09-22 22:17:01,485]   INFO -   jetbrains.buildServer.SERVER - Finished loading test names index 
+[2017-09-22 22:17:01,631]   INFO -   jetbrains.buildServer.SERVER - Start initializing build durations cache... 
+[2017-09-22 22:17:01,636]   INFO -   jetbrains.buildServer.SERVER - Finished initializing build durations cache, time spent: 5 ms 
+[2017-09-22 22:17:03,289]   INFO -   jetbrains.buildServer.SERVER - Loading roles from the configuration file: /Users/nsharma/.BuildServer/config/roles-config.xml 
+[2017-09-22 22:17:04,818]   INFO -   jetbrains.buildServer.SERVER - Applying memory thresholds for Memory Usage Monitor: storing 100 last measurements; time between measurements: 3000ms. Thresholds: {TC_TOTAL_MEMORY_USAGE_KEY=90.0, PS Old Gen=90.0} 
+[2017-09-22 22:17:07,945]   INFO - til.ChildSpringContextLoader$1 - Refreshing jetbrains.buildServer.util.ChildSpringContextLoader$1@5f1e32a6: startup date [Fri Sep 22 22:17:07 EDT 2017]; parent: WebApplicationContext for namespace 'buildServer-servlet' 
+[2017-09-22 22:17:08,030]   INFO -  jetbrains.buildServer.STARTUP - TeamCity Spring context contains 1363 beans 
+[2017-09-22 22:17:08,612]   INFO -  jetbrains.buildServer.STARTUP - TeamCity Spring context created in: 16235 ms 
+[2017-09-22 22:17:08,683]   INFO -   jetbrains.buildServer.SERVER - Root project configuration files created 
+[2017-09-22 22:17:08,969]   INFO - rver.plugins.PluginManagerImpl - =========================================================== 
+[2017-09-22 22:17:08,969]   INFO - rver.plugins.PluginManagerImpl - Plugins initialization started... 
+[2017-09-22 22:17:08,971]   INFO - rver.plugins.PluginManagerImpl - Scanning plugins folders 
+[2017-09-22 22:17:08,972]   INFO - .plugins.files.JarSearcherBase - Scanning plugin folder: /Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins 
+[2017-09-22 22:17:09,557]   INFO -   jetbrains.buildServer.SERVER - Start pre-compiling JSP files... 
+[2017-09-22 22:17:10,848]   INFO - .plugins.files.JarSearcherBase - Scanning plugin folder: /Users/nsharma/.BuildServer/plugins 
+[2017-09-22 22:17:10,873]   INFO - rver.plugins.PluginManagerImpl - Found 88 bundled plugins: [agent-system-info (ver:47070), agent.push (ver:47070), Ant (ver:47070), ant-net-tasks (ver:47070), Apache Ant (ver:47070), artifactsSizeStatistics (ver:47070), bugzilla (ver:47070), buildDurationStatisticsPlugin (ver:47070), changeViewers (ver:47070), clearcase (ver:47070), cloud-amazon (ver:47070), commandLineRunner (ver:47070), commit-status-publisher (ver:47070), configs-dsl (ver:47070), coverage (ver:47070), cvs (ver:47070), data-dir-browse (ver:47070), deploy-runner (ver:47070), dotnet-tools (ver:47070), dotNetRunners (ver:47070), Duplicator (ver:47070), eclipse-plugin-distributor (ver:47070), email (ver:47070), environment-fetcher (ver:47070), feed (ver:47070), file-content-replacer (ver:47070), flaky-test-detector (ver:47070), FxCop (ver:47070), gant-tool (ver:47070), GAntRunner (ver:47070), gradle-runner (ver:47070), idea-tool (ver:47070), Inspection (ver:47070), intellij-plugin-distributor (ver:47070), Ipr (ver:47070), jabber (ver:47070), Java Crashed detector (ver:47070), java-dowser (ver:47070), jetbrains.git (ver:47070), jira (ver:47070), jps-tool (ver:47070), jvm-update (ver:47070), ldap (ver:47070), Maven2 (ver:47070), mercurial (ver:47070), metarunner (ver:47070), nt-domain-login (ver:47070), nuget (ver:47070), perfmon (ver:47070), perforce (ver:47070), powershell-runner (ver:47070), priority-queue (ver:47070), queue-pauser (ver:47070), rake-runner (ver:47070), remoteAccess (ver:47070), reset-password (ver:47070), rest-api (ver:47070), rest-api-6.0 (ver:47070), rest-api-7.0 (ver:47070), rest-api-8.1 (ver:47070), rest-api-9.0 (ver:47070), rest-api-9.1 (ver:47070), rest-api-contrib (ver:47070), rest-api-contrib-9.0 (ver:47070), rest-api-contrib-9.1 (ver:47070), sbt-runner (ver:47070), searchBuildByNumber (ver:47070), ssh-manager (ver:47070), stacktraces (ver:47070), starteam (ver:47070), svn (ver:47070), swabra (ver:47070), TeamCity.BitBucketIssues (ver:47070), TeamCity.GitHubIssues (ver:47070), TeamCity.SharedResources (ver:47070), tfs (ver:47070), unified-ui (ver:47070), usage-statistics (ver:47070), vault-vcs (ver:47070), visualstudiotest (ver:47070), vs-addin-distributor (ver:47070), vsphere (ver:47070), vss (ver:47070), WindowsTray (ver:47070), WindowsTray-distributor (ver:47070), xcode-runner (ver:47070), xml-report-plugin (ver:47070), youtrack (ver:47070)] 
+[2017-09-22 22:17:11,066]   INFO - rver.plugins.PluginsCollection - Load shared classloader for 33 plugins [Ant, ant-net-tasks, Apache Ant, artifactsSizeStatistics, buildDurationStatisticsPlugin, changeViewers, clearcase, commandLineRunner, coverage, cvs, email, environment-fetcher, feed, gant-tool, GAntRunner, gradle-runner, intellij-plugin-distributor, Ipr, jabber, Java Crashed detector, jps-tool, ldap, perfmon, priority-queue, remoteAccess, sbt-runner, searchBuildByNumber, stacktraces, starteam, swabra, WindowsTray, xml-report-plugin, youtrack] 
+[2017-09-22 22:17:11,102]   INFO - rver.plugins.PluginsCollection - Load standalone classloaders for 55 plugins [agent-system-info, agent.push, bugzilla, cloud-amazon, commit-status-publisher, configs-dsl, data-dir-browse, deploy-runner, dotnet-tools, dotNetRunners, Duplicator, eclipse-plugin-distributor, file-content-replacer, flaky-test-detector, FxCop, idea-tool, Inspection, java-dowser, jetbrains.git, jira, jvm-update, Maven2, mercurial, metarunner, nt-domain-login, nuget, perforce, powershell-runner, queue-pauser, rake-runner, reset-password, rest-api, rest-api-6.0, rest-api-7.0, rest-api-8.1, rest-api-9.0, rest-api-9.1, rest-api-contrib, rest-api-contrib-9.0, rest-api-contrib-9.1, ssh-manager, svn, TeamCity.BitBucketIssues, TeamCity.GitHubIssues, TeamCity.SharedResources, tfs, unified-ui, usage-statistics, vault-vcs, visualstudiotest, vs-addin-distributor, vsphere, vss, WindowsTray-distributor, xcode-runner] 
+[2017-09-22 22:17:11,361]   INFO -   jetbrains.buildServer.SERVER - Creating new Lucene index (version.24): org.apache.lucene.store.NIOFSDirectory@/Users/nsharma/.BuildServer/system/caches/search lockFactory=org.apache.lucene.store.NativeFSLockFactory@194cfe65 
+[2017-09-22 22:17:13,059]   INFO - ServerDistributionTypeProvider - TeamCity distribution type: tar.gz 
+[2017-09-22 22:17:16,334]   INFO - e.RemoteMavenServerManagerImpl - Starting external maven service 
+[2017-09-22 22:17:27,040]   INFO - e.RemoteMavenServerManagerImpl - Remote server is connected. 
+[2017-09-22 22:17:30,184]   INFO - rver.plugins.PluginManagerImpl - Plugins initialization completed (88 plugins loaded): [agent-system-info (ver:47070), agent.push (ver:47070), Ant (ver:47070), ant-net-tasks (ver:47070), Apache Ant (ver:47070), artifactsSizeStatistics (ver:47070), bugzilla (ver:47070), buildDurationStatisticsPlugin (ver:47070), changeViewers (ver:47070), clearcase (ver:47070), cloud-amazon (ver:47070), commandLineRunner (ver:47070), commit-status-publisher (ver:47070), configs-dsl (ver:47070), coverage (ver:47070), cvs (ver:47070), data-dir-browse (ver:47070), deploy-runner (ver:47070), dotnet-tools (ver:47070), dotNetRunners (ver:47070), Duplicator (ver:47070), eclipse-plugin-distributor (ver:47070), email (ver:47070), environment-fetcher (ver:47070), feed (ver:47070), file-content-replacer (ver:47070), flaky-test-detector (ver:47070), FxCop (ver:47070), gant-tool (ver:47070), GAntRunner (ver:47070), gradle-runner (ver:47070), idea-tool (ver:47070), Inspection (ver:47070), intellij-plugin-distributor (ver:47070), Ipr (ver:47070), jabber (ver:47070), Java Crashed detector (ver:47070), java-dowser (ver:47070), jetbrains.git (ver:47070), jira (ver:47070), jps-tool (ver:47070), jvm-update (ver:47070), ldap (ver:47070), Maven2 (ver:47070), mercurial (ver:47070), metarunner (ver:47070), nt-domain-login (ver:47070), nuget (ver:47070), perfmon (ver:47070), perforce (ver:47070), powershell-runner (ver:47070), priority-queue (ver:47070), queue-pauser (ver:47070), rake-runner (ver:47070), remoteAccess (ver:47070), reset-password (ver:47070), rest-api (ver:47070), rest-api-6.0 (ver:47070), rest-api-7.0 (ver:47070), rest-api-8.1 (ver:47070), rest-api-9.0 (ver:47070), rest-api-9.1 (ver:47070), rest-api-contrib (ver:47070), rest-api-contrib-9.0 (ver:47070), rest-api-contrib-9.1 (ver:47070), sbt-runner (ver:47070), searchBuildByNumber (ver:47070), ssh-manager (ver:47070), stacktraces (ver:47070), starteam (ver:47070), svn (ver:47070), swabra (ver:47070), TeamCity.BitBucketIssues (ver:47070), TeamCity.GitHubIssues (ver:47070), TeamCity.SharedResources (ver:47070), tfs (ver:47070), unified-ui (ver:47070), usage-statistics (ver:47070), vault-vcs (ver:47070), visualstudiotest (ver:47070), vs-addin-distributor (ver:47070), vsphere (ver:47070), vss (ver:47070), WindowsTray (ver:47070), WindowsTray-distributor (ver:47070), xcode-runner (ver:47070), xml-report-plugin (ver:47070), youtrack (ver:47070)] 
+[2017-09-22 22:17:30,185]   INFO - rver.plugins.PluginManagerImpl - =========================================================== 
+[2017-09-22 22:17:30,185]   INFO -   jetbrains.buildServer.SERVER - TeamCity plugins loaded in: 21215 ms 
+[2017-09-22 22:17:34,612]   INFO -   jetbrains.buildServer.SERVER - Start loading server configuration... 
+[2017-09-22 22:17:34,796]   INFO - r.configs.dsl.DslPluginManager - Plugin sources are packed in 27ms 
+[2017-09-22 22:17:34,908]   INFO -  jetbrains.buildServer.CLEANUP - Max cleanup duration is set to 0 seconds 
+[2017-09-22 22:17:34,914]   INFO -  jetbrains.buildServer.CLEANUP - Cleanup time has been set to 03:00:00 daily 
+[2017-09-22 22:17:34,914]   INFO -  jetbrains.buildServer.CLEANUP - Cleanup is enabled 
+[2017-09-22 22:17:34,925]   INFO -   jetbrains.buildServer.SERVER - Parsing 2 configuration files... 
+[2017-09-22 22:17:34,951]   INFO -   jetbrains.buildServer.SERVER - Loading data from parsed configuration files... 
+[2017-09-22 22:17:35,201]   INFO -   jetbrains.buildServer.SERVER - Server configuration loaded in: 589 ms 
+[2017-09-22 22:17:41,675]   INFO -   jetbrains.buildServer.SERVER - TeamCity initialized, server UUID: e898a8c4-5d55-49e2-a0d5-da2b78cfbd5d, URL: http://localhost 
+[2017-09-22 22:17:41,675]   INFO -   jetbrains.buildServer.SERVER - TeamCity is running in professional mode 
+[2017-09-22 22:17:41,677]   INFO - utors.DeferringExecutorService - 3 commands sent to execution 
+[2017-09-22 22:17:41,677]   INFO - utors.DeferringExecutorService - 3 commands sent to execution 
+[2017-09-22 22:17:41,677]   INFO - utors.DeferringExecutorService - 0 commands sent to execution 
+[2017-09-22 22:17:41,677]   INFO - utors.DeferringExecutorService - 0 commands sent to execution 
+[2017-09-22 22:17:41,677]   INFO - utors.DeferringExecutorService - 0 commands sent to execution 
+[2017-09-22 22:17:41,704]   INFO -   jetbrains.buildServer.SERVER - Start pre-fetching changes for 0 build configurations... 
+[2017-09-22 22:17:41,706]   INFO -   jetbrains.buildServer.SERVER - Done pre-fetching changes 
+[2017-09-22 22:17:41,706]   INFO -   jetbrains.buildServer.SERVER - Start calculating branches for 0 build configurations... 
+[2017-09-22 22:17:41,706]   INFO -   jetbrains.buildServer.SERVER - Done calculating branches 
+[2017-09-22 22:17:41,706]   INFO -   jetbrains.buildServer.SERVER - Start calculating status for 0 build configurations... 
+[2017-09-22 22:17:41,706]   INFO -   jetbrains.buildServer.SERVER - Done calculating status 
+[2017-09-22 22:17:41,706]   INFO -   jetbrains.buildServer.SERVER - Start prefetching build statistic metrics for 0 build configurations... 
+[2017-09-22 22:17:41,707]   INFO -   jetbrains.buildServer.SERVER - Done prefetching build statistic metrics 
+[2017-09-22 22:17:41,793]   INFO -   jetbrains.buildServer.SERVER - Start loading cache of build committers... 
+[2017-09-22 22:17:41,796]   INFO -   jetbrains.buildServer.SERVER - Done loading cache of build committers 
+[2017-09-22 22:17:41,815]   INFO -   jetbrains.buildServer.SERVER - Super user authentication token: "3918409979496102164". To login as Super user use an empty username and this token as a password on the login page. 
+[2017-09-22 22:17:41,818]   INFO - .agent.AgentZipVersionProvider - Build agent distribution '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/update/buildAgent.zip' state initialized. Last modified: 06.09.2017 09:17:34, size: 18341181 
+[2017-09-22 22:17:41,820]   INFO -   jetbrains.buildServer.SERVER - Start loading test runs for investigations and mutes into cache... 
+[2017-09-22 22:17:41,844]   INFO -   jetbrains.buildServer.SERVER - Done loading test runs. Loaded 0 tests in 23ms, cache size: 0 
+[2017-09-22 22:17:41,846]   INFO -   jetbrains.buildServer.SERVER - Start loading "failed to start" build configuration errors in background 
+[2017-09-22 22:17:41,846]   INFO -   jetbrains.buildServer.SERVER - Done loading "failed to start" build configuration errors: loaded 0 problems 
+[2017-09-22 22:17:41,930]   INFO - ority.PriorityClassManagerImpl - Loading priority classes from the configuration file: /Users/nsharma/.BuildServer/config/build-queue-priorities.xml 
+[2017-09-22 22:17:41,934]   INFO -   jetbrains.buildServer.SERVER - Ordering strategy changed to jetbrains.buildServer.serverSide.priority.BuildQueuePriorityOrdering 
+[2017-09-22 22:17:42,080]   INFO - .agent.AgentZipVersionProvider - Build agent distribution version is set to 47070, hash=SHA-125ygNXnaTT78gtfBl/iWg59L5QY= 
+[2017-09-22 22:17:49,227]   INFO - nt.AgentPluginsVersionProvider - State of agent plugin packages is initialized in 7140 ms: new plugin 'agentSystemInfo.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/agentSystemInfo/agent/agentSystemInfo.zip', hash: 'SHA-1pERGIvB3a95Zl1R91S3CfcomLy8='; new plugin 'amazonEC2.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/cloud-amazon/agent/amazonEC2.zip', hash: 'SHA-1oRyoka89cnINdiz27Jm0Wau3qeo='; new plugin 'ant-net-tasks.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant-net-tasks/agent/ant-net-tasks.zip', hash: 'SHA-1YM2Pr8gZnzayoeKjO3wiJjBwLFo='; new plugin 'ant.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant-tool/agent/ant.zip', hash: 'SHA-1O93swCSmjScY2huyhy+/hSvYRHc='; new plugin 'antPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant/agent/antPlugin.zip', hash: 'SHA-14a5eCJ4g2B1Qo06cuPOGTnqlHVU='; new plugin 'clearcase-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/clearcase/agent/clearcase-agent.zip', hash: 'SHA-1MJShZ3g8WOX89eerXtLfaRn60fg='; new plugin 'cloud-vmware-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/cloud-vmware/agent/cloud-vmware-agent.zip', hash: 'SHA-1udx2I3F3cWx6IuIwPQGAUz0iSKc='; new plugin 'commandLineRunner.jar' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/commandLineRunner/agent/commandLineRunner.jar', hash: 'SHA-1Lr0B2TkvbbuG16ekVKXX8v4oZDQ='; new plugin 'coveragePlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/coverage/agent/coveragePlugin.zip', hash: 'SHA-1tZHte50JaEhy4ZaoEfMRR8VwCeg='; new plugin 'crashDetector.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/crash-detector/agent/crashDetector.zip', hash: 'SHA-17IBtG09RayoRQrs/gv+Of984Hjw='; new plugin 'cvsAgent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/cvs/agent/cvsAgent.zip', hash: 'SHA-1wkA3bS+rHdyEo+FmkX272bCWpCE='; new plugin 'deploy-runner-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/deploy-runner/agent/deploy-runner-agent.zip', hash: 'SHA-1+K/dz5W2AIhqvGjTrsnd98v06fI='; new plugin 'dotCover.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/dotNetRunners/bundled-tools/dotCover.zip', hash: 'SHA-1HwuhlCexpf0NmTa9CUmBsqd9Rm8='; new plugin 'dotNetPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/dotNetRunners/agent/dotNetPlugin.zip', hash: 'SHA-1btE0ArffIo4oO6SKle3ZOYvyfOI='; new plugin 'dotNetRunners.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/dotNetRunners/agent/dotNetRunners.zip', hash: 'SHA-1EHsHmaIKmYqa90CYXShVw3klc6s='; new plugin 'dotnet-tools-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/dotnet-tools/agent/dotnet-tools-agent.zip', hash: 'SHA-1W0cmczbz5HBcrLs5vttx+W37bSk='; new plugin 'duplicatePlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Duplicator/agent/duplicatePlugin.zip', hash: 'SHA-1ce3Upe11b9eRXlTXS4Ud0Zgb4tg='; new plugin 'environment-fetcher-agent.jar' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/environment-fetcher/agent/environment-fetcher-agent.jar', hash: 'SHA-1djdoSvpCH+ObeD7bwkGR4Wgs3Nk='; new plugin 'file-content-replacer.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/file-content-replacer/agent/file-content-replacer.zip', hash: 'SHA-1WhFSLnYKFHM70KgFF5AzbB0bC1E='; new plugin 'fxcop.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/fxcop/agent/fxcop.zip', hash: 'SHA-1aDaBZ4iDu8iA0BAP2/JAHJxePpM='; new plugin 'gant.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/gant-tool/agent/gant.zip', hash: 'SHA-1DYHGYG/+1GPcHiA/yPq5rtEXd5A='; new plugin 'gantPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/gantRunner/agent/gantPlugin.zip', hash: 'SHA-1ef3lDLEJMiAJqorBPo4yJUm7MHg='; new plugin 'gradle-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/gradle/agent/gradle-runner.zip', hash: 'SHA-1JLAzvua+ZJgsHoRBKZwDrNROaVI='; new plugin 'idea-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ipr-runner/agent/idea-runner.zip', hash: 'SHA-1kRs9jZ0w8hM3N6VTxiR7wlIWjc0='; new plugin 'idea.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/idea-tool/bundled/idea.zip', hash: 'SHA-1uUXJNcaB+ZWTCrpAx1jTxjRzOPs='; new plugin 'inspectionPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/server-side-inspections/agent/inspectionPlugin.zip', hash: 'SHA-1CEqzD1Xhy7+2yH/TxdlE6fkgJ9k='; new plugin 'jacoco.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/coverage/agent/jacoco.zip', hash: 'SHA-1tv6VgBPKl6oQkvLQ/Vf/tHG9xyY='; new plugin 'java-dowser.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/java-dowser/agent/java-dowser.zip', hash: 'SHA-1j81rXBktoIjq9X1rCHk1AAWA9SY='; new plugin 'jetbrains.git.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/jetbrains.git/agent/jetbrains.git.zip', hash: 'SHA-1wOhvcwYsKiWPE0XqKJSTRZa2JPM='; new plugin 'jps.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/jps-tool/agent/jps.zip', hash: 'SHA-1r6PSRPzcNXinGSc6kNf3I0r3Ww4='; new plugin 'junitPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant/agent/junitPlugin.zip', hash: 'SHA-1DWv8eq02ekH4bmErjLrTzw50oB4='; new plugin 'jvm-update.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/jvm-update/agent/jvm-update.zip', hash: 'SHA-1xsmzoLPLqr9anC31gBHHFSZO3Ks='; new plugin 'maven.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven.zip', hash: 'SHA-1dQIgsnG4xrWSJxJ2nfp6aXYcvcc='; new plugin 'maven3.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven3.zip', hash: 'SHA-1VYrF/Z7amGwBDJtYtVMGEP1O5rY='; new plugin 'maven3_1.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven3_1.zip', hash: 'SHA-1MiZz/go2OIn/m/Z1suQ6Lweudd0='; new plugin 'maven3_2.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven3_2.zip', hash: 'SHA-1a6xZzSYczQeMgm8UIA+Yn4FITSU='; new plugin 'maven3_3.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven3_3.zip', hash: 'SHA-1phhog5zxeHNvYjjLtr4b2FQ8asM='; new plugin 'mavenPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/agent/mavenPlugin.zip', hash: 'SHA-1drjIeYhjOZsk2TwLmM3OxVVPQ4g='; new plugin 'mercurial.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/mercurial/agent/mercurial.zip', hash: 'SHA-1H2wCPUORRCX/7mM5RS631jzSgMM='; new plugin 'meta-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/meta-runner/agent/meta-runner.zip', hash: 'SHA-1wL8C7T5pJ2vYUWAwGFhdsko6OzU='; new plugin 'nuget-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/dotNetPackagesSupport/agent/nuget-agent.zip', hash: 'SHA-11C5ZVUCM/B166jvVNfC6XRaIKfw='; new plugin 'perfmon-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/perfmon/agent/perfmon-agent.zip', hash: 'SHA-1dCJ2/t2nLwtUwBSwOsMPKBgKuKI='; new plugin 'perforce-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/perforce/agent/perforce-agent.zip', hash: 'SHA-1h48m7BQ19N99ZQLoM2eoFBtQNDY='; new plugin 'powershell-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/powershell/agent/powershell-agent.zip', hash: 'SHA-18ZbM67BkmTHBKa1LA2X3rLDr4gE='; new plugin 'rake-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/rake-runner/agent/rake-runner.zip', hash: 'SHA-16UFft0xNIQiwR0dtrYKq0qAPJ1c='; new plugin 'remoteAccess.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/remoteAccess/agent/remoteAccess.zip', hash: 'SHA-1XD3EXWvOpMN43yaJpyyCh0YU12o='; new plugin 'sbt-runner-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/sbt-runner/agent/sbt-runner-agent.zip', hash: 'SHA-17pPoxbDNcBwOc3xR40X6Ph4Q0iU='; new plugin 'ssh-manager.jar' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ssh-manager/agent/ssh-manager.jar', hash: 'SHA-1J4bulyW3SZJvC8u17SkXLHf6GKA='; new plugin 'stacktracesPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/stacktraces/agent/stacktracesPlugin.zip', hash: 'SHA-16Q/ANnbKZHEAzLxr0HAEJ1PYzWA='; new plugin 'svnAgent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/svn/agent/svnAgent.zip', hash: 'SHA-17N8irEU6j/TVpC6WSZTd4QSUy7g='; new plugin 'swabra.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/swabra/agent/swabra.zip', hash: 'SHA-1f9KByEzIpQvd6Vby/50t0kkf+ww='; new plugin 'testNGPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant/agent/testNGPlugin.zip', hash: 'SHA-1xeC+FNCmDKq9pg3LLkDSk4b0uq0='; new plugin 'tfs-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/tfs/agent/tfs-agent.zip', hash: 'SHA-1snKJMnGnWEvt8gl+3Jd4AG2gTVE='; new plugin 'visualstudiotest-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/visualstudiotest/agent/visualstudiotest-agent.zip', hash: 'SHA-1MNQT7OruQlDtlySCK1LpIx+ctO8='; new plugin 'xcode-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/xcode-runner/agent/xcode-runner.zip', hash: 'SHA-1yj40nyhB/aY6IG+oo9nhGuVWZSw='; new plugin 'xml-report-plugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/xml-report-plugin/agent/xml-report-plugin.zip', hash: 'SHA-1GXh8/BIQrlGNkS9y7HJQkqUb8ZI=' 
+[2017-09-22 22:17:50,965]   INFO -   jetbrains.buildServer.SERVER - JSP pre-compilation finished, pre-compiled 200 files in 41407ms 
+[2017-09-22 22:18:03,668]   INFO - r.configs.dsl.DslPluginManager - Plugins dsl compiled in 28857ms 
+[2017-09-22 22:18:03,716]   INFO - verSide.impl.BuildServerRunner - Start daemons 
+[2017-09-22 22:18:03,717]   INFO - tbrains.buildServer.ACTIVITIES - Server Started 
+[2017-09-22 22:18:03,720]   INFO -  jetbrains.buildServer.STARTUP - Startup duration: 1m:40s 
+[2017-09-22 22:18:03,720]   INFO -  jetbrains.buildServer.STARTUP - Current stage: System is ready 
+[2017-09-22 22:18:05,777]   INFO -    jetbrains.buildServer.AGENT - Did not find agent by its authorization token '' and will search by name, agent details: "Default Agent" {id=0}. 
+[2017-09-22 22:18:05,780]   INFO -    jetbrains.buildServer.AGENT - Did not find agent by name, agent details: "Default Agent" {id=0} 
+[2017-09-22 22:18:05,792]   INFO -    jetbrains.buildServer.AGENT - New agent authorization token "c0ded7025ac696dc2a3a4778e2a17f1c" was generated for agent "Default Agent" {id=1} 
+[2017-09-22 22:18:05,825]   INFO -    jetbrains.buildServer.AGENT - Upgrade of agent "Default Agent" {id=1} has been scheduled, agent version: 47070, plugins signature: NA. Current version: 47070, plugins signature: 47070-md5-2d465d87680122fff1c7c26db76f2532 
+[2017-09-22 22:18:05,851]   INFO -    jetbrains.buildServer.AGENT - Agent has been registered: "Default Agent" {id=1, protocol=unidirectional, host=127.0.0.1:9090, agentTypeId=1, pool=Default, registered since 2017-09-22 22:18:05.777}, not running a build 
+[2017-09-22 22:18:05,856]   INFO - ldServer.AGENT.PollingProtocol - Polling Agent session 'ga8ogfh...' was created, agent: "Default Agent" {id=1} 
+[2017-09-22 22:18:05,912]   INFO - s.buildServer.ACTIVITIES.AUDIT - agent_authorize: Agent ""Default Agent" {id=1}" was authorized with comment "Locally installed agent is authorized by default" 
+[2017-09-22 22:18:06,426]   INFO -    jetbrains.buildServer.AGENT - Agent "Default Agent" {id=1} has confirmed upgrade. 
+[2017-09-22 22:18:06,630]   INFO - ldServer.AGENT.PollingProtocol - Polling Agent session 'ga8ogfh...' was closed, agent: "Default Agent" {id=1} 
+[2017-09-22 22:18:06,633]   INFO -    jetbrains.buildServer.AGENT - Agent "Default Agent" {id=1} has been unregistered. Reason: Agent has unregistered (will upgrade) 
+[2017-09-22 22:18:51,849]   INFO -    jetbrains.buildServer.AGENT - Agent has been registered: "Default Agent" {id=1, protocol=unidirectional, host=127.0.0.1:9090, agentTypeId=1, pool=Default, registered since 2017-09-22 22:18:51.769}, not running a build 
+[2017-09-22 22:18:51,851]   INFO - ldServer.AGENT.PollingProtocol - Polling Agent session 'Tf6rMLE...' was created, agent: "Default Agent" {id=1} 
+[2017-09-22 22:19:27,099]   INFO - tbrains.buildServer.ACTIVITIES - New user created: 'nsharma' {id=1} 
+[2017-09-22 22:30:30,652]   INFO - s.buildServer.ACTIVITIES.AUDIT - project_create: Project "Nqs {internalId=project1, externalId=Nqs}" was created by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-22 22:30:30,668]   INFO - s.buildServer.ACTIVITIES.AUDIT - vcs_root_create: VCS root ""https://nqscode@bitbucket.org/nqscode/nqs.git#refs/heads/master" {internal id=1, id=Nqs_HttpsNqscodeBitbucketOrgNqscodeNqsGitRefsHeadsMaster, description: "https://nqscode@bitbucket.org/nqscode/nqs.git#refs/heads/master"}" was created by "'nsharma' (Navnidhi Sharma) {id=1}" with comment "In project: Nqs" 
+[2017-09-22 22:30:30,800]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_type_create: "Nqs :: Build {id=Nqs_Build, internal id=bt1}" was created by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-22 22:31:36,791]   INFO - l.UsageStatisticsCollectorImpl - Starting usage statistics collection... 
+[2017-09-22 22:32:43,188]   INFO - l.UsageStatisticsCollectorImpl - Finish usage statistics collection, collected in 66394 ms 
+[2017-09-22 22:37:26,742]   INFO - s.buildServer.ACTIVITIES.AUDIT - project_remove: Project "Nqs" was removed by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-22 23:26:22,940]   INFO - s.buildServer.ACTIVITIES.AUDIT - project_create: Project "Newgithubrepo {internalId=project2, externalId=Newgithubrepo}" was created by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-22 23:26:22,943]   INFO - s.buildServer.ACTIVITIES.AUDIT - vcs_root_create: VCS root ""https://github.com/navnidhigmail/newgithubrepo.git#refs/heads/master" {internal id=2, id=Newgithubrepo_HttpsGithubComNavnidhigmailNewgithubrepoGitRefsHeadsMaster, description: "https://github.com/navnidhigmail/newgithubrepo.git#refs/heads/master"}" was created by "'nsharma' (Navnidhi Sharma) {id=1}" with comment "In project: Newgithubrepo" 
+[2017-09-22 23:26:22,946]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_type_create: "Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2}" was created by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-22 23:26:37,776]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_type_edit_settings: "Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2}" build configuration settings were edited ("version before: 1, version after: 2") by "'nsharma' (Navnidhi Sharma) {id=1}" with comment "1 build step(s) were added to 'Build' build configuration" 
+[2017-09-22 23:27:51,001]   INFO - ity.BuildQueuePriorityOrdering - New item Queued build {Build promotion {promotion id=1, configuration={id=Newgithubrepo_Build, internal id=bt2}}, item id=1} with weight 0.00 inserted at the default position 0 in the end of the queue 
+[2017-09-22 23:27:51,018]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_add_to_queue: Build BUILD_PROMOTION{id=1} was added to queue by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-22 23:27:51,109]   INFO - tbrains.buildServer.ACTIVITIES - Build added to queue; Queued build {Build promotion {promotion id=1, configuration={id=Newgithubrepo_Build, internal id=bt2}, queued}, triggered by "Navnidhi Sharma"} 
+[2017-09-22 23:27:51,595]   INFO -   jetbrains.buildServer.SERVER - Running build saved to DB: build id=1, promotion id=1 
+[2017-09-22 23:27:51,623]   INFO - tbrains.buildServer.ACTIVITIES - Build started; Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #1 {build id=1, promotion id=1, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-22 23:27:51.547, running} 
+[2017-09-22 23:27:51,628]   INFO -   jetbrains.buildServer.SERVER - Build removed from queue (started): 1 
+[2017-09-22 23:27:51,633]   INFO -   jetbrains.buildServer.SERVER - Flush queue finished in 104ms, number of builds started: 1 
+[2017-09-22 23:28:03,140]   INFO -   jetbrains.buildServer.SERVER - Build finished received for build: #1 {build id=1, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:28:03,148]   INFO - ndexer.EventBasedBuildsIndexer - Indexing finishing build: #1 {build id=1, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:28:03,196]   INFO - de.impl.history.DBBuildHistory - Created build history entry; build id: 1, finish date: 2017-09-22 23:28:03.254 
+[2017-09-22 23:28:03,254]   INFO - tbrains.buildServer.ACTIVITIES - Finished build Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #1 {build id=1, promotion id=1, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-22 23:27:52.701, running} 
+[2017-09-22 23:31:56,221]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_type_edit_settings: "Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2}" build configuration settings were edited ("version before: 2, version after: 3") by "'nsharma' (Navnidhi Sharma) {id=1}" with comment "runners of 'Build' build configuration were updated" 
+[2017-09-22 23:32:03,071]   INFO - ity.BuildQueuePriorityOrdering - New item Queued build {Build promotion {promotion id=2, configuration={id=Newgithubrepo_Build, internal id=bt2}}, item id=2} with weight 0.00 inserted at the default position 0 in the end of the queue 
+[2017-09-22 23:32:03,077]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_add_to_queue: Build BUILD_PROMOTION{id=2} was added to queue by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-22 23:32:03,084]   INFO - tbrains.buildServer.ACTIVITIES - Build added to queue; Queued build {Build promotion {promotion id=2, configuration={id=Newgithubrepo_Build, internal id=bt2}, queued}, triggered by "Navnidhi Sharma"} 
+[2017-09-22 23:32:03,589]   INFO -   jetbrains.buildServer.SERVER - Running build saved to DB: build id=2, promotion id=2 
+[2017-09-22 23:32:03,591]   INFO - tbrains.buildServer.ACTIVITIES - Build started; Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #2 {build id=2, promotion id=2, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-22 23:32:03.584, running} 
+[2017-09-22 23:32:03,592]   INFO -   jetbrains.buildServer.SERVER - Build removed from queue (started): 2 
+[2017-09-22 23:32:03,593]   INFO -   jetbrains.buildServer.SERVER - Flush queue finished in 11ms, number of builds started: 1 
+[2017-09-22 23:32:18,413]   INFO -   jetbrains.buildServer.SERVER - Build finished received for build: #2 {build id=2, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:32:18,417]   INFO - ndexer.EventBasedBuildsIndexer - Indexing finishing build: #2 {build id=2, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:32:18,425]   INFO - de.impl.history.DBBuildHistory - Created build history entry; build id: 2, finish date: 2017-09-22 23:32:18.410 
+[2017-09-22 23:32:18,435]   INFO - tbrains.buildServer.ACTIVITIES - Finished build Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #2 {build id=2, promotion id=2, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-22 23:32:03.926, running} 
+[2017-09-22 23:33:24,545]   INFO - ity.BuildQueuePriorityOrdering - New item Queued build {Build promotion {promotion id=3, configuration={id=Newgithubrepo_Build, internal id=bt2}}, item id=3} with weight 0.00 inserted at the default position 0 in the end of the queue 
+[2017-09-22 23:33:24,549]   INFO - tbrains.buildServer.ACTIVITIES - Build added to queue; Queued build {Build promotion {promotion id=3, configuration={id=Newgithubrepo_Build, internal id=bt2}, queued}, triggered by "Git"} 
+[2017-09-22 23:33:25,055]   INFO -   jetbrains.buildServer.SERVER - Running build saved to DB: build id=3, promotion id=3 
+[2017-09-22 23:33:25,057]   INFO - tbrains.buildServer.ACTIVITIES - Build started; Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #3 {build id=3, promotion id=3, history=false, agent="Default Agent" {id=1}, triggered by "Git" (##vcsName='jetbrains.git' type='vcs'). Started 2017-09-22 23:33:25.050, running} 
+[2017-09-22 23:33:25,058]   INFO -   jetbrains.buildServer.SERVER - Build removed from queue (started): 3 
+[2017-09-22 23:33:25,058]   INFO -   jetbrains.buildServer.SERVER - Flush queue finished in 10ms, number of builds started: 1 
+[2017-09-22 23:33:29,166]   INFO -   jetbrains.buildServer.SERVER - Build finished received for build: #3 {build id=3, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:33:29,171]   INFO - ndexer.EventBasedBuildsIndexer - Indexing finishing build: #3 {build id=3, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:33:29,182]   INFO - de.impl.history.DBBuildHistory - Created build history entry; build id: 3, finish date: 2017-09-22 23:33:29.169 
+[2017-09-22 23:33:29,188]   INFO - tbrains.buildServer.ACTIVITIES - Finished build Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #3 {build id=3, promotion id=3, history=false, agent="Default Agent" {id=1}, triggered by "Git" (##vcsName='jetbrains.git' type='vcs'). Started 2017-09-22 23:33:25.271, running} 
+[2017-09-22 23:37:45,762]   INFO - ity.BuildQueuePriorityOrdering - New item Queued build {Build promotion {promotion id=4, configuration={id=Newgithubrepo_Build, internal id=bt2}}, item id=4} with weight 0.00 inserted at the default position 0 in the end of the queue 
+[2017-09-22 23:37:45,764]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_add_to_queue: Build BUILD_PROMOTION{id=4} was added to queue by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-22 23:37:45,768]   INFO - tbrains.buildServer.ACTIVITIES - Build added to queue; Queued build {Build promotion {promotion id=4, configuration={id=Newgithubrepo_Build, internal id=bt2}, queued}, triggered by "Navnidhi Sharma"} 
+[2017-09-22 23:37:46,276]   INFO -   jetbrains.buildServer.SERVER - Running build saved to DB: build id=4, promotion id=4 
+[2017-09-22 23:37:46,279]   INFO - tbrains.buildServer.ACTIVITIES - Build started; Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #4 {build id=4, promotion id=4, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-22 23:37:46.269, running} 
+[2017-09-22 23:37:46,280]   INFO -   jetbrains.buildServer.SERVER - Build removed from queue (started): 4 
+[2017-09-22 23:37:46,280]   INFO -   jetbrains.buildServer.SERVER - Flush queue finished in 12ms, number of builds started: 1 
+[2017-09-22 23:37:50,307]   INFO -   jetbrains.buildServer.SERVER - Build finished received for build: #4 {build id=4, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:37:50,310]   INFO - ndexer.EventBasedBuildsIndexer - Indexing finishing build: #4 {build id=4, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:37:50,318]   INFO - de.impl.history.DBBuildHistory - Created build history entry; build id: 4, finish date: 2017-09-22 23:37:50.303 
+[2017-09-22 23:37:50,322]   INFO - tbrains.buildServer.ACTIVITIES - Finished build Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #4 {build id=4, promotion id=4, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-22 23:37:46.489, running} 
+[2017-09-22 23:40:04,729]   INFO - projectSources.SmallPatchCache - Cleaned all versions of cached server-side patches in '/Users/nsharma/.BuildServer/system/caches/sources' directory 
+[2017-09-22 23:40:21,238]   INFO - ity.BuildQueuePriorityOrdering - New item Queued build {Build promotion {promotion id=5, configuration={id=Newgithubrepo_Build, internal id=bt2}}, item id=5} with weight 0.00 inserted at the default position 0 in the end of the queue 
+[2017-09-22 23:40:21,240]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_add_to_queue: Build BUILD_PROMOTION{id=5} was added to queue by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-22 23:40:21,243]   INFO - tbrains.buildServer.ACTIVITIES - Build added to queue; Queued build {Build promotion {promotion id=5, configuration={id=Newgithubrepo_Build, internal id=bt2}, queued}, triggered by "Navnidhi Sharma"} 
+[2017-09-22 23:40:21,751]   INFO -   jetbrains.buildServer.SERVER - Running build saved to DB: build id=5, promotion id=5 
+[2017-09-22 23:40:21,753]   INFO - tbrains.buildServer.ACTIVITIES - Build started; Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #5 {build id=5, promotion id=5, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-22 23:40:21.748, running} 
+[2017-09-22 23:40:21,754]   INFO -   jetbrains.buildServer.SERVER - Build removed from queue (started): 5 
+[2017-09-22 23:40:21,754]   INFO -   jetbrains.buildServer.SERVER - Flush queue finished in 9ms, number of builds started: 1 
+[2017-09-22 23:40:34,964]   INFO -   jetbrains.buildServer.SERVER - Build finished received for build: #5 {build id=5, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:40:34,967]   INFO - ndexer.EventBasedBuildsIndexer - Indexing finishing build: #5 {build id=5, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:40:34,974]   INFO - de.impl.history.DBBuildHistory - Created build history entry; build id: 5, finish date: 2017-09-22 23:40:34.961 
+[2017-09-22 23:40:34,982]   INFO - tbrains.buildServer.ACTIVITIES - Finished build Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #5 {build id=5, promotion id=5, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-22 23:40:21.927, running} 
+[2017-09-22 23:41:46,168]   INFO - ity.BuildQueuePriorityOrdering - New item Queued build {Build promotion {promotion id=6, configuration={id=Newgithubrepo_Build, internal id=bt2}}, item id=6} with weight 0.00 inserted at the default position 0 in the end of the queue 
+[2017-09-22 23:41:46,171]   INFO - tbrains.buildServer.ACTIVITIES - Build added to queue; Queued build {Build promotion {promotion id=6, configuration={id=Newgithubrepo_Build, internal id=bt2}, queued}, triggered by "Git"} 
+[2017-09-22 23:41:46,680]   INFO -   jetbrains.buildServer.SERVER - Running build saved to DB: build id=6, promotion id=6 
+[2017-09-22 23:41:46,681]   INFO - tbrains.buildServer.ACTIVITIES - Build started; Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #6 {build id=6, promotion id=6, history=false, agent="Default Agent" {id=1}, triggered by "Git" (##vcsName='jetbrains.git' type='vcs'). Started 2017-09-22 23:41:46.675, running} 
+[2017-09-22 23:41:46,683]   INFO -   jetbrains.buildServer.SERVER - Build removed from queue (started): 6 
+[2017-09-22 23:41:46,683]   INFO -   jetbrains.buildServer.SERVER - Flush queue finished in 10ms, number of builds started: 1 
+[2017-09-22 23:41:50,243]   INFO -   jetbrains.buildServer.SERVER - Build finished received for build: #6 {build id=6, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:41:50,246]   INFO - ndexer.EventBasedBuildsIndexer - Indexing finishing build: #6 {build id=6, buildTypeId=Newgithubrepo_Build} 
+[2017-09-22 23:41:50,251]   INFO - de.impl.history.DBBuildHistory - Created build history entry; build id: 6, finish date: 2017-09-22 23:41:50.240 
+[2017-09-22 23:41:50,256]   INFO - tbrains.buildServer.ACTIVITIES - Finished build Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #6 {build id=6, promotion id=6, history=false, agent="Default Agent" {id=1}, triggered by "Git" (##vcsName='jetbrains.git' type='vcs'). Started 2017-09-22 23:41:46.862, running} 
+[2017-09-23 02:00:00,501]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-23 02:00:00,567]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-23 02:00:00,567]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-23 02:00:00,567]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-23 02:00:00,568]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-23 02:00:00,568]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-23 02:00:00,568]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-23 02:00:00,568]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-23 02:00:00,570]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-23 02:00:00,570]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-23 02:00:00,571]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-23 02:00:00,571]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-23 02:00:00,572]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-23 02:00:00,572]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 35ms 
+[2017-09-23 02:00:00,572]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-23 03:00:00,660]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-23 03:00:00,661]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-23 03:00:00,672]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-23 03:00:00,673]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-23 03:00:00,677]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-22 03:00:00.677 
+[2017-09-23 03:00:00,678]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-23 03:00:00,679]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-23 03:00:00,680]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-23 03:00:00,680]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-23 03:00:00,681]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-23 03:00:00,681]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-23 03:00:00,685]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-23 03:00:00,687]   INFO - ide.db.TeamCityDatabaseManager - Performing shutdown compact on HSQL database... 
+[2017-09-23 03:00:01,001]   INFO - ide.db.TeamCityDatabaseManager - HSQL database shutdown compact performed successfully. 
+[2017-09-23 03:00:01,046]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-23 03:00:01,101]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-23 03:00:01,101]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-23 03:00:01,103]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-23 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-23 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-23 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-23 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-23 03:00:01,110]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-23 03:00:01,114]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-23 03:00:01,115]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-23 03:00:01,116]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-23 03:00:01,118]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-23 03:00:01,119]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-23 03:00:01,120]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-23 03:00:01,120]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-23 03:00:01,120]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-23 03:00:01,121]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-23 03:00:01,123]   INFO -  jetbrains.buildServer.CLEANUP - Removed 1 empty artifact directories 
+[2017-09-23 03:00:01,123]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-23 03:00:01,123]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-23 03:00:01,125]   INFO - .projectSources.PatchCacheImpl - Cleaned 0 cached server-side patches of size 0 B in '/Users/nsharma/.BuildServer/system/caches/sources' directory 
+[2017-09-23 03:00:01,125]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-23 03:00:01,129]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-23 03:00:01,131]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-23 03:00:01,132]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-23 03:00:01,144]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-23 03:00:01,145]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-23 03:00:01,154]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-23 03:00:01,154]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-23 03:00:01,155]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-23 03:00:01,155]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-23 03:00:01,155]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-23 03:00:01,155]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-23 03:00:01,156]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-23 03:00:01,156]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-23 03:00:01,157]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-23 03:00:01,178]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 76ms 
+[2017-09-23 03:00:01,180]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-23 03:00:01,186]   INFO -   jetbrains.buildServer.SERVER - Build history cache size is set to 10000 entries 
+[2017-09-23 03:00:01,201]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 20ms 
+[2017-09-23 03:00:01,201]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-23 10:17:04,857]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-23 10:17:04,858]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-23 10:17:04,858]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-23 10:17:04,860]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (8 processed) 
+[2017-09-23 15:00:02,758]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-23 15:00:02,758]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-23 15:00:02,759]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-23 15:00:02,759]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (8 processed) 
+[2017-09-23 22:17:06,505]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-23 22:17:06,507]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-23 22:17:06,507]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-23 22:17:06,509]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (8 processed) 
+[2017-09-23 22:46:04,117]   INFO - l.UsageStatisticsCollectorImpl - Starting usage statistics collection... 
+[2017-09-23 22:47:10,365]   INFO - l.UsageStatisticsCollectorImpl - Finish usage statistics collection, collected in 66245 ms 
+[2017-09-23 22:59:52,124]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_type_edit_settings: "Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2}" build configuration settings were edited ("version before: 3, version after: 4") by "'nsharma' (Navnidhi Sharma) {id=1}" with comment "runners of 'Build' build configuration were updated" 
+[2017-09-23 23:00:56,320]   INFO - ity.BuildQueuePriorityOrdering - New item Queued build {Build promotion {promotion id=7, configuration={id=Newgithubrepo_Build, internal id=bt2}}, item id=7} with weight 0.00 inserted at the default position 0 in the end of the queue 
+[2017-09-23 23:00:56,323]   INFO - s.buildServer.ACTIVITIES.AUDIT - build_add_to_queue: Build BUILD_PROMOTION{id=7} was added to queue by "'nsharma' (Navnidhi Sharma) {id=1}" 
+[2017-09-23 23:00:56,329]   INFO - tbrains.buildServer.ACTIVITIES - Build added to queue; Queued build {Build promotion {promotion id=7, configuration={id=Newgithubrepo_Build, internal id=bt2}, queued}, triggered by "Navnidhi Sharma"} 
+[2017-09-23 23:00:56,835]   INFO -   jetbrains.buildServer.SERVER - Running build saved to DB: build id=7, promotion id=7 
+[2017-09-23 23:00:56,836]   INFO - tbrains.buildServer.ACTIVITIES - Build started; Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #7 {build id=7, promotion id=7, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-23 23:00:56.832, running} 
+[2017-09-23 23:00:56,837]   INFO -   jetbrains.buildServer.SERVER - Build removed from queue (started): 7 
+[2017-09-23 23:00:56,838]   INFO -   jetbrains.buildServer.SERVER - Flush queue finished in 9ms, number of builds started: 1 
+[2017-09-23 23:01:11,165]   INFO -   jetbrains.buildServer.SERVER - Build finished received for build: #7 {build id=7, buildTypeId=Newgithubrepo_Build} 
+[2017-09-23 23:01:11,172]   INFO - ndexer.EventBasedBuildsIndexer - Indexing finishing build: #7 {build id=7, buildTypeId=Newgithubrepo_Build} 
+[2017-09-23 23:01:11,182]   INFO - de.impl.history.DBBuildHistory - Created build history entry; build id: 7, finish date: 2017-09-23 23:01:11.164 
+[2017-09-23 23:01:11,184]   INFO -   jetbrains.buildServer.SERVER - Start loading cache of build committers... 
+[2017-09-23 23:01:11,189]   INFO - tbrains.buildServer.ACTIVITIES - Finished build Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} #7 {build id=7, promotion id=7, history=false, agent="Default Agent" {id=1}, triggered by "'nsharma' (Navnidhi Sharma) {id=1}" (##userId='1' type='user'). Started 2017-09-23 23:00:57.057, running} 
+[2017-09-23 23:01:11,199]   INFO -   jetbrains.buildServer.SERVER - Done loading cache of build committers 
+[2017-09-24 02:00:03,284]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-24 02:00:03,316]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-24 02:00:03,316]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-24 02:00:03,317]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-24 02:00:03,317]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-24 02:00:03,317]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-24 02:00:03,318]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-24 02:00:03,319]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-24 02:00:03,319]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-24 02:00:03,319]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-24 02:00:03,320]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-24 02:00:03,320]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-24 02:00:03,321]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-24 02:00:03,321]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-24 02:00:03,322]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-24 02:00:03,322]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-24 02:00:03,322]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-24 02:00:03,322]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-24 02:00:03,323]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-24 02:00:03,323]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 33ms 
+[2017-09-24 02:00:03,323]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-24 03:00:03,941]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-24 03:00:03,941]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-24 03:00:03,942]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-24 03:00:03,942]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-24 03:00:03,943]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-23 03:00:03.943 
+[2017-09-24 03:00:03,943]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-24 03:00:03,943]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-24 03:00:03,946]   INFO - ide.db.TeamCityDatabaseManager - Performing shutdown compact on HSQL database... 
+[2017-09-24 03:00:04,174]   INFO - ide.db.TeamCityDatabaseManager - HSQL database shutdown compact performed successfully. 
+[2017-09-24 03:00:04,207]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-24 03:00:04,221]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-24 03:00:04,221]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-24 03:00:04,221]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-24 03:00:04,223]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-24 03:00:04,223]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-24 03:00:04,224]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-24 03:00:04,224]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-24 03:00:04,227]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-24 03:00:04,227]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-24 03:00:04,227]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-24 03:00:04,231]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-24 03:00:04,231]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (10 processed) 
+[2017-09-24 03:00:04,232]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-24 03:00:04,232]   INFO -  jetbrains.buildServer.CLEANUP - Removed 1 empty artifact directories 
+[2017-09-24 03:00:04,232]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-24 03:00:04,234]   INFO - .projectSources.PatchCacheImpl - Cleaned 0 cached server-side patches of size 0 B in '/Users/nsharma/.BuildServer/system/caches/sources' directory 
+[2017-09-24 03:00:04,234]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-24 03:00:04,234]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-24 03:00:04,235]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-24 03:00:04,235]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-24 03:00:04,237]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-24 03:00:04,238]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-24 03:00:04,240]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-24 03:00:04,240]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-24 03:00:04,240]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-24 03:00:04,240]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-24 03:00:04,247]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 26ms 
+[2017-09-24 03:00:04,248]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-24 03:00:04,249]   INFO -   jetbrains.buildServer.SERVER - Build history cache size is set to 10000 entries 
+[2017-09-24 03:00:04,252]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 4ms 
+[2017-09-24 03:00:04,252]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-24 03:00:04,412]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-24 03:00:04,412]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-24 03:00:04,413]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-24 03:00:04,413]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-24 10:17:08,141]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-24 10:17:08,141]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-24 10:17:08,141]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-24 10:17:08,141]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-24 19:26:23,499]   INFO -  jetbrains.buildServer.STARTUP - Path to the startup configuration file: /Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-startup.properties 
+[2017-09-24 19:26:23,603]   INFO -  jetbrains.buildServer.STARTUP - 
+
+
+
+
+
+ 
+[2017-09-24 19:26:23,603]   INFO -  jetbrains.buildServer.STARTUP - =========================================================== 
+[2017-09-24 19:26:23,603]   INFO -  jetbrains.buildServer.STARTUP - Starting TeamCity server 
+[2017-09-24 19:26:24,004]   INFO -  jetbrains.buildServer.STARTUP - TeamCity version: 2017.1.4 (build 47070), data format version 812 
+[2017-09-24 19:26:24,012]   INFO -  jetbrains.buildServer.STARTUP - OS: Mac OS X, version 10.12.6, x86_64, Current user: nsharma, Time zone: EDT (UTC-04:00) 
+[2017-09-24 19:26:24,012]   INFO -  jetbrains.buildServer.STARTUP - Java: 1.8.0_121, Java HotSpot(TM) 64-Bit Server VM (25.121-b13, mixed mode), Java(TM) SE Runtime Environment (1.8.0_121-b13), Oracle Corporation; JVM parameters: -Djava.util.logging.config.file=/Users/nsharma/Downloads/TeamCity/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Xmx512m -Dteamcity.configuration.path=../conf/teamcity-startup.properties -Dlog4j.configuration=file:/Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-server-log4j.xml -Dteamcity_logs=../logs/ -Djava.awt.headless=true -Dtomcat.util.http.parser.HttpParser.requestTargetAllow={} -Djava.endorsed.dirs=/Users/nsharma/Downloads/TeamCity/endorsed -Dcatalina.base=/Users/nsharma/Downloads/TeamCity -Dcatalina.home=/Users/nsharma/Downloads/TeamCity -Djava.io.tmpdir=/Users/nsharma/Downloads/TeamCity/temp 
+[2017-09-24 19:26:24,013]   INFO -  jetbrains.buildServer.STARTUP - Garbage collection: PS Scavenge, PS MarkSweep 
+[2017-09-24 19:26:24,013]   INFO -  jetbrains.buildServer.STARTUP - Web server version: Apache Tomcat/7.0.79 
+[2017-09-24 19:26:29,015]   INFO -  jetbrains.buildServer.STARTUP - Server IP address: 192.168.1.6 
+[2017-09-24 19:26:29,017]   INFO -  jetbrains.buildServer.STARTUP - Web server ports: 8111 (protocol: org.apache.coyote.http11.Http11NioProtocol, scheme: http), 8105 (shutdown port) 
+[2017-09-24 19:26:29,017]   INFO -  jetbrains.buildServer.STARTUP - Context path: "/", servlet real path: "/Users/nsharma/Downloads/TeamCity/webapps/ROOT/" 
+[2017-09-24 19:26:29,017]   INFO -  jetbrains.buildServer.STARTUP - TeamCity server work mode: Main TeamCity Server 
+[2017-09-24 19:26:29,025]   INFO -  jetbrains.buildServer.STARTUP - Version file lock was successfully obtained: /Users/nsharma/Downloads/TeamCity/webapps/ROOT/BUILD_47070 
+[2017-09-24 19:26:29,042]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Looking for the TeamCity Data Directory 
+[2017-09-24 19:26:29,043]   INFO -  jetbrains.buildServer.STARTUP - The TeamCity Data Directory path is determined using the startup configuration from '/Users/nsharma/Downloads/TeamCity/conf/teamcity-startup.properties' file 
+[2017-09-24 19:26:29,050]   INFO -  jetbrains.buildServer.STARTUP - The TeamCity Data Directory "/Users/nsharma/.BuildServer" exists 
+[2017-09-24 19:26:29,052]   INFO -  jetbrains.buildServer.STARTUP - The main configuration file "/Users/nsharma/.BuildServer/config/main-config.xml" exists 
+[2017-09-24 19:26:29,052]   INFO -  jetbrains.buildServer.STARTUP - The database properties file "/Users/nsharma/.BuildServer/config/database.properties" exists 
+[2017-09-24 19:26:29,052]   INFO -  jetbrains.buildServer.STARTUP - The internal database data file "/Users/nsharma/.BuildServer/system/buildserver.data" exists 
+[2017-09-24 19:26:29,058]   INFO -  jetbrains.buildServer.STARTUP - Data Directory version: 812 
+[2017-09-24 19:26:29,058]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Looking for the database configuration 
+[2017-09-24 19:26:29,058]   INFO -  jetbrains.buildServer.STARTUP - Database properties file "/Users/nsharma/.BuildServer/config/database.properties" exists 
+[2017-09-24 19:26:29,059]   INFO -  jetbrains.buildServer.STARTUP - Internal HSQL database file (/Users/nsharma/.BuildServer/system/buildserver.data) exists, version: 2.3.2 
+[2017-09-24 19:26:29,059]   INFO -  jetbrains.buildServer.STARTUP - Database connection URL: jdbc:hsqldb:file:$TEAMCITY_SYSTEM_PATH/buildserver 
+[2017-09-24 19:26:29,059]   INFO -  jetbrains.buildServer.STARTUP - Using database connection URL from the database properties file. The URL is: jdbc:hsqldb:file:$TEAMCITY_SYSTEM_PATH/buildserver 
+[2017-09-24 19:26:29,060]   INFO -  jetbrains.buildServer.STARTUP - Using internal (HSQL) database 
+[2017-09-24 19:26:29,060]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Connecting to the database 
+[2017-09-24 19:26:31,718]   INFO -  jetbrains.buildServer.STARTUP - JDBC driver version: 2.3 (HSQL Database Engine Driver) 
+[2017-09-24 19:26:31,718]   INFO -  jetbrains.buildServer.STARTUP - Database system version: 2.3.2 (HSQL Database Engine) 
+[2017-09-24 19:26:31,718]   INFO -  jetbrains.buildServer.STARTUP - Connected to the database successfully 
+[2017-09-24 19:26:31,718]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Checking the database 
+[2017-09-24 19:26:31,766]   INFO -  jetbrains.buildServer.STARTUP - Using schema: PUBLIC 
+[2017-09-24 19:26:31,776]   INFO -  jetbrains.buildServer.STARTUP - Schema contains 137 tables. 
+[2017-09-24 19:26:31,779]   INFO -  jetbrains.buildServer.STARTUP - Database version is 812 
+[2017-09-24 19:26:31,849]   INFO -  jetbrains.buildServer.STARTUP - Current stage: Initializing TeamCity server components 
+[2017-09-24 19:26:32,022]   INFO -  jetbrains.buildServer.STARTUP - Starting the main application 
+[2017-09-24 19:26:32,261]   INFO - ebDispatcherApplicationContext - Refreshing jetbrains.buildServer.maintenance.WebDispatcherApplicationContext@182b5d9e: startup date [Sun Sep 24 19:26:32 EDT 2017]; root of context hierarchy 
+[2017-09-24 19:26:32,314]   INFO - MainTeamCityApplicationContext - Refreshing WebApplicationContext for namespace 'buildServer-servlet': startup date [Sun Sep 24 19:26:32 EDT 2017]; parent: jetbrains.buildServer.maintenance.WebDispatcherApplicationContext@182b5d9e 
+[2017-09-24 19:26:44,568]   INFO -   jetbrains.buildServer.SERVER - Loading history of VCS changes... 
+[2017-09-24 19:26:44,919]   INFO -   jetbrains.buildServer.SERVER - History of VCS changes loaded in 336ms (4 modifications since 2014-09-25 19:26:44.572, id range: 1 - 5) 
+[2017-09-24 19:26:44,957]   INFO -   jetbrains.buildServer.SERVER - Loading related configurations: 100% 
+[2017-09-24 19:26:44,958]   INFO -   jetbrains.buildServer.SERVER - Pre-fetching related configurations for VCS changes finished in 38ms 
+[2017-09-24 19:26:44,974]   INFO -   jetbrains.buildServer.SERVER - Done loading history of VCS changes: 4 changes loaded in 402ms 
+[2017-09-24 19:26:45,189]   INFO -   jetbrains.buildServer.SERVER - Build history cache size is set to 10000 entries 
+[2017-09-24 19:26:45,298]   INFO -   jetbrains.buildServer.SERVER - Loading test names index from database... 
+[2017-09-24 19:26:45,300]   INFO -   jetbrains.buildServer.SERVER - Finished loading test names index 
+[2017-09-24 19:26:45,619]   INFO -   jetbrains.buildServer.SERVER - Start initializing build durations cache... 
+[2017-09-24 19:26:45,679]   INFO -   jetbrains.buildServer.SERVER - Finished initializing build durations cache, time spent: 60 ms 
+[2017-09-24 19:26:47,509]   INFO -   jetbrains.buildServer.SERVER - Loading roles from the configuration file: /Users/nsharma/.BuildServer/config/roles-config.xml 
+[2017-09-24 19:26:49,299]   INFO -   jetbrains.buildServer.SERVER - Applying memory thresholds for Memory Usage Monitor: storing 100 last measurements; time between measurements: 3000ms. Thresholds: {TC_TOTAL_MEMORY_USAGE_KEY=90.0, PS Old Gen=90.0} 
+[2017-09-24 19:26:52,703]   INFO - til.ChildSpringContextLoader$1 - Refreshing jetbrains.buildServer.util.ChildSpringContextLoader$1@52e7dcb5: startup date [Sun Sep 24 19:26:52 EDT 2017]; parent: WebApplicationContext for namespace 'buildServer-servlet' 
+[2017-09-24 19:26:52,771]   INFO -  jetbrains.buildServer.STARTUP - TeamCity Spring context contains 1363 beans 
+[2017-09-24 19:26:53,476]   INFO -  jetbrains.buildServer.STARTUP - TeamCity Spring context created in: 21168 ms 
+[2017-09-24 19:26:53,604]   INFO - rver.plugins.PluginManagerImpl - =========================================================== 
+[2017-09-24 19:26:53,604]   INFO - rver.plugins.PluginManagerImpl - Plugins initialization started... 
+[2017-09-24 19:26:53,606]   INFO - rver.plugins.PluginManagerImpl - Scanning plugins folders 
+[2017-09-24 19:26:53,606]   INFO - .plugins.files.JarSearcherBase - Scanning plugin folder: /Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins 
+[2017-09-24 19:26:53,997]   INFO - .plugins.files.JarSearcherBase - Scanning plugin folder: /Users/nsharma/.BuildServer/plugins 
+[2017-09-24 19:26:54,018]   INFO - rver.plugins.PluginManagerImpl - Found 88 bundled plugins: [agent-system-info (ver:47070), agent.push (ver:47070), Ant (ver:47070), ant-net-tasks (ver:47070), Apache Ant (ver:47070), artifactsSizeStatistics (ver:47070), bugzilla (ver:47070), buildDurationStatisticsPlugin (ver:47070), changeViewers (ver:47070), clearcase (ver:47070), cloud-amazon (ver:47070), commandLineRunner (ver:47070), commit-status-publisher (ver:47070), configs-dsl (ver:47070), coverage (ver:47070), cvs (ver:47070), data-dir-browse (ver:47070), deploy-runner (ver:47070), dotnet-tools (ver:47070), dotNetRunners (ver:47070), Duplicator (ver:47070), eclipse-plugin-distributor (ver:47070), email (ver:47070), environment-fetcher (ver:47070), feed (ver:47070), file-content-replacer (ver:47070), flaky-test-detector (ver:47070), FxCop (ver:47070), gant-tool (ver:47070), GAntRunner (ver:47070), gradle-runner (ver:47070), idea-tool (ver:47070), Inspection (ver:47070), intellij-plugin-distributor (ver:47070), Ipr (ver:47070), jabber (ver:47070), Java Crashed detector (ver:47070), java-dowser (ver:47070), jetbrains.git (ver:47070), jira (ver:47070), jps-tool (ver:47070), jvm-update (ver:47070), ldap (ver:47070), Maven2 (ver:47070), mercurial (ver:47070), metarunner (ver:47070), nt-domain-login (ver:47070), nuget (ver:47070), perfmon (ver:47070), perforce (ver:47070), powershell-runner (ver:47070), priority-queue (ver:47070), queue-pauser (ver:47070), rake-runner (ver:47070), remoteAccess (ver:47070), reset-password (ver:47070), rest-api (ver:47070), rest-api-6.0 (ver:47070), rest-api-7.0 (ver:47070), rest-api-8.1 (ver:47070), rest-api-9.0 (ver:47070), rest-api-9.1 (ver:47070), rest-api-contrib (ver:47070), rest-api-contrib-9.0 (ver:47070), rest-api-contrib-9.1 (ver:47070), sbt-runner (ver:47070), searchBuildByNumber (ver:47070), ssh-manager (ver:47070), stacktraces (ver:47070), starteam (ver:47070), svn (ver:47070), swabra (ver:47070), TeamCity.BitBucketIssues (ver:47070), TeamCity.GitHubIssues (ver:47070), TeamCity.SharedResources (ver:47070), tfs (ver:47070), unified-ui (ver:47070), usage-statistics (ver:47070), vault-vcs (ver:47070), visualstudiotest (ver:47070), vs-addin-distributor (ver:47070), vsphere (ver:47070), vss (ver:47070), WindowsTray (ver:47070), WindowsTray-distributor (ver:47070), xcode-runner (ver:47070), xml-report-plugin (ver:47070), youtrack (ver:47070)] 
+[2017-09-24 19:26:54,170]   INFO - rver.plugins.PluginsCollection - Load shared classloader for 33 plugins [Ant, ant-net-tasks, Apache Ant, artifactsSizeStatistics, buildDurationStatisticsPlugin, changeViewers, clearcase, commandLineRunner, coverage, cvs, email, environment-fetcher, feed, gant-tool, GAntRunner, gradle-runner, intellij-plugin-distributor, Ipr, jabber, Java Crashed detector, jps-tool, ldap, perfmon, priority-queue, remoteAccess, sbt-runner, searchBuildByNumber, stacktraces, starteam, swabra, WindowsTray, xml-report-plugin, youtrack] 
+[2017-09-24 19:26:54,209]   INFO - rver.plugins.PluginsCollection - Load standalone classloaders for 55 plugins [agent-system-info, agent.push, bugzilla, cloud-amazon, commit-status-publisher, configs-dsl, data-dir-browse, deploy-runner, dotnet-tools, dotNetRunners, Duplicator, eclipse-plugin-distributor, file-content-replacer, flaky-test-detector, FxCop, idea-tool, Inspection, java-dowser, jetbrains.git, jira, jvm-update, Maven2, mercurial, metarunner, nt-domain-login, nuget, perforce, powershell-runner, queue-pauser, rake-runner, reset-password, rest-api, rest-api-6.0, rest-api-7.0, rest-api-8.1, rest-api-9.0, rest-api-9.1, rest-api-contrib, rest-api-contrib-9.0, rest-api-contrib-9.1, ssh-manager, svn, TeamCity.BitBucketIssues, TeamCity.GitHubIssues, TeamCity.SharedResources, tfs, unified-ui, usage-statistics, vault-vcs, visualstudiotest, vs-addin-distributor, vsphere, vss, WindowsTray-distributor, xcode-runner] 
+[2017-09-24 19:26:54,250]   INFO -   jetbrains.buildServer.SERVER - Start pre-compiling JSP files... 
+[2017-09-24 19:26:56,267]   INFO -   jetbrains.buildServer.SERVER - JSP pre-compilation finished, pre-compiled 200 files in 2010ms 
+[2017-09-24 19:27:00,800]   INFO - ServerDistributionTypeProvider - TeamCity distribution type: tar.gz 
+[2017-09-24 19:27:02,438]   INFO - e.RemoteMavenServerManagerImpl - Starting external maven service 
+[2017-09-24 19:27:12,902]   INFO - e.RemoteMavenServerManagerImpl - Remote server is connected. 
+[2017-09-24 19:27:14,647]   INFO - rver.plugins.PluginManagerImpl - Plugins initialization completed (88 plugins loaded): [agent-system-info (ver:47070), agent.push (ver:47070), Ant (ver:47070), ant-net-tasks (ver:47070), Apache Ant (ver:47070), artifactsSizeStatistics (ver:47070), bugzilla (ver:47070), buildDurationStatisticsPlugin (ver:47070), changeViewers (ver:47070), clearcase (ver:47070), cloud-amazon (ver:47070), commandLineRunner (ver:47070), commit-status-publisher (ver:47070), configs-dsl (ver:47070), coverage (ver:47070), cvs (ver:47070), data-dir-browse (ver:47070), deploy-runner (ver:47070), dotnet-tools (ver:47070), dotNetRunners (ver:47070), Duplicator (ver:47070), eclipse-plugin-distributor (ver:47070), email (ver:47070), environment-fetcher (ver:47070), feed (ver:47070), file-content-replacer (ver:47070), flaky-test-detector (ver:47070), FxCop (ver:47070), gant-tool (ver:47070), GAntRunner (ver:47070), gradle-runner (ver:47070), idea-tool (ver:47070), Inspection (ver:47070), intellij-plugin-distributor (ver:47070), Ipr (ver:47070), jabber (ver:47070), Java Crashed detector (ver:47070), java-dowser (ver:47070), jetbrains.git (ver:47070), jira (ver:47070), jps-tool (ver:47070), jvm-update (ver:47070), ldap (ver:47070), Maven2 (ver:47070), mercurial (ver:47070), metarunner (ver:47070), nt-domain-login (ver:47070), nuget (ver:47070), perfmon (ver:47070), perforce (ver:47070), powershell-runner (ver:47070), priority-queue (ver:47070), queue-pauser (ver:47070), rake-runner (ver:47070), remoteAccess (ver:47070), reset-password (ver:47070), rest-api (ver:47070), rest-api-6.0 (ver:47070), rest-api-7.0 (ver:47070), rest-api-8.1 (ver:47070), rest-api-9.0 (ver:47070), rest-api-9.1 (ver:47070), rest-api-contrib (ver:47070), rest-api-contrib-9.0 (ver:47070), rest-api-contrib-9.1 (ver:47070), sbt-runner (ver:47070), searchBuildByNumber (ver:47070), ssh-manager (ver:47070), stacktraces (ver:47070), starteam (ver:47070), svn (ver:47070), swabra (ver:47070), TeamCity.BitBucketIssues (ver:47070), TeamCity.GitHubIssues (ver:47070), TeamCity.SharedResources (ver:47070), tfs (ver:47070), unified-ui (ver:47070), usage-statistics (ver:47070), vault-vcs (ver:47070), visualstudiotest (ver:47070), vs-addin-distributor (ver:47070), vsphere (ver:47070), vss (ver:47070), WindowsTray (ver:47070), WindowsTray-distributor (ver:47070), xcode-runner (ver:47070), xml-report-plugin (ver:47070), youtrack (ver:47070)] 
+[2017-09-24 19:27:14,650]   INFO - rver.plugins.PluginManagerImpl - =========================================================== 
+[2017-09-24 19:27:14,650]   INFO -   jetbrains.buildServer.SERVER - TeamCity plugins loaded in: 21045 ms 
+[2017-09-24 19:27:16,522]   INFO -   jetbrains.buildServer.SERVER - Start loading server configuration... 
+[2017-09-24 19:27:16,684]   INFO -  jetbrains.buildServer.CLEANUP - Max cleanup duration is set to 0 seconds 
+[2017-09-24 19:27:16,686]   INFO -  jetbrains.buildServer.CLEANUP - Cleanup time has been set to 03:00:00 daily 
+[2017-09-24 19:27:16,687]   INFO -  jetbrains.buildServer.CLEANUP - Cleanup is enabled 
+[2017-09-24 19:27:16,699]   INFO -   jetbrains.buildServer.SERVER - Parsing 6 configuration files... 
+[2017-09-24 19:27:16,755]   INFO -   jetbrains.buildServer.SERVER - Loading data from parsed configuration files... 
+[2017-09-24 19:27:16,836]   INFO - r.configs.dsl.DslPluginManager - Plugin sources are packed in 62ms 
+[2017-09-24 19:27:17,405]   INFO -   jetbrains.buildServer.SERVER - Server configuration loaded in: 889 ms 
+[2017-09-24 19:27:20,609]   INFO -   jetbrains.buildServer.SERVER - TeamCity initialized, server UUID: e898a8c4-5d55-49e2-a0d5-da2b78cfbd5d, URL: http://localhost:8111 
+[2017-09-24 19:27:20,609]   INFO -   jetbrains.buildServer.SERVER - TeamCity is running in professional mode 
+[2017-09-24 19:27:20,610]   INFO - utors.DeferringExecutorService - 3 commands sent to execution 
+[2017-09-24 19:27:20,611]   INFO - utors.DeferringExecutorService - 3 commands sent to execution 
+[2017-09-24 19:27:20,611]   INFO - utors.DeferringExecutorService - 0 commands sent to execution 
+[2017-09-24 19:27:20,611]   INFO - utors.DeferringExecutorService - 0 commands sent to execution 
+[2017-09-24 19:27:20,611]   INFO - utors.DeferringExecutorService - 0 commands sent to execution 
+[2017-09-24 19:27:20,652]   INFO -   jetbrains.buildServer.SERVER - Start pre-fetching changes for 0 build configurations... 
+[2017-09-24 19:27:20,656]   INFO -   jetbrains.buildServer.SERVER - Done pre-fetching changes 
+[2017-09-24 19:27:20,656]   INFO -   jetbrains.buildServer.SERVER - Start calculating branches for 0 build configurations... 
+[2017-09-24 19:27:20,656]   INFO -   jetbrains.buildServer.SERVER - Done calculating branches 
+[2017-09-24 19:27:20,656]   INFO -   jetbrains.buildServer.SERVER - Start calculating status for 0 build configurations... 
+[2017-09-24 19:27:20,656]   INFO -   jetbrains.buildServer.SERVER - Done calculating status 
+[2017-09-24 19:27:20,656]   INFO -   jetbrains.buildServer.SERVER - Start prefetching build statistic metrics for 0 build configurations... 
+[2017-09-24 19:27:20,657]   INFO -   jetbrains.buildServer.SERVER - Done prefetching build statistic metrics 
+[2017-09-24 19:27:20,694]   INFO -   jetbrains.buildServer.SERVER - Super user authentication token: "3544700331160168575". To login as Super user use an empty username and this token as a password on the login page. 
+[2017-09-24 19:27:20,699]   INFO - .agent.AgentZipVersionProvider - Build agent distribution '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/update/buildAgent.zip' state initialized. Last modified: 06.09.2017 09:17:34, size: 18341181 
+[2017-09-24 19:27:20,701]   INFO -   jetbrains.buildServer.SERVER - Start loading test runs for investigations and mutes into cache... 
+[2017-09-24 19:27:20,723]   INFO -   jetbrains.buildServer.SERVER - Done loading test runs. Loaded 0 tests in 21ms, cache size: 0 
+[2017-09-24 19:27:20,751]   INFO -   jetbrains.buildServer.SERVER - Start loading "failed to start" build configuration errors in background 
+[2017-09-24 19:27:20,777]   INFO -   jetbrains.buildServer.SERVER - Done loading "failed to start" build configuration errors: loaded 0 problems 
+[2017-09-24 19:27:20,908]   INFO - .agent.AgentZipVersionProvider - Build agent distribution version is set to 47070, hash=SHA-125ygNXnaTT78gtfBl/iWg59L5QY= 
+[2017-09-24 19:27:24,093]   INFO - nt.AgentPluginsVersionProvider - State of agent plugin packages is initialized in 3178 ms: new plugin 'agentSystemInfo.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/agentSystemInfo/agent/agentSystemInfo.zip', hash: 'SHA-1pERGIvB3a95Zl1R91S3CfcomLy8='; new plugin 'amazonEC2.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/cloud-amazon/agent/amazonEC2.zip', hash: 'SHA-1oRyoka89cnINdiz27Jm0Wau3qeo='; new plugin 'ant-net-tasks.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant-net-tasks/agent/ant-net-tasks.zip', hash: 'SHA-1YM2Pr8gZnzayoeKjO3wiJjBwLFo='; new plugin 'ant.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant-tool/agent/ant.zip', hash: 'SHA-1O93swCSmjScY2huyhy+/hSvYRHc='; new plugin 'antPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant/agent/antPlugin.zip', hash: 'SHA-14a5eCJ4g2B1Qo06cuPOGTnqlHVU='; new plugin 'clearcase-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/clearcase/agent/clearcase-agent.zip', hash: 'SHA-1MJShZ3g8WOX89eerXtLfaRn60fg='; new plugin 'cloud-vmware-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/cloud-vmware/agent/cloud-vmware-agent.zip', hash: 'SHA-1udx2I3F3cWx6IuIwPQGAUz0iSKc='; new plugin 'commandLineRunner.jar' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/commandLineRunner/agent/commandLineRunner.jar', hash: 'SHA-1Lr0B2TkvbbuG16ekVKXX8v4oZDQ='; new plugin 'coveragePlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/coverage/agent/coveragePlugin.zip', hash: 'SHA-1tZHte50JaEhy4ZaoEfMRR8VwCeg='; new plugin 'crashDetector.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/crash-detector/agent/crashDetector.zip', hash: 'SHA-17IBtG09RayoRQrs/gv+Of984Hjw='; new plugin 'cvsAgent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/cvs/agent/cvsAgent.zip', hash: 'SHA-1wkA3bS+rHdyEo+FmkX272bCWpCE='; new plugin 'deploy-runner-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/deploy-runner/agent/deploy-runner-agent.zip', hash: 'SHA-1+K/dz5W2AIhqvGjTrsnd98v06fI='; new plugin 'dotCover.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/dotNetRunners/bundled-tools/dotCover.zip', hash: 'SHA-1HwuhlCexpf0NmTa9CUmBsqd9Rm8='; new plugin 'dotNetPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/dotNetRunners/agent/dotNetPlugin.zip', hash: 'SHA-1btE0ArffIo4oO6SKle3ZOYvyfOI='; new plugin 'dotNetRunners.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/dotNetRunners/agent/dotNetRunners.zip', hash: 'SHA-1EHsHmaIKmYqa90CYXShVw3klc6s='; new plugin 'dotnet-tools-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/dotnet-tools/agent/dotnet-tools-agent.zip', hash: 'SHA-1W0cmczbz5HBcrLs5vttx+W37bSk='; new plugin 'duplicatePlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Duplicator/agent/duplicatePlugin.zip', hash: 'SHA-1ce3Upe11b9eRXlTXS4Ud0Zgb4tg='; new plugin 'environment-fetcher-agent.jar' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/environment-fetcher/agent/environment-fetcher-agent.jar', hash: 'SHA-1djdoSvpCH+ObeD7bwkGR4Wgs3Nk='; new plugin 'file-content-replacer.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/file-content-replacer/agent/file-content-replacer.zip', hash: 'SHA-1WhFSLnYKFHM70KgFF5AzbB0bC1E='; new plugin 'fxcop.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/fxcop/agent/fxcop.zip', hash: 'SHA-1aDaBZ4iDu8iA0BAP2/JAHJxePpM='; new plugin 'gant.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/gant-tool/agent/gant.zip', hash: 'SHA-1DYHGYG/+1GPcHiA/yPq5rtEXd5A='; new plugin 'gantPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/gantRunner/agent/gantPlugin.zip', hash: 'SHA-1ef3lDLEJMiAJqorBPo4yJUm7MHg='; new plugin 'gradle-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/gradle/agent/gradle-runner.zip', hash: 'SHA-1JLAzvua+ZJgsHoRBKZwDrNROaVI='; new plugin 'idea-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ipr-runner/agent/idea-runner.zip', hash: 'SHA-1kRs9jZ0w8hM3N6VTxiR7wlIWjc0='; new plugin 'idea.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/idea-tool/bundled/idea.zip', hash: 'SHA-1uUXJNcaB+ZWTCrpAx1jTxjRzOPs='; new plugin 'inspectionPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/server-side-inspections/agent/inspectionPlugin.zip', hash: 'SHA-1CEqzD1Xhy7+2yH/TxdlE6fkgJ9k='; new plugin 'jacoco.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/coverage/agent/jacoco.zip', hash: 'SHA-1tv6VgBPKl6oQkvLQ/Vf/tHG9xyY='; new plugin 'java-dowser.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/java-dowser/agent/java-dowser.zip', hash: 'SHA-1j81rXBktoIjq9X1rCHk1AAWA9SY='; new plugin 'jetbrains.git.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/jetbrains.git/agent/jetbrains.git.zip', hash: 'SHA-1wOhvcwYsKiWPE0XqKJSTRZa2JPM='; new plugin 'jps.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/jps-tool/agent/jps.zip', hash: 'SHA-1r6PSRPzcNXinGSc6kNf3I0r3Ww4='; new plugin 'junitPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant/agent/junitPlugin.zip', hash: 'SHA-1DWv8eq02ekH4bmErjLrTzw50oB4='; new plugin 'jvm-update.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/jvm-update/agent/jvm-update.zip', hash: 'SHA-1xsmzoLPLqr9anC31gBHHFSZO3Ks='; new plugin 'maven.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven.zip', hash: 'SHA-1dQIgsnG4xrWSJxJ2nfp6aXYcvcc='; new plugin 'maven3.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven3.zip', hash: 'SHA-1VYrF/Z7amGwBDJtYtVMGEP1O5rY='; new plugin 'maven3_1.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven3_1.zip', hash: 'SHA-1MiZz/go2OIn/m/Z1suQ6Lweudd0='; new plugin 'maven3_2.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven3_2.zip', hash: 'SHA-1a6xZzSYczQeMgm8UIA+Yn4FITSU='; new plugin 'maven3_3.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/bundled-tools/maven3_3.zip', hash: 'SHA-1phhog5zxeHNvYjjLtr4b2FQ8asM='; new plugin 'mavenPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/Maven2/agent/mavenPlugin.zip', hash: 'SHA-1drjIeYhjOZsk2TwLmM3OxVVPQ4g='; new plugin 'mercurial.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/mercurial/agent/mercurial.zip', hash: 'SHA-1H2wCPUORRCX/7mM5RS631jzSgMM='; new plugin 'meta-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/meta-runner/agent/meta-runner.zip', hash: 'SHA-1wL8C7T5pJ2vYUWAwGFhdsko6OzU='; new plugin 'nuget-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/dotNetPackagesSupport/agent/nuget-agent.zip', hash: 'SHA-11C5ZVUCM/B166jvVNfC6XRaIKfw='; new plugin 'perfmon-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/perfmon/agent/perfmon-agent.zip', hash: 'SHA-1dCJ2/t2nLwtUwBSwOsMPKBgKuKI='; new plugin 'perforce-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/perforce/agent/perforce-agent.zip', hash: 'SHA-1h48m7BQ19N99ZQLoM2eoFBtQNDY='; new plugin 'powershell-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/powershell/agent/powershell-agent.zip', hash: 'SHA-18ZbM67BkmTHBKa1LA2X3rLDr4gE='; new plugin 'rake-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/rake-runner/agent/rake-runner.zip', hash: 'SHA-16UFft0xNIQiwR0dtrYKq0qAPJ1c='; new plugin 'remoteAccess.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/remoteAccess/agent/remoteAccess.zip', hash: 'SHA-1XD3EXWvOpMN43yaJpyyCh0YU12o='; new plugin 'sbt-runner-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/sbt-runner/agent/sbt-runner-agent.zip', hash: 'SHA-17pPoxbDNcBwOc3xR40X6Ph4Q0iU='; new plugin 'ssh-manager.jar' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ssh-manager/agent/ssh-manager.jar', hash: 'SHA-1J4bulyW3SZJvC8u17SkXLHf6GKA='; new plugin 'stacktracesPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/stacktraces/agent/stacktracesPlugin.zip', hash: 'SHA-16Q/ANnbKZHEAzLxr0HAEJ1PYzWA='; new plugin 'svnAgent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/svn/agent/svnAgent.zip', hash: 'SHA-17N8irEU6j/TVpC6WSZTd4QSUy7g='; new plugin 'swabra.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/swabra/agent/swabra.zip', hash: 'SHA-1f9KByEzIpQvd6Vby/50t0kkf+ww='; new plugin 'testNGPlugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/ant/agent/testNGPlugin.zip', hash: 'SHA-1xeC+FNCmDKq9pg3LLkDSk4b0uq0='; new plugin 'tfs-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/tfs/agent/tfs-agent.zip', hash: 'SHA-1snKJMnGnWEvt8gl+3Jd4AG2gTVE='; new plugin 'visualstudiotest-agent.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/visualstudiotest/agent/visualstudiotest-agent.zip', hash: 'SHA-1MNQT7OruQlDtlySCK1LpIx+ctO8='; new plugin 'xcode-runner.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/xcode-runner/agent/xcode-runner.zip', hash: 'SHA-1yj40nyhB/aY6IG+oo9nhGuVWZSw='; new plugin 'xml-report-plugin.zip' file: '/Users/nsharma/Downloads/TeamCity/webapps/ROOT/WEB-INF/plugins/.unpacked/xml-report-plugin/agent/xml-report-plugin.zip', hash: 'SHA-1GXh8/BIQrlGNkS9y7HJQkqUb8ZI=' 
+[2017-09-24 19:27:37,539]   INFO - r.configs.dsl.DslPluginManager - Plugins dsl compiled in 20699ms 
+[2017-09-24 19:27:37,580]   INFO - ority.PriorityClassManagerImpl - Loading priority classes from the configuration file: /Users/nsharma/.BuildServer/config/build-queue-priorities.xml 
+[2017-09-24 19:27:37,585]   INFO -   jetbrains.buildServer.SERVER - Ordering strategy changed to jetbrains.buildServer.serverSide.priority.BuildQueuePriorityOrdering 
+[2017-09-24 19:27:37,590]   INFO - verSide.impl.BuildServerRunner - Start daemons 
+[2017-09-24 19:27:37,592]   INFO - tbrains.buildServer.ACTIVITIES - Server Started 
+[2017-09-24 19:27:37,601]   INFO -  jetbrains.buildServer.STARTUP - Startup duration: 1m:13s 
+[2017-09-24 19:27:37,601]   INFO -  jetbrains.buildServer.STARTUP - Current stage: System is ready 
+[2017-09-24 19:27:39,697]   INFO -    jetbrains.buildServer.AGENT - Agent has been registered: "Default Agent" {id=1, protocol=unidirectional, host=127.0.0.1:9090, agentTypeId=1, pool=Default, registered since 2017-09-24 19:27:39.599}, not running a build 
+[2017-09-24 19:27:39,701]   INFO - ldServer.AGENT.PollingProtocol - Polling Agent session 'hcjgUUG...' was created, agent: "Default Agent" {id=1} 
+[2017-09-24 19:28:18,266]   INFO - rs.login.LoginSubmitController - Failed user login attempt for POST '/loginSubmit.html?username=nsharma&remember=true&_remember=&submitLogin=Log%20in&publicKey=00950377e88fb34a154da4b74f1b25b93b12c6b16f003bb5e0a94b85b6f7dc661d0e03df6cd41553dce7872f8a7c4504a3f4f57f36e5d5645ba7af992824964fba182ec681461f64b0aba966501d1e800a6f39bcfd240e8cad43ce2b371ab387e3cce1038fb1178ab8497b9532a768e8565d58b714150ebd3b52bb59786f8034f1&encryptedPassword=27d1b0c0539455af6a6acf653b4121d66d8302e5c8e13b16552f3e9faa80b783dd878cbf9e7219f97a4ee82e9476b27175d1df5b2bf9f6b39e20c0f63563e68bbd92cc819a1a16326c3a03f3f971879dcfdca0392b95c1457669e4fa5d9dbe3340c66ed7b800fd65b85ff816ba3fe2cb45a0f8023703908da697444594abe464', from client [0:0:0:0:0:0:0:1]:51117, no associated user: jetbrains.buildServer.serverSide.auth.AuthenticationFailedException: Incorrect username or password., see auth log for details 
+[2017-09-24 19:28:28,840]   INFO - rs.login.LoginSubmitController - Failed user login attempt for POST '/loginSubmit.html?username=nsharma&remember=true&_remember=&submitLogin=Log%20in&publicKey=00950377e88fb34a154da4b74f1b25b93b12c6b16f003bb5e0a94b85b6f7dc661d0e03df6cd41553dce7872f8a7c4504a3f4f57f36e5d5645ba7af992824964fba182ec681461f64b0aba966501d1e800a6f39bcfd240e8cad43ce2b371ab387e3cce1038fb1178ab8497b9532a768e8565d58b714150ebd3b52bb59786f8034f1&encryptedPassword=5190bbce28f8f94e5fa585350a4e829a2a53314bb7db8a172b9b1a4579b1ba0874cfa8185795e2bfcf9446ea233040008f8019746b4eebe4d55fc187189524cce29efe0132cf652fabe5f08d99be9263c1451e702c1da1b153811c8daa0adb3b0dba946922c844ae1244558a16875c5f9eac7eacaa6ac61901dc2fe9602a93b2', from client [0:0:0:0:0:0:0:1]:51117, no associated user: jetbrains.buildServer.serverSide.auth.AuthenticationFailedException: Incorrect username or password., see auth log for details 
+[2017-09-24 19:28:32,559]   INFO - rs.login.LoginSubmitController - Failed user login attempt for POST '/loginSubmit.html?username=nsharma&remember=true&_remember=&submitLogin=Log%20in&publicKey=00950377e88fb34a154da4b74f1b25b93b12c6b16f003bb5e0a94b85b6f7dc661d0e03df6cd41553dce7872f8a7c4504a3f4f57f36e5d5645ba7af992824964fba182ec681461f64b0aba966501d1e800a6f39bcfd240e8cad43ce2b371ab387e3cce1038fb1178ab8497b9532a768e8565d58b714150ebd3b52bb59786f8034f1&encryptedPassword=9318ec6084b50a5a7de47abaded771f1806c96572c11b6246f2b937f1cc98007b3e4cc591360275ee73532ccf482df7bf15a10e86442c461b6ef9774c6b1ed4793896c93cdbd936e69f89ccde759effa3c8b9361890b75bb68d39289405fb2993901f46f1768f8b4dbd1bba04d1506aedaab9f59278ca518fa9855439d7a7214', from client [0:0:0:0:0:0:0:1]:51117, no associated user: jetbrains.buildServer.serverSide.auth.AuthenticationFailedException: Incorrect username or password., see auth log for details 
+[2017-09-24 19:28:45,331]   INFO -   jetbrains.buildServer.SERVER - Start loading cache of build committers... 
+[2017-09-24 19:28:45,357]   INFO -   jetbrains.buildServer.SERVER - Done loading cache of build committers 
+[2017-09-24 19:28:45,516]   WARN - erver.ACTIVITIES.ResetPassword - Error while sending reset password email to 'navnidhi@gmail.com': jetbrains.buildServer.util.EmailException: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: mail, 25; timeout 60000;
+  nested exception is:
+	java.net.UnknownHostException: mail (enable debug to see stacktrace) 
+[2017-09-24 19:29:00,268]   INFO - rs.login.LoginSubmitController - Failed user login attempt for POST '/loginSubmit.html?username=navnidhi%40gmail.com&remember=true&_remember=&submitLogin=Log%20in&publicKey=00950377e88fb34a154da4b74f1b25b93b12c6b16f003bb5e0a94b85b6f7dc661d0e03df6cd41553dce7872f8a7c4504a3f4f57f36e5d5645ba7af992824964fba182ec681461f64b0aba966501d1e800a6f39bcfd240e8cad43ce2b371ab387e3cce1038fb1178ab8497b9532a768e8565d58b714150ebd3b52bb59786f8034f1&encryptedPassword=2ace001ae3e50b7f7a33ae568212bceb96875c9d5d5a6f21714d044f1ffb1d09b172e0c95dbfead06abea0ef5af88da39fc7d1a3977440632fb20e1171503a802550842cd66dad5266987a5a383ef1e4d36ce51929f5b5ca71defc0a4729765eff495b3304b87a65aae83b4fa88166ad3b2e2413d297540c33c35431a2e627c9', from client [0:0:0:0:0:0:0:1]:51117, no associated user: jetbrains.buildServer.serverSide.auth.AuthenticationFailedException: Incorrect username or password., see auth log for details 
+[2017-09-24 19:29:15,363]   INFO - rs.login.LoginSubmitController - Failed user login attempt for POST '/loginSubmit.html?username=nsharma&remember=true&_remember=&submitLogin=Log%20in&publicKey=00950377e88fb34a154da4b74f1b25b93b12c6b16f003bb5e0a94b85b6f7dc661d0e03df6cd41553dce7872f8a7c4504a3f4f57f36e5d5645ba7af992824964fba182ec681461f64b0aba966501d1e800a6f39bcfd240e8cad43ce2b371ab387e3cce1038fb1178ab8497b9532a768e8565d58b714150ebd3b52bb59786f8034f1&encryptedPassword=5448902688fd814da44d43d375ac49467ca0414d1204b3cd4433605f659cab70836337a7718515a812fa26d1b3f6e73defc461b9c8db8235da19cf5f702d919ca224b5cf61e60d8b43936240221215493df98f9cf0a79d00250c52bbd6df8c8d5d26b18975e0fe608ced59888eee610daa409bbdb03377cd9aff3ef8e23b79d5', from client [0:0:0:0:0:0:0:1]:51117, no associated user: jetbrains.buildServer.serverSide.auth.AuthenticationFailedException: Incorrect username or password., see auth log for details 
+[2017-09-24 19:29:17,569]   INFO - rs.login.LoginSubmitController - Failed user login attempt for POST '/loginSubmit.html?username=nsharma&remember=true&_remember=&submitLogin=Log%20in&publicKey=00950377e88fb34a154da4b74f1b25b93b12c6b16f003bb5e0a94b85b6f7dc661d0e03df6cd41553dce7872f8a7c4504a3f4f57f36e5d5645ba7af992824964fba182ec681461f64b0aba966501d1e800a6f39bcfd240e8cad43ce2b371ab387e3cce1038fb1178ab8497b9532a768e8565d58b714150ebd3b52bb59786f8034f1&encryptedPassword=6fe264c24f8e4028fc89024b46b8a3573dedf637106e1bb2330617eafad4b78487d50887e11e2d3ce32ff065269e449b348ab59a286ebf872ef3d62ff249b92e6ddbae92b77f29e3fd596479fe5de8bb4de8411ef17bdf32b1224be32e49ea15cd8ce36aee03a9ff90aab8d9824d3316fb467e6524d93261afe59e017821f8ec', from client [0:0:0:0:0:0:0:1]:51117, no associated user: jetbrains.buildServer.serverSide.auth.AuthenticationFailedException: Incorrect username or password., see auth log for details 
+[2017-09-24 19:29:38,712]   INFO - tbrains.buildServer.ACTIVITIES - New user created: 'navnidhi' {id=2} 
+[2017-09-24 19:41:24,651]   INFO - l.UsageStatisticsCollectorImpl - Starting usage statistics collection... 
+[2017-09-24 19:42:31,747]   INFO - l.UsageStatisticsCollectorImpl - Finish usage statistics collection, collected in 67092 ms 
+[2017-09-25 02:00:00,922]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-25 02:00:00,966]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-25 02:00:00,966]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-25 02:00:00,966]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-25 02:00:00,967]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-25 02:00:00,967]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-25 02:00:00,969]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-25 02:00:00,969]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-25 02:00:00,969]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-25 02:00:00,969]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-25 02:00:00,970]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-25 02:00:00,970]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-25 02:00:00,970]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-25 02:00:00,970]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-25 02:00:00,985]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-25 02:00:00,985]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-25 02:00:00,987]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-25 02:00:00,987]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-25 02:00:00,987]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-25 02:00:00,988]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 52ms 
+[2017-09-25 02:00:00,988]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-25 03:00:01,079]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-25 03:00:01,079]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-25 03:00:01,092]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-25 03:00:01,094]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-25 03:00:01,098]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-24 03:00:01.098 
+[2017-09-25 03:00:01,098]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-25 03:00:01,099]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-25 03:00:01,101]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-25 03:00:01,101]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-25 03:00:01,102]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-25 03:00:01,102]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-25 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-25 03:00:01,109]   INFO - ide.db.TeamCityDatabaseManager - Performing shutdown compact on HSQL database... 
+[2017-09-25 03:00:01,419]   INFO - ide.db.TeamCityDatabaseManager - HSQL database shutdown compact performed successfully. 
+[2017-09-25 03:00:01,466]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-25 03:00:01,486]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-25 03:00:01,486]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-25 03:00:01,492]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-25 03:00:01,492]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-25 03:00:01,492]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-25 03:00:01,494]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-25 03:00:01,494]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-25 03:00:01,494]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-25 03:00:01,494]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-25 03:00:01,496]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-25 03:00:01,499]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-25 03:00:01,499]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-25 03:00:01,505]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-25 03:00:01,506]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-25 03:00:01,516]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-25 03:00:01,516]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-25 03:00:01,518]   INFO - .projectSources.PatchCacheImpl - Cleaned 0 cached server-side patches of size 0 B in '/Users/nsharma/.BuildServer/system/caches/sources' directory 
+[2017-09-25 03:00:01,518]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-25 03:00:01,520]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-25 03:00:01,544]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-25 03:00:01,544]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-25 03:00:01,544]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-25 03:00:01,546]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-25 03:00:01,546]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-25 03:00:01,546]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-25 03:00:01,546]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-25 03:00:01,548]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-25 03:00:01,552]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-25 03:00:01,554]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-25 03:00:01,556]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-25 03:00:01,556]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-25 03:00:01,559]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-25 03:00:01,565]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-25 03:00:01,565]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-25 03:00:01,567]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-25 03:00:01,567]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 81ms 
+[2017-09-25 03:00:01,568]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-25 03:00:01,571]   INFO -   jetbrains.buildServer.SERVER - Build history cache size is set to 10000 entries 
+[2017-09-25 03:00:01,578]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 9ms 
+[2017-09-25 03:00:01,578]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-25 07:26:49,134]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-25 07:26:49,134]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-25 07:26:49,134]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-25 07:26:49,136]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-25 15:00:03,279]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-25 15:00:03,279]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-25 15:00:03,280]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-25 15:00:03,280]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-25 19:26:50,868]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-25 19:26:50,868]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-25 19:26:50,868]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-25 19:26:50,869]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-25 19:55:52,123]   INFO - l.UsageStatisticsCollectorImpl - Starting usage statistics collection... 
+[2017-09-25 19:56:58,509]   INFO - l.UsageStatisticsCollectorImpl - Finish usage statistics collection, collected in 66383 ms 
+[2017-09-26 02:00:03,438]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-26 02:00:03,493]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-26 02:00:03,493]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-26 02:00:03,493]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-26 02:00:03,494]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-26 02:00:03,494]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-26 02:00:03,496]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-26 02:00:03,496]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-26 02:00:03,496]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-26 02:00:03,496]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-26 02:00:03,497]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-26 02:00:03,497]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-26 02:00:03,498]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-26 02:00:03,498]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-26 02:00:03,500]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-26 02:00:03,500]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-26 02:00:03,501]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-26 02:00:03,501]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-26 02:00:03,502]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-26 02:00:03,502]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 57ms 
+[2017-09-26 02:00:03,502]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-26 03:00:04,521]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-26 03:00:04,521]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-26 03:00:04,521]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-26 03:00:04,521]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-26 03:00:04,522]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-25 03:00:04.522 
+[2017-09-26 03:00:04,522]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-26 03:00:04,522]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-26 03:00:04,523]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-26 03:00:04,523]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-26 03:00:04,523]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-26 03:00:04,523]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-26 03:00:04,524]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-26 03:00:04,526]   INFO - ide.db.TeamCityDatabaseManager - Performing shutdown compact on HSQL database... 
+[2017-09-26 03:00:04,730]   INFO - ide.db.TeamCityDatabaseManager - HSQL database shutdown compact performed successfully. 
+[2017-09-26 03:00:04,761]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-26 03:00:04,778]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-26 03:00:04,778]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-26 03:00:04,780]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-26 03:00:04,780]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-26 03:00:04,780]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-26 03:00:04,781]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-26 03:00:04,782]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-26 03:00:04,782]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-26 03:00:04,782]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-26 03:00:04,782]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-26 03:00:04,783]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-26 03:00:04,783]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-26 03:00:04,787]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-26 03:00:04,788]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-26 03:00:04,790]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-26 03:00:04,791]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-26 03:00:04,793]   INFO - .projectSources.PatchCacheImpl - Cleaned 0 cached server-side patches of size 0 B in '/Users/nsharma/.BuildServer/system/caches/sources' directory 
+[2017-09-26 03:00:04,793]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-26 03:00:04,793]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-26 03:00:04,798]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-26 03:00:04,798]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-26 03:00:04,800]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-26 03:00:04,800]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-26 03:00:04,800]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-26 03:00:04,800]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-26 03:00:04,802]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-26 03:00:04,802]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 03:00:04,802]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 03:00:04,802]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-26 03:00:04,803]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 03:00:04,803]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-26 03:00:04,803]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 03:00:04,804]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-26 03:00:04,804]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-26 03:00:04,805]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-26 03:00:04,807]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 28ms 
+[2017-09-26 03:00:04,808]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-26 03:00:04,809]   INFO -   jetbrains.buildServer.SERVER - Build history cache size is set to 10000 entries 
+[2017-09-26 03:00:04,824]   INFO -   jetbrains.buildServer.SERVER - Start loading cache of build committers... 
+[2017-09-26 03:00:04,824]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 15ms 
+[2017-09-26 03:00:04,824]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-26 03:00:04,839]   INFO -   jetbrains.buildServer.SERVER - Done loading cache of build committers 
+[2017-09-26 03:00:05,001]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 03:00:05,001]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 03:00:05,001]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 03:00:05,001]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 07:26:52,580]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 07:26:52,581]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 07:26:52,582]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 07:26:52,583]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 15:00:06,517]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 15:00:06,517]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 15:00:06,517]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 15:00:06,517]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 15:00:06,713]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 15:00:06,713]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 15:00:06,714]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 15:00:06,714]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 19:26:54,296]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 19:26:54,297]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 19:26:54,297]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 19:26:54,298]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 20:10:19,583]   INFO - l.UsageStatisticsCollectorImpl - Starting usage statistics collection... 
+[2017-09-26 20:11:26,014]   INFO - l.UsageStatisticsCollectorImpl - Finish usage statistics collection, collected in 66428 ms 
+[2017-09-27 02:00:03,434]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-27 02:00:03,483]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-27 02:00:03,483]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-27 02:00:03,483]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-27 02:00:03,484]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-27 02:00:03,484]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-27 02:00:03,485]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-27 02:00:03,485]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-27 02:00:03,486]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-27 02:00:03,486]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-27 02:00:03,486]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-27 02:00:03,486]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-27 02:00:03,487]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-27 02:00:03,487]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-27 02:00:03,488]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-27 02:00:03,488]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-27 02:00:03,490]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-27 02:00:03,490]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-27 02:00:03,490]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-27 02:00:03,491]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 50ms 
+[2017-09-27 02:00:03,491]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-27 03:00:07,949]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-27 03:00:07,949]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-27 03:00:07,949]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-27 03:00:07,951]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-27 03:00:07,951]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-26 03:00:07.951 
+[2017-09-27 03:00:07,951]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-27 03:00:07,951]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-27 03:00:07,952]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-27 03:00:07,952]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-27 03:00:07,952]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-27 03:00:07,952]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-27 03:00:07,953]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-27 03:00:07,955]   INFO - ide.db.TeamCityDatabaseManager - Performing shutdown compact on HSQL database... 
+[2017-09-27 03:00:08,145]   INFO - ide.db.TeamCityDatabaseManager - HSQL database shutdown compact performed successfully. 
+[2017-09-27 03:00:08,170]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-27 03:00:08,182]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-27 03:00:08,182]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-27 03:00:08,184]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-27 03:00:08,184]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-27 03:00:08,184]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-27 03:00:08,185]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-27 03:00:08,185]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-27 03:00:08,185]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-27 03:00:08,186]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-27 03:00:08,186]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-27 03:00:08,186]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-27 03:00:08,186]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-27 03:00:08,189]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-27 03:00:08,190]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-27 03:00:08,192]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-27 03:00:08,192]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-27 03:00:08,193]   INFO - .projectSources.PatchCacheImpl - Cleaned 0 cached server-side patches of size 0 B in '/Users/nsharma/.BuildServer/system/caches/sources' directory 
+[2017-09-27 03:00:08,193]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-27 03:00:08,193]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-27 03:00:08,200]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-27 03:00:08,201]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-27 03:00:08,202]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-27 03:00:08,202]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-27 03:00:08,202]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-27 03:00:08,203]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-27 03:00:08,203]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 03:00:08,203]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 03:00:08,205]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 03:00:08,206]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 03:00:08,206]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-27 03:00:08,207]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-27 03:00:08,207]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-27 03:00:08,208]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-27 03:00:08,208]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-27 03:00:08,208]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-27 03:00:08,208]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 26ms 
+[2017-09-27 03:00:08,209]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-27 03:00:08,209]   INFO -   jetbrains.buildServer.SERVER - Build history cache size is set to 10000 entries 
+[2017-09-27 03:00:08,210]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 1ms 
+[2017-09-27 03:00:08,210]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-27 03:00:08,245]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 03:00:08,245]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 03:00:08,245]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 03:00:08,245]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 03:00:08,440]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 03:00:08,441]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 03:00:08,441]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 03:00:08,441]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 07:26:56,012]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 07:26:56,012]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 07:26:56,012]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 07:26:56,014]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 15:00:09,902]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 15:00:09,902]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 15:00:09,902]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 15:00:09,904]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 15:00:09,947]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 15:00:09,947]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 15:00:09,947]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 15:00:09,948]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 15:00:10,141]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 15:00:10,141]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 15:00:10,141]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 15:00:10,141]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 19:26:57,716]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 19:26:57,716]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 19:26:57,716]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 19:26:57,716]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 20:24:47,024]   INFO - l.UsageStatisticsCollectorImpl - Starting usage statistics collection... 
+[2017-09-27 20:25:53,451]   INFO - l.UsageStatisticsCollectorImpl - Finish usage statistics collection, collected in 66424 ms 
+[2017-09-27 21:33:22,118]   INFO -  jetbrains.buildServer.STARTUP - Server shutdown event received 
+[2017-09-27 21:33:22,118]   INFO -  jetbrains.buildServer.STARTUP - Current stage: TeamCity server is shutting down 
+[2017-09-27 21:33:22,118]   INFO -  jetbrains.buildServer.STARTUP - Stopping the main application 
+[2017-09-27 21:33:22,221]   INFO -  jetbrains.buildServer.STARTUP - Destroying the main servlet 
+[2017-09-27 21:33:22,221]   INFO - MainTeamCityApplicationContext - Closing WebApplicationContext for namespace 'buildServer-servlet': startup date [Sun Sep 24 19:26:32 EDT 2017]; parent: jetbrains.buildServer.maintenance.WebDispatcherApplicationContext@182b5d9e 
+[2017-09-27 21:33:22,225]   INFO - til.ChildSpringContextLoader$1 - Closing jetbrains.buildServer.util.ChildSpringContextLoader$1@52e7dcb5: startup date [Sun Sep 24 19:26:52 EDT 2017]; parent: WebApplicationContext for namespace 'buildServer-servlet' 
+[2017-09-27 21:33:22,289]   INFO - tbrains.buildServer.ACTIVITIES - Shutdown Spring components 
+[2017-09-27 21:33:22,291]   INFO -   jetbrains.buildServer.SERVER - Start shutdown of the thread "Ping 1" 
+[2017-09-27 21:33:22,291]   INFO -   jetbrains.buildServer.SERVER - Start shutdown of the thread "Flush Queue 1" 
+[2017-09-27 21:33:22,291]   INFO -   jetbrains.buildServer.SERVER - Start shutdown of the thread "Vcs Monitor 1" 
+[2017-09-27 21:33:22,291]   INFO -   jetbrains.buildServer.SERVER - Start shutdown of the thread "Build Triggers Monitor 1" 
+[2017-09-27 21:33:22,291]   INFO -   jetbrains.buildServer.SERVER - Start shutdown of the thread "Ping 1" 
+[2017-09-27 21:33:22,307]   INFO -   jetbrains.buildServer.SERVER - Saving projects credentials on disk ... 
+[2017-09-27 21:33:22,308]   INFO -   jetbrains.buildServer.SERVER - Saving projects credentials on disk finished 
+[2017-09-27 21:33:22,308]   INFO - ojects.BackgroundPersisterImpl - Shutdown background persister 
+[2017-09-27 21:33:22,309]   INFO - ojects.BackgroundPersisterImpl - Background persister shutdown complete 
+[2017-09-27 21:33:22,317]   INFO - .index.BuildIndexer (metadata) - Background build indexer finished 
+[2017-09-27 21:33:22,439]   INFO - ld.index.BuildIndexer (search) - Background build indexer finished 
+[2017-09-27 21:33:22,462]   WARN - e.RemoteMavenServerManagerImpl - Exception while shutting down maven server: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused (Connection refused): java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused (Connection refused) (enable debug to see stacktrace) 
+[2017-09-27 21:33:22,462]   WARN - e.RemoteMavenServerManagerImpl - Trying force shutdown 
+[2017-09-27 21:33:22,469]   INFO - rShutdownProcessTerminatorImpl - Start killing all child processes. To disable it set 'teamcity.kill.child.processes.on.shutdown' JVM property to 'false' 
+[2017-09-27 21:33:22,471]   INFO - rocesses.ProcessTreeTerminator - Using jetbrains.buildServer.processes.ProcessTreeTerminatorMac 
+[2017-09-27 21:33:22,472]   INFO - .ProcessTreeTerminatorImplBase - Will use command 'sh -c echo $$ && ps awwxo pid,ppid,command'. 
+[2017-09-27 21:33:22,505]   INFO - .ProcessTreeTerminatorImplBase - Collecting processes from the current one, current process PID 6011 
+[2017-09-27 21:33:22,506]   INFO - .ProcessTreeTerminatorImplBase - No processes to kill 
+[2017-09-27 21:33:22,514]   WARN -   jetbrains.buildServer.SERVER - There are non daemon running threads. These threads can prevent server shutdown. Server thread dump has been saved to: /Users/nsharma/Downloads/TeamCity/logs/threadDumps-2017-09-27/2017-09-27_21.33.22-shutdown.txt 
+[2017-09-27 21:33:22,514]   INFO - tbrains.buildServer.ACTIVITIES - Spring components are shut down 
+[2017-09-27 21:33:22,514]   INFO -  jetbrains.buildServer.STARTUP - The main servlet destroyed 
+[2017-09-27 21:33:22,517]   INFO - ide.db.TeamCityDatabaseManager - Performing shutdown on HSQL database... 
+[2017-09-27 21:33:22,631]   INFO - ide.db.TeamCityDatabaseManager - HSQL database shutdown performed successfully. 
+[2017-09-27 21:33:22,633]   INFO -  jetbrains.buildServer.STARTUP - Version file lock was released: /Users/nsharma/Downloads/TeamCity/webapps/ROOT/BUILD_47070 
+[2017-09-27 21:33:22,633]   INFO -  jetbrains.buildServer.STARTUP - Server shutdown complete 

@@ -1,0 +1,107 @@
+.inplaceHealthStatusItem {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px dotted #CCC;
+  clear: both;
+}
+
+i.itemSeverity {
+  color: #0085FF;
+  margin: auto;
+}
+
+i.itemSeverity.tc-icon {
+  margin-left: 0.3em;
+}
+
+i.itemSeverity.icon-info, i.itemSeverity.icon-lightbulb {
+  width: 1em;
+}
+
+.inplaceHealthStatusItem i.itemSeverity {
+  display: block;
+  float: left;
+  clear: both;
+  width: 1.5em;
+
+  margin-top: 3px; /* Align icon with the following text */
+}
+
+.inplaceHealthStatusItem.last {
+  border-bottom: none;
+}
+
+.inplaceItemsList + .viewAll {
+  background-color: #F6F6F6;
+  padding: 5px 5px 5px 8px;
+  border-top: 1px solid #D6D6D6;
+}
+
+.inplaceHealthStatusItem .hideLink {
+  float: right;
+  margin-left: 30px;
+}
+
+.suggestionItem .suggestionAction {
+  margin-top: .5em;
+}
+
+
+/* health icons */
+
+.healthItemIndicator {
+  padding: 2px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.healthItemIndicator > span.error, .healthItemIndicator > span.warning, .healthItemIndicator > span.info {
+  padding-right: 6px;
+}
+
+.healthItemIndicatorContainer span.error {
+  display: inline;
+  margin-left: 0;
+}
+
+.healthItemIndicatorContainer span.warning {
+  display: inline;
+  margin-left: 0;
+  color: #ff8c00;
+}
+
+.healthItemIndicatorContainer span.info {
+  display: inline;
+  margin-left: 0;
+  color: #1564c2;
+}
+
+.healthItemIndicatorContainer {
+  display: inline;
+}
+
+.breadcrumbHealthIndicators {
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#restPageTitle .breadcrumbHealthIndicators{
+  display: inline-block;
+  padding: 0;
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+#restPageTitle .healthItemIndicatorContainer{
+  display: inline-block;
+  padding: 0;
+}
+
+li.breadcrumbHealthIndicators .healthItemIndicator {
+  font-size: 14px;
+  line-height: 14px;
+  vertical-align: text-bottom;
+}

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+  <description>TeamCity authorization functions library</description>
+  <display-name>TeamCity authorization functions</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>afn</short-name>
+  <uri>/WEB-INF/functions/authz</uri>
+
+  <function>
+    <description>
+      Returns true if given permission is granted to the currently logged in user for all projects.
+    </description>
+    <name>permissionGrantedGlobally</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean permissionGrantedGlobally(java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if given permission is granted to the currently logged in user for specified project.
+    </description>
+    <name>permissionGrantedForProject</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean permissionGrantedForProject(jetbrains.buildServer.serverSide.SProject,java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if given permission is granted to the currently logged in user for project with specified id.
+    </description>
+    <name>permissionGrantedForProjectWithId</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean permissionGrantedForProjectWithId(java.lang.String,java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if given permission is granted to the currently logged in user for any project.
+    </description>
+    <name>permissionGrantedForAnyProject</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean permissionGrantedForAnyProject(java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if given permission is granted to the currently logged in user for specified build configuration.
+    </description>
+    <name>permissionGrantedForBuildType</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean permissionGrantedForBuildType(jetbrains.buildServer.serverSide.SBuildType,java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if given permission is granted to the currently logged in user for specified VCS modification.
+    </description>
+    <name>permissionGrantedForModification</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean permissionGrantedForModification(jetbrains.buildServer.vcs.SVcsModification,java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if currently logged in user has view file content permission granted for specified VCS modification or any of its duplicates
+    </description>
+    <name>hasFileContentAccess</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean hasFileContentAccess(jetbrains.buildServer.vcs.SVcsModification)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if given permission is granted to the currently logged in user for specified build.
+    </description>
+    <name>permissionGrantedForBuild</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean permissionGrantedForBuild(jetbrains.buildServer.serverSide.SBuild,java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true administration space is available for the currently logged in user.
+    </description>
+    <name>adminSpaceAvailable</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean adminSpaceAvailable()</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if user &amp; group management interfaces are available.
+    </description>
+    <name>userManagementAvailable</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean userManagementAvailable()</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if group management interface are available.
+    </description>
+    <name>groupManagementAvailable</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean groupManagementAvailable()</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if edit group page is available.
+    </description>
+    <name>canEditGroup</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean canEditGroup(jetbrains.buildServer.groups.SUserGroup)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if edit VCS root page is available.
+    </description>
+    <name>canEditVcsRoot</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean canEditVcsRoot(jetbrains.buildServer.vcs.SVcsRoot)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if action to stop build is available.
+    </description>
+    <name>canStopBuild</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean canStopBuild(jetbrains.buildServer.serverSide.SBuild)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if action to remove build is available.
+    </description>
+    <name>canRemoveBuild</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean canRemoveBuild(jetbrains.buildServer.serverSide.SBuild)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if current user can edit VCS change description.
+    </description>
+    <name>canEditVcsChange</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean canEditVcsChange(jetbrains.buildServer.vcs.SVcsModification)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if current authenticated user is a system admin.
+    </description>
+    <name>isSystemAdmin</name>
+    <function-class>jetbrains.buildServer.web.functions.auth.AuthorizationFunctions</function-class>
+    <function-signature>boolean isSystemAdmin()</function-signature>
+  </function>
+</taglib>

@@ -1,0 +1,21 @@
+<%@ include file="/include-internal.jsp"%>
+<%--@elvariable id="buildTypeId" type="java.lang.String"--%>
+<%--@elvariable id="flakyBuildTypes" type="java.util.Map<java.lang.String, jetbrains.buildServer.serverSide.SBuildType>"--%>
+<c:set var="sBuildType" value="${flakyBuildTypes[buildTypeId]}"/>
+<%--@elvariable id="sBuildType" type="jetbrains.buildServer.serverSide.SBuildType"--%>
+<c:choose>
+
+  <c:when test="${not empty sBuildType}">
+    <bs:buildTypeLinkFull buildType="${sBuildType}"
+                          dontShowProjectName="${true}"
+                          popupMode="${true}"
+                          popupNoProject="${true}"/>
+  </c:when>
+
+  <c:otherwise>
+    <%-- Configuration is inaccessible (was removed or insufficient permissions) --%>
+    <c:set var="buildTypeIdPopup"><bs:tooltipAttrs text="id = ${buildTypeId}"/></c:set>
+    <span class="inaccessible" ${buildTypeIdPopup}>an inaccessible build configuration</span>
+  </c:otherwise>
+
+</c:choose>

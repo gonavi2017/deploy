@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="constructor"
+    >
+
+  <bean class="jetbrains.buildServer.diagnostic.ThreadStatCleaner"/>
+
+  <bean class="jetbrains.buildServer.diagnostic.web.ThreadDumpsController"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.NodeDiagnosticsController"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.NodeThreadDumpController"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.NodeStatisticDataController"/>
+  <bean class="jetbrains.buildServer.diagnostic.CPUUsageStatisticDataProvider"/>
+  <bean class="jetbrains.buildServer.diagnostic.MemoryUsageStatisticDataProvider"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.DiagnosticsAdminPage"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.DiagnosticThreadDumpExtension"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.DiagnosticVcsStatusExtension"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.DiagnosticBackgroundPersistExtension"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.DiagnosticPropertiesExtension"/>
+
+  <bean class="jetbrains.buildServer.diagnostic.web.DiagnosticServerLogsController"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.DiagnosticLog4jConfigController"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.ThreadDumpsAnalyzerExtension"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.WebSocketDiagnosticController"/>
+
+  <bean class="jetbrains.buildServer.diagnostic.web.DiagnosticFilterConfigurator"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.ThreadStatPersister"/>
+
+  <bean class="jetbrains.buildServer.diagnostic.web.VarsController"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.ResetCacheController"/>
+
+  <bean class="jetbrains.buildServer.diagnostic.web.MemoryProblemsPageExtension"/>
+
+  <bean class="jetbrains.buildServer.diagnostic.web.RequestStatExtention"/>
+  <bean class="jetbrains.buildServer.diagnostic.web.ThreadStatExtension"/>
+</beans>

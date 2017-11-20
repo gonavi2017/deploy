@@ -1,0 +1,32 @@
+div.metaRunnersSettings td .smallNote {
+  margin-left: 0;
+}
+
+#metaRunnersListTable th.runnerId {
+  width: 25%;
+}
+#metaRunnersListTable th.runnerName {
+  width: 25%;
+}
+
+#metaRunnersListTable td.runnerMisc {
+  width: auto;
+}
+
+#metaRunnersListTable td.runnerActions {
+  width: 3em;
+  text-align: center;
+  padding: .5em;
+}
+
+#metaRunnersListTable td.value div.usage {
+  font-weight: bold;
+}
+
+#inlineMetaRunnerDialog {
+  width: 47em;
+}
+
+#inlineMetaRunnerDialog table.runnerFormTable label {
+  width: 13em;
+}

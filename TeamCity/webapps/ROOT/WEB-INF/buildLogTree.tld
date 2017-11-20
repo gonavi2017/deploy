@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+  <tlib-version>1.0</tlib-version>
+  <short-name>Build Log TagLob</short-name>
+  <uri>http://jetbrains.com</uri>
+  <tag>
+    <name>buildLogTreeTag</name>
+    <tag-class>jetbrains.buildServer.controllers.viewLog.tree.BuildLogTreeTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <name>incremental</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>sizeLimit</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>hideBlocks</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>baseClasses</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>consoleStyle</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>filter</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>expand</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>id</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>state</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>baseLevel</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>messagesIterator</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>build</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>additionalSizeWarningArg</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>beginningSkipped</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>

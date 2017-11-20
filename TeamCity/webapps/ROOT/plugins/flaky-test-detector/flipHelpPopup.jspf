@@ -1,0 +1,18 @@
+<%@ include file="/include-internal.jsp"%>
+
+<c:set var="flipHelpPopup">
+  <bs:tooltipAttrs width="25em">
+    <jsp:attribute name="text">
+      <p><b>Flip</b> is a test status change &mdash; either from <i>OK</i> to
+        <i>Failure</i>, or vice versa.</p>
+
+      <p><b>Flip Rate</b> is the ratio of such "flips" to the invocation count
+        of a given test, measured per agent, per build configuration, or over a
+        certain time period.</p>
+
+      <p>A test which constantly fails, while having a 100% <i>failure rate</i>,
+        will have its <i>flip rate</i> close to zero; a test which "flips" each
+        time it is invoked will have the <i>flip rate</i> close to 100%.</p>
+    </jsp:attribute>
+  </bs:tooltipAttrs>
+</c:set>

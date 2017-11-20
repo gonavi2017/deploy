@@ -1,0 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"
+%><%@ taglib prefix="bs" tagdir="/WEB-INF/tags"
+%><%@ attribute name="buildType" required="true" type="jetbrains.buildServer.serverSide.SBuildType"
+%><%@ attribute name="forTooltip" type="java.lang.Boolean" required="false"
+%><c:set var="pauseComment" value="${buildType.pauseComment}"
+/><c:if test="${forTooltip}"><bs:_pauseInfo buildType="${buildType}"
+  /></c:if><c:if test="${pauseComment != null}"
+   ><bs:_commentInfo comment="${pauseComment}"
+  /><bs:_commentText comment="${pauseComment}" forTooltip="${forTooltip}"
+/></c:if>

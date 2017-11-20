@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="projectFeature" type="IssueTracker" generateDslJar="true" applicable="params['type'] == 'bugzilla'">
+  <class name="BugzillaIssueTracker">
+    <description>
+      Project feature enabling integration with [Bugzilla](https://confluence.jetbrains.com/display/TCD10/Bugzilla) issue tracker
+    </description>
+  </class>
+  <init>
+    <param name="type" value="bugzilla" />
+  </init>
+  <function name="bugzilla">
+    <description>
+      Enables integration with [Bugzilla](https://confluence.jetbrains.com/display/TCD10/Bugzilla) issue tracker
+      @see BugzillaIssueTracker
+    </description>
+  </function>
+  <params>
+    <param name="name" dslName="displayName">
+      <description>
+        Issue tracker integration display name
+      </description>
+    </param>
+    <param name="host">
+      <description>
+        Bugzilla server URL
+      </description>
+    </param>
+    <param name="username" dslName="userName">
+      <description>
+        A username for Bugzilla connection
+      </description>
+    </param>
+    <param name="secure:password" dslName="password">
+      <description>
+        A password for Bugzilla connection
+      </description>
+    </param>
+    <param name="pattern" dslName="issueIdPattern">
+      <description>
+        A [java regular expression](http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html) to find the Bugzilla issue ID
+        in a commit message
+      </description>
+    </param>
+  </params>
+</dsl-extension>

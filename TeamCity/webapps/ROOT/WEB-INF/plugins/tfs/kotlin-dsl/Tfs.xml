@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="vcs" type="tfs" generateDslJar="true">
+  <class name="TfsVcsRoot">
+    <description>
+      TFS [VCS root](https://confluence.jetbrains.com/display/TCDL/Team+Foundation+Server)
+    </description>
+  </class>
+  <params>
+    <param name="tfs-url" dslName="url">
+      <description>
+        Team Foundation Server URL in the following format:
+        * TFS 2010+: http{s}://{TFS Server}:{Port}/tfs/{Project Collection Name}
+        * TFS 2005/2008: http{s}://{TFS Server}:{Port}
+        * Visual Studio Team Services: https://{accountname}.visualstudio.com
+      </description>
+    </param>
+    <param name="tfs-root" dslName="root">
+      <description>
+        TFS path to checkout. Format: $/path.
+      </description>
+    </param>
+    <param name="tfs-username" dslName="userName">
+      <description>
+        A username for TFS connection
+      </description>
+    </param>
+    <param name="secure:tfs-password" dslName="password">
+      <description>
+        A password for TFS connection
+      </description>
+    </param>
+    <param name="tfs-force-get" dslName="forceOverwrite" type="boolean" trueValue="true" falseValue="">
+      <description>
+        When set to true, TeamCity will call TFS to update workspace rewriting all files
+      </description>
+    </param>
+  </params>
+</dsl-extension>

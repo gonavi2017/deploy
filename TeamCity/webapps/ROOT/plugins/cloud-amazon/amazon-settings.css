@@ -1,0 +1,35 @@
+.runnerFormTable.innerTable,
+.runnerFormTable.innerTable td,
+.runnerFormTable.innerTable th {
+  border: none;
+}
+
+.innerTable,
+.innerTable td,
+.innerTable th {
+  border: none;
+}
+
+.AmazonImageDialog{
+  width:570px;
+}
+
+.RemoveImageDialog{
+  width:500px;
+}
+
+.buttonsWrapper {
+  margin-top: 1em;
+}
+
+.buttonsWrapper .error {
+  margin-left: 0;
+}
+
+.imagesTableWrapper {
+  margin-bottom: 0.5em;
+}
+
+.agent-name-prefix{
+  font-size:11px;
+}

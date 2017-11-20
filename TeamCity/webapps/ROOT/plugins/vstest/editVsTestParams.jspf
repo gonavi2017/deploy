@@ -1,0 +1,59 @@
+<tr class="js_testsetting VSTest advancedSetting">
+  <th><label for="${platform}">Target platform:</label></th>
+  <td>
+    <props:selectProperty name="${platform}" enableFilter="true" className="mediumField">
+      <c:forEach var="p" items="${supportBean.supportedRunPlatforms}">
+        <props:option value="${p.value}"><c:out value="${p.description}"/></props:option>
+      </c:forEach>
+    </props:selectProperty>
+    <span class="smallNote" id="x64Note">Using <strong>x64</strong> target platform will force vstest.console process to be run in <strong>isolated</strong> mode.</span>
+  </td>
+</tr>
+
+<tr class="js_testsetting VSTest advancedSetting">
+  <th><label for="${framework}">Framework:</label></th>
+  <td>
+    <props:selectProperty name="${framework}" enableFilter="true" className="mediumField">
+      <c:forEach var="item" items="${supportBean.frameworks}">
+        <props:option value="${item}"><c:out value="${item}"/></props:option>
+      </c:forEach>
+    </props:selectProperty>
+    <span class="smallNote">Target .NET Framework version to be used for test execution.</span>
+  </td>
+</tr>
+
+<tr class="js_testsetting VSTest advancedSetting">
+  <th><label for="${testNames}">Test names: <bs:help file="Visual+Studio+Tests" anchor="VSTestSettings"/></label></th>
+  <td>
+    <props:multilineProperty expanded="true" name="${testNames}" className="longField"
+                             note="Newline-separated list of test names"
+                             rows="3" cols="49" linkTitle="Edit test names"/>
+  </td>
+</tr>
+
+<tr class="js_testsetting VSTest advancedSetting">
+  <th><label for="${testCaseFilter}">Test case filter: <bs:help file="Visual+Studio+Tests" anchor="VSTestSettings"/></label></th>
+  <td>
+    <props:textProperty name="${testCaseFilter}" className="longField" />
+    <span class="error" id="error_${testCaseFilter}"></span>
+  </td>
+</tr>
+
+
+<tr class="js_testsetting VSTest advancedSetting">
+  <th><label for="${inIsolation}">Run in isolation:</label></th>
+  <td>
+    <props:checkboxProperty name="${inIsolation}"/>
+    <label for="${inIsolation}">Run the tests in an isolated process</label>
+    <span class="error" id="error_${inIsolation}"></span>
+  </td>
+</tr>
+
+<tr class="js_testsetting VSTest advancedSetting">
+  <th><label for="${detectTeamCityLogger}">Use real-time test reporting: <bs:help file="Visual+Studio+Tests" anchor="Customtestlogger"/></label></th>
+  <td>
+    <props:checkboxProperty name="${detectTeamCityLogger}"/>
+    <label for="${detectTeamCityLogger}">Use custom TeamCity test logger for real-time reporting</label>
+    <span class="error" id="error_${detectTeamCityLogger}"></span>
+  </td>
+</tr>

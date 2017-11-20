@@ -1,0 +1,10 @@
+#ldapSectionContainer .attentionComment {
+  position: relative;
+  padding-left: 2em;
+}
+
+#ldapSectionContainer .attentionComment:before {
+  position: absolute;
+  top: 0.65em;
+  left: 8px;
+}

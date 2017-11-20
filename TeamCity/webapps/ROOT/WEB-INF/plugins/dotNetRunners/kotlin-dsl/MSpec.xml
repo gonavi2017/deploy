@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="jetbrains.mspec" generateDslJar="true">
+  <class name="MSpecStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/MSpec) running [MSpec](https://github.com/machine/machine.specifications) tests
+    </description>
+  </class>
+  <init>
+    <param name="dotNetTestRunner.Type" value="MSpec" />
+  </init>
+  <function name="mspec">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/MSpec) running [MSpec](https://github.com/machine/machine.specifications) tests
+      @see MSpecStep
+    </description>
+  </function>
+  <params>
+    <param name="mspec_path" dslName="mspecPath">
+      <description>
+        A path to mspec.exe
+      </description>
+    </param>
+    <param name="mspec_bit" dslName="platform" type="Platform">
+      A desired execution mode on a x64 machine
+      @see Platform
+    </param>
+    <param name="mspec_runtime_version" dslName="runtimeVersion" type="RuntimeVersion">
+      <description>
+        A desired .NET Framework version
+        @see RuntimeVersion
+      </description>
+    </param>
+    <param name="mspec_files_include" dslName="includeTests">
+      <description>
+        Comma- or newline-separated list of .NET assemblies where the MSpec tests are specified
+        relative to the checkout directory. Wildcards are supported.
+      </description>
+    </param>
+    <param name="mspec_files_exclude" dslName="excludeTests">
+      <description>
+        Comma- or newline-separated list of .NET assemblies which should be excluded
+        from the list of found assemblies to test.
+      </description>
+    </param>
+    <param name="mspec_spec_include" dslName="includeSpecs">
+      <description>
+        Comma- or newline-separated list of specifications to be executed.
+      </description>
+    </param>
+    <param name="mspec_spec_exclude" dslName="excludeSpecs">
+      <description>
+        Comma- or newline-separated list of specifications to be excluded.
+      </description>
+    </param>
+    <param name="mspec_additional_commandline" dslName="args" />
+  </params>
+  <types>
+    <enum name="Platform">
+      <description>Execution mode on a x64 machine</description>
+      <option name="MSIL" value="MSIL"/>
+      <option name="x86" value="x86"/>
+      <option name="x64" value="x64"/>
+    </enum>
+    <enum name="RuntimeVersion">
+      <description>.NET Framework version</description>
+      <option name="AUTO" value="auto"/>
+      <option name="v2_0" value="v2.0"/>
+      <option name="v4_0" value="v4.0"/>
+    </enum>
+  </types>
+</dsl-extension>

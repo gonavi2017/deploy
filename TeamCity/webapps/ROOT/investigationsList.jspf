@@ -1,0 +1,37 @@
+<bs:refreshable containerId="responsibilitiesTable" pageUrl="${url}">
+  <c:if test="${empty param['projectId']}">
+    <div>
+      <profile:booleanPropertyCheckbox propertyKey="investigations.hideFixed" progress="hideFixed_progress"
+                                       labelText="Hide problems marked as fixed"
+                                       afterComplete="if($('responsibilitiesTable')) $('responsibilitiesTable').refresh('hideFixed_progress');"/>
+      <forms:saving id="hideFixed_progress" className="progressRingInline" savingTitle="Refreshing list of investigations"/>
+    </div>
+  </c:if>
+  <c:set var="buildTypes" value="${bean.buildTypes}"/>
+  <c:if test="${bean.noData}"><p>You have no active investigations.</p></c:if>
+  <c:if test="${not empty buildTypes}">
+    <c:set var="title"><span class="icon icon16 bp taken"></span> Build configuration investigations</c:set>
+    <bs:_collapsibleBlock title="${title}" id="buildConfInvestigations" contentClass="buildTypesRespTableContainer">
+      <resp:buildTypesRespTable buildTypes="${buildTypes}" project="${project}"/>
+    </bs:_collapsibleBlock>
+  </c:if>
+  <c:if test="${bean.hasTestInvestigations}">
+    <c:set var="title"><span class="icon icon16 bp taken"></span> Test investigations</c:set>
+    <bs:_collapsibleBlock title="${title}" id="testsInvestigations">
+      <c:set var="groupedTestsBean" value="${bean.testGroup}"/>
+      <c:if test="${groupedTestsBean.testsNumber > 0}">
+        <div class="investTests">
+          <resp:testsResponsibilityTable groupedTestsBean="${groupedTestsBean}"
+                                         showFullProjectName="${empty param['projectId']}"
+                                         id="investigations_tests"/>
+        </div>
+      </c:if>
+    </bs:_collapsibleBlock>
+  </c:if>
+
+  <c:if test="${bean.hasBuildProblemInvestigations}"><problems:buildProblemInvestigationList projectBuildProblemsBean="${bean.buildProblemsBean}"/></c:if>
+
+  <script type="text/javascript">
+    $j(".investigationDetails").installEllipsis();
+  </script>
+</bs:refreshable>

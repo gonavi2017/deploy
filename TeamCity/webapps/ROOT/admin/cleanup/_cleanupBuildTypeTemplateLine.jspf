@@ -1,0 +1,36 @@
+<tr>
+
+  <%@ include file="_cleanupProjectCell.jspf" %>
+
+  <td class="buildType">
+    <admin:templateUsageInfo template="${template}"/>
+    <admin:editTemplateLink templateId="${template.externalId}" cameFromUrl="${pageUrl}"><c:out value="${template.name}"/></admin:editTemplateLink>
+  </td>
+  <c:set var="onclick">
+    <c:set var="ownCleanupPolicies" value="${template.ownCleanupPolicies}"/>
+    <c:set var="inheritedCleanupPolicies" value="${template.inheritedCleanupPolicies}"/>
+    <c:set var="inheritedOptions" value="${template.inheritedCleanupOptions}"/>
+    <c:set var="ownOptions" value="${template.ownCleanupOptions}"/>
+
+    BS.CleanupPolicyDialog.showForBuildType('${template.id}', 'Edit Clean-up Rules for template <bs:escapeForJs text="${template.name}" forHTMLAttribute="true"/>',
+    { <%@ include file="_cleanupPoliciesJson.jspf" %> },
+    [ <%@ include file="_cleanupLevelsJson.jspf" %> ],
+    {<c:if test="${fn:length(inheritedCleanupPolicies) > 0}">
+      <c:forEach items="${inheritedCleanupPolicies}" var="defPolicy" varStatus="defPolicyI">
+      ${defPolicy.cleanupLevel}:'<c:out value="${defPolicy.description}"/>'<c:if test="${not defPolicyI.last}">,</c:if>
+    </c:forEach>
+    </c:if>},
+    '<c:if test="${not empty ownOptions['preventDependenciesArtifactsFromCleanup']}">${ownOptions['preventDependenciesArtifactsFromCleanup']}</c:if>'
+    )
+  </c:set>
+
+  <%@ include file="_cleanupSetEditableVars.jspf" %>
+
+  <td class="description ${editableHighlight}" ${editableOnClick}>
+    <admin:cleanupPoliciesList cleanupPolicies="${template.cleanupPolicies}" parentPolicies="${inheritedCleanupPolicies}"/>
+    <admin:cleanupPreventDependencies prevent="${ownOptions['preventDependenciesArtifactsFromCleanup']}" parentPrevent="${inheritedOptions['preventDependenciesArtifactsFromCleanup']}"/>
+  </td>
+  
+  <%@ include file="_cleanupLastEditCell.jspf" %>
+</tr>
+

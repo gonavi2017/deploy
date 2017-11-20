@@ -1,0 +1,167 @@
+#inspectionBrowser {
+  overflow: auto;
+}
+
+#inspectionBrowser .inspectionToolbar {
+  margin-right: 1em;
+  white-space: nowrap;
+}
+
+#inspectionBrowser .dtitle {
+  font-size: 16px;
+}
+
+#inspectionBrowser #modules,
+#inspectionBrowser #inspections {
+  margin-right: 15px;
+  padding-top: 5px;
+}
+
+#inspectionBrowser #modules {
+  width: 400px;
+  height: 180px;
+  border-top: 1px solid #bfbfbf;
+}
+
+#inspectionBrowser #moduleList {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  line-height: 1.3em;
+}
+
+#inspectionBrowser #moduleList .module {
+  padding-left: 5px;
+  white-space: nowrap;
+}
+
+#inspectionBrowser #moduleList .moduleLink {
+  padding: 1px 2px;
+}
+
+#inspectionBrowser #moduleList .moduleLink.active {
+  color: #FFF;
+  background-color: #1564C2;
+}
+
+#inspectionBrowser #inspectionsList {
+  overflow: auto;
+  width: 400px;
+  border-top: 1px solid #bfbfbf;
+}
+
+#inspectionBrowser #ibControls {
+  width: 400px;
+}
+
+#inspectionBrowser #details {
+  overflow: hidden;
+  position: absolute;
+  margin-left: 420px;
+}
+
+#inspectionBrowser #popupDescription {
+  background-color: #FFFFE0;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: none;
+  padding: 10px;
+  border: 1px solid #bfbfbf;
+  font-size: small !important;
+  z-index: 1000;
+}
+
+#inspectionBrowser #popupDescription pre {
+  white-space: normal;
+}
+
+#inspectionBrowser #details #files {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 5px;
+  border-top: 1px solid #bfbfbf;
+}
+
+#inspectionBrowser .group {
+  margin-top: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#inspectionBrowser .openGroup {
+  padding: 0 13px 0 0;
+  background: url(img/minus.gif) center center no-repeat;
+}
+
+#inspectionBrowser .closedGroup {
+  padding: 0 13px 0 0;
+  background: url(img/plus.gif) center center no-repeat;
+}
+
+#inspectionBrowser .inspection {
+  margin-left: 25px;
+}
+
+#inspectionBrowser .inspection a {
+  display: block;
+  white-space: nowrap;
+}
+
+#inspectionBrowser #details .file {
+  margin-left: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#inspectionBrowser #details .filename {
+  white-space: nowrap;
+}
+
+#inspectionBrowser #details .details {
+  margin-left: 22px;
+  padding-left: 22px;
+  border-left: 1px dotted #bfbfbf;
+}
+
+#inspectionBrowser #details .detail {
+  margin-bottom: 1px;
+}
+
+#inspectionBrowser #details code {
+  white-space: normal;
+}
+
+#inspectionBrowser #details .loc {
+  font-weight: bold;
+  font-size: small;
+}
+
+#inspectionBrowser .help_none {
+  visibility: hidden;
+  float: right;
+  width: 16px;
+  height: 16px;
+}
+
+#inspectionBrowser .help_url {
+  visibility: visible;
+  float: right;
+  cursor: pointer;
+}
+
+#inspectionBrowser .help_text {
+  visibility: visible;
+  float: right;
+  cursor: default;
+}
+
+#inspectionBrowser .highlight {
+  background-color: #ff0;
+}
+
+/* COMPACT FOOTER */
+#footer .footerMain {
+  height: 1em !important;
+}

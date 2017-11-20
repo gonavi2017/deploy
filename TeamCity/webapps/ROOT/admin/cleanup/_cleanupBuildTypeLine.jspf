@@ -1,0 +1,49 @@
+<tr>
+
+  <%@ include file="_cleanupProjectCell.jspf" %>
+
+  <c:choose>
+    <c:when test="${not type.templateBased or type.templateAccessible}">
+      <td class="buildType">
+        <admin:buildTypeTemplateInfo buildType="${type}"/>
+        <bs:buildTypeLink buildType="${type}"/>
+        <div class="diskUsage" style="display: none" data-build-type-id="<c:out value="${type.externalId}"/>">Disk usage: <span class="valueHolder"></span></div>
+      </td>
+
+      <c:set var="inheritedPolicies" value="${type.inheritedCleanupPolicies}"/>
+      <c:set var="inheritedOptions" value="${type.inheritedCleanupOptions}"/>
+      <c:set var="ownOptions" value="${type.ownCleanupOptions}"/>
+
+      <c:set var="onclick">
+        <c:set var="ownCleanupPolicies" value="${type.ownCleanupPolicies}"/>
+        BS.CleanupPolicyDialog.showForBuildType('${type.buildTypeId}', 'Edit Clean-up Rules for <bs:escapeForJs text="${type.fullName}" forHTMLAttribute="true"/>',
+        { <%@ include file="_cleanupPoliciesJson.jspf" %> },
+        [ <%@ include file="_cleanupLevelsJson.jspf" %> ],
+        {<c:if test="${fn:length(inheritedPolicies) > 0}">
+          <c:forEach items="${inheritedPolicies}" var="defPolicy" varStatus="defPolicyI"><c:set var="defPolDescr"><c:out value="${defPolicy.description}"/></c:set>
+          ${defPolicy.cleanupLevel}:'<bs:escapeForJs text="${defPolDescr}"/>'<c:if test="${not defPolicyI.last}">,</c:if>
+        </c:forEach>
+        </c:if>},
+        '<c:if test="${not empty ownOptions['preventDependenciesArtifactsFromCleanup']}">${ownOptions['preventDependenciesArtifactsFromCleanup']}</c:if>'
+        )
+      </c:set>
+
+      <%@ include file="_cleanupSetEditableVars.jspf" %>
+
+      <td class="description ${editableHighlight}" ${editableOnClick}>
+
+        <admin:cleanupPoliciesList cleanupPolicies="${type.cleanupPolicies}" parentPolicies="${inheritedPolicies}"/>
+        <admin:cleanupPreventDependencies prevent="${ownOptions['preventDependenciesArtifactsFromCleanup']}" parentPrevent="${inheritedOptions['preventDependenciesArtifactsFromCleanup']}"/>
+      </td>
+
+      <%@ include file="_cleanupLastEditCell.jspf" %>
+    </c:when>
+    <c:otherwise>
+      <td class="buildType" colspan="3">
+        <admin:buildTypeTemplateInfo buildType="${type}"/>
+        <bs:buildTypeLink buildType="${type}"/>
+      </td>
+    </c:otherwise>
+  </c:choose>
+</tr>
+

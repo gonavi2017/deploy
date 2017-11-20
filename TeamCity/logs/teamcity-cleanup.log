@@ -1,0 +1,448 @@
+[2017-09-22 22:17:34,908]   INFO -  jetbrains.buildServer.CLEANUP - Max cleanup duration is set to 0 seconds 
+[2017-09-22 22:17:34,914]   INFO -  jetbrains.buildServer.CLEANUP - Cleanup time has been set to 03:00:00 daily 
+[2017-09-22 22:17:34,914]   INFO -  jetbrains.buildServer.CLEANUP - Cleanup is enabled 
+[2017-09-23 02:00:00,501]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-23 02:00:00,567]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-23 02:00:00,567]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-23 02:00:00,567]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-23 02:00:00,568]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-23 02:00:00,568]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-23 02:00:00,568]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-23 02:00:00,568]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-23 02:00:00,569]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-23 02:00:00,570]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-23 02:00:00,570]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-23 02:00:00,571]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-23 02:00:00,571]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-23 02:00:00,572]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-23 02:00:00,572]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 35ms 
+[2017-09-23 02:00:00,572]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-23 03:00:00,660]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-23 03:00:00,661]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-23 03:00:00,672]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-23 03:00:00,673]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-23 03:00:00,677]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-22 03:00:00.677 
+[2017-09-23 03:00:00,678]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-23 03:00:00,679]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-23 03:00:00,680]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-23 03:00:00,680]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-23 03:00:00,681]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-23 03:00:00,681]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-23 03:00:00,685]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-23 03:00:01,046]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-23 03:00:01,101]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-23 03:00:01,101]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-23 03:00:01,103]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-23 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-23 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-23 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-23 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-23 03:00:01,110]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-23 03:00:01,114]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-23 03:00:01,115]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-23 03:00:01,116]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-23 03:00:01,118]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-23 03:00:01,119]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-23 03:00:01,120]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-23 03:00:01,120]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-23 03:00:01,120]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-23 03:00:01,121]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-23 03:00:01,123]   INFO -  jetbrains.buildServer.CLEANUP - Removed 1 empty artifact directories 
+[2017-09-23 03:00:01,123]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-23 03:00:01,123]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-23 03:00:01,125]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-23 03:00:01,129]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-23 03:00:01,131]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-23 03:00:01,132]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-23 03:00:01,144]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-23 03:00:01,145]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-23 03:00:01,154]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-23 03:00:01,154]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-23 03:00:01,155]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-23 03:00:01,155]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-23 03:00:01,155]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-23 03:00:01,155]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-23 03:00:01,156]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-23 03:00:01,156]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-23 03:00:01,157]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-23 03:00:01,178]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 76ms 
+[2017-09-23 03:00:01,180]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-23 03:00:01,201]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 20ms 
+[2017-09-23 03:00:01,201]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-23 10:17:04,857]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-23 10:17:04,858]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-23 10:17:04,858]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-23 10:17:04,860]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (8 processed) 
+[2017-09-23 15:00:02,758]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-23 15:00:02,758]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-23 15:00:02,759]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-23 15:00:02,759]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (8 processed) 
+[2017-09-23 22:17:06,505]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-23 22:17:06,507]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-23 22:17:06,507]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-23 22:17:06,509]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (8 processed) 
+[2017-09-24 02:00:03,284]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-24 02:00:03,316]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-24 02:00:03,316]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-24 02:00:03,317]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-24 02:00:03,317]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-24 02:00:03,317]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-24 02:00:03,318]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-24 02:00:03,319]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-24 02:00:03,319]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-24 02:00:03,319]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-24 02:00:03,320]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-24 02:00:03,320]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-24 02:00:03,321]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-24 02:00:03,321]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-24 02:00:03,322]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-24 02:00:03,322]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-24 02:00:03,322]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-24 02:00:03,322]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-24 02:00:03,323]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-24 02:00:03,323]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 33ms 
+[2017-09-24 02:00:03,323]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-24 03:00:03,941]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-24 03:00:03,941]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-24 03:00:03,942]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-24 03:00:03,942]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-24 03:00:03,943]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-23 03:00:03.943 
+[2017-09-24 03:00:03,943]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-24 03:00:03,943]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-24 03:00:03,944]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-24 03:00:04,207]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-24 03:00:04,221]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-24 03:00:04,221]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-24 03:00:04,221]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-24 03:00:04,223]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-24 03:00:04,223]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-24 03:00:04,224]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-24 03:00:04,224]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-24 03:00:04,227]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-24 03:00:04,227]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-24 03:00:04,227]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-24 03:00:04,231]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-24 03:00:04,231]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (10 processed) 
+[2017-09-24 03:00:04,232]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-24 03:00:04,232]   INFO -  jetbrains.buildServer.CLEANUP - Removed 1 empty artifact directories 
+[2017-09-24 03:00:04,232]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-24 03:00:04,233]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-24 03:00:04,234]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-24 03:00:04,234]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-24 03:00:04,235]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-24 03:00:04,235]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-24 03:00:04,237]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-24 03:00:04,238]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-24 03:00:04,239]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-24 03:00:04,240]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-24 03:00:04,240]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-24 03:00:04,240]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-24 03:00:04,240]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-24 03:00:04,247]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 26ms 
+[2017-09-24 03:00:04,248]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-24 03:00:04,252]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 4ms 
+[2017-09-24 03:00:04,252]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-24 03:00:04,412]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-24 03:00:04,412]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-24 03:00:04,413]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-24 03:00:04,413]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-24 10:17:08,141]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-24 10:17:08,141]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-24 10:17:08,141]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-24 10:17:08,141]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-24 19:27:16,684]   INFO -  jetbrains.buildServer.CLEANUP - Max cleanup duration is set to 0 seconds 
+[2017-09-24 19:27:16,686]   INFO -  jetbrains.buildServer.CLEANUP - Cleanup time has been set to 03:00:00 daily 
+[2017-09-24 19:27:16,687]   INFO -  jetbrains.buildServer.CLEANUP - Cleanup is enabled 
+[2017-09-25 02:00:00,922]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-25 02:00:00,966]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-25 02:00:00,966]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-25 02:00:00,966]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-25 02:00:00,967]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-25 02:00:00,967]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-25 02:00:00,969]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-25 02:00:00,969]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-25 02:00:00,969]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-25 02:00:00,969]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-25 02:00:00,970]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-25 02:00:00,970]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-25 02:00:00,970]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-25 02:00:00,970]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-25 02:00:00,985]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-25 02:00:00,985]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-25 02:00:00,987]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-25 02:00:00,987]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-25 02:00:00,987]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-25 02:00:00,988]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 52ms 
+[2017-09-25 02:00:00,988]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-25 03:00:01,079]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-25 03:00:01,079]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-25 03:00:01,092]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-25 03:00:01,094]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-25 03:00:01,098]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-24 03:00:01.098 
+[2017-09-25 03:00:01,098]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-25 03:00:01,099]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-25 03:00:01,101]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-25 03:00:01,101]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-25 03:00:01,102]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-25 03:00:01,102]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-25 03:00:01,107]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-25 03:00:01,466]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-25 03:00:01,486]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-25 03:00:01,486]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-25 03:00:01,492]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-25 03:00:01,492]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-25 03:00:01,492]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-25 03:00:01,494]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-25 03:00:01,494]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-25 03:00:01,494]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-25 03:00:01,494]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-25 03:00:01,496]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-25 03:00:01,499]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-25 03:00:01,499]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-25 03:00:01,505]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-25 03:00:01,506]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-25 03:00:01,516]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-25 03:00:01,516]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-25 03:00:01,518]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-25 03:00:01,520]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-25 03:00:01,544]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-25 03:00:01,544]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-25 03:00:01,544]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-25 03:00:01,546]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-25 03:00:01,546]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-25 03:00:01,546]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-25 03:00:01,546]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-25 03:00:01,548]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-25 03:00:01,552]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-25 03:00:01,554]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-25 03:00:01,556]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-25 03:00:01,556]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-25 03:00:01,559]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-25 03:00:01,565]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-25 03:00:01,565]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-25 03:00:01,567]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-25 03:00:01,567]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 81ms 
+[2017-09-25 03:00:01,568]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-25 03:00:01,578]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 9ms 
+[2017-09-25 03:00:01,578]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-25 07:26:49,134]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-25 07:26:49,134]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-25 07:26:49,134]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-25 07:26:49,136]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-25 15:00:03,279]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-25 15:00:03,279]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-25 15:00:03,280]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-25 15:00:03,280]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-25 19:26:50,868]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-25 19:26:50,868]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-25 19:26:50,868]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-25 19:26:50,869]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 02:00:03,438]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-26 02:00:03,493]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-26 02:00:03,493]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-26 02:00:03,493]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-26 02:00:03,494]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-26 02:00:03,494]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-26 02:00:03,496]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-26 02:00:03,496]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-26 02:00:03,496]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-26 02:00:03,496]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-26 02:00:03,497]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-26 02:00:03,497]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-26 02:00:03,498]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-26 02:00:03,498]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-26 02:00:03,500]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-26 02:00:03,500]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-26 02:00:03,501]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-26 02:00:03,501]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-26 02:00:03,502]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-26 02:00:03,502]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 57ms 
+[2017-09-26 02:00:03,502]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-26 03:00:04,521]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-26 03:00:04,521]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-26 03:00:04,521]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-26 03:00:04,521]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-26 03:00:04,522]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-25 03:00:04.522 
+[2017-09-26 03:00:04,522]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-26 03:00:04,522]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-26 03:00:04,523]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-26 03:00:04,523]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-26 03:00:04,523]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-26 03:00:04,523]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-26 03:00:04,524]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-26 03:00:04,761]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-26 03:00:04,778]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-26 03:00:04,778]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-26 03:00:04,780]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-26 03:00:04,780]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-26 03:00:04,780]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-26 03:00:04,781]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-26 03:00:04,782]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-26 03:00:04,782]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-26 03:00:04,782]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-26 03:00:04,782]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-26 03:00:04,783]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-26 03:00:04,783]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-26 03:00:04,787]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-26 03:00:04,788]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-26 03:00:04,790]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-26 03:00:04,791]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-26 03:00:04,793]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-26 03:00:04,793]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-26 03:00:04,798]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-26 03:00:04,798]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-26 03:00:04,800]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-26 03:00:04,800]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-26 03:00:04,800]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-26 03:00:04,800]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-26 03:00:04,802]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-26 03:00:04,802]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 03:00:04,802]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 03:00:04,802]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-26 03:00:04,803]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 03:00:04,803]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-26 03:00:04,803]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 03:00:04,804]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-26 03:00:04,804]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-26 03:00:04,805]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-26 03:00:04,807]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 28ms 
+[2017-09-26 03:00:04,808]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-26 03:00:04,824]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 15ms 
+[2017-09-26 03:00:04,824]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-26 03:00:05,001]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 03:00:05,001]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 03:00:05,001]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 03:00:05,001]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 07:26:52,580]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 07:26:52,581]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 07:26:52,582]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 07:26:52,583]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 15:00:06,517]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 15:00:06,517]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 15:00:06,517]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 15:00:06,517]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 15:00:06,713]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 15:00:06,713]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 15:00:06,714]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 15:00:06,714]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-26 19:26:54,296]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-26 19:26:54,297]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-26 19:26:54,297]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-26 19:26:54,298]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 02:00:03,434]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup started 
+[2017-09-27 02:00:03,483]   INFO -  jetbrains.buildServer.CLEANUP - Use git at path 'git' 
+[2017-09-27 02:00:03,483]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection started 
+[2017-09-27 02:00:03,483]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] repository url: 'navnidhigmail@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-27 02:00:03,484]   INFO -  jetbrains.buildServer.CLEANUP - [git-33346326.git] no git gc is needed 
+[2017-09-27 02:00:03,484]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] repository url: 'https://navnidhi%40gmail.com@bitbucket.org/nqscode/nqs.git' 
+[2017-09-27 02:00:03,485]   INFO -  jetbrains.buildServer.CLEANUP - [git-1B015006.git] no git gc is needed 
+[2017-09-27 02:00:03,485]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] repository url: 'https://navnidhigmail@github.com/navnidhigmail/newgithubrepo.git' 
+[2017-09-27 02:00:03,486]   INFO -  jetbrains.buildServer.CLEANUP - [git-0FED9660.git] no git gc is needed 
+[2017-09-27 02:00:03,486]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] repository url: 'https://nqscode@bitbucket.org/nqscode/nqs.git' 
+[2017-09-27 02:00:03,486]   INFO -  jetbrains.buildServer.CLEANUP - [git-555FA70E.git] no git gc is needed 
+[2017-09-27 02:00:03,486]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] repository url: 'https://nsharma@bitbucket.org/nqscode/nqs.git' 
+[2017-09-27 02:00:03,487]   INFO -  jetbrains.buildServer.CLEANUP - [git-47E4A419.git] no git gc is needed 
+[2017-09-27 02:00:03,487]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] repository url: 'https://navnidhi@bitbucket.org/nqscode/nqs.git' 
+[2017-09-27 02:00:03,488]   INFO -  jetbrains.buildServer.CLEANUP - [git-125E1316.git] no git gc is needed 
+[2017-09-27 02:00:03,488]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] repository url: 'navnidhi@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-27 02:00:03,490]   INFO -  jetbrains.buildServer.CLEANUP - [git-88977516.git] no git gc is needed 
+[2017-09-27 02:00:03,490]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] repository url: 'navnidhisharma@github.com:navnidhigmail/newgithubrepo.git' 
+[2017-09-27 02:00:03,490]   INFO -  jetbrains.buildServer.CLEANUP - [git-434E7CBC.git] no git gc is needed 
+[2017-09-27 02:00:03,491]   INFO -  jetbrains.buildServer.CLEANUP - Git garbage collection finished, it took 50ms 
+[2017-09-27 02:00:03,491]   INFO -  jetbrains.buildServer.CLEANUP - Git cleanup finished 
+[2017-09-27 03:00:07,949]   INFO -  jetbrains.buildServer.CLEANUP - Trying to get lock for the maintenance process... 
+[2017-09-27 03:00:07,949]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process obtained 
+[2017-09-27 03:00:07,949]   INFO -  jetbrains.buildServer.CLEANUP - Preparing for clean-up... 
+[2017-09-27 03:00:07,951]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up started... 
+[2017-09-27 03:00:07,951]   INFO -  jetbrains.buildServer.CLEANUP - Will cleanup data for 0 build configurations removed before 2017-09-26 03:00:07.951 
+[2017-09-27 03:00:07,951]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by specific build number ... 
+[2017-09-27 03:00:07,951]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds depending on other builds by sources or artifacts... 
+[2017-09-27 03:00:07,952]   INFO -  jetbrains.buildServer.CLEANUP - Done collecting depending builds for each cleanup level 
+[2017-09-27 03:00:07,952]   INFO -  jetbrains.buildServer.CLEANUP - Collecting builds for cleanup for each cleanup level... 
+[2017-09-27 03:00:07,952]   INFO -  jetbrains.buildServer.CLEANUP - 	Processing Newgithubrepo :: Build {id=Newgithubrepo_Build, internal id=bt2} 
+[2017-09-27 03:00:07,952]   INFO -  jetbrains.buildServer.CLEANUP - Collected builds for 1 build configurations 
+[2017-09-27 03:00:07,953]   INFO -  jetbrains.buildServer.CLEANUP - Start compacting HSQL database... 
+[2017-09-27 03:00:08,170]   INFO -  jetbrains.buildServer.CLEANUP - Compacting HSQL database finished 
+[2017-09-27 03:00:08,182]   INFO -  jetbrains.buildServer.CLEANUP - Start processing 21 afterCleanup extensions 
+[2017-09-27 03:00:08,182]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (1 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BackgroundBuildDataCleanerImpl 
+[2017-09-27 03:00:08,184]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (2 of 21): jetbrains.buildServer.serverSide.statistics.diskusage.DiskUsageSListener$PinnedBuildsCollector 
+[2017-09-27 03:00:08,184]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (3 of 21): jetbrains.buildServer.serverSide.mute.LowLevelProblemMutingServiceImpl$TestMutesCleaner 
+[2017-09-27 03:00:08,184]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (4 of 21): jetbrains.buildServer.serverSide.CustomDataStorageManager 
+[2017-09-27 03:00:08,185]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (5 of 21): jetbrains.buildServer.buildTriggers.vcs.clearcase.structure.ClearCaseStructureCache$ClearcaseCacheGeneralDataCleaner 
+[2017-09-27 03:00:08,185]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (6 of 21): jetbrains.buildServer.serverSide.statistics.impl.BuildDataStorageImpl 
+[2017-09-27 03:00:08,185]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (7 of 21): jetbrains.buildServer.serverSide.impl.cleanup.BuildArtifactsCleaner 
+[2017-09-27 03:00:08,186]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (8 of 21): jetbrains.buildServer.serverSide.TestName2IndexImpl 
+[2017-09-27 03:00:08,186]   INFO -  jetbrains.buildServer.CLEANUP - 		Start cleaning unused test names ... 
+[2017-09-27 03:00:08,186]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (9 of 21): jetbrains.buildServer.serverSide.impl.audit.AuditLogCleanerImpl 
+[2017-09-27 03:00:08,186]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records older than 365 days ... 
+[2017-09-27 03:00:08,189]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete tests ... 
+[2017-09-27 03:00:08,190]   INFO -  jetbrains.buildServer.CLEANUP - 		Removing audit log records for obsolete builds ... 
+[2017-09-27 03:00:08,192]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished removing audit log records. 
+[2017-09-27 03:00:08,192]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (10 of 21): jetbrains.buildServer.serverSide.impl.projectSources.PatchCacheImpl 
+[2017-09-27 03:00:08,193]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (11 of 21): jetbrains.buildServer.serverSide.stat.TestFailureRateCollector 
+[2017-09-27 03:00:08,193]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (12 of 21): jetbrains.buildServer.serverSide.metadata.impl.metadata.MetadataStorageBean 
+[2017-09-27 03:00:08,200]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (13 of 21): jetbrains.buildServer.serverSide.impl.cleanup.ObsoleteFilesCleaner 
+[2017-09-27 03:00:08,201]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (14 of 21): jetbrains.buildServer.responsibility.impl.ResponsibilityCleaner 
+[2017-09-27 03:00:08,202]   INFO -  jetbrains.buildServer.CLEANUP - 		Starting cleanup of responsibility entries... 
+[2017-09-27 03:00:08,202]   INFO -  jetbrains.buildServer.CLEANUP - 		Will delete 0 responsibility entries 
+[2017-09-27 03:00:08,202]   INFO -  jetbrains.buildServer.CLEANUP - 		Finished cleanup of 0 responsibility entries 
+[2017-09-27 03:00:08,203]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (15 of 21): jetbrains.buildServer.duplicator.DuplicatesDataCleaner 
+[2017-09-27 03:00:08,203]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 03:00:08,203]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 03:00:08,205]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 03:00:08,206]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 03:00:08,206]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (16 of 21): jetbrains.buildServer.diagnostic.ThreadStatCleaner 
+[2017-09-27 03:00:08,207]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (17 of 21): jetbrains.buildServer.serverSide.impl.personal.PersonalBuildCleaner 
+[2017-09-27 03:00:08,207]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (18 of 21): jetbrains.buildServer.runner.codeInspection.InspectionDataCleaner 
+[2017-09-27 03:00:08,208]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (19 of 21): jetbrains.buildServer.controllers.login.RememberMe$2 
+[2017-09-27 03:00:08,208]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (20 of 21): jetbrains.buildServer.serverSide.impl.cleanup.InvalidHistoryRecordsCleaner 
+[2017-09-27 03:00:08,208]   INFO -  jetbrains.buildServer.CLEANUP - 	Executing afterCleanup extension (21 of 21): jetbrains.buildServer.serverSide.impl.OldAgentsCleaner 
+[2017-09-27 03:00:08,208]   INFO -  jetbrains.buildServer.CLEANUP - Finished processing afterCleanup extensions, took 26ms 
+[2017-09-27 03:00:08,209]   INFO -  jetbrains.buildServer.CLEANUP - Clean-up finished, took < 1s 
+[2017-09-27 03:00:08,210]   INFO -  jetbrains.buildServer.CLEANUP - Post-cleanup tasks finished, took 1ms 
+[2017-09-27 03:00:08,210]   INFO -  jetbrains.buildServer.CLEANUP - Lock for the maintenance process released 
+[2017-09-27 03:00:08,245]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 03:00:08,245]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 03:00:08,245]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 03:00:08,245]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 03:00:08,440]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 03:00:08,441]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 03:00:08,441]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 03:00:08,441]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 07:26:56,012]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 07:26:56,012]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 07:26:56,012]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 07:26:56,014]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 15:00:09,902]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 15:00:09,902]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 15:00:09,902]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 15:00:09,904]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 15:00:09,947]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 15:00:09,947]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 15:00:09,947]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 15:00:09,948]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 15:00:10,141]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 15:00:10,141]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 15:00:10,141]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 15:00:10,141]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 
+[2017-09-27 19:26:57,716]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete log files (not used by any build) under build logs directory: /Users/nsharma/.BuildServer/system/messages 
+[2017-09-27 19:26:57,716]   INFO -  jetbrains.buildServer.CLEANUP - Cannot find obsolete build log directories in old format 
+[2017-09-27 19:26:57,716]   INFO -  jetbrains.buildServer.CLEANUP - Searching for obsolete artifact directories (not used by any build) under directories: [/Users/nsharma/.BuildServer/system/artifacts] 
+[2017-09-27 19:26:57,716]   INFO -  jetbrains.buildServer.CLEANUP - Removed no obsolete artifact directories (9 processed) 

@@ -1,0 +1,6 @@
+header = '<?xml version="1.0"?>\n<log>\n'
+footer = '</log>\n'
+
+changeset = '<logentry revision="{rev}" shortnode="{node|short}" branch="{branches}">\n{parents}<author original="{author|xmlescape}"/>\n<date>{date|date|xmlescape}</date>\n<msg xml:space="preserve">{desc|xmlescape}</msg>\n</logentry>\n'
+parent = '<parent revision="{rev}" node="{node}" shortnode="{node|short}"/>\n'
+branch = '{branch|xmlescape}'

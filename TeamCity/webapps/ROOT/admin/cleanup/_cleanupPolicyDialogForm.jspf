@@ -1,0 +1,102 @@
+<%@ page import="jetbrains.buildServer.serverSide.CleanupLevel" %>
+<%@ taglib prefix="props" tagdir="/WEB-INF/tags/props" %>
+<c:url value="/admin/editCleanupRules.html" var="actionUrl"/>
+<bs:modalDialog formId="editPolicy"
+                title="Clean-up rules"
+                action="${actionUrl}"
+                saveCommand="BS.CleanupPolicyDialog.submitCleanupPolicy()"
+                closeCommand="BS.CleanupPolicyDialog.cancelDialog()">
+  <bs:help file="Clean-Up" style="float: right;"/>
+  <%--@elvariable id="levels" type="java.util.List<jetbrains.buildServer.serverSide.CleanupLevel>"--%>
+
+  <c:set var="artifactsLevel" value="<%=CleanupLevel.ARTIFACTS%>"/>
+  <c:forEach items="${levels}" var="level">
+    <c:set var="curLevelIsArtifacts" value="${level == artifactsLevel}"/>
+
+    <div class="editPolicySection">
+      <h2>Clean <c:out value="${level.description}"/></h2>
+      <div class="levelDetails"><c:out value="${level.keepDescription}"/></div>
+      <div id="apply${level}" class="radioDefault">
+        <forms:radioButton name="custom[${level}]" id="custom_D${level}" style="vertical-align: middle;" value="false"
+                           onclick="$('edit${level}').hide();$('default${level}').show();if (${curLevelIsArtifacts}) $('artifactPatternsDiv').hide()"
+            />
+        <label for="custom_D${level}">Default policy</label>
+        &nbsp;&nbsp;&nbsp;
+        <forms:radioButton name="custom[${level}]" id="custom_C${level}" style="vertical-align: middle;" value="true"
+                           onclick="$('edit${level}').show();$('default${level}').hide();if (${curLevelIsArtifacts}) $('artifactPatternsDiv').show()"
+            />
+        <label for="custom_C${level}">Custom policy</label>
+      </div>
+
+      <div id="default${level}" class="rule">
+        <strong><span id="defPrefix${level}"><c:out value="${level.description}"/> </span><span id="default${level}text">...</span></strong>
+      </div>
+      <div class="cleanup-rule-wrapper">
+        <div id="edit${level}" class="rule cleanup-rule">
+          <label for="daysCount[${level}]" class="cleanup-rule__label">Older than</label>
+          <div class="cleanup-rule__wrapper">
+            <div class="error" id="${level}_invalidRuleError" style="margin-left: 0;"></div>
+            <div>
+              <forms:textField name="daysCount[${level}]"
+                               maxlength="5"
+                               style="width: 2em; vertical-align: middle;"
+                               onchange="BS.CleanupPolicyDialog.checkIntegerInput('daysCount[${level}]', 'daysCount[${level}]_invalid_msg');"/>
+              days since last build
+            </div>
+            <div id="daysCount[${level}]_invalid_msg" style="display:none; color:#ED2C10;">
+              The number of days should be a positive integer value or be empty.
+            </div>
+            <div>
+              <forms:textField name="buildsCount[${level}]"
+                               maxlength="5"
+                               style="width: 2em; vertical-align: middle;"
+                               onchange="BS.CleanupPolicyDialog.checkIntegerInput('buildsCount[${level}]', 'buildsCount[${level}]_invalid_msg');"/>-th
+              successful build
+            </div>
+            <div id="buildsCount[${level}]_invalid_msg" style="display:none; color:#ED2C10;">
+              The number of builds should be a positive integer value or be empty.
+            </div>
+          </div>
+        </div>
+
+        <c:if test="${curLevelIsArtifacts}">
+          <div id="artifactPatternsDiv" class="cleanup-rule">
+            <label class="cleanup-rule__label" for="artifactPatterns">Artifact patterns:</label>
+            <div class="cleanup-rule__wrapper">
+              <forms:textField name="artifactPatterns" expandable="true" minheight="40" className="artifact-patterns-textarea"/>
+              <bs:smallNote>Newline-delimited set of rules in the form of [+:|-:]ANT_LIKE_PATTERN</bs:smallNote>
+            </div>
+          </div>
+        </c:if>
+      </div>
+    </div>
+  </c:forEach>
+
+  <div class="editPolicySection">
+    <h2>Dependencies</h2>
+
+    <div class="levelDetails">This setting affects clean-up of artifacts in builds that the builds of this build configuration depend on</div>
+    <div class="radioDefault">
+      <span id="use_default_option">
+        <forms:radioButton name="holdDependencies" id="holdDependencies_default" value="default"/> <label for="holdDependencies_default">Use default</label>
+        &nbsp;&nbsp;&nbsp;
+      </span>
+      <forms:radioButton name="holdDependencies" id="holdDependencies_true" value="true"/> <label for="holdDependencies_true">Prevent clean-up</label>
+      &nbsp;&nbsp;&nbsp;
+      <forms:radioButton name="holdDependencies" id="holdDependencies_false" value="false"/> <label for="holdDependencies_false">Do not prevent clean-up</label>
+    </div>
+  </div>
+
+  <input type="hidden" name="buildTypeId" id="buildTypeId"/>
+  <input type="hidden" name="projectId" id="projectId"/>
+  <input type="hidden" name="cleanupPageAction" id="cleanupPageAction1"/>
+  <c:if test="${not empty editCleanupRulesForm}">
+    <input type="hidden" name="parentProjectId" value="${editCleanupRulesForm.parentProject.externalId}"/>
+  </c:if>
+
+  <div class="popupSaveButtonsBlock">
+    <forms:submit id="innerSaveButton" label="Save"/>
+    <forms:cancel onclick="BS.CleanupPolicyDialog.cancelDialog()"/>
+    <forms:saving/>
+  </div>
+</bs:modalDialog>

@@ -1,0 +1,30 @@
+<%-- included from agentStatistics.jspf --%>
+<%@ include file="/include-internal.jsp"%>
+
+<%--@elvariable id="agent" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.AgentWithRate"--%>
+<%--@elvariable id="sAgentType" type="jetbrains.buildServer.serverSide.agentTypes.SAgentType"--%>
+
+<c:if test="${not empty agent}">
+  <c:choose>
+
+    <c:when test="${not empty sAgentType}">
+      <authz:authorize anyPermission="VIEW_AGENT_DETAILS">
+        <jsp:attribute name="ifAccessDenied">
+          <span class="icon icon16 os-icon"></span>
+        </jsp:attribute>
+      </authz:authorize>
+      <bs:agentDetailsFullLink agentType="${sAgentType}"
+                               doNotShowOutdated="${true}"
+                               doNotShowPoolInfo="${true}"
+                               showCloudIcon="${false}"
+                               doNotShowOSIcon="${false}"/>
+    </c:when>
+
+    <c:otherwise>
+      <!-- Never -->
+      <span class="icon icon16 os-icon"></span>
+      <span><c:out value="${agent.name}"/></span>
+    </c:otherwise>
+
+  </c:choose>
+</c:if>

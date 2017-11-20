@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="NUnit" generateDslJar="true">
+  <class name="NUnitStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/NUnit) running NUnit tests
+    </description>
+  </class>
+  <init>
+    <param name="nunit_enabled" value="checked" />
+    <param name="dotNetTestRunner.Type" value="NUnit" />
+  </init>
+  <function name="nunit">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/NUnit) running NUnit tests
+      @see NUnitStep
+    </description>
+  </function>
+  <params>
+    <param name="nunit_version" dslName="nunitVersion" type="NUnitVersion">
+      <description>
+        NUnit version to use
+        @see NUnitVersion
+      </description>
+    </param>
+    <param name="nunit_path" dslName="nunitPath">
+      <description>
+        A path to NUnit console tool including the file name
+      </description>
+    </param>
+    <param name="nunit_platform" dslName="platform" type="Platform">
+      <description>
+        A desired execution mode on a x64 machine
+        @see Platform
+      </description>
+    </param>
+    <param name="nunit_environment" dslName="runtimeVersion" type="RuntimeVersion">
+      <description>
+        A desired .NET Framework version
+        @see RuntimeVersion
+      </description>
+    </param>
+    <param name="nunit_include" dslName="includeTests">
+      <description>
+        Comma- or newline-separated list of .NET assemblies where the NUnit tests are specified
+        relative to the checkout directory. Wildcards are supported.
+      </description>
+    </param>
+    <param name="nunit_exclude" dslName="excludeTests">
+      <description>
+        Comma- or newline-separated list of .NET assemblies which should be excluded
+        from the list of found assemblies to test.
+      </description>
+    </param>
+    <param name="nunit_categery_include" dslName="includeCategories">
+      <description>
+        Comma- or newline-separated list of NUnit categories.
+        [Category expressions](https://confluence.jetbrains.com/display/TCDL/TeamCity+NUnit+Test+Launcher#TeamCityNUnitTestLauncher-CategoryExpression) are supported as well.
+      </description>
+    </param>
+    <param name="nunit_categery_exclude" dslName="excludeCategories">
+      <description>
+        Comma- or newline-separated list of NUnit categories which should be excluded.
+        [Category expressions](https://confluence.jetbrains.com/display/TCDL/TeamCity+NUnit+Test+Launcher#TeamCityNUnitTestLauncher-CategoryExpression) are supported as well.
+      </description>
+    </param>
+    <param name="teamcity.tests.runRiskGroupTestsFirst" dslName="reduceTestFeedback" type="boolean" trueValue="recentlyFailed" falseValue="">
+      <description>
+        Whether TeamCity should run recently failed tests first to reduce test feedback
+      </description>
+    </param>
+    <param name="nunit_process_per_process" dslName="runProcessPerAssembly" type="boolean" trueValue="true" falseValue="">
+      <description>
+        Whether TeamCity should run each assembly in a separate process. Works for NUnit versions prior to 3.0
+      </description>
+    </param>
+  </params>
+  <types>
+    <enum name="Platform">
+      <option name="MSIL" value="MSIL"/>
+      <option name="x86" value="x86"/>
+      <option name="x64" value="x64"/>
+    </enum>
+    <enum name="RuntimeVersion">
+      <option name="AUTO" value="auto"/>
+      <option name="v2_0" value="v2.0"/>
+      <option name="v4_0" value="v4.0"/>
+    </enum>
+    <enum name="NUnitVersion">
+      <description>NUnit version</description>
+      <option name="NUnit_3" value="NUnit-3.0.0" />
+      <option name="NUnit_2_6_4" value="NUnit-2.6.4" />
+      <option name="NUnit_2_6_3" value="NUnit-2.6.3" />
+      <option name="NUnit_2_6_2" value="NUnit-2.6.2" />
+      <option name="NUnit_2_6_1" value="NUnit-2.6.1" />
+      <option name="NUnit_2_6_0" value="NUnit-2.6.0" />
+      <option name="NUnit_2_5_10" value="NUnit-2.5.10" />
+      <option name="NUnit_2_5_9" value="NUnit-2.5.9" />
+      <option name="NUnit_2_5_8" value="NUnit-2.5.8" />
+      <option name="NUnit_2_5_7" value="NUnit-2.5.7" />
+      <option name="NUnit_2_5_6" value="NUnit-2.5.6" />
+      <option name="NUnit_2_5_5" value="NUnit-2.5.5" />
+      <option name="NUnit_2_5_4" value="NUnit-2.5.4" />
+      <option name="NUnit_2_5_3" value="NUnit-2.5.3" />
+      <option name="NUnit_2_5_2" value="NUnit-2.5.2" />
+      <option name="NUnit_2_5_0" value="NUnit-2.5.0" />
+      <option name="NUnit_2_4_8" value="NUnit-2.4.8" />
+      <option name="NUnit_2_4_7" value="NUnit-2.4.7" />
+      <option name="NUnit_2_4_6" value="NUnit-2.4.6" />
+      <option name="NUnit_2_4_1" value="NUnit-2.4.1" />
+      <option name="NUnit_2_2_10" value="NUnit-2.2.10" />
+    </enum>
+  </types>
+</dsl-extension>

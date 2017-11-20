@@ -1,0 +1,43 @@
+/*
+ * An extension to the original /css/testGroups.css
+ */
+
+/*
+ * The div which encloses the select-all checkbox.
+ */
+.tests-group table.analysis.testList th > div {
+  margin-left: 0;
+  display: inline;
+}
+
+/*
+ * The div between the top-most group div and the table.
+ */
+#flakyTests .tests-group .by-nothing {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+/*
+ * The table cell which contains a testName link. Checkboxes are in the separate
+ * column, so we don't need any padding to the left. Instead, be consistent with
+ * that of "table.dark th".
+ */
+.group-div table.analysis.testList td.testNamePart {
+  padding: 2px 6px;
+}
+
+/*
+ * Selected+highlighted cells.
+ */
+table.highlightable.testList tr.testRowSelected:hover > td.highlight {
+  background-color: #fafae1;
+}
+
+/*
+ * The <span/> element containing investigated/muted/flaky icons
+ */
+table.analysis.testList .testIcons {
+  margin-left: 0;
+  min-width: 0;
+}

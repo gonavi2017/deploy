@@ -1,0 +1,232 @@
+#responsibilitiesTable .project-icon:before {
+  margin-bottom: -1px;
+}
+
+.mutedInfo{
+  font-style: italic;
+  color:#a7a7a7;
+}
+
+ul.compiler-errors {
+  list-style: none;
+}
+
+.compiler-errors {
+  margin: 0;
+  padding: 0;
+}
+
+.compiler-error {
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+  color: #C00;
+}
+
+.compiler-errors-actions {
+  float: right;
+  margin-top: -0.3px;
+}
+
+.bpl .groupHeader {
+  margin-bottom: 0.5em;
+}
+
+.bpl .groupHeader .problemCount {
+  color: #888;
+  font-weight: normal;
+}
+
+.bpl .handle_expanded:before,
+.bpl .handle_collapsed:before {
+  margin-right: 4px;
+}
+
+.bpl .group {
+  padding-left: 18px;
+}
+
+.tcRow{
+  width: 100%;
+  white-space: nowrap;
+  padding: 0;
+  margin-bottom: 0.25em;
+}
+
+.tcRow .clear {
+  clear: both;
+  height: 0;
+}
+
+.tcRow .tcCell{
+  display: inline-block;
+}
+
+.tcRow .tcCell.rightSideActions{
+  float: right;
+}
+
+.bpl .icons {
+  white-space: nowrap;
+  /*display: inline-block;*/
+  height: 20px;
+}
+
+.bpType {
+  width: 100%;
+  white-space: nowrap;
+
+}
+.bpl .detailsWrapper{
+  display: none;
+}
+
+.bpl .detailsWrapper.expanded{
+  display: block;
+}
+
+.bpl .tcCell.details{
+  margin-top: .5em;
+  width: 95%;
+}
+
+.bpl .description{
+  padding: 0;
+  margin-left: -2px;
+}
+
+.bpl .descriptionContainer{
+  font-weight: normal;
+}
+
+.bpl .hasDetails, .inplaceLink{
+  cursor: pointer;
+  color: #3773C9;
+}
+
+.bpl .hasDetails.descriptionContainer{
+  border-bottom: 1px dotted #3773C9;
+}
+
+.descriptionContainer__ellipsis {
+  cursor: pointer;
+}
+
+.bpl .tcCell .hasDetails:hover, .inplaceLink:hover{
+  border-bottom: 1px dotted #3773C9;
+  text-decoration:none;
+}
+
+.inplaceLinkSymbol{
+  color: #3773C9;
+}
+
+.bpl .muteOrResponsibilityInline{
+  color: #888;
+  float: right;
+  width: 100%;
+}
+
+.group.inner{
+  border-bottom: 1px dotted lightgray;
+  margin-bottom: 0.35em;
+}
+
+.bpl .noDependencyBuildInfo{
+  font-style: italic;
+  color: #888;
+}
+
+.bpl .tcRow{
+  white-space: nowrap;
+}
+
+.bpl .section{
+  margin-bottom: 1em;
+}
+
+.bpl .tcRow.problemToHighlight.highlighted,
+.bpl .tcRow.problemToHighlight.stickyHighlighted  {
+  background-color: #FFC !important;
+}
+
+.bpl .tcRow.problemToHighlight.highlighted .testFailedInPart,
+.bpl .tcRow.problemToHighlight.stickyHighlighted .testFailedInPart {
+  color: #3F3F3F;
+}
+
+.bpl .tcRow.problemToHighlight.highlighted .testFailedInPart a,
+.bpl .tcRow.problemToHighlight.stickyHighlighted .testFailedInPart a {
+  color: #1564c2;
+}
+
+.bpl .code{
+  color: darkred;
+  white-space: pre;
+}
+
+#buildProblems{
+  margin-bottom: 0.7em;
+}
+
+.sdProblem{
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: inline-table;
+}
+.sdProblem tr td{
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+.sdProblem td.status{
+  padding-left: 1em;
+}
+
+.bpl.heavy .tcRow .tcCell.details{
+  border-left: none;
+}
+
+.bpl.heavy .tcRow.hasDetails {
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
+  cursor: pointer;
+  width: 99%;
+}
+
+.bpl.heavy .hideDetailsLink {
+  padding-top: .5em;
+}
+
+.groupHeader{
+  cursor: pointer;
+}
+
+.dependentBuildResult{
+  white-space: nowrap;
+}
+
+#buildProblemsDl{
+  padding-left: 11px;
+}
+
+.tcTable{
+  margin-bottom: 5px;
+}
+
+.expandCollapseContainer > div, .bpl > div {
+  margin-bottom: 1em;
+}
+
+.expandCollapseContainer,
+.buildResultsSummaryTable .bpl{
+  margin-left: 2px;
+}
+
+#buildResultsInner .blockHeader.expanded:before,
+#buildResultsInner .blockHeader.collapsed:before {
+  width: 22px;
+}

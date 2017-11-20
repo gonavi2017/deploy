@@ -1,0 +1,127 @@
+
+.policyChooser {
+  display: inline-block;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  width: 35em;
+}
+
+.messagesHolder {
+  margin-top: 1em;
+  display: inline-block;
+}
+
+.assignAction {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.agentsCompatibilityTable {
+  width: 100%;
+}
+
+.agentsCompatibilityTable th {
+  text-align: left;
+  border-bottom: 1px solid #999;
+  background-color: #f5f5f5;
+}
+
+.agentsCompatibilityTable .project-handle .buildTypeNameWithHandle {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.agentsCompatibilityTable td.compatible,
+.agentsCompatibilityTable th.compatible,
+.agentsCompatibilityTable td.incompatible,
+.agentsCompatibilityTable th.incompatible {
+  padding: 5px 5px 5px 10px;
+  font-size: 100%;
+  vertical-align: top;
+}
+
+.agentsCompatibilityTable th.compatible {
+  width: 38%;
+}
+
+.agentsCompatibilityTable th.empty,
+.agentsCompatibilityTable td.empty {
+  width: 20px;
+  border: none;
+  background: none;
+}
+
+.agentsCompatibilityTable span.handle {
+  vertical-align: text-bottom;
+  width: auto;
+  padding-left: 18px;
+}
+
+.agentsCompatibilityTable td.incompatible.selected div.incompatible {
+  margin-left: 35px;
+}
+
+.agentsCompatibilityTable div.content + div.project-handle {
+  margin-top: 0.3em;
+}
+
+div.incompatible {
+  padding-left: 26px;
+}
+div.incompatible:last-child {
+  margin-bottom: 10px;
+}
+
+div.incompatible div.details {
+  display: inline-block;
+  margin: 0;
+}
+
+div.incompatible div.details.name {
+  min-width: 10em;
+  margin-right: 2em;
+  vertical-align: top;
+}
+
+div.incompatible div.details.value ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+div.incompatible .warn {
+  padding-left: 5px;
+  color: #ED2C10;
+}
+
+div.incompatible .mono {
+  font-size: 12px;
+}
+
+div.compatibilityDetailsToolbar {
+  padding: 5px 0 10px 0;
+}
+
+div.compatibilityDetailsToolbar .expand-collapse {
+  margin-right: 3em;
+}
+
+#compatibleDivider {
+  background: #ffc;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  margin: 0 0 0.5em 0;
+}
+
+#removeSelected {
+  text-align: left;
+  margin-top: 1ex;
+}
+
+#poolDetails {
+  float: right;
+}
+
+#assignButtons {
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="trigger" type="mavenArtifactDependencyTrigger" generateDslJar="true">
+  <class name="MavenArtifactDependencyTrigger">
+    <description>
+      A [trigger](https://confluence.jetbrains.com/display/TCDL/Configuring+Maven+Triggers#ConfiguringMavenTriggers-MavenArtifactDependencyTrigger)
+      running builds when there is a modification of the maven dependency content.
+    </description>
+  </class>
+  <function name="mavenArtifact">
+    <description>
+      Adds a [trigger](https://confluence.jetbrains.com/display/TCDL/Configuring+Maven+Triggers#ConfiguringMavenTriggers-MavenArtifactDependencyTrigger).
+      running builds when there is a modification of the maven dependency content.
+      @see MavenArtifactDependencyTrigger
+    </description>
+  </function>
+  <params>
+    <param name="groupId">
+      <description>
+        A maven group identifier to the watched artifact belongs to
+      </description>
+    </param>
+    <param name="artifactId">
+      <description>
+        A watched maven artifact id
+      </description>
+    </param>
+    <param name="version" description="Version or Version range">
+      <description>
+        A [version or version range](https://confluence.jetbrains.com/display/TCDL/Configuring+Maven+Triggers#ConfiguringMavenTriggers-versionRanges) of the artifact
+      </description>
+    </param>
+    <param name="type" dslName="artifactType">
+      <description>
+        A type of the watched artifact. By default, the type is "jar".
+      </description>
+    </param>
+    <param name="classifier">
+      <description>
+        Optional classifier of the watched artifact.
+      </description>
+    </param>
+    <param name="repoUrl" description="Maven repository URL">
+      <description>
+        Maven repository URL
+      </description>
+    </param>
+    <param name="repoId">
+      <description>Maven repository ID to match authentication from applied maven settings</description>
+    </param>
+    <param name="skipIfRunning" type="boolean">
+      <description>Do not trigger a build if currently running builds can produce this artifact</description>
+    </param>
+    <param name="userSettingsSelection">
+      <description>Use one of the predefined settings files or provide a custom path. By default, the standard Maven settings file location is used.</description>
+    </param>
+    <param name="userSettingsPath" description="The path to a user settings file"/>
+  </params>
+</dsl-extension>

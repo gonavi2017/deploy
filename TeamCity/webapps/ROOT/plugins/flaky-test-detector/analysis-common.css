@@ -1,0 +1,77 @@
+/*
+ * Referenced from analysis.jsp and testHistoryExtension.jsp
+ */
+
+th.numeric, td.numeric {
+  text-align: right !important;
+  vertical-align: top;
+}
+
+table.analysis {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.analysis th {
+  white-space: nowrap;
+}
+
+table.analysis td.testName {
+  white-space: nowrap;
+}
+
+td.testName {
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: .5em;
+  padding-right: .5em;
+  vertical-align: top;
+}
+
+table.analysis ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+table.analysis li {
+  white-space: normal;
+}
+
+table.analysis div.flakyReason, table.analysis ul.flakyReason, th.flakyReason {
+  margin: 0;
+  padding-left: 1.25em !important;
+}
+
+td.flakyReason {
+  padding-left: 0 !important;
+  padding-top: .25em;
+  padding-bottom: .5em;
+  padding-right: .5em;
+  vertical-align: top;
+  white-space: normal !important;
+}
+
+span.term {
+  font-weight: bolder;
+}
+
+table.environmentSpecifics th {
+  font-weight: normal;
+  text-align: left;
+  border-bottom: 1px solid #cccccc;
+  /*
+   * Resolves conflict with table.dark th style (main.css), which also applies
+   * to non-immediate children.
+   */
+  background-color: #ffffff;
+  color: inherit;
+  margin: 0;
+  padding: 5px 0 0;
+}
+
+table.environmentSpecifics td {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}

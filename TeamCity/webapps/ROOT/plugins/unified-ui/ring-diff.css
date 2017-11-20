@@ -1,0 +1,1605 @@
+.ring-link, .ring-link:visited {
+  color: #1866C5;
+  text-decoration: none;
+  cursor: pointer; }
+
+body .ring-link:hover, body .ring-link:focus {
+  color: #FF5A00 !important;
+  text-decoration: underline !important; }
+
+@font-face {
+  font-family: 'font-icon';
+  src: url('fonts/font-icon.eot');
+  src: url('fonts/font-icon.eot?#iefix') format('embedded-opentype'), url('fonts/font-icon.svg#font-icon') format('svg'), url('fonts/font-icon.woff') format('woff'), url('fonts/font-icon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+body .ring-font-icon {
+  font-family: 'font-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  body .ring-font-icon:hover {
+    text-decoration: none !important; }
+
+.ring-font-icon_authmodule:before {
+  content: "\e602"; }
+
+.ring-font-icon_user:before {
+  content: "\e61b"; }
+
+.ring-font-icon_service:before {
+  content: "\e61c"; }
+
+.ring-font-icon_space:before {
+  content: "\e61d"; }
+
+.ring-font-icon_search:before {
+  content: "\e600"; }
+
+.ring-font-icon_ok:before {
+  content: "\e601"; }
+
+.ring-font-icon_cog:before {
+  content: "\e603"; }
+
+.ring-font-icon_refresh:before {
+  content: "\e604"; }
+
+.ring-font-icon_pencil:before {
+  content: "\e605"; }
+
+.ring-font-icon_chevron-left:before {
+  content: "\e606"; }
+
+.ring-font-icon_chevron-right:before {
+  content: "\e607"; }
+
+.ring-font-icon_ban-circle:before {
+  content: "\e608"; }
+
+.ring-font-icon_pushpin:before {
+  content: "\e609"; }
+
+.ring-font-icon_caret-down:before {
+  content: "\e60a"; }
+
+.ring-font-icon_caret-up:before {
+  content: "\e60b"; }
+
+.ring-font-icon_frown:before {
+  content: "\e60c"; }
+
+.ring-font-icon_help:before {
+  content: "\e60d"; }
+
+.ring-font-icon_warning:before {
+  content: "\e60e"; }
+
+.ring-font-icon_permission:before {
+  content: "\e015"; }
+
+.ring-font-icon_group:before {
+  content: "\e014"; }
+
+.ring-font-icon_jabber:before {
+  content: "\e00b"; }
+
+.ring-font-icon_resource:before {
+  content: "\e011"; }
+
+.ring-font-icon_drag:before {
+  content: "\e00f"; }
+
+.ring-font-icon_added:before {
+  content: "\e006"; }
+
+.ring-font-icon_email:before {
+  content: "\e012"; }
+
+.ring-font-icon_global:before {
+  content: "\e013"; }
+
+.ring-font-icon_close:before {
+  content: "\e00e"; }
+
+.ring-font-icon_merge_icon:before {
+  content: "\e00d"; }
+
+.ring-font-icon_role:before {
+  content: "\e00a"; }
+
+.ring-font-icon_add:before {
+  content: "\e008"; }
+
+.ring-font-icon_check:before {
+  content: "\e005"; }
+
+.ring-font-icon_renamed:before {
+  content: "\e004"; }
+
+.ring-font-icon_removed:before {
+  content: "\e003"; }
+
+.ring-font-icon_modified:before {
+  content: "\e002"; }
+
+.ring-font-icon_trash:before {
+  content: "\e010"; }
+
+.ring-font-icon_collapse:before {
+  content: "\e60f"; }
+
+.ring-font-icon_expand:before {
+  content: "\e610"; }
+
+.ring-font-icon_usability:before {
+  content: "\e611"; }
+
+.ring-font-icon_task:before {
+  content: "\e612"; }
+
+.ring-font-icon_security:before {
+  content: "\e613"; }
+
+.ring-font-icon_perfomance:before {
+  content: "\e614"; }
+
+.ring-font-icon_meta:before {
+  content: "\e615"; }
+
+.ring-font-icon_bug:before {
+  content: "\e616"; }
+
+.ring-font-icon_auto-report:before {
+  content: "\e617"; }
+
+.ring-font-icon_feature:before {
+  content: "\e618"; }
+
+.ring-font-icon_exception:before {
+  content: "\e619"; }
+
+.ring-font-icon_cosmetics:before {
+  content: "\e61a"; }
+
+.no-font-antialiasing .ring-font-icon_help, .no-font-antialiasing .ring-font-icon_search, .no-font-antialiasing .ring-font-icon_ban-circle {
+  display: inline-block;
+  background-image: url('fonts/font-icon.png');
+  background-repeat: no-repeat;
+  height: 16px;
+  width: 16px; }
+  .no-font-antialiasing .ring-font-icon_help:before, .no-font-antialiasing .ring-font-icon_search:before, .no-font-antialiasing .ring-font-icon_ban-circle:before {
+    content: normal; }
+.no-font-antialiasing .ring-font-icon_help {
+  background-position: -3px 0; }
+  .ring-link .no-font-antialiasing .ring-font-icon_help:hover, .no-font-antialiasing .ring-font-icon_help.ring-link:hover {
+    background-position: -3px -20px; }
+.no-font-antialiasing .ring-font-icon_search {
+  background-position: -20px 0; }
+  .ring-link .no-font-antialiasing .ring-font-icon_search:hover, .no-font-antialiasing .ring-font-icon_search.ring-link:hover {
+    background-position: -20px -20px; }
+.no-font-antialiasing .ring-font-icon_ban-circle {
+  background-position: -42px 0; }
+  .ring-link .no-font-antialiasing .ring-font-icon_ban-circle:hover, .no-font-antialiasing .ring-font-icon_ban-circle.ring-link:hover {
+    background-position: -42px -20px; }
+
+.ring-btn {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  display: inline-block;
+  width: auto;
+  height: 24px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 15px;
+  border: solid 1px #B4B4B4;
+  border-radius: 3px;
+  font-size: 11px;
+  line-height: 22px;
+  text-decoration: none;
+  color: #282828;
+  cursor: default;
+  outline: 0;
+  z-index: 0;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#EBEBEB), to(#FFF));
+  background-image: -webkit-linear-gradient(bottom, #EBEBEB, #FFF);
+  background-image: linear-gradient(to top, #EBEBEB, #FFF); }
+  @media screen\9 {
+    .ring-btn {
+      display: inline;
+      zoom: 1; } }
+  .ring-btn:hover, .ring-btn.ring-btn_hover {
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#E1E1E1), to(#FFF));
+    background-image: -webkit-linear-gradient(bottom, #E1E1E1, #FFF);
+    background-image: linear-gradient(to top, #E1E1E1, #FFF); }
+  .ring-btn:active, .ring-btn.ring-btn_active {
+    -webkit-box-shadow: inset 0 1px 0 0 #D3D3D3;
+    box-shadow: inset 0 1px 0 0 #D3D3D3;
+    background-color: #E4E4E4;
+    background-image: none; }
+  .ring-btn[disabled], .ring-btn[disabled]:hover, .ring-btn[disabled]:active, .ring-btn.ring-btn_disabled, .ring-btn.ring-btn_disabled:hover, .ring-btn.ring-btn_disabled:active {
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#EBEBEB), to(#FFF));
+    background-image: -webkit-linear-gradient(bottom, #EBEBEB, #FFF);
+    background-image: linear-gradient(to top, #EBEBEB, #FFF); }
+  .ring-btn:focus, .ring-btn.ring-btn_focus {
+    position: relative;
+    border-radius: 3px !important;
+    -webkit-box-shadow: 0 0 0 2px rgba(37, 183, 255, 0.5);
+    box-shadow: 0 0 0 2px rgba(37, 183, 255, 0.5);
+    z-index: 2;
+    outline: 1px dotted #666; }
+    :root .ring-btn:focus, :root .ring-btn.ring-btn_focus {
+      outline: none; }
+  .ring-btn .ring-font-icon {
+    vertical-align: top;
+    position: relative;
+    top: 3px;
+    color: #888;
+    font-size: 16px; }
+  .ring-btn .ring-font-icon_trash {
+    top: 2px;
+    font-size: 14px; }
+  .ring-btn .ring-font-icon_chevron-left, .ring-btn .ring-font-icon_chevron-right {
+    font-size: 14px; }
+  .ring-btn .ring-font-icon_refresh {
+    top: 2px;
+    font-size: 15px; }
+  .ring-btn .ring-font-icon_caret-down {
+    display: inline-block;
+    top: 6px;
+    font-size: 11px; }
+
+.ring-btn_disabled, .ring-btn:disabled, .ring-btn[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#EBEBEB), to(#FFF));
+  background-image: -webkit-linear-gradient(bottom, #EBEBEB, #FFF);
+  background-image: linear-gradient(to top, #EBEBEB, #FFF); }
+
+.ring-btn_primary {
+  border: solid 1px #BC5600;
+  color: #fff;
+  background-color: #FF8620;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#FF6600), to(#FF8620));
+  background-image: -webkit-linear-gradient(bottom, #FF6600, #FF8620);
+  background-image: linear-gradient(to top, #FF6600, #FF8620); }
+  .ring-btn_primary:hover {
+    background-color: #FF6600;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#ffb373), color-stop(29%, #f60), to(#FF8620));
+    background-image: -webkit-linear-gradient(bottom, #ffb373, #f60 29%, #FF8620);
+    background-image: linear-gradient(to top, #ffb373, #f60 29%, #FF8620); }
+  .ring-btn_primary:active, .ring-btn_primary.ring-btn_active {
+    background-color: #FF8620;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F60), to(#FF8620));
+    background-image: -webkit-linear-gradient(top, #F60, #FF8620);
+    background-image: linear-gradient(to bottom, #F60, #FF8620);
+    -webkit-box-shadow: inset 0 1px 1px 0 #D95801;
+    box-shadow: inset 0 1px 1px 0 #D95801; }
+  .ring-btn_primary[disabled], .ring-btn_primary[disabled]:hover, .ring-btn_primary[disabled]:active, .ring-btn_primary.ring-btn_disabled, .ring-btn_primary.ring-btn_disabled:hover, .ring-btn_primary.ring-btn_disabled:active {
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#FF6600), to(#FF8620));
+    background-image: -webkit-linear-gradient(bottom, #FF6600, #FF8620);
+    background-image: linear-gradient(to top, #FF6600, #FF8620); }
+  .ring-btn_primary .ring-font-icon {
+    color: inherit; }
+
+.ring-btn_blue {
+  border: solid 1px #0084C5;
+  color: #FFF;
+  background-color: #25B7FF;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#008FD6), to(#25B7FF));
+  background-image: -webkit-linear-gradient(bottom, #008FD6, #25B7FF);
+  background-image: linear-gradient(to top, #008FD6, #25B7FF); }
+  .ring-btn_blue:hover {
+    background-color: #008FD6;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(2%, #64CCFF), color-stop(29%, #008FD6), to(#25B7FF));
+    background-image: -webkit-linear-gradient(bottom, #64CCFF 2%, #008FD6 29%, #25B7FF);
+    background-image: linear-gradient(to top, #64CCFF 2%, #008FD6 29%, #25B7FF); }
+  .ring-btn_blue:active, .ring-btn_blue.ring-btn_active {
+    background-color: #25B7FF;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#008FD6), to(#25B7FF));
+    background-image: -webkit-linear-gradient(top, #008FD6, #25B7FF);
+    background-image: linear-gradient(to bottom, #008FD6, #25B7FF);
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); }
+  .ring-btn_blue[disabled], .ring-btn_blue[disabled]:hover, .ring-btn_blue[disabled]:active, .ring-btn_blue.ring-btn_disabled, .ring-btn_blue.ring-btn_disabled:hover, .ring-btn_blue.ring-btn_disabled:active {
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#008FD6), to(#25B7FF));
+    background-image: -webkit-linear-gradient(bottom, #008FD6, #25B7FF);
+    background-image: linear-gradient(to top, #008FD6, #25B7FF); }
+  .ring-btn_blue .ring-font-icon {
+    color: inherit; }
+
+.ring-btn_black {
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  color: #B4B4B4;
+  background-color: #3C3C3C;
+  -webkit-box-shadow: inset 0 1px 1px #505050;
+  box-shadow: inset 0 1px 1px #505050;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#313131), to(#3C3C3C));
+  background-image: -webkit-linear-gradient(bottom, #313131, #3C3C3C);
+  background-image: linear-gradient(to top, #313131, #3C3C3C); }
+  .ring-btn_black:hover {
+    background-color: #313131;
+    -webkit-box-shadow: inset 0 1px #505050;
+    box-shadow: inset 0 1px #505050;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#4A4A4A), color-stop(24%, #313131), to(#3C3C3C));
+    background-image: -webkit-linear-gradient(bottom, #4A4A4A, #313131 24%, #3C3C3C);
+    background-image: linear-gradient(to top, #4A4A4A, #313131 24%, #3C3C3C); }
+  .ring-btn_black:active, .ring-btn_black.ring-btn_active {
+    background-color: #3C3C3C;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#3C3C3C));
+    background-image: -webkit-linear-gradient(top, #313131, #3C3C3C);
+    background-image: linear-gradient(to bottom, #313131, #3C3C3C);
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); }
+  .ring-btn_black[disabled], .ring-btn_black[disabled]:hover, .ring-btn_black[disabled]:active, .ring-btn_black.ring-btn_disabled, .ring-btn_black.ring-btn_disabled:hover, .ring-btn_black.ring-btn_disabled:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: 1;
+    color: #808080;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#3B3B3B), to(#373737));
+    background-image: -webkit-linear-gradient(bottom, #3B3B3B, #373737);
+    background-image: linear-gradient(to top, #3B3B3B, #373737); }
+  .ring-btn_black .ring-font-icon {
+    color: inherit; }
+
+.ring-btn_plus {
+  padding-left: 5px !important; }
+  .ring-btn_plus:before {
+    content: '+';
+    position: relative;
+    top: 1px;
+    margin-right: 3px;
+    font-size: 16px;
+    line-height: 16px; }
+
+.ring-btn_delayed-action {
+  padding-right: 12px !important; }
+  .ring-btn_delayed-action:after {
+    content: '…'; }
+
+.ring-btn_danger {
+  color: #C10000; }
+  .ring-btn_danger .ring-font-icon {
+    color: inherit; }
+
+.ring-btn_square:nth-child(n) {
+  width: 32px; }
+
+.ring-btn_icon {
+  width: 48px;
+  padding: 0; }
+
+.ring-btn__dropdown-icon {
+  width: 24px; }
+
+.ring-btn__last-icon {
+  margin-left: 4px; }
+
+.ring-btn__first-icon {
+  margin-right: 4px; }
+
+.ring-btn__icon-text {
+  margin-right: 8px; }
+
+.ring-btn-group {
+  display: inline-block;
+  position: relative;
+  max-height: 24px;
+  font-size: 0; }
+  @media screen\9 {
+    .ring-btn-group {
+      display: inline;
+      zoom: 1; } }
+
+.ring-btn-group .ring-btn {
+  margin: 0 0 0 -1px;
+  border-radius: 0; }
+
+.ring-btn-group .ring-btn:first-child, .ring-btn-group .ring-btn-group__first {
+  margin: 0;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px; }
+
+.ring-btn-group .ring-btn:last-child, .ring-btn-group .ring-btn-group__last {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px; }
+
+.ring-btn-toolbar {
+  display: inline-block;
+  font-size: 0; }
+  .ring-btn-toolbar.ring-btn-toolbar_block {
+    display: block; }
+
+.ring-btn-toolbar > .ring-btn, .ring-btn-toolbar > .ring-btn-group {
+  margin-right: 16px; }
+  .ring-btn-toolbar > .ring-btn:last-child, .ring-btn-toolbar > .ring-btn-group:last-child {
+    margin-right: 0; }
+
+.ring-icon-btn {
+  position: relative;
+  display: inline;
+  width: 17px !important;
+  height: 17px !important;
+  padding: 0 !important;
+  font-size: 8px;
+  border-radius: 16px;
+  line-height: 16px;
+  color: #6E6E6E; }
+  .ring-icon-btn .ring-font-icon {
+    position: relative;
+    top: -1px;
+    font-size: 7px; }
+
+.ring-plate {
+  padding: 1px 2px;
+  border-radius: 2px;
+  color: #FFF;
+  background-color: #888;
+  font-size: 10px; }
+
+.ring-plate_red {
+  background-color: #C10000; }
+
+.ring-plate_blue {
+  background-color: #1866C5; }
+
+.ring-plate_green {
+  background-color: #608900; }
+
+.ring-header {
+  position: relative;
+  height: 23px;
+  padding: 0 16px;
+  border-bottom: 1px solid #000;
+  background-color: #35444B;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#24353D', endColorstr='#4A565C', GradientType=0)";
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#24353D), to(#4A565C));
+  background-image: -webkit-linear-gradient(top, #24353D, #4A565C);
+  background-image: linear-gradient(to bottom, #24353D, #4A565C);
+  text-align: left;
+  letter-spacing: -5px;
+  font-size: 18px !important;
+  line-height: 12px !important;
+  text-rendering: optimizeLegibility; }
+  .ring-header.ring-header_4x {
+    padding: 0 24px; }
+
+.ring-header__item {
+  position: relative;
+  display: inline-block;
+  height: 17px;
+  padding: 6px 8px 0 8px;
+  vertical-align: middle;
+  letter-spacing: 0;
+  font-size: 11px !important;
+  font-weight: normal !important;
+  font-family: "Helvetica Neue", Arial, sans-serif; }
+
+.ring-header__item_link:hover {
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.ring-header__item_link, .ring-header__item_link:visited {
+  color: #B4B4B4 !important; }
+
+.ring-header__item_active {
+  color: #FFF;
+  font-weight: bold !important; }
+
+.ring-header__personal, .ring-header__more {
+  color: #B4B4B4;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .ring-header__personal .ring-font-icon, .ring-header__more .ring-font-icon {
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    width: 8px;
+    color: #B4B4B4;
+    font-size: 12px !important;
+    vertical-align: top; }
+  .ring-header__personal:hover, .ring-header__more:hover {
+    color: #FF5A00 !important;
+    text-decoration: underline; }
+  .ring-header__personal:hover .ring-font-icon, .ring-header__more:hover .ring-font-icon {
+    color: #FF5A00 !important;
+    background-position: -66px -22px; }
+
+.ring-header__personal {
+  right: 24px; }
+  .ring-header_4x .ring-header__personal {
+    right: 32px; }
+
+.ring-menu {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px solid #CCC;
+  text-align: center;
+  line-height: 24px;
+  font-family: "Helvetica Neue", Arial, sans-serif; }
+
+.ring-menu__i {
+  position: absolute;
+  left: 24px;
+  right: 0;
+  display: inline-block;
+  font-size: 0 !important;
+  text-align: left;
+  white-space: nowrap; }
+  .ring-menu_4x .ring-menu__i {
+    left: 32px; }
+
+.ring-menu__background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 56px;
+  left: 0;
+  right: 0;
+  background: #F0F0F0; }
+
+.ring-menu_gradient .ring-menu__background {
+  height: 112px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#E4E4E4), to(#FFF));
+  background-image: -webkit-linear-gradient(top, #E4E4E4, #FFF);
+  background-image: linear-gradient(to bottom, #E4E4E4, #FFF);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E4E4E4', endColorstr='#FFFFFF',GradientType=0)"; }
+  @media screen\9 {
+    .ring-menu_gradient .ring-menu__background {
+      height: 56px; } }
+
+.ring-menu_noborder, .ring-menu_gradient {
+  border-bottom: none !important; }
+
+.ring-menu__spacer {
+  display: inline-block;
+  width: 0;
+  height: 56px;
+  vertical-align: middle; }
+
+.ring-menu__logo {
+  display: inline-block;
+  height: 24px;
+  vertical-align: middle; }
+
+.ring-menu__logo__img {
+  height: 24px;
+  border: 0; }
+
+.ring-menu__item {
+  font-size: 13px;
+  vertical-align: middle; }
+
+.ring-menu__item {
+  display: inline-block;
+  margin-left: 32px;
+  font-size: 13px !important; }
+  @media screen\9 {
+    .ring-menu__item {
+      display: inline; } }
+  .ring-dropdown-toggle + .ring-menu__item {
+    margin-left: 27px; }
+  .ring-menu__item .ring-btn {
+    font-size: 13px !important; }
+
+.ring-menu__item_noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.ring-menu__item__counter {
+  position: relative;
+  top: -7px;
+  left: 5px; }
+
+.ring-menu__right {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  height: 56px;
+  font-size: 0; }
+  .ring-menu_4x .ring-menu__right {
+    right: 32px; }
+
+.ring-menu__right .ring-menu__item {
+  margin-left: 16px; }
+
+.ring-menu__right .ring-font-icon {
+  font-size: 16px; }
+
+.ring-menu__right .ring-font-icon_cog {
+  width: 12px;
+  font-size: 18px !important; }
+
+.ring-menu__right .ring-menu__item_help {
+  height: 35px; }
+
+.no-font-antialiasing .ring-menu__right .ring-font-icon_help {
+  left: 24px;
+  margin-top: 1px;
+  background-position: -62px 0; }
+  .no-font-antialiasing .ring-menu__right .ring-font-icon_help:hover {
+    background-position: -62px -20px; }
+
+.ring-menu__item__i {
+  display: inline-block; }
+  .no-font-antialiasing .ring-menu__item__i {
+    vertical-align: top; }
+  .ring-menu__item:hover .ring-menu__item__i {
+    text-decoration: underline; }
+
+.ring-menu__item_active, body .ring-menu__item_active.ring-menu__item:hover {
+  color: #000 !important; }
+
+.ring-menu__item_icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 0;
+  margin-left: 16px;
+  text-align: right;
+  vertical-align: middle; }
+  .ring-menu__item_icon:hover .ring-menu__item__i {
+    text-decoration: none !important; }
+
+.ring-menu__right .ring-menu__search {
+  position: relative;
+  top: -2px;
+  margin-left: 24px; }
+
+@media screen\9 {
+  .ring-menu__search__input {
+    width: 173px;
+    height: 24px; } }
+
+.ring-menu__search__glass {
+  position: absolute;
+  top: 11px;
+  width: 16px;
+  right: 4px;
+  color: #D1D1D1; }
+
+.no-font-antialiasing .ring-menu__search__glass {
+  background-position: -80px 0 !important; }
+
+.ring-footer {
+  position: relative;
+  height: 64px;
+  margin: 40px 24px 0 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5;
+  color: #6E6E6E;
+  text-align: center;
+  font-size: 11px !important;
+  font-family: "Helvetica Neue", Arial, sans-serif; }
+  .ring-footer.ring-footer_4x {
+    margin: 40px 32px 0 32px; }
+  .ring-footer.ring-footer_gray {
+    margin: 40px 0 0 0;
+    background-color: #F0F0F0; }
+
+.ring-footer__column {
+  position: absolute;
+  width: 33%; }
+
+.ring-footer__column__i {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top; }
+
+.ring-footer__column_left {
+  left: 0;
+  text-align: left; }
+
+.ring-footer_gray .ring-footer__column_left {
+  padding-left: 24px; }
+
+.ring-footer__column_center {
+  left: 33.6%; }
+
+.ring-footer__column_right {
+  top: 16px;
+  right: 0;
+  text-align: right; }
+
+.ring-footer_gray .ring-footer__column_right {
+  padding-right: 24px; }
+
+.ring-footer__line {
+  list-style: none;
+  padding: 0;
+  line-height: 16px !important; }
+
+.ring-footer__column_center .ring-footer__line {
+  text-align: left; }
+
+.ring-dropdown {
+  position: absolute;
+  margin-top: 4px;
+  z-index: 5;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #ADADAD;
+  border-color: rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-family: "Helvetica Neue", Arial, sans-serif; }
+  .ring-dropdown:not(.ring-dropdown_typed) .ring-dropdown__item_hint {
+    padding: 0; }
+  .ring-dropdown.ring-dropdown_loader .ring-dropdown__i {
+    padding: 0; }
+  .ring-dropdown.ring-dropdown_loader .ring-loader {
+    margin: 16px; }
+
+.ring-dropdown__scroll {
+  position: relative;
+  max-height: 120px;
+  overflow: scroll;
+  overflow-style: none; }
+
+.ring-dropdown_bound {
+  margin-top: 0;
+  border-top: 0;
+  border-radius: 2px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+.ring-dropdown__i {
+  position: relative;
+  padding-top: 5px;
+  z-index: 1;
+  line-height: normal;
+  border-radius: 3px;
+  background-color: #FFF; }
+  .ring-dropdown_typed .ring-dropdown__i {
+    display: table;
+    width: 100%;
+    padding: 0; }
+
+.ring-dropdown-filter__container {
+  width: 208px; }
+
+.ring-dropdown__separator {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 2px 0 5px;
+  background-color: #ADADAD; }
+
+.ring-dropdown__items {
+  max-height: 184px;
+  overflow: scroll; }
+
+.ring-dropdown__item {
+  display: block;
+  overflow: hidden;
+  padding: 0 16px;
+  text-align: left;
+  font-size: 13px !important;
+  line-height: 24px;
+  vertical-align: bottom;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .ring-dropdown__item:last-child:not(.ring-dropdown__item_hint) {
+    margin-bottom: 3px; }
+  .ring-dropdown__item.ring-dropdown__item_error, .ring-dropdown__item.ring-dropdown__item_error .ring-dropdown__item__content {
+    color: #F00 !important;
+    cursor: default; }
+    .ring-dropdown__item.ring-dropdown__item_error:hover, .ring-dropdown__item.ring-dropdown__item_error:focus, .ring-dropdown__item.ring-dropdown__item_error:visited, .ring-dropdown__item.ring-dropdown__item_error .ring-dropdown__item__content:hover, .ring-dropdown__item.ring-dropdown__item_error .ring-dropdown__item__content:focus, .ring-dropdown__item.ring-dropdown__item_error .ring-dropdown__item__content:visited {
+      color: #F00 !important; }
+  .ring-dropdown_typed .ring-dropdown__item {
+    padding-left: 0;
+    display: table-row; }
+    .ring-dropdown_typed .ring-dropdown__item .ring-dropdown__item__type, .ring-dropdown_typed .ring-dropdown__item .ring-dropdown__item__content {
+      display: table-cell; }
+  .ring-dropdown .ring-dropdown__item:hover {
+    text-decoration: none !important; }
+
+.ring-dropdown__item__controls {
+  margin: 4px 0 4px 0;
+  background: #fff; }
+  .ring-dropdown__item__controls:last-child {
+    margin-bottom: 0; }
+    .ring-dropdown__item__controls:last-child .ring-dropdown__item__controls__title {
+      font-weight: normal; }
+
+.ring-dropdown__item__controls__title {
+  cursor: pointer;
+  font-weight: bold; }
+
+.ring-dropdown__item_action {
+  cursor: pointer;
+  color: #000 !important; }
+  .ring-dropdown__item_action.active:not(.ring-dropdown__item_error), .ring-dropdown_menu .ring-dropdown__item_action:hover {
+    color: #FFF !important;
+    background-color: #25B7FF; }
+    .ring-dropdown__item_action.active:not(.ring-dropdown__item_error) .ring-dropdown__highlight, .ring-dropdown__item_action.active:not(.ring-dropdown__item_error) .ring-dropdown__service, .ring-dropdown_menu .ring-dropdown__item_action:hover .ring-dropdown__highlight, .ring-dropdown_menu .ring-dropdown__item_action:hover .ring-dropdown__service {
+      color: inherit; }
+
+.ring-dropdown__highlight {
+  color: #D800FF; }
+
+.ring-dropdown__service {
+  color: #B4B4B4; }
+
+.ring-dropdown__image {
+  height: 16px;
+  width: 16px;
+  float: right;
+  margin-right: -8px;
+  margin-left: 8px;
+  margin-top: 4px; }
+
+.ring-dropdown__item__title {
+  padding-right: 8px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #929292;
+  background-color: #FFF; }
+
+.ring-dropdown__item__underline {
+  display: block;
+  height: 15px;
+  border-bottom: 1px solid #929292;
+  margin-bottom: 8px; }
+
+.ring-dropdown__item__content {
+  display: block;
+  padding: 0 16px 0 8px; }
+  .ring-dropdown__item_hint .ring-dropdown__item__content {
+    font-size: 11px;
+    background-color: #FFF5CD;
+    border-top: 1px solid #E5DCB8; }
+
+.ring-dropdown__item__type {
+  display: block;
+  padding: 0 8px 0 16px;
+  width: 1px;
+  text-align: right;
+  font-size: 13px;
+  white-space: nowrap;
+  color: #888888;
+  background-color: #F0F0F0; }
+  .ring-dropdown__item:first-child .ring-dropdown__item__type {
+    border-top: 4px solid #F0F0F0; }
+
+.ring-dropdown-toggle {
+  font-size: 14px;
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+  margin-left: 5px;
+  padding: 1px 1px 2px 4px;
+  vertical-align: middle;
+  color: #B4B4B4;
+  border-color: #B4B4B4;
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .ring-dropdown-toggle:hover {
+    color: #FF5A00;
+    border-color: #FF5A00;
+    border-width: 1px;
+    padding: 1px 0 2px 4px; }
+
+/* BASICS */
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px; }
+
+.CodeMirror-scroll {
+  /* Set scrolling behaviour here */
+  overflow: auto; }
+
+/* PADDING */
+.CodeMirror-lines {
+  padding: 4px 0;
+  /* Vertical padding around content */ }
+
+.CodeMirror pre {
+  padding: 0 4px;
+  /* Horizontal padding of content */ }
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white;
+  /* The little square between H and V scrollbars */ }
+
+/* GUTTER */
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap; }
+
+
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/* CURSOR */
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid black; }
+
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver; }
+
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: #7e7; }
+
+/* Can style cursor different in overwrite (non-insert) mode */
+
+.cm-tab {
+  display: inline-block; }
+
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  position: absolute; }
+
+/* DEFAULT THEME */
+.cm-s-default .cm-keyword {
+  color: #708; }
+
+.cm-s-default .cm-atom {
+  color: #219; }
+
+.cm-s-default .cm-number {
+  color: #164; }
+
+.cm-s-default .cm-def {
+  color: #00f; }
+
+
+.cm-s-default .cm-variable-2 {
+  color: #05a; }
+
+.cm-s-default .cm-variable-3 {
+  color: #085; }
+
+.cm-s-default .cm-comment {
+  color: #a50; }
+
+.cm-s-default .cm-string {
+  color: #a11; }
+
+.cm-s-default .cm-string-2 {
+  color: #f50; }
+
+.cm-s-default .cm-meta {
+  color: #555; }
+
+.cm-s-default .cm-qualifier {
+  color: #555; }
+
+.cm-s-default .cm-builtin {
+  color: #30a; }
+
+.cm-s-default .cm-bracket {
+  color: #997; }
+
+.cm-s-default .cm-tag {
+  color: #170; }
+
+.cm-s-default .cm-attribute {
+  color: #00c; }
+
+.cm-s-default .cm-header {
+  color: blue; }
+
+.cm-s-default .cm-quote {
+  color: #090; }
+
+.cm-s-default .cm-hr {
+  color: #999; }
+
+.cm-s-default .cm-link {
+  color: #00c; }
+
+.cm-negative {
+  color: #d44; }
+
+.cm-positive {
+  color: #292; }
+
+.cm-header, .cm-strong {
+  font-weight: bold; }
+
+.cm-em {
+  font-style: italic; }
+
+.cm-link {
+  text-decoration: underline; }
+
+.cm-s-default .cm-error {
+  color: #f00; }
+
+.cm-invalidchar {
+  color: #f00; }
+
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #0f0; }
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  color: #f22; }
+
+.CodeMirror-activeline-background {
+  background: #e8f2ff; }
+
+/* STOP */
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+.CodeMirror {
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  color: black; }
+
+.CodeMirror-scroll {
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px;
+  margin-right: -30px;
+  padding-bottom: 30px;
+  height: 100%;
+  outline: none;
+  /* Prevent dragging from highlighting the element */
+  position: relative;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 30px solid transparent;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actuall scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none; }
+
+.CodeMirror-vscrollbar {
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+.CodeMirror-hscrollbar {
+  bottom: 0;
+  left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll; }
+
+.CodeMirror-scrollbar-filler {
+  right: 0;
+  bottom: 0; }
+
+.CodeMirror-gutter-filler {
+  left: 0;
+  bottom: 0; }
+
+.CodeMirror-gutters {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-bottom: 30px;
+  z-index: 3; }
+
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding-bottom: 30px;
+  margin-bottom: -32px;
+  display: inline-block;
+  /* Hack to make IE7 behave */
+  *zoom: 1;
+  *display: inline; }
+
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4; }
+
+.CodeMirror-lines {
+  cursor: text; }
+
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible; }
+
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal; }
+
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0; }
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto; }
+
+
+.CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden; }
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden; }
+
+.CodeMirror-measure pre {
+  position: static; }
+
+.CodeMirror div.CodeMirror-cursor {
+  position: absolute;
+  border-right: none;
+  width: 0; }
+
+div.CodeMirror-cursors {
+  visibility: hidden;
+  position: relative;
+  z-index: 1; }
+
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible; }
+
+.CodeMirror-selected {
+  background: #d9d9d9; }
+
+.CodeMirror-focused .CodeMirror-selected {
+  background: #d7d4f0; }
+
+.CodeMirror-crosshair {
+  cursor: crosshair; }
+
+.cm-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, 0.4); }
+
+/* IE7 hack to prevent it from returning funny offsetTops on the spans */
+.CodeMirror span {
+  *vertical-align: text-bottom; }
+
+/* Used to force a border model for a node */
+.cm-force-border {
+  padding-right: 0.1px; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden; } }
+
+.ring-diff__map {
+  background: #f7f7f7;
+  border: solid 1px #ccc;
+  border-left: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 16px;
+  z-index: 2; }
+
+.ring-diff__map-element {
+  border: solid 1px transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  min-height: 4px;
+  left: 2px;
+  position: absolute;
+  width: 9px; }
+
+.ring-diff__map-element_added {
+  background: #c8efc7;
+  border-color: #f0fbf0;
+  border-bottom-color: #8fe08e;
+  border-right-color: #8fe08e;
+  z-index: 2; }
+
+.ring-diff__map-element_modified {
+  background: #c2d4f8;
+  border-color: #f1f5fd;
+  border-bottom-color: #80a5f0;
+  border-right-color: #80a5f0;
+  z-index: 2; }
+
+.ring-diff__map-element_deleted {
+  background: #dadada;
+  border-color: #f4f4f4;
+  border-bottom-color: #b5b5b5;
+  border-right-color: #b5b5b5;
+  z-index: 1; }
+
+.ring-diff__menu {
+  font: 13px "Helvetica Neue", Helvetica, Arial;
+  line-height: 24px;
+  padding: 4px 8px;
+  overflow: hidden; }
+
+.ring-diff__menu-group {
+  float: left;
+  margin-right: 20px; }
+
+.ring-diff__menu-checkbox {
+  display: inline-block;
+  vertical-align: middle; }
+  .ring-diff__menu-checkbox input[type=checkbox] {
+    margin-top: -1px;
+    vertical-align: middle; }
+
+.ring-diff_doublepane {
+  height: 100%; }
+
+.ring-diff__code {
+  height: 100%;
+  margin-right: 17px;
+  position: relative; }
+
+.ring-diff_doublepane .CodeMirror {
+  border: solid 1px #CCC;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+  height: 100%; }
+
+.ring-diff_doublepane:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.ring-diff__modified, .ring-diff__original, .ring-diff__split {
+  bottom: 0;
+  position: absolute;
+  top: 0; }
+
+.ring-diff__modified {
+  left: 51%;
+  right: 0; }
+
+.ring-diff__modified .CodeMirror {
+  border-left-width: 0; }
+
+.ring-diff__original {
+  left: 0;
+  right: 51%; }
+
+.ring-diff__original .CodeMirror {
+  border-right-width: 0; }
+
+.ring-diff__split {
+  background: rgba(0, 0, 0, 0.1);
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  left: 49%;
+  overflow: hidden;
+  right: 49%;
+  z-index: 4; }
+
+.ring-diff__split svg {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.ring-diff_doublepane .ring-diff-line_added, .ring-diff_doublepane .ring-diff-line_deleted {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+.ring-diff_doublepane .ring-diff-line_added {
+  background: #EDFAED; }
+.ring-diff_doublepane .ring-diff-line_modified {
+  background: #EEF3FD; }
+.ring-diff_doublepane .ring-diff-line_deleted {
+  background: #F2F2F2; }
+.ring-diff_doublepane .ring-diff-line_before-added, .ring-diff_doublepane .ring-diff-line_before-deleted {
+  z-index: 1; }
+.ring-diff_doublepane .ring-diff-line_before-added {
+  -webkit-box-shadow: 0 1px 0 #B2BCB2;
+  box-shadow: 0 1px 0 #B2BCB2;
+  border-bottom: solid 1px #EDFAED; }
+.ring-diff_doublepane .ring-diff-line_before-deleted {
+  -webkit-box-shadow: 0 1px 0 #F2F2F2;
+  box-shadow: 0 1px 0 #F2F2F2;
+  border-bottom: solid 1px #B6B6B6; }
+.ring-diff_doublepane .ring-diff-chars_added {
+  padding: 2px 0;
+  background: #D1F3D2;
+  font-weight: bold; }
+.ring-diff_doublepane .ring-diff-chars_modified {
+  padding: 2px 0;
+  background: #D4E1FB;
+  font-weight: bold; }
+.ring-diff_doublepane .ring-diff-chars_deleted {
+  padding: 2px 0;
+  background: #DEDEDE;
+  font-weight: bold; }
+.ring-diff_doublepane .ring-diff-line_collapsed {
+  border-bottom: solid 1px;
+  z-index: 3; }
+.ring-diff_doublepane .ring-diff-line_first.ring-diff-line_added {
+  border-top: solid 1px #B2BCB2; }
+.ring-diff_doublepane .ring-diff-line_first.ring-diff-line_modified {
+  border-top: solid 1px #B2B7BF; }
+.ring-diff_doublepane .ring-diff-line_first.ring-diff-line_deleted {
+  border-top: solid 1px #B6B6B6; }
+.ring-diff_doublepane .ring-diff-line_first ~ pre .ring-diff-chars_added, .ring-diff_doublepane .ring-diff-line_first ~ pre .ring-diff-chars_modified, .ring-diff_doublepane .ring-diff-line_first ~ pre .ring-diff-chars_deleted {
+  padding-top: 1px; }
+.ring-diff_doublepane .ring-diff-line_last.ring-diff-line_added {
+  border-bottom: solid 1px #B2BCB2; }
+.ring-diff_doublepane .ring-diff-line_last.ring-diff-line_modified {
+  border-bottom: solid 1px #B2B7BF; }
+.ring-diff_doublepane .ring-diff-line_last.ring-diff-line_deleted {
+  border-bottom: solid 1px #B6B6B6; }
+.ring-diff_doublepane .ring-diff-line_last ~ pre .ring-diff-chars_added, .ring-diff_doublepane .ring-diff-line_last ~ pre .ring-diff-chars_modified, .ring-diff_doublepane .ring-diff-line_last ~ pre .ring-diff-chars_deleted {
+  padding-bottom: 1px; }
+
+.ring-diff-connector__line {
+  stroke: #CCCCCC;
+  stroke-width: 1px;
+  fill: transparent; }
+  .ring-diff-connector__line.ring-diff-connector__line_added {
+    stroke: #B2BCB2; }
+  .ring-diff-connector__line.ring-diff-connector__line_modified {
+    stroke: #B2B7BF; }
+  .ring-diff-connector__line.ring-diff-connector__line_deleted {
+    stroke: #B6B6B6; }
+
+.ring-diff-connector {
+  stroke-width: 0px; }
+
+.ring-diff-connector__path_added {
+  fill: #EDFAED; }
+
+.ring-diff-connector__path_modified {
+  fill: #EEF3FD; }
+
+.ring-diff-connector__path_deleted {
+  fill: #F2F2F2; }
+
+.ring-diff__plain-editor .CodeMirror {
+  border: solid 1px #ccc;
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", "Courier New", Courier, monospace; }
+
+.ring-diff_single .CodeMirror {
+  background: #F9F9FC;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  height: auto;
+  width: 100%;
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", "Courier New", Courier, monospace; }
+
+.ring-diff__gutter_original, .ring-diff__gutter_modified, .ring-diff__gutter_symbol {
+  background: rgba(249, 249, 252, 0.9);
+  color: #A7A7A7; }
+
+.ring-diff__gutter_original, .ring-diff__gutter_modified {
+  width: 40px; }
+
+.ring-diff__gutter-symbol {
+  width: 1em; }
+
+.ring-diff__line_added {
+  background: #D1F3D2;
+  font-weight: bold; }
+
+.ring-diff__line_added-inline {
+  background: #D1F3D2; }
+
+.ring-diff__line_deleted {
+  background: #DEDEDE;
+  font-weight: bold; }
+
+.ring-diff__line_deleted-inline {
+  background: #F2F2F2; }
+
+.ring-diff__line_inline {
+  background: #EEF3FD; }
+
+.ring-diff__change_added {
+  background: #D1F3D2;
+  font-weight: bold; }
+
+.ring-diff__change_deleted {
+  background: #DEDEDE;
+  font-weight: bold; }
+
+.ring-diff__line_folded:before {
+  background: -webkit-linear-gradient(135deg, transparent 50%, #F9F9FC 50%) 0 50%, -webkit-linear-gradient(45deg, transparent 50%, #F9F9FC 50%) 0 50%, -webkit-linear-gradient(45deg, #EEE, #EEE);
+  background: linear-gradient(-45deg, transparent 50%, #F9F9FC 50%) 0 50%, linear-gradient(45deg, transparent 50%, #F9F9FC 50%) 0 50%, linear-gradient(45deg, #EEE, #EEE); }
+
+.ring-diff__line_folded:after {
+  background: -webkit-linear-gradient(135deg, transparent 50%, #EEE 50%) 0 50%, -webkit-linear-gradient(45deg, transparent 50%, #EEE 50%) 0 50%, -webkit-linear-gradient(45deg, #F9F9FC, #F9F9FC);
+  background: linear-gradient(-45deg, transparent 50%, #EEE 50%) 0 50%, linear-gradient(45deg, transparent 50%, #EEE 50%) 0 50%, linear-gradient(45deg, #F9F9FC, #F9F9FC); }
+
+.ring-diff__line_folded:before, .ring-diff__line_folded:after {
+  background-repeat: repeat-x;
+  -webkit-background-size: 12px 12px, 12px 12px;
+  background-size: 12px 12px, 12px 12px;
+  content: '';
+  display: block;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+.ring-diff {
+  /* Remove vertical padding around content */
+  /* Remove horizontal padding of content */
+  /* Selection */
+  /* Brackets highlighting */
+  /* Theme */ }
+  .ring-diff .CodeMirror {
+    line-height: 1.5; }
+  .ring-diff .CodeMirror-lines {
+    padding: 0; }
+  .ring-diff .CodeMirror pre {
+    padding: 0; }
+  .ring-diff .CodeMirror-selected {
+    background: #DDEAFE; }
+  .ring-diff .CodeMirror-focused .CodeMirror-selected {
+    background: #DDEAFE; }
+  .ring-diff div.CodeMirror span.CodeMirror-matchingbracket {
+    background-color: #AAD7FD;
+    color: inherit; }
+  .ring-diff div.CodeMirror span.CodeMirror-nonmatchingbracket {
+    background-color: #FFE3E3;
+    color: inherit; }
+  .ring-diff .cm-s-default .cm-keyword {
+    color: #00008B;
+    font-weight: bold; }
+  .ring-diff .cm-s-default .cm-number {
+    color: #00F; }
+  .ring-diff .cm-s-default .cm-def {
+    color: #8B008B; }
+  .ring-diff .cm-s-default .cm-variable {
+    color: #8B008B; }
+  .ring-diff .cm-s-default .cm-variable-2 {
+    color: #8B008B; }
+  .ring-diff .cm-s-default .cm-variable-3 {
+    color: #8B008B; }
+  .ring-diff .cm-s-default .cm-comment {
+    color: #A9A9A9;
+    font-style: italic; }
+  .ring-diff .cm-s-default .cm-string {
+    color: #008D14; }
+  .ring-diff .cm-s-default .cm-string-2 {
+    color: #008D14; }
+  .ring-diff .cm-s-default .cm-tag {
+    color: #000080; }
+  .ring-diff .cm-s-default .cm-attribute {
+    color: #00F; }
+  .ring-diff .cm-s-default .cm-error {
+    color: #FF2A1A; }
+  .ring-diff .cm-s-default .cm-meta {
+    color: #808000; }
+
+.ring-tree {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .ring-tree .ring-tree {
+    padding: 0; }
+  .ring-tree .ring-tree__item {
+    padding-left: 1rem; }
+  .ring-tree .ring-tree__item-dir {
+    position: relative; }
+    .ring-tree .ring-tree__item-dir:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 1em;
+      width: 1em;
+      background-repeat: no-repeat;
+      background-position: center;
+      content: "";
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHNJREFUeNpi/P//PwMlgImBQkCxASy4JKqrq9uBVBUQw/3Y2tpKkgsqgHgxELNR4oVoIN4OxLyUhIETEO8GYlFKAtEciBdRYsBpII4j14B9QOwKxK/JMWApEHsC8UdyArEbiGOB+Bc+GxiHfl6g2ACAAAMA6LcWHlEWBKEAAAAASUVORK5CYII=); }
+      @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+        .ring-tree .ring-tree__item-dir:before {
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANRJREFUeNpi/P//P8NAAsZRB4w6YMg5oKCgoAtIlQMxXo0TJkwgyjwmMhxdCsSLgZiNGiHARKa+aCDeDsT8A+UAEHAC4j1ALDpQDgABEyA+BsQqA+UABqjlIEeYD5QDGKDRsBsaLQPiABDghSbM6IFyAAM0a4KyaMVAOYBkwEJl834BcRIQLx0IB3wC4kAg3jcQIfAaiH2B+ORARMEdIPaE0nQvB04BsRW5llPqAFBcu0GDn+51wVJosH8ciNoQ1CCJhWa50TbhqANGHTDqAIoBQIABAOyWSoNHC+f4AAAAAElFTkSuQmCC);
+          -webkit-background-size: 1rem 1rem;
+          background-size: 1rem 1rem; } }
+    .ring-tree .ring-tree__item-dir > .ring-tree {
+      display: none; }
+    .ring-tree .ring-tree__item-dir > .ring-tree__item-name {
+      cursor: pointer; }
+      .ring-tree .ring-tree__item-dir > .ring-tree__item-name:hover {
+        text-decoration: underline; }
+  .ring-tree .ring-tree__item-dir--opened:before {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGtJREFUeNpi/P//PwMlgImBQjBqAAMDC7pAdXV1O5CqwKOnu7W1tQyfC6qAeCkOzSDxckJeACWMJCDehya+Dyr+n5gw+AXEAUB8Eso/DcRBUHGiA/EzEPsC8Q4g9gbij9gUMY4mZcoNAAgwADOZGPK6qJbFAAAAAElFTkSuQmCC); }
+    @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+      .ring-tree .ring-tree__item-dir--opened:before {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMBJREFUeNpi/P//P8NAAsZRB4w6YNQBow4YdQA+BxQUFHQCqTIK7eieMGECTjOYCGiuAOKlFFgO0luOTwEhB4CCJwmI95Fh+T6o3v+UOAAEfgFxEBCfIsHyM1A9vwgpZCLSwI9A7APEd4hQC1LjBdXDQC0HgMBrIPaE0pSoIdsBMN/5AvEnLHKfoXJ3SDGQiYzEdRKIA9HiF8QOgMox0NoB6CmckpzCwEJhHpdFYo/WBaMOGHXAqANGHTA0HQAQYADHc2r9o9RCNgAAAABJRU5ErkJggg==);
+        -webkit-background-size: 1rem 1rem;
+        background-size: 1rem 1rem; } }
+  .ring-tree .ring-tree__item-dir--opened > .ring-tree {
+    display: block; }
+/*# sourceMappingURL=ring-diff.css.map */

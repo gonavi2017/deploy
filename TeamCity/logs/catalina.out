@@ -1,0 +1,228 @@
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.79
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Jun 26 2017 16:25:20 UTC
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.79.0
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.12.6
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_121-b13
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/nsharma/Downloads/TeamCity
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/nsharma/Downloads/TeamCity
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/nsharma/Downloads/TeamCity/conf/logging.properties
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Xmx512m
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dteamcity.configuration.path=../conf/teamcity-startup.properties
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dlog4j.configuration=file:/Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-server-log4j.xml
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dteamcity_logs=../logs/
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.awt.headless=true
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dtomcat.util.http.parser.HttpParser.requestTargetAllow={}
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/nsharma/Downloads/TeamCity/endorsed
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/nsharma/Downloads/TeamCity
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/nsharma/Downloads/TeamCity
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/nsharma/Downloads/TeamCity/temp
+Sep 22, 2017 10:16:17 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/nsharma/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Sep 22, 2017 10:16:17 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-8111"]
+Sep 22, 2017 10:16:17 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 786 ms
+Sep 22, 2017 10:16:17 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Sep 22, 2017 10:16:17 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.79
+Sep 22, 2017 10:16:17 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/nsharma/Downloads/TeamCity/webapps/ROOT
+Sep 22, 2017 10:16:22 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Using logs directory /Users/nsharma/Downloads/TeamCity/logs
+Log4J configuration file /Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-server-log4j.xml will be monitored with interval 10 seconds.
+Sep 22, 2017 10:16:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/nsharma/Downloads/TeamCity/webapps/ROOT has finished in 6,376 ms
+Sep 22, 2017 10:16:23 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-8111"]
+Sep 22, 2017 10:16:23 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 6417 ms
+TeamCity version: 2017.1.4 (build 47070), data format version 812
+OS: Mac OS X, version 10.12.6, x86_64, Current user: nsharma, Time zone: EDT (UTC-04:00)
+Java: 1.8.0_121, Java HotSpot(TM) 64-Bit Server VM (25.121-b13, mixed mode), Java(TM) SE Runtime Environment (1.8.0_121-b13), Oracle Corporation; JVM parameters: -Djava.util.logging.config.file=/Users/nsharma/Downloads/TeamCity/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Xmx512m -Dteamcity.configuration.path=../conf/teamcity-startup.properties -Dlog4j.configuration=file:/Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-server-log4j.xml -Dteamcity_logs=../logs/ -Djava.awt.headless=true -Dtomcat.util.http.parser.HttpParser.requestTargetAllow={} -Djava.endorsed.dirs=/Users/nsharma/Downloads/TeamCity/endorsed -Dcatalina.base=/Users/nsharma/Downloads/TeamCity -Dcatalina.home=/Users/nsharma/Downloads/TeamCity -Djava.io.tmpdir=/Users/nsharma/Downloads/TeamCity/temp
+Startup confirmation is required. Open TeamCity web page in the browser. Server is running at http://localhost:8111
+=======================================================================
+TeamCity initialized, server UUID: e898a8c4-5d55-49e2-a0d5-da2b78cfbd5d, URL: http://localhost
+TeamCity is running in professional mode
+Super user authentication token: "3918409979496102164". To login as Super user use an empty username and this token as a password on the login page.
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.79
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Jun 26 2017 16:25:20 UTC
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.79.0
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Mac OS X
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            10.12.6
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86_64
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_121-b13
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /Users/nsharma/Downloads/TeamCity
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /Users/nsharma/Downloads/TeamCity
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/Users/nsharma/Downloads/TeamCity/conf/logging.properties
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Xmx512m
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dteamcity.configuration.path=../conf/teamcity-startup.properties
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dlog4j.configuration=file:/Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-server-log4j.xml
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dteamcity_logs=../logs/
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.awt.headless=true
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dtomcat.util.http.parser.HttpParser.requestTargetAllow={}
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/Users/nsharma/Downloads/TeamCity/endorsed
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/Users/nsharma/Downloads/TeamCity
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/Users/nsharma/Downloads/TeamCity
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/Users/nsharma/Downloads/TeamCity/temp
+Sep 24, 2017 7:26:16 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/nsharma/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Sep 24, 2017 7:26:16 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-8111"]
+Sep 24, 2017 7:26:16 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 861 ms
+Sep 24, 2017 7:26:16 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Sep 24, 2017 7:26:16 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.79
+Sep 24, 2017 7:26:16 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /Users/nsharma/Downloads/TeamCity/webapps/ROOT
+Sep 24, 2017 7:26:23 PM org.apache.catalina.startup.TldConfig execute
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Using logs directory /Users/nsharma/Downloads/TeamCity/logs
+Log4J configuration file /Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-server-log4j.xml will be monitored with interval 10 seconds.
+Sep 24, 2017 7:26:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /Users/nsharma/Downloads/TeamCity/webapps/ROOT has finished in 7,102 ms
+Sep 24, 2017 7:26:23 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-8111"]
+Sep 24, 2017 7:26:23 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 7152 ms
+TeamCity version: 2017.1.4 (build 47070), data format version 812
+OS: Mac OS X, version 10.12.6, x86_64, Current user: nsharma, Time zone: EDT (UTC-04:00)
+Java: 1.8.0_121, Java HotSpot(TM) 64-Bit Server VM (25.121-b13, mixed mode), Java(TM) SE Runtime Environment (1.8.0_121-b13), Oracle Corporation; JVM parameters: -Djava.util.logging.config.file=/Users/nsharma/Downloads/TeamCity/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Xmx512m -Dteamcity.configuration.path=../conf/teamcity-startup.properties -Dlog4j.configuration=file:/Users/nsharma/Downloads/TeamCity/bin/../conf/teamcity-server-log4j.xml -Dteamcity_logs=../logs/ -Djava.awt.headless=true -Dtomcat.util.http.parser.HttpParser.requestTargetAllow={} -Djava.endorsed.dirs=/Users/nsharma/Downloads/TeamCity/endorsed -Dcatalina.base=/Users/nsharma/Downloads/TeamCity -Dcatalina.home=/Users/nsharma/Downloads/TeamCity -Djava.io.tmpdir=/Users/nsharma/Downloads/TeamCity/temp
+=======================================================================
+TeamCity initialized, server UUID: e898a8c4-5d55-49e2-a0d5-da2b78cfbd5d, URL: http://localhost:8111
+TeamCity is running in professional mode
+Super user authentication token: "3544700331160168575". To login as Super user use an empty username and this token as a password on the login page.
+[2017-09-24 19:28:45,516]   WARN - erver.ACTIVITIES.ResetPassword - Error while sending reset password email to 'navnidhi@gmail.com': jetbrains.buildServer.util.EmailException: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: mail, 25; timeout 60000;
+  nested exception is:
+	java.net.UnknownHostException: mail (enable debug to see stacktrace) 
+Sep 27, 2017 9:33:19 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-nio-8111"]
+Sep 27, 2017 9:33:22 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+[2017-09-27 21:33:22,462]   WARN - e.RemoteMavenServerManagerImpl - Exception while shutting down maven server: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused (Connection refused): java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused (Connection refused) (enable debug to see stacktrace) 
+[2017-09-27 21:33:22,462]   WARN - e.RemoteMavenServerManagerImpl - Trying force shutdown 
+[2017-09-27 21:33:22,514]   WARN -   jetbrains.buildServer.SERVER - There are non daemon running threads. These threads can prevent server shutdown. Server thread dump has been saved to: /Users/nsharma/Downloads/TeamCity/logs/threadDumps-2017-09-27/2017-09-27_21.33.22-shutdown.txt 
+log4j:WARN No appenders could be found for logger (jetbrains.buildServer.STARTUP).
+log4j:WARN Please initialize the log4j system properly.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesJdbc
+SEVERE: The web application [] registered the JDBC driver [org.hsqldb.jdbc.JDBCDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesJdbc
+SEVERE: The web application [] registered the JDBC driver [org.hsqldb1.jdbcDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [Thread-3] but has failed to stop it. This is very likely to create a memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [TeamCity Diagnostics Service 1] but has failed to stop it. This is very likely to create a memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [Flush Web UI Updates 1] but has failed to stop it. This is very likely to create a memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [jetbrains.buildServer.util.ThreadStat$1] (value [jetbrains.buildServer.util.ThreadStat$1@3b7d948a]) and a value of type [jetbrains.buildServer.util.ThreadStatNoOp] (value [jetbrains.buildServer.util.ThreadStatNoOp@230883e9]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@683ddb1f]) and a value of type [jetbrains.buildServer.util.NamedThreadFactory$1] (value [jetbrains.buildServer.util.NamedThreadFactory$1@3f33cb56]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [jetbrains.buildServer.util.ThreadStat$1] (value [jetbrains.buildServer.util.ThreadStat$1@3b7d948a]) and a value of type [jetbrains.buildServer.util.ThreadStatNoOp] (value [jetbrains.buildServer.util.ThreadStatNoOp@230883e9]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [jetbrains.buildServer.util.ThreadStat$1] (value [jetbrains.buildServer.util.ThreadStat$1@3b7d948a]) and a value of type [jetbrains.buildServer.util.ThreadStatNoOp] (value [jetbrains.buildServer.util.ThreadStatNoOp@230883e9]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Sep 27, 2017 9:33:22 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-nio-8111"]
+Sep 27, 2017 9:33:22 PM org.apache.catalina.loader.WebappClassLoaderBase loadClass
+INFO: Illegal access: this web application instance has been stopped already.  Could not load jetbrains.buildServer.push.impl.atmosphere.AtmosphereFrameworkSpringConfig$FakeBroadcasterCache.  The eventual following stack trace is caused by an error thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access, and has no functional impact.
+java.lang.IllegalStateException
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1777)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1735)
+	at org.atmosphere.util.IOUtils.loadClass(IOUtils.java:308)
+	at org.atmosphere.cpr.BroadcasterConfig.configureBroadcasterCache(BroadcasterConfig.java:126)
+	at org.atmosphere.cpr.BroadcasterConfig.init(BroadcasterConfig.java:118)
+	at org.atmosphere.util.SimpleBroadcaster.createBroadcasterConfig(SimpleBroadcaster.java:53)
+	at org.atmosphere.cpr.DefaultBroadcaster.initialize(DefaultBroadcaster.java:126)
+	at org.atmosphere.cpr.DefaultBroadcasterFactory.createBroadcaster(DefaultBroadcasterFactory.java:138)
+	at org.atmosphere.cpr.DefaultBroadcasterFactory.lookup(DefaultBroadcasterFactory.java:219)
+	at org.atmosphere.cpr.DefaultBroadcasterFactory.lookup(DefaultBroadcasterFactory.java:193)
+	at org.atmosphere.cpr.DefaultBroadcasterFactory.lookup(DefaultBroadcasterFactory.java:188)
+	at jetbrains.buildServer.push.impl.atmosphere.BroadcastersManager.getBroadcasterFor(BroadcastersManager.java:14)
+	at jetbrains.buildServer.push.impl.atmosphere.AtmosphereHandler.broadcast(AtmosphereHandler.java:58)
+	at jetbrains.buildServer.push.impl.atmosphere.AtmosphereHandler$1.send(AtmosphereHandler.java:1)
+	at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopic.lambda$sendLastMessage$0(DefaultTopicsRegistry.java:17)
+	at jetbrains.buildServer.util.NamedThreadFactory.executeWithNewThreadName(NamedThreadFactory.java:71)
+	at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopic.sendLastMessage(DefaultTopicsRegistry.java:14)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.concurrent.ConcurrentHashMap$KeySpliterator.forEachRemaining(ConcurrentHashMap.java:3527)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopicsFlushProcessor.flush(DefaultTopicsRegistry.java:30)
+	at jetbrains.buildServer.push.impl.DefaultTopicsRegistry$ValueTopicsFlushProcessor.lambda$start$0(DefaultTopicsRegistry.java:23)
+	at java.lang.Thread.run(Thread.java:745)
+
+Sep 27, 2017 9:33:22 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-nio-8111"]

@@ -1,0 +1,38 @@
+.presetDescription {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+.presetDescriptionCustom {
+  padding-left: 0;
+  margin: 1em 0;
+}
+
+.disabled {
+  color: #ccc;
+}
+
+label.disabled {
+  color: #888;
+}
+
+.running {
+  font-weight: bold;
+}
+
+.cancelling {
+  color: #ED2C10;
+}
+
+.error-hl {
+  color: #ED2C10;
+  font-weight: bold;
+}
+
+.error-details {
+  color: #ED2C10
+}
+
+.hint {
+  color: gray;
+}

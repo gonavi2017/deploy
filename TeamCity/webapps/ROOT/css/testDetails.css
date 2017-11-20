@@ -1,0 +1,217 @@
+.testSummaryPane {
+  background-color: #F0F0F0;
+  padding: 2px 5px;
+}
+
+table.mainHeader {
+  width: 100%;
+}
+
+.buildTypeSelector {
+  float: right;
+}
+
+.testSummaryPane span.successRate {
+  white-space: nowrap;
+}
+
+.testSummaryPane span.shortStat {
+  padding-right: .5em;
+}
+
+table.durationTable {
+  width: 100%;
+}
+
+table.durationTable tr td.midHeader {
+  padding-top: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+table.durationTable tr.headerRow {
+  line-height: 1em;
+  color: #707070;
+}
+
+table.durationTable tr.valueRow {
+  line-height: 1em;
+}
+
+h3.topHeader {
+  margin: 0 0 3px 0;
+}
+
+table.topTable {
+  width: 100%;
+}
+
+table.topTable tr {
+  vertical-align: top;
+}
+
+table.topTable > tbody > tr > td,
+table.topTable         > tr > td {
+  padding: 10px;
+}
+
+table.topTable tr td div.testDurationContents {
+  float: right;
+}
+
+.testHeader {
+  margin: 0 27px 15px 0;
+  padding: 10px 0 0;
+  color: #000;
+  font-size: 18px;
+}
+
+.testHeader .testHeaderName {
+  white-space: normal;
+}
+
+.testDetailsHeader {
+  margin-top: 1.2em;
+  font-size: 13px;
+  font-weight: normal;
+  color: #1564c2;
+}
+
+#testStats {
+  margin-top: 0.5em;
+}
+
+.testDetailsHeader + * {
+  margin-bottom: 1.2em;
+  border: 1px solid #dbdbdb;
+  border-top: none;
+}
+
+.testDetailsHeader .successRate,
+.testDetailsHeader .investigation {
+  display: inline-block;
+  width: 50%;
+}
+
+.testDetailsHeader .investigation {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px;
+}
+
+.testDetailsHeader .mute {
+  padding-left: 2px;
+}
+
+.testDetailsHeader .investigation .icon16.bp,
+.testDetailsHeader .mute .icon16.bp {
+  width: 16px;
+}
+
+.success-rate__icon {
+  display: inline-block;
+  border: 1px solid #6da2c5;
+  width: 10px;
+  height: 10px;
+  background-color: #ced9e0;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, transparent 50%, #4892c1 0);
+  opacity: 0.8;
+  margin-bottom: -1px;
+  box-shadow: 0 0 0 1px transparent; /* hack for Chrome to avoid round border cropping */
+}
+
+.success-rate__icon:before {
+  content: '';
+  display: block;
+  background-color: inherit;
+  width: 50%;
+  height: 100%;
+  margin-left: 50%;
+  border-radius: 0 11px 11px 0;
+  transform-origin: left;
+}
+
+.successRate01 .success-rate__icon:before,
+.successRate05 .success-rate__icon:before { transform: rotate(45deg); }
+.successRate02 .success-rate__icon:before,
+.successRate06 .success-rate__icon:before { transform: rotate(90deg); }
+.successRate03 .success-rate__icon:before,
+.successRate07 .success-rate__icon:before { transform: rotate(135deg); }
+.successRate04 .success-rate__icon:before,
+.successRate08 .success-rate__icon:before { transform: rotate(180deg); }
+
+.successRate05 .success-rate__icon:before,
+.successRate06 .success-rate__icon:before,
+.successRate07 .success-rate__icon:before,
+.successRate08 .success-rate__icon:before { background-color: #4892c1; }
+
+.testDetailsHeader .duration span {
+  margin-left: 0.5em;
+}
+
+.testDetailsHeader .duration .avg {
+  color: #000;
+}
+
+.testDetailsHeader .duration .min {
+  color: #0a0;
+}
+
+.testDetailsHeader .duration .max {
+  color: #ED2C10;
+}
+
+.testDetailsHeader img {
+  margin: 0.1em 0.1em 0 0;
+  vertical-align: top;
+}
+
+table#investigation-section {
+  width: 100%;
+  padding-left: 15px;
+}
+
+table#investigation-section td.half {
+  width: 50%;
+  vertical-align: top;
+}
+
+table#investigation-section table th {
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+table#investigation-section table td,
+table#investigation-section table th {
+  text-align: left;
+}
+
+table#investigation-section + div.actions {
+  background-color: #F6F6F6;
+  padding: 5px 5px 5px 8px;
+  border-top: 1px solid #D6D6D6;
+}
+
+table#investigation-section + div.actions a + a {
+  margin-left: 1.5em;
+}
+
+.topTable .GraphContainer .graphContainer {
+  position: relative;
+  padding: 5px 10px 0 0;
+}
+
+.topTable .GraphContainer .agentsList {
+  position: relative;
+  width: 240px;
+  padding: 10px 5px 5px;
+  vertical-align: top;
+}
+
+table.testList.historyList td.buildNumber {
+  text-align: left !important;
+}
+
+table.testList.historyList td:last-child {
+  max-width: 12em;
+}

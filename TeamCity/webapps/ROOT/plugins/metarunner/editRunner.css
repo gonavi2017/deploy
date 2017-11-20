@@ -1,0 +1,28 @@
+div.metaRunnerEditSettings .CodeMirror {
+  height: auto;
+  border: 1px solid #eee;
+}
+
+div.metaRunnerEditSettings table.metaRunnerParameters {
+  padding-top: 0.5em;
+  width: 50%;
+}
+
+div.metaRunnerEditSettings table.metaRunnerParameters th,
+div.metaRunnerEditSettings table.metaRunnerParameters td {
+  padding-left: 0;
+  border-top: none;
+}
+
+div.metaRunnerEditSettings .metaRunnerContent {
+  width: 100%;
+  height: 300px;
+}
+
+div.metaRunnerEditSettings div.metaRunnerSubmitBlock {
+  width: 60%;
+}
+
+div.metaRunnerEditSettings .error {
+  margin-left: 0;
+}

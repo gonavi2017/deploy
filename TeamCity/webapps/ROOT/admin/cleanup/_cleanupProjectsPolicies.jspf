@@ -1,0 +1,27 @@
+<c:forEach items="${editCleanupRulesForm.projectsToShow}" var="project">
+  <c:set var="isFirstProjectRow" value="${true}"/>
+
+  <jsp:useBean id="project" type="jetbrains.buildServer.serverSide.impl.ProjectEx"/>
+  <%@ include file="_cleanupProjectLine.jspf" %>
+
+  <c:set var="isFirstProjectRow" value="${false}"/>
+
+  <c:forEach items="${project.ownBuildTypeTemplates}" var="template" varStatus="pos">
+    <jsp:useBean id="template" type="jetbrains.buildServer.serverSide.BuildTypeTemplateEx"/>
+
+    <%@ include file="_cleanupBuildTypeTemplateLine.jspf" %>
+
+    <c:set var="isFirstProjectRow" value="${false}"/>
+
+  </c:forEach>
+
+  <c:forEach items="${project.ownBuildTypes}" var="type" varStatus="pos">
+    <jsp:useBean id="type" type="jetbrains.buildServer.serverSide.BuildTypeEx"/>
+    <%@ include file="_cleanupBuildTypeLine.jspf" %>
+
+    <c:set var="isFirstProjectRow" value="${false}"/>
+
+  </c:forEach>
+
+</c:forEach>
+

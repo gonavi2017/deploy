@@ -1,0 +1,90 @@
+/*----- Files popup styles, see filesPopup.jsp --------*/
+div#filesPopup {
+  padding: 0;
+}
+
+table.changedFiles {
+  margin: .5em .5em 0;
+  font-size: 95%;
+  border-collapse: collapse;
+}
+
+table.separatedWithLine table.changedFiles td {
+  border-bottom: none;
+}
+
+table.changedFiles td.typeTD {
+  padding: 0 0 0 2px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+table.changedFiles td.fileTD {
+  padding: .2em .5em;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+table.changedFiles td.typeTD .changeType {
+  display: inline-block;
+  width: 60px;
+  margin-right: .5em;
+  padding: 0 4px;
+  border-radius: 2px;
+
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+table.changedFiles td.typeTD .changeType.edited {
+  background-color: #9ABDED;
+}
+
+table.changedFiles td.typeTD .changeType.copied {
+  background-color: #9ABDED;
+}
+
+table.changedFiles td.typeTD .changeType.added {
+  background-color: #A9BA66;
+}
+
+table.changedFiles td.typeTD .changeType.removed {
+  background-color: #DDD;
+}
+
+table.changedFiles td.fileTD .excluded {
+  color: #ED2C10;
+}
+
+.filesPopupHeader,
+.filesPopupFooter {
+  font-size: 90%;
+}
+
+.filesPopupHeader {
+  background-color: #f5f5f5;
+  margin: 3px 4px;
+  padding: 4px 5px;
+}
+
+.filesPopupHeaderTitle {
+  float: left;
+  max-width: 70%;
+}
+
+.filesPopupHeaderActions {
+  float: right;
+  position: relative;
+  top: 1px;
+}
+
+.filesPopupFooter {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 9px;
+}
+
+.fileTD .ide_link_group{
+  margin-left: 5px;
+}

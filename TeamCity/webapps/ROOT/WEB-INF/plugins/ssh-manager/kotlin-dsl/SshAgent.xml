@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildFeature" type="ssh-agent-build-feature" generateDslJar="true">
+  <class name="SshAgent">
+    <description>
+      A [build feature](https://confluence.jetbrains.com/display/TCDL/SSH+Agent) which runs
+      SSH agent during a build with the specified SSH key loaded
+    </description>
+  </class>
+  <function name="sshAgent">
+    <description>
+      Adds a [build feature](https://confluence.jetbrains.com/display/TCDL/SSH+Agent) which runs
+      SSH agent during a build with the specified SSH key loaded
+    </description>
+  </function>
+  <params>
+    <param name="teamcitySshKey" description="[Uploaded SSH key](https://confluence.jetbrains.com/display/TCDL/SSH+Keys+Management) name to load into an SSH agent" />
+  </params>
+</dsl-extension>

@@ -1,0 +1,14 @@
+input.textProperty {
+  font-family: verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+div.paramSection {
+  margin-bottom: 1em;
+}
+
+span.unknownRunner {
+  padding-left: 1em;
+  color: #ED2C10;
+}

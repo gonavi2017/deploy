@@ -1,0 +1,12 @@
+<%@ page import="java.util.Set" %>
+<%@ page import="jetbrains.buildServer.util.StringUtil" %>
+&nbsp;contains <strong><bs:out value="${fn:length(errors)}"/></strong> unresolved maven user settings name<bs:s val="${fn:length(errors)}"/>:
+<%
+  @SuppressWarnings("unchecked")
+  final Set<String> set = (Set<String>)pageContext.getAttribute("errors");
+  if (set != null) {
+%>
+<%=StringUtil.join(set, ", ")%>
+<%
+  }
+%>

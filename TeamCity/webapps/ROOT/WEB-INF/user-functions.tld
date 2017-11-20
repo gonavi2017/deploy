@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+  <description>TeamCity user-related functions library</description>
+  <display-name>TeamCity user-related functions</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>ufn</short-name>
+  <uri>/WEB-INF/functions/user</uri>
+
+  <function>
+    <description>
+      Returns value of a boolean property.
+    </description>
+    <name>booleanPropertyValue</name>
+    <function-class>jetbrains.buildServer.web.functions.user.UserFunctions</function-class>
+    <function-signature>boolean booleanPropertyValue(jetbrains.buildServer.users.User,java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns value of a string property.
+    </description>
+    <name>getPropertyValue</name>
+    <function-class>jetbrains.buildServer.web.functions.user.UserFunctions</function-class>
+    <function-signature>java.lang.String getPropertyValue(jetbrains.buildServer.users.User,java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns all users registered in the system.
+    </description>
+    <name>getAllUsers</name>
+    <function-class>jetbrains.buildServer.web.functions.user.UserFunctions</function-class>
+    <function-signature>java.util.List getAllUsers()</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Checks if the specified user is the guest user
+    </description>
+    <name>isGuestUser</name>
+    <function-class>jetbrains.buildServer.web.functions.user.UserFunctions</function-class>
+    <function-signature>boolean isGuestUser(jetbrains.buildServer.users.User)</function-signature>
+  </function>
+</taglib>

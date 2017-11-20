@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+  <description>TeamCity util functions library</description>
+  <display-name>TeamCity util functions</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>util</short-name>
+  <uri>/WEB-INF/functions/util</uri>
+
+  <function>
+    <description>
+      Escapes string to be used in javascript
+    </description>
+    <name>forJS</name>
+    <function-class>jetbrains.buildServer.web.functions.UtilFunctions</function-class>
+    <function-signature>java.lang.String escapeJavaScript(java.lang.String, boolean, boolean)</function-signature>
+  </function>
+
+  <function>
+    <description>Escapes url to be used inside quotes</description>
+    <name>escapeUrlForQuotes</name>
+    <function-class>jetbrains.buildServer.web.functions.UtilFunctions</function-class>
+    <function-signature>java.lang.String escapeUrlForQuotes(java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>Performs the URL escaping of the provided string (e.g. %20 for a whitespace, etc)</description>
+    <name>urlEscape</name>
+    <function-class>jetbrains.buildServer.web.util.WebUtil</function-class>
+    <function-signature>java.lang.String encode(java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Escapes string to be used as javascript identifier
+    </description>
+    <name>forJSIdentifier</name>
+    <function-class>jetbrains.buildServer.web.functions.UtilFunctions</function-class>
+    <function-signature>java.lang.String escapeJavaScriptIdentifier(java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Get unique id withing the bounds of the server
+    </description>
+    <name>uniqueId</name>
+    <function-class>jetbrains.buildServer.web.functions.UtilFunctions</function-class>
+    <function-signature>java.lang.String uniqueId()</function-signature>
+  </function>
+
+
+  <function>
+    <description>
+      Get non-unique blockID from any text (uses MD5). Text is considered the key.
+    </description>
+    <name>blockId</name>
+    <function-class>jetbrains.buildServer.web.functions.BlockStateUtil</function-class>
+    <function-signature>java.lang.String blockId(java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns 'display:none;' string if block should be hidden.
+      Parameters: request, blockId, collapsedByDefault
+    </description>
+    <name>blockHiddenCss</name>
+    <function-class>jetbrains.buildServer.web.functions.BlockStateUtil</function-class>
+    <function-signature>java.lang.String displayBlockStyle(javax.servlet.http.HttpServletRequest,java.lang.String,boolean)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Restores current state of the blocks for particular blocksType (or for a single block, if blockType = blockId)
+
+      State is put to BS.Blocks._saved variable.
+      It is supposed that corresponding BS.Blocks.restoreSavedBlocks() method
+      is called after this method, to fix actual block state.
+
+      Parameters: request, blockType, wrapInScriptTag
+
+      @see util:blockHiddenCss
+      @see util:blockId
+      @see BlockWithHandle, BlockWithHeader
+    </description>
+    <name>blockHiddenJs</name>
+    <function-class>jetbrains.buildServer.web.functions.BlockStateUtil</function-class>
+    <function-signature>java.lang.String getBlockStyleJavascript(javax.servlet.http.HttpServletRequest,java.lang.String,boolean)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if block should be hidden.
+      Parameters: request, blockId, collapsedByDefault
+    </description>
+    <name>isBlockHidden</name>
+    <function-class>jetbrains.buildServer.web.functions.BlockStateUtil</function-class>
+    <function-signature>boolean isBlockHidden(javax.servlet.http.HttpServletRequest,java.lang.String,boolean)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if current mute info should be shown on a page with specified build type scope.
+      Parameters: currentMuteInfo, ignoreMuteScope, currentScope
+    </description>
+    <name>shouldShowCurrentMuteInfo</name>
+    <function-class>jetbrains.buildServer.web.functions.MuteWebUtil</function-class>
+    <function-signature>boolean shouldShowCurrentMuteInfo(jetbrains.buildServer.serverSide.mute.CurrentMuteInfo,java.lang.Boolean,jetbrains.buildServer.serverSide.SBuildType)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Adds the specified item to the list.
+      Parameters: list, item
+    </description>
+    <name>add</name>
+    <function-class>jetbrains.buildServer.web.functions.UtilFunctions</function-class>
+    <function-signature>void add(java.util.List,java.lang.Object)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Check whether collection contains specified item.
+      Parameters: collection, item
+    </description>
+    <name>contains</name>
+    <function-class>jetbrains.buildServer.web.functions.UtilFunctions</function-class>
+    <function-signature>boolean contains(java.util.Collection,java.lang.Object)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns index of first new line sequence
+    </description>
+    <name>indexOfNewLine</name>
+    <function-class>jetbrains.buildServer.web.functions.UtilFunctions</function-class>
+    <function-signature>int indexOfNewLine(java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns index of first new line sequence since given start index
+    </description>
+    <name>indexOfNewLineEx</name>
+    <function-class>jetbrains.buildServer.web.functions.UtilFunctions</function-class>
+    <function-signature>int indexOfNewLine(java.lang.String, int, boolean)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns line separator
+    </description>
+    <name>
+      lineSeparator
+    </name>
+    <function-class>jetbrains.buildServer.web.functions.UtilFunctions</function-class>
+    <function-signature>java.lang.String lineSeparator(boolean)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Return first line of text
+    </description>
+    <name>firstLine</name>
+    <function-class>jetbrains.buildServer.web.util.WebUtil</function-class>
+    <function-signature>java.lang.String firstLine(java.lang.String)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Formats a long value as file size
+    </description>
+    <name>formatFileSize</name>
+    <function-class>jetbrains.buildServer.util.StringUtil</function-class>
+    <function-signature>java.lang.String formatFileSize(long,int)</function-signature>
+  </function>
+
+  <function>
+    <name>formatPercent</name>
+    <function-class>jetbrains.buildServer.util.StringUtil</function-class>
+    <function-signature>java.lang.String formatPercent(float,long)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Formats interval in nano seconds in {seconds}s{millis}ms{micros}us{nanos}ns format.
+    </description>
+    <name>formatNanos</name>
+    <function-class>jetbrains.buildServer.util.Dates</function-class>
+    <function-signature>java.lang.String formatNanos(long)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Formats timezone in format "&lt;id&gt; (GTM[+-]&lt;offset&gt;)"
+    </description>
+    <name>formatTimeZone</name>
+    <function-class>jetbrains.buildServer.util.Dates</function-class>
+    <function-signature>java.lang.String formatTimeZoneLong(java.util.TimeZone)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns sorted by GTM offset array of timezone ids. Only region based timezones are included.
+    </description>
+    <name>timeZones</name>
+    <function-class>jetbrains.buildServer.util.Dates</function-class>
+    <function-signature>java.util.TimeZone[] getSortedTimeZones()</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns user timezone
+    </description>
+    <name>userTimeZone</name>
+    <function-class>jetbrains.buildServer.web.util.SessionUser</function-class>
+    <function-signature>java.util.TimeZone getUserTimeZone(javax.servlet.http.HttpServletRequest)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Truncates string and adds dots to the end of the string if it was truncated
+    </description>
+    <name>truncate</name>
+    <function-class>jetbrains.buildServer.util.StringUtil</function-class>
+    <function-signature>java.lang.String truncateStringValueWithDotsAtEnd(java.lang.String, int)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Collapse project path based on project context
+    </description>
+    <name>contextProjectInfo</name>
+    <function-class>jetbrains.buildServer.util.ContextProjectInfo</function-class>
+    <function-signature>jetbrains.buildServer.util.ContextProjectInfo createContextProjectInfo(jetbrains.buildServer.serverSide.SProject, jetbrains.buildServer.serverSide.SProject)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Collapse build configuration path based on project context
+    </description>
+    <name>contextConfigurationName</name>
+    <function-class>jetbrains.buildServer.util.ContextProjectInfo</function-class>
+    <function-signature>java.lang.String getDependentBuildTypeName(jetbrains.buildServer.serverSide.SBuildType,jetbrains.buildServer.serverSide.SProject)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Creates URL pointing to TeamCity help documentation
+    </description>
+    <name>helpUrl</name>
+    <function-class>jetbrains.buildServer.util.HelpURLProvider</function-class>
+    <function-signature>java.lang.String getHelpUrl(java.lang.String,java.lang.String,java.lang.String,boolean)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Formats given Throwable stacktrace
+    </description>
+    <name>stackTrace</name>
+    <function-class>jetbrains.buildServer.util.StringUtil</function-class>
+    <function-signature>java.lang.String stackTrace(java.lang.Throwable)</function-signature>
+  </function>
+
+
+</taglib>

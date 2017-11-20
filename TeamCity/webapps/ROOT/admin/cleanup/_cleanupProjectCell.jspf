@@ -1,0 +1,10 @@
+<c:if test="${isFirstProjectRow}">
+  <c:set var="numBuildTypes" value="${fn:length(project.ownBuildTypes)}"/>
+  <c:set var="numTemplates" value="${fn:length(project.ownBuildTypeTemplates)}"/>
+  <c:set var="rowSpan" value="${numBuildTypes + numTemplates + 1}"/>
+  <td class="project" rowspan="${rowSpan}">
+    <bs:projectLinkFull project="${project}"/>
+    <c:if test="${not empty project.description}"><br/><c:out value="${project.description}"/></c:if>
+    <div class="diskUsage" style="display: none" data-project-id="<c:out value="${project.externalId}"/>">Disk usage: <span class="valueHolder"></span></div>
+  </td>
+</c:if>

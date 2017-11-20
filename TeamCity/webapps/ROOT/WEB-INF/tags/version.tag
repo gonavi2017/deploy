@@ -1,0 +1,1 @@
+<span class="greyNote"><span class="vWord">Version</span> ${serverTC.fullServerVersion}</span>

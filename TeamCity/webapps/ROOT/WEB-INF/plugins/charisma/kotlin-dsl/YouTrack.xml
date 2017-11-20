@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="projectFeature" type="IssueTracker" generateDslJar="true" applicable="params['type'] == 'youtrack'">
+  <class name="YouTrackIssueTracker">
+    <description>
+      Project feature enabling integration with [YouTrack](https://confluence.jetbrains.com/display/TCDL/YouTrack) issue tracker
+    </description>
+  </class>
+  <init>
+    <param name="type" value="youtrack" />
+  </init>
+  <function name="youtrack">
+    <description>
+      Enables integration with [YouTrack](https://confluence.jetbrains.com/display/TCDL/YouTrack) issue tracker
+      @see YouTrackIssueTracker
+    </description>
+  </function>
+  <params>
+    <param name="name" dslName="displayName">
+      <description>
+        Issue tracker integration display name
+      </description>
+    </param>
+    <param name="host">
+      <description>
+        YouTrack server URL
+      </description>
+    </param>
+    <param name="username" dslName="userName">
+      <description>
+        A username for YouTrack connection
+      </description>
+    </param>
+    <param name="secure:password" dslName="password">
+      <description>
+        A password for YouTrack connection
+      </description>
+    </param>
+    <param name="idPrefix" dslName="projectExtIds">
+      <description>
+        A space-separated list of YouTrack Project IDs
+      </description>
+    </param>
+    <param name="autoSync" dslName="useAutomaticIds" type="boolean" trueValue="true" falseValue="">
+      <description>
+        Automatically populate YouTrack Project IDs
+      </description>
+    </param>
+  </params>
+</dsl-extension>

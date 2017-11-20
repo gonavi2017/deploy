@@ -1,0 +1,49 @@
+<%@ include file="/include-internal.jsp"%>
+<c:set var="tableBody">
+  <%--@elvariable id="flakyTest" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.TestInfo"--%>
+  <c:forEach var="build" items="${flakyTest.builds}">
+    <c:if test="${build.failureRate.value eq 1.0}">
+      <c:set var="buildTypeId" value="${build.buildTypeId}"/>
+      <tr>
+        <td>Test always fails in <%@ include file="buildTypeLinkFull.jspf"%></td>
+      </tr>
+    </c:if>
+  </c:forEach>
+  <c:forEach var="agent" items="${flakyTest.agents}">
+    <c:if test="${agent.failureRate.value eq 1.0}">
+      <c:set var="agentDetailsLink">
+        <%--@elvariable id="flakyAgents" type="java.util.Map<jetbrains.buildServer.serverSide.flakyTestDetector.opendata.AgentInfo,jetbrains.buildServer.serverSide.BuildAgentEx>"--%>
+        <c:set var="sAgent" value="${flakyAgents[agent]}"/>
+        <c:choose>
+
+          <c:when test="${not empty sAgent}">
+            <bs:agentDetailsLink agent="${sAgent}"/>
+          </c:when>
+
+          <c:otherwise>
+            <%-- Never --%>
+            <c:out value="${agent.name}"/>
+          </c:otherwise>
+
+        </c:choose>
+      </c:set>
+      <tr>
+        <td>Test always fails on ${agentDetailsLink}</td>
+      </tr>
+    </c:if>
+  </c:forEach>
+</c:set>
+<c:if test="${not empty fn:trim(tableBody)}">
+  <table class="environmentSpecifics">
+    <thead>
+    <tr>
+      <th>
+        Environment specifics
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+      ${tableBody}
+    </tbody>
+  </table>
+</c:if>

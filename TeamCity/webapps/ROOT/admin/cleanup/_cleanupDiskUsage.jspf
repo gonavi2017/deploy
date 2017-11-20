@@ -1,0 +1,20 @@
+<%--@elvariable id="totalLogsSize" type="java.lang.String"--%>
+<%--@elvariable id="totalLogsText" type="java.lang.String"--%>
+<%--@elvariable id="totalArtifactsSize" type="java.lang.String"--%>
+<%--@elvariable id="totalArtifactsText" type="java.lang.String"--%>
+<%--@elvariable id="totalArtifactsFreeSpace" type="java.lang.String"--%>
+<%--@elvariable id="totalLogsFreeSpace" type="java.lang.String"--%>
+<div>
+Current disk space usage:
+<c:choose>
+  <c:when test="${totalArtifactsFreeSpace != totalLogsFreeSpace}">
+    free space in artifacts directory: <strong>${totalArtifactsFreeSpace}</strong>,
+    free space in logs directory: <strong>${totalLogsFreeSpace}</strong>,
+  </c:when>
+  <c:otherwise>
+    free space: <strong>${totalArtifactsFreeSpace}</strong>,
+  </c:otherwise>
+</c:choose>
+${totalArtifactsText}<strong>${totalArtifactsSize}</strong>, ${totalLogsText}<strong>${totalLogsSize}</strong>.
+<a href="admin.html?item=diskUsage">View disk usage report</a>
+</div>

@@ -1,0 +1,37 @@
+.plugins h2 {
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+}
+
+.plugins .installMore {
+  margin: 1em 0 2em;
+}
+
+.plugins table {
+  width: 100%;
+}
+
+.pluginMessageBar {
+  color: #222;
+}
+
+.pluginMessageBar__error{
+  color: #d92f19;
+}
+
+.pluginMessage__warning .problemMessage,
+.pluginMessage__disable_reason .problemMessage {
+  color: #cc8800;
+}
+
+.pluginMessageBar__message {
+  /*background-color: #ebfaf5;*/
+  background: none;
+  /*color: #00de94;*/
+  color: black;
+}
+
+.pluginMessage__message .problemMessage {
+  /*color: #00cc88;*/
+  color: black;
+}

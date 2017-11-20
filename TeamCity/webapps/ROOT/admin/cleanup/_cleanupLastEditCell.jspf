@@ -1,0 +1,12 @@
+<td class="edit ${editableHighlight}" ${editableOnClick}>
+  <c:if test="${editable}">
+    <div>
+      <a ${editableOnClick}>Edit</a>
+    </div>
+  </c:if>
+  <c:set var="hasNonDefaultPolicy" value="${fn:length(ownCleanupPolicies) > 0}"/>
+  <c:set var="hasNonDefaultArtifactCleanupPrevention" value="${not empty ownOptions['preventDependenciesArtifactsFromCleanup'] and not (project.rootProject and ownOptions['preventDependenciesArtifactsFromCleanup'])}"/>
+  <c:if test="${editable and (hasNonDefaultPolicy or hasNonDefaultArtifactCleanupPrevention)}">
+    <a onclick="BS.Cleanup.resetPolicies('${not empty editCleanupRulesForm ? editCleanupRulesForm.parentProject.externalId : project.externalId}', '${project.projectId}', '${not empty type ? type.buildTypeId : template.id}'); event.stopPropagation(); return false;">Reset</a>
+  </c:if>
+</td>

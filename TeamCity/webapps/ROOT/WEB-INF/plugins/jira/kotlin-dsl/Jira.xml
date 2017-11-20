@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="projectFeature" type="IssueTracker" generateDslJar="true" applicable="params['type'] == 'jira'">
+  <class name="JiraIssueTracker">
+    <description>
+      Project feature enabling integration with [JIRA](https://confluence.jetbrains.com/display/TCDL/JIRA) issue tracker
+    </description>
+  </class>
+  <init>
+    <param name="type" value="jira" />
+  </init>
+  <function name="jira">
+    <description>
+      Enables integration with [JIRA](https://confluence.jetbrains.com/display/TCDL/JIRA) issue tracker
+    </description>
+  </function>
+  <params>
+    <param name="name" dslName="displayName">
+      <description>
+        Issue tracker integration display name
+      </description>
+    </param>
+    <param name="host">
+      <description>
+        JIRA server URL
+      </description>
+    </param>
+    <param name="username" dslName="userName">
+      <description>
+        A username for JIRA connection
+      </description>
+    </param>
+    <param name="secure:password" dslName="password">
+      <description>
+        A password for JIRA connection
+      </description>
+    </param>
+    <param name="idPrefix" dslName="projectKeys">
+      A space-separated list of JIRA [Project keys](https://confluence.atlassian.com/display/JIRA044/What+is+a+Project)
+    </param>
+    <param name="autoSync" dslName="useAutomaticKeys" type="boolean" trueValue="true" falseValue="">
+      <description>
+        Automatically populate JIRA Project keys
+      </description>
+    </param>
+  </params>
+</dsl-extension>

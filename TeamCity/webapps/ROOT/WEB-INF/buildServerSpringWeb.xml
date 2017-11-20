@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="constructor"
+    >
+
+  <bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+    <property name="customEditors">
+      <map>
+        <entry key="jetbrains.buildServer.web.openapi.PlaceId" value="jetbrains.buildServer.web.openapi.PlaceIdEditor"/>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="commentTransformer" class="jetbrains.buildServer.web.util.RegExpTextTransformer"/>
+  <bean id="colorerSyntaxHighlighter" class="jetbrains.buildServer.web.util.ColorerSyntaxHighlighter"
+        depends-on="mainServerInterceptor"/>
+
+  <bean id="webResourcesUnpacker" class="jetbrains.buildServer.web.impl.WebResourcesUnpacker">
+    <property name="pluginResources">
+      <map>
+        <!-- Plugin resources. Key should match the value rurned by WebExtension::getPluginName method -->
+        <!--
+        <entry key="coverage" value="coverage-server.jar"/>
+        <entry key="cvs" value="cvs-support.jar"/>
+        <entry key="clearcase" value="clearcase.jar"/>
+        <entry key="svn" value="svn.jar"/>
+        <entry key="vss" value="vss-support.jar"/>
+        <entry key="tfs" value="tfs-server.jar"/>
+        <entry key="perforce" value="perforce.jar"/>
+        <entry key="Ant" value="ant-runner-server.jar"/>
+        <entry key="Maven2" value="maven-runner-server.jar"/>
+        <entry key="NAnt" value="NAnt-runner-server.jar"/>
+        <entry key="MSBuild" value="MSBuild-runner-server.jar"/>
+        <entry key="sln2003" value="Solution2003-runner-server.jar"/>
+        <entry key="sln2005" value="Solution2005-runner-server.jar"/>
+        <entry key="Inspection" value="server-side-inspections.jar"/>
+        <entry key="Duplicator" value="duplicator-server-side.jar"/>
+        <entry key="Ipr" value="idea-runner-server.jar"/>
+        -->
+      </map>
+    </property>
+  </bean>
+
+  <bean id="iprProjectManager" class="jetbrains.buildServer.controllers.admin.ipr.IprWebManagerImpl"/>
+  <bean class="jetbrains.buildServer.controllers.admin.ipr.IdeaSettingsPreprocessor"/>
+
+  <bean id="addToQueueProcessor" class="jetbrains.buildServer.controllers.actions.AddToQueueProcessor"/>
+
+  <bean id="actionController" init-method="initializeActions" class="jetbrains.buildServer.controllers.actions.SimpleActionController"/>
+
+  <bean id="webControllerManager" class="jetbrains.buildServer.web.impl.WebControllerManagerImpl" lazy-init="true">
+    <property name="handlerMapping" ref="urlMapping"/>
+  </bean>
+
+  <bean id="hiddenReportTabManager" class="jetbrains.buildServer.web.reportTabs.impl.ReportTabManagerImpl" autowire-candidate="false">
+    <constructor-arg index="6" ref="serverDispatcher"/>
+  </bean>
+  <bean id="reportTabManager" class="jetbrains.buildServer.web.reportTabs.impl.SecuredReportTabManager">
+    <constructor-arg index="0" ref="hiddenReportTabManager"/>
+    <constructor-arg index="1" ref="securityContext"/>
+  </bean>
+  <bean id="reportTabsProvider" class="jetbrains.buildServer.web.reportTabs.impl.ReportTabsProviderImpl"/>
+
+  <bean id="buildLookupService" class="jetbrains.buildServer.web.util.BuildLookupService"/>
+
+  <!--============================ OpenAPI End ================================================================-->
+
+
+  <!--============================ Login model start ================================================================-->
+  <bean id="rememberMe" class="jetbrains.buildServer.controllers.login.RememberMe"/>
+  <bean id="webLoginModel" class="jetbrains.buildServer.controllers.login.WebLoginModelImpl"/>
+  <bean id="userRolesActionHelper" class="jetbrains.buildServer.controllers.admin.RolesActionHelper"/>
+
+  <bean id="loginController" class="jetbrains.buildServer.controllers.login.LoginController"/>
+  <bean id="loginExtensionsController" class="jetbrains.buildServer.controllers.login.LoginExtensionsController"/>
+  <bean id="guestLoginController" class="jetbrains.buildServer.controllers.login.GuestLoginController"/>
+  <bean id="loginController4Tests" class="jetbrains.buildServer.controllers.login.TestLoginController"/>
+  <bean id="loginSubmitController" class="jetbrains.buildServer.controllers.login.LoginSubmitController"/>
+
+  <bean id="unauthorizedErrorController" class="jetbrains.buildServer.controllers.login.UnauthorizedErrorController"/>
+
+  <bean id="authorizedUserInterceptor" class="jetbrains.buildServer.controllers.interceptors.AuthorizationInterceptorImpl">
+    <property name="pathsNotRequiringAuth">
+      <list>
+        <value>/login.html</value>
+        <value>/loginExtensions.html</value>
+        <value>/loginSubmit.html</value>
+        <value>/registerUser.html</value>
+        <value>/registerUserSubmit.html</value>
+        <value>/setupAdmin.html</value>
+        <value>/setupAdminSubmit.html</value>
+        <value>/createAdminSubmit.html</value>
+        <value>/externalStatus.html</value>
+        <value>/uploadChanges.html</value>
+        <value>/showAgreement.html</value>
+        <value>/update/buildServerPlugin.zip</value>
+        <value>/runtimeError.html</value>
+        <value>/res/**</value>
+      </list>
+    </property>
+    <property name="nonMemorizablePaths">
+      <list>
+        <value>/ajax.html</value>
+        <value>/app/subscriptions/**</value>
+        <value>/action.html</value>
+        <value>/subscriptions.html</value>
+        <value>/changesPopup.html</value>
+        <value>/changesPopupTab.html</value>
+        <value>/filesPopup.html</value>
+        <value>/allProjects.html</value>
+        <value>/externalStatus.html</value>
+        <value>/visibleProjects.html</value>
+        <value>/visibleBuildTypes.html</value>
+        <value>/showCompatibleAgents.html</value>
+        <value>/admin/action.html</value>
+        <value>/buildGraph.html</value>
+        <value>/showAgreement.html</value>
+        <value>/queuedBuilds.html</value>
+        <value>/viewDependentArtifactsPopup.html</value>
+        <value>/runBuild.html</value>
+        <value>/promotionGraph.html</value>
+        <value>/promoDetailsPopup.html</value>
+        <value>/tz.html</value>
+        <value>/authenticationTest.html</value>
+
+        <!--The next path are here only for backwars compatibility.
+        See jetbrains.buildServer.controllers.obsolete.EventTrackerController-->
+        <value>/eventTracker.html</value>
+        <value>/serverStatistics.html</value>
+      </list>
+    </property>
+  </bean>
+
+  <bean class="jetbrains.buildServer.controllers.interceptors.FirstLoginInterceptor" id="firstLoginInterceptor"/>
+
+  <bean id="pageExtensionInterceptor" class="jetbrains.buildServer.web.impl.PageExtensionsInterceptor" lazy-init="true">
+    <property name="pagePlaces" ref="webControllerManager"/>
+    <property name="nonExtendablePaths">
+      <set>
+        <value>/ajax.html</value>
+        <value>/subscriptions.html</value>
+      </set>
+    </property>
+  </bean>
+
+  <bean id="actionMessagesCleaner" class="jetbrains.buildServer.controllers.interceptors.ActionMessagesCleaner"/>
+  <bean id="executeOnceSupport" class="jetbrains.buildServer.controllers.interceptors.ExecuteOnceSupport"/>
+
+  <bean id="guestHttpAuthenticationScheme" class="jetbrains.buildServer.controllers.interceptors.auth.impl.GuestHttpAuthenticationScheme"/>
+  <bean id="basicHttpAuthenticationScheme" class="jetbrains.buildServer.controllers.interceptors.auth.impl.BasicHttpAuthenticationScheme"/>
+  <bean id="agentHttpAuthenticationScheme" class="jetbrains.buildServer.controllers.interceptors.auth.impl.AgentHttpAuthenticationScheme"/>
+  <bean id="buildHttpLoginSupport" class="jetbrains.buildServer.controllers.interceptors.auth.impl.BuildHttpLoginSupport"/>
+
+  <bean id="authModulesProvider" class="jetbrains.buildServer.controllers.interceptors.auth.impl.MainServerAuthModulesProviderImpl">
+    <constructor-arg index="1">
+      <list>
+        <ref bean="guestHttpAuthenticationScheme"/>
+        <ref bean="agentHttpAuthenticationScheme"/>
+      </list>
+    </constructor-arg>
+  </bean>
+
+  <bean id="httpAuthenticationManager" class="jetbrains.buildServer.controllers.interceptors.auth.impl.HttpAuthenticationManagerImpl"/>
+
+  <!--============================ Login model end ================================================================-->
+
+  <bean class="jetbrains.buildServer.controllers.RunBuildBeanFactory"/>
+
+  <bean id="ajaxController" class="jetbrains.buildServer.controllers.AjaxController"/>
+  <bean id="ajaxControllerActions" class="jetbrains.buildServer.controllers.actions.AjaxControllerActions"/>
+  <bean id="buildTagsAction" class="jetbrains.buildServer.controllers.actions.BuildTagsAction"/>
+  <bean id="setVcsModificationDescriptionAction" class="jetbrains.buildServer.controllers.actions.SetVcsModificationDescriptionAction"/>
+  <bean id="userPropertyAction" class="jetbrains.buildServer.controllers.actions.UserPropertyAction" init-method="register">
+    <constructor-arg ref="webControllerManager" index="0"/>
+    <constructor-arg ref="ajaxController" index="1"/>
+  </bean>
+  <bean class="jetbrains.buildServer.controllers.actions.AddVcsUsernameFromModificationAction">
+    <constructor-arg index="0" ref="webControllerManager"/>
+    <constructor-arg index="1" ref="ajaxController"/>
+    <constructor-arg index="2" ref="dbVcsModificationHistory"/>
+  </bean>
+
+  <bean id="registerUserController" class="jetbrains.buildServer.controllers.user.RegisterUserController"/>
+  <bean id="submitRegisterUserController" class="jetbrains.buildServer.controllers.user.SubmitRegisterUserController"/>
+  <bean id="userEmailVerifier" class="jetbrains.buildServer.controllers.emailVerification.UserEmailVerifier"/>
+  <bean id="emailVerificationSuggestion" class="jetbrains.buildServer.controllers.emailVerification.EmailVerificationSuggestion"/>
+  <bean id="tokenSender" class="jetbrains.buildServer.controllers.emailVerification.FreemarkerBasedTokenSender"/>
+  <bean id="verifyUserEmailController" class="jetbrains.buildServer.controllers.emailVerification.EmailVerificationController"/>
+  <bean id="setupAdminController" class="jetbrains.buildServer.controllers.admin.users.SetupAdminController"/>
+  <bean id="submitSetupAdminController" class="jetbrains.buildServer.controllers.admin.users.SubmitSetupAdminController"/>
+  <bean id="submitCreateAdminController" class="jetbrains.buildServer.controllers.admin.users.SubmitCreateAdminController"/>
+  <bean id="overviewController" class="jetbrains.buildServer.controllers.overview.OverviewController"/>
+  <bean id="showBuildTypesPopupController" class="jetbrains.buildServer.controllers.overview.ShowBuildTypesPopupController"/>
+  <bean id="projectController" class="jetbrains.buildServer.controllers.project.ProjectController"/>
+  <bean id="projectOverviewTab" class="jetbrains.buildServer.controllers.project.ProjectOverviewTab"/>
+  <bean id="projectChangeLogTab" class="jetbrains.buildServer.controllers.project.ProjectChangeLogTab"/>
+  <bean id="statisticsTab" class="jetbrains.buildServer.controllers.project.StatisticsTab"/>
+  <bean id="currentProblemsTab" class="jetbrains.buildServer.web.problems.CurrentProblemsTab"/>
+  <bean id="investigationsTab" class="jetbrains.buildServer.controllers.project.InvestigationsTab">
+    <constructor-arg index="2" ref="responsibilityFacade"/>
+  </bean>
+  <bean id="mutedProblemsTab" class="jetbrains.buildServer.controllers.project.MutedProblemsTab"/>
+  <bean id="buildsScheduleTab" class="jetbrains.buildServer.controllers.project.schedule.BuildsScheduleTab"/>
+  <bean id="buildsScheduleController" class="jetbrains.buildServer.controllers.project.schedule.BuildsScheduleController"/>
+  <bean id="buildsScheduleDataProvider" class="jetbrains.buildServer.controllers.project.schedule.BuildsScheduleDataProvider"/>
+  <bean id="buildChainsTab" class="jetbrains.buildServer.controllers.project.ProjectBuildChainsTab"/>
+  <bean id="testDetailsTab" class="jetbrains.buildServer.controllers.project.TestHistoryTab"/>
+
+  <bean id="versionedSettingsTab" class="jetbrains.buildServer.controllers.project.VersionedSettingsProjectPage"/>
+  <bean id="versionedSettingsConfigTab" class="jetbrains.buildServer.controllers.project.VersionedSettingsConfigTab"/>
+  <bean id="versionedSettingsChangeLogTab" class="jetbrains.buildServer.controllers.project.VersionedSettingsChangeLogTab"/>
+  <bean id="versionedSettingsStatusController" class="jetbrains.buildServer.controllers.project.VersionedSettingsStatusController" init-method="init"/>
+  <bean id="versionedSettingsController" class="jetbrains.buildServer.controllers.project.VersionedSettingsController"/>
+  <bean id="versionedSettingsActionsController" class="jetbrains.buildServer.controllers.project.VersionedSettingsActionsController"/>
+  <bean class="jetbrains.buildServer.controllers.project.VersionedSettingsDisabledPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.project.ProjectVersionedSettingsDisabledPage"/>
+  <bean class="jetbrains.buildServer.controllers.project.OutdatedProjectSettingsPage"/>
+  <bean class="jetbrains.buildServer.controllers.project.VersionedSettingsConfigErrorPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.project.VersionedSettingsCommitErrorPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.project.GenerateDslAction"/>
+
+  <bean id="chainsFilterController" class="jetbrains.buildServer.controllers.graph.BuildChainsFilterController"/>
+  <bean id="chainStatusChartController" class="jetbrains.buildServer.controllers.graph.BuildChainStatusChartController"/>
+
+  <bean id="userAutocompletionController" class="jetbrains.buildServer.controllers.UserCompletionController"/>
+  <bean id="changesController" class="jetbrains.buildServer.controllers.changes.ChangesController"/>
+  <bean id="changeExpandedViewController" class="jetbrains.buildServer.controllers.changes.ChangeExpandedViewController"/>
+  <bean id="agentsController" class="jetbrains.buildServer.controllers.agent.AgentsController"/>
+  <bean id="viewLogController" class="jetbrains.buildServer.controllers.viewLog.ViewLogController"/>
+  <bean id="BuildResultsTab" class="jetbrains.buildServer.controllers.viewLog.BuildResultsTab"/>
+  <bean id="ChangesTab" class="jetbrains.buildServer.controllers.viewLog.ChangesTab"/>
+  <bean id="TestsTab" class="jetbrains.buildServer.controllers.viewLog.TestsTab"/>
+
+  <bean id="favoriteBuildsController" class="jetbrains.buildServer.controllers.builds.FavoriteBuildsPageController"/>
+
+  <bean id="BuildLogTab" class="jetbrains.buildServer.controllers.viewLog.BuildLogTab"/>
+  <bean id="buildLogTreeController" class="jetbrains.buildServer.controllers.viewLog.tree.BuildLogTreeController"/>
+  <bean id="buildLogTailController" class="jetbrains.buildServer.controllers.viewLog.BuildLogTailController"/>
+  <bean id="buildLogPrinterController" class="jetbrains.buildServer.controllers.viewLog.BuildLogPrinterController"/>
+
+  <bean id="buildLogTreeTagBean" class="jetbrains.buildServer.controllers.viewLog.tree.BuildLogTreeTag">
+    <property name="extensionHolder"><ref bean="buildServer"/></property>
+  </bean>
+
+  <bean id="viewQueuedPersonalController" class="jetbrains.buildServer.controllers.viewLog.ViewQueuedPersonalController"/>
+  <bean id="viewQueuedController" class="jetbrains.buildServer.controllers.viewLog.ViewQueuedController"/>
+  <bean id="queuedBuildOverviewTab" class="jetbrains.buildServer.controllers.viewLog.QueuedBuildOverviewTab"/>
+  <bean id="queuedBuildCompatibilityTab" class="jetbrains.buildServer.controllers.viewLog.QueuedBuildCompatibilityTab"/>
+
+  <bean id="BuildParametersTab" class="jetbrains.buildServer.controllers.viewLog.BuildParametersTab"/>
+  <bean id="DependenciesTab" class="jetbrains.buildServer.controllers.viewLog.DependenciesTab"/>
+  <bean id="relatedIssuesTab" class="jetbrains.buildServer.controllers.viewLog.RelatedIssuesTab"/>
+  <bean id="buildSummaryController" class="jetbrains.buildServer.controllers.viewLog.BuildDetailsController"/>
+
+  <bean id="issueDetailsController" class="jetbrains.buildServer.controllers.IssueDetailsController"/>
+
+  <bean id="investigationDialogController" class="jetbrains.buildServer.controllers.overview.BuildTypeInvestigationDialogController"/>
+  <bean id="investigationWarningsController" class="jetbrains.buildServer.controllers.overview.InvestigationWarningsController"/>
+  <bean id="bulkInvestigateController" class="jetbrains.buildServer.controllers.tests.BulkInvestigateDialogController"/>
+
+  <bean id="buildProblemWithDetailsController" class="jetbrains.buildServer.web.problems.BuildProblemWithDetailsController"/>
+  <bean id="compilationErrorBuildProblemRenderer" class="jetbrains.buildServer.web.problems.impl.CompilationErrorBuildProblemRenderer"/>
+  <bean id="snapshotDependencyErrorBuildProblemRenderer" class="jetbrains.buildServer.web.problems.impl.SnapshotDependencyErrorBuildProblemRenderer"/>
+  <bean id="snapshotDependencyErrorBuildProceedsBuildProblemRenderer" class="jetbrains.buildServer.web.problems.impl.SnapshotDependencyErrorBuildProceedsBuildProblemRenderer"/>
+  <bean id="buildFailureOnMessageBuildProblemRenderer" class="jetbrains.buildServer.web.problems.impl.BuildFailureOnMessageBuildProblemRenderer"/>
+  <bean id="exitCodeBuildProblemRenderer" class="jetbrains.buildServer.web.problems.impl.exitCode.ExitCodeBuildProblemRenderer"/>
+  <bean id="errorMessageBuildProblemRenderer" class="jetbrains.buildServer.web.problems.impl.ErrorMessageBuildProblemRenderer"/>
+
+  <bean id="failedTestTextController" class="jetbrains.buildServer.controllers.viewLog.FailedTestTextController"/>
+  <bean id="firstFailedInfoController" class="jetbrains.buildServer.controllers.viewLog.FirstFailedInfoController"/>
+  <bean id="downloadBuildLogController" class="jetbrains.buildServer.controllers.viewLog.DownloadBuildLogController"/>
+  <bean id="downloadTestsController" class="jetbrains.buildServer.controllers.viewLog.DownloadTestsController"/>
+  <bean id="downloadRawMessageFileController" class="jetbrains.buildServer.controllers.viewLog.DownloadRawMessageFileController"/>
+
+  <bean id="artifactsTab" class="jetbrains.buildServer.controllers.artifacts.ArtifactsTab"/>
+  <bean id="artifactsViewPopupController" class="jetbrains.buildServer.controllers.artifacts.ViewArtifactsPopupController"/>
+  <bean id="downloadArtifactsController" class="jetbrains.buildServer.controllers.artifacts.DownloadArtifactsController"/>
+  <bean id="artifactsTreeController" class="jetbrains.buildServer.controllers.artifacts.ArtifactsTreeController"/>
+  <bean id="artifactsDetailsController" class="jetbrains.buildServer.controllers.artifacts.ArtifactsDetailsController"/>
+
+  <bean class="jetbrains.buildServer.web.statistics.graph.BuildGraphHelper"/>
+  <bean id="buildGraphController" class="jetbrains.buildServer.controllers.BuildGraphController"/>
+
+  <bean class="jetbrains.buildServer.controllers.buildType.ParametersBeanFactory"/>
+
+  <bean id="showCompatibleAgentsController" class="jetbrains.buildServer.controllers.buildType.ShowCompatibleAgentsController"/>
+  <bean id="willRunOnAgentController" class="jetbrains.buildServer.controllers.buildType.WillRunOnAgentController"/>
+  <bean id="dagLayoutFactory" class="jetbrains.buildServer.controllers.buildType.tabs.DAGLayoutFactoryImpl"/>
+  <bean id="graphFactory" class="jetbrains.buildServer.controllers.buildType.tabs.GraphFactory"/>
+
+
+
+  <bean id="buildTypeController" class="jetbrains.buildServer.controllers.buildType.BuildTypeController"/>
+  <bean id="buildTypeBranchesTab" class="jetbrains.buildServer.controllers.buildType.tabs.BuildTypeBranchesTab"/>
+  <bean id="buildTypeOverviewTab" class="jetbrains.buildServer.controllers.buildType.tabs.OverviewBuildTypeTab"/>
+  <bean id="buildTypeHistoryTab" class="jetbrains.buildServer.controllers.buildType.tabs.HistoryTab"/>
+  <bean id="buildTypeChangeLogTab" class="jetbrains.buildServer.controllers.buildType.tabs.ChangeLogTab"/>
+  <bean id="buildTypeIssueLogTab" class="jetbrains.buildServer.controllers.buildType.tabs.IssueLogTab"/>
+  <bean id="buildTypeStatisticsTab" class="jetbrains.buildServer.controllers.buildType.tabs.StatisticsTab"/>
+  <bean id="buildTypeCompatibleAgentsTab" class="jetbrains.buildServer.controllers.buildType.tabs.CompatibleAgentsTab"/>
+  <bean id="buildTypePendingChangesTab" class="jetbrains.buildServer.controllers.buildType.tabs.PendingChangesTab"/>
+  <bean id="buildTypeDependenciesTab" class="jetbrains.buildServer.controllers.buildType.tabs.BuildTypeBuildChainsTab"/>
+  <bean id="buildTypeSettingsTab" class="jetbrains.buildServer.controllers.buildType.tabs.SettingsTab"/>
+  <bean id="buildTypeAgentBrowserTab" class="jetbrains.buildServer.controllers.buildType.tabs.BuildTypeAgentBrowserTab"/>
+
+  <bean id="buildChainController" class="jetbrains.buildServer.controllers.buildType.tabs.BuildChainController"/>
+  <bean id="buildChainChangesController" class="jetbrains.buildServer.controllers.buildType.tabs.BuildChainChangesController"/>
+  <bean id="buildChainProblemsController" class="jetbrains.buildServer.controllers.buildType.tabs.BuildChainProblemsController"/>
+
+  <bean id="agentTreeController" class="jetbrains.buildServer.controllers.agentServer.AgentTreeController"/>
+  <bean id="downloadAgentFilesController" class="jetbrains.buildServer.controllers.agentServer.DownloadAgentFilesController"/>
+
+  <bean id="viewAllProjectsController" class="jetbrains.buildServer.controllers.allProjectsPopup.AllProjectsPopupController"/>
+  <bean id="archivedProjectsPopupController" class="jetbrains.buildServer.controllers.allProjectsPopup.ArchivedProjectsPopupController"/>
+  <bean id="externalStatusController" class="jetbrains.buildServer.controllers.status.ExternalStatusController"/>
+  <bean id="quickNavigationController" class="jetbrains.buildServer.controllers.quickNav.QuickNavigationController"/>
+  <bean id="buildTypePopupController" class="jetbrains.buildServer.controllers.BuildTypePopupController"/>
+  <bean id="projectPopupController" class="jetbrains.buildServer.controllers.ProjectPopupController"/>
+
+  <bean id="xmlRpcController" class="jetbrains.buildServer.controllers.XmlRpcController"/>
+  <bean id="xmlRpcServer" class="org.apache.xmlrpc.TCXmlRpcServer"/>
+  <bean class="jetbrains.buildServer.controllers.XmlRpcHandlerManagerImpl">
+    <constructor-arg index="5" ref="xmlRpcDispatcher"/>
+  </bean>
+
+  <bean class="jetbrains.buildServer.controllers.XmlRpcHandlerBuildServer"/>
+  <bean class="jetbrains.buildServer.controllers.XmlRpcHandlerRemoteAuthServer"/>
+  <bean class="jetbrains.buildServer.controllers.XmlRpcHandlerVersionControlServer"/>
+  <bean class="jetbrains.buildServer.controllers.XmlRpcHandlerRemoteBuildServer">
+    <constructor-arg index="0">
+      <bean class="jetbrains.buildServer.serverSide.impl.XmlRpcBasedRemoteServer"/>
+    </constructor-arg>
+  </bean>
+
+  <bean id="agentPollingProtocolController" class="jetbrains.buildServer.controllers.agentServer.AgentPollingProtocolController"/>
+  <bean id="agentProtocolsController" class="jetbrains.buildServer.controllers.agentServer.AgentProtocolsController"/>
+
+  <bean id="remoteStatusManager" class="jetbrains.buildServer.remoteHandlers.RemoteStatusManager"/>
+
+  <bean class="jetbrains.buildServer.controllers.HttpDownloadProcessor"/>
+  <bean class="jetbrains.buildServer.artifacts.impl.SimpleDigestCalculator"/>
+
+  <bean id="repositoryController" class="jetbrains.buildServer.controllers.artifacts.RepositoryDownloadController"/>
+  <bean id="repositoryArchiveController" class="jetbrains.buildServer.controllers.artifacts.RepositoryArchiveController"/>
+  <bean id="fileUploadRequestProcessor" class="jetbrains.buildServer.controllers.artifacts.FileUploadRequestProcessorImpl"/>
+  <bean id="artifactsUploadController" class="jetbrains.buildServer.controllers.artifacts.ArtifactUploadController"/>
+  <bean id="downloadController" class="jetbrains.buildServer.controllers.DownloadFileController"/>
+
+  <bean id="serverAvailabilityController" class="jetbrains.buildServer.controllers.actions.GetServerVersionAction"/>
+  <bean id="subscriptionsController" class="jetbrains.buildServer.push.impl.PollingController"/>
+  <bean id="createPatchController" class="jetbrains.buildServer.controllers.changes.CreatePatchController"/>
+  <bean id="loadChangesController" class="jetbrains.buildServer.controllers.changes.PublishChangesController"/>
+  <bean id="changesPopupController" class="jetbrains.buildServer.controllers.changes.ChangesPopupController"/>
+  <bean id="changesPopupTabController" class="jetbrains.buildServer.controllers.changes.ChangesPopupTabController"/>
+  <bean id="filesPopupController" class="jetbrains.buildServer.controllers.changes.FilesController"/>
+  <bean id="carpetController" class="jetbrains.buildServer.controllers.changes.CarpetController"/>
+  <bean id="changesLinkController" class="jetbrains.buildServer.controllers.changes.ChangesLinkController"/>
+  <bean id="limitedPendingChangesLinkController" class="jetbrains.buildServer.controllers.changes.LimitedPendingChangesLinkController"/>
+  <bean id="artifactsLinkController" class="jetbrains.buildServer.controllers.artifacts.ArtifactsLinkController"/>
+  <bean id="tagsLinkController" class="jetbrains.buildServer.controllers.TagsLinkController"/>
+  <bean id="favoriteIconController" class="jetbrains.buildServer.controllers.FavoriteIconController"/>
+  <bean id="vcsModificationController" class="jetbrains.buildServer.controllers.changes.VcsModificationController"/>
+  <bean id="vcsModificationTestsTab" class="jetbrains.buildServer.controllers.changes.VcsModificationTestsTab"/>
+  <bean id="vcsModificationBuildsTab" class="jetbrains.buildServer.controllers.changes.VcsModificationBuildsTab"/>
+  <bean id="vcsModificationFilesTab" class="jetbrains.buildServer.controllers.changes.VcsModificationFilesTab"/>
+  <bean id="testDetailsController" class="jetbrains.buildServer.controllers.changes.TestDetailsController"/>
+  <bean id="diffViewController" class="jetbrains.buildServer.controllers.changes.DiffViewController"/>
+  <bean id="settingsDiffViewController" class="jetbrains.buildServer.controllers.SettingsDiffViewController"/>
+  <bean id="comparisonFailureDiffViewController" class="jetbrains.buildServer.controllers.ComparisonFailureDiffViewController"/>
+  <bean id="fileModificationController" class="jetbrains.buildServer.controllers.changes.FileModificationController"/>
+  <bean id="profileController" class="jetbrains.buildServer.controllers.profile.ProfileController"/>
+  <bean id="investigationsController" class="jetbrains.buildServer.controllers.investigate.InvestigationsController"/>
+  <bean id="userInvestigationsProvider" class="jetbrains.buildServer.controllers.investigate.UserInvestigationsCounterProvider"/>
+  <bean id="vcsTreePopupController" class="jetbrains.buildServer.controllers.vcs.VcsTreePopupController"/>
+  <bean id="projectDataFetcherController" class="jetbrains.buildServer.controllers.admin.ProjectDataFetcherController"/>
+  <bean id="branchesPopupController" class="jetbrains.buildServer.controllers.admin.BranchesPopupController"/>
+
+  <bean id="userGeneralSettingsTab" class="jetbrains.buildServer.controllers.profile.ProfileGeneralTab" init-method="register">
+    <property name="tabTitle" value="General"/>
+    <property name="placeId" value="MY_TOOLS_TABS"/>
+    <property name="pluginName" value="userGeneralSettings"/>
+    <property name="includeUrl" value="/profile/userGeneralSettings.jsp"/>
+  </bean>
+  <bean id="vcsUsernamesTab" class="jetbrains.buildServer.web.openapi.SimpleCustomTab" init-method="register">
+    <property name="tabTitle" value="VCS Usernames"/>
+    <property name="placeId" value="MY_TOOLS_TABS"/>
+    <property name="pluginName" value="vcsUsernames"/>
+    <property name="includeUrl" value="/vcsSettings.html"/>
+  </bean>
+  <bean id="userGroupsTab" class="jetbrains.buildServer.web.openapi.SimpleCustomTab" init-method="register">
+    <property name="tabTitle" value="Groups"/>
+    <property name="placeId" value="MY_TOOLS_TABS"/>
+    <property name="pluginName" value="userGroups"/>
+    <property name="includeUrl" value="/profile/userGroups.jsp"/>
+  </bean>
+  <bean id="userRolesTab" class="jetbrains.buildServer.controllers.admin.PerProjectPermissionsTab" init-method="register">
+    <property name="tabTitle" value="Roles"/>
+    <property name="placeId" value="MY_TOOLS_TABS"/>
+    <property name="pluginName" value="userRoles"/>
+    <property name="includeUrl" value="/profile/userRoles.jsp"/>
+  </bean>
+  <bean id="userNotificationsTab" class="jetbrains.buildServer.controllers.profile.ProfileNotificationRulesTab" init-method="register">
+    <property name="tabTitle" value="Notification Rules"/>
+    <property name="placeId" value="MY_TOOLS_TABS"/>
+    <property name="pluginName" value="userNotifications"/>
+    <property name="includeUrl" value="/profile/userNotifications.jsp"/>
+  </bean>
+
+  <bean id="editNotificationRulesController"
+        class="jetbrains.buildServer.controllers.profile.notifications.EditNotificationRulesController"/>
+  <bean id="editNotifierSettingsController"
+        class="jetbrains.buildServer.controllers.profile.notifications.EditNotifierSettingsController"/>
+
+  <bean id="editVcsSettingsController"
+        class="jetbrains.buildServer.controllers.profile.vcs.EditVcsSettingsController">
+    <constructor-arg index="1" ref="userModel"/>
+  </bean>
+
+  <bean id="systemProblemsController" class="jetbrains.buildServer.controllers.changes.SystemProblemsController"/>
+  <bean id="visibleProjectsController" class="jetbrains.buildServer.controllers.profile.VisibleProjectsController"/>
+  <bean id="visibleBuildTypesController" class="jetbrains.buildServer.controllers.profile.VisibleBuildTypesController"/>
+  <bean id="buildQueueController" class="jetbrains.buildServer.controllers.queue.BuildQueueController"/>
+  <bean id="buildDistributorController" class="jetbrains.buildServer.controllers.queue.BuildDistributorController"/>
+
+  <bean class="jetbrains.buildServer.controllers.agent.AgentFinder"/>
+
+  <bean id="agentDetailsController" class="jetbrains.buildServer.controllers.agent.AgentDetailsController"/>
+  <bean class="jetbrains.buildServer.controllers.agent.RemoveAgentDetailsAction"/>
+  <bean class="jetbrains.buildServer.controllers.agent.ExcludeBuildTypesFromAllowedAction"/>
+  <bean class="jetbrains.buildServer.controllers.agent.RunConfigurationPolicyAgentDetailsAction"/>
+
+  <bean id="agentPoolController" class="jetbrains.buildServer.controllers.agent.AgentPoolController"/>
+  <bean id="poolAgentTypeSelectorItemType" class="jetbrains.buildServer.controllers.agent.PoolAgentTypeSelectorDescriptor"/>
+  <bean id="poolProjectSelectorItemType" class="jetbrains.buildServer.controllers.agent.PoolProjectSelectorDescriptor"/>
+
+  <bean id="showAgentStatusController" class="jetbrains.buildServer.controllers.agent.ShowAgentStatusController"/>
+  <bean id="agentSummaryTab" class="jetbrains.buildServer.controllers.agent.AgentSummaryTab"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentTypeSummaryTab"/>
+  <bean id="agentHistoryTab" class="jetbrains.buildServer.controllers.agent.AgentHistoryTab"/>
+  <bean id="agentCompatibleConfTab" class="jetbrains.buildServer.controllers.agent.AgentCompatibleConfigurationsTab"/>
+  <bean id="agentBuildRunnersTab" class="jetbrains.buildServer.controllers.agent.AgentBuildRunnersTab"/>
+  <bean id="agentCleanSourcesExtension" class="jetbrains.buildServer.controllers.agent.CleanSourcesExtension"/>
+  <bean id="agentAuditLinkExtension" class="jetbrains.buildServer.controllers.agent.AgentAuditLinkExtension"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentTypesTab"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentLogsTab"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentParametersTab">
+    <constructor-arg index="0">
+      <list>
+        <bean class="jetbrains.buildServer.controllers.agent.AgentParametersTabProvider">
+          <constructor-arg index="0" value="sys"/>
+          <constructor-arg index="1" value="System Properties"/>
+          <constructor-arg index="2" value="agentParametersSystemProperties.jsp"/>
+        </bean>
+        <bean class="jetbrains.buildServer.controllers.agent.AgentParametersTabProvider">
+          <constructor-arg index="0" value="env"/>
+          <constructor-arg index="1" value="Environment Variables"/>
+          <constructor-arg index="2" value="agentParametersEnvironment.jsp"/>
+        </bean>
+        <bean class="jetbrains.buildServer.controllers.agent.AgentParametersTabProvider">
+          <constructor-arg index="0" value="conf"/>
+          <constructor-arg index="1" value="Configuration Parameters"/>
+          <constructor-arg index="2" value="agentParametersConfigurationParams.jsp"/>
+        </bean>
+      </list>
+    </constructor-arg>
+  </bean>
+
+  <bean class="jetbrains.buildServer.controllers.agent.AgentsListConnectedTab"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentsListUnregisteredTab"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentsListUnauthorizedTab"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentPoolsTab"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentsParametersReportTab"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentSelectConfigurationsPopupController"/>
+  <bean id="agentsParametersReportController" class="jetbrains.buildServer.controllers.agent.AgentsParametersReportController"/>
+
+  <bean id="buildResultsSummaryController" class="jetbrains.buildServer.controllers.viewLog.BuildResultsSummaryController"/>
+  <bean id="runCustomBuildController" class="jetbrains.buildServer.controllers.RunCustomBuildController"/>
+  <bean id="runBuildWithChangeExtension" class="jetbrains.buildServer.controllers.RunBuildWithChangeExtension"/>
+
+  <!-- Administration -->
+  <bean id="adminOverviewController" class="jetbrains.buildServer.controllers.admin.AdminOverviewController"/>
+  <bean id="projectsAdminPage" class="jetbrains.buildServer.controllers.admin.ProjectsAdminPage"/>
+
+  <bean id="adminActionsController" class="jetbrains.buildServer.controllers.admin.AdminActionsController"/>
+
+  <bean id="attachVcsRootAction" class="jetbrains.buildServer.controllers.admin.actions.AttachVcsRootAction"/>
+  <bean id="detachVcsRootAction" class="jetbrains.buildServer.controllers.admin.actions.DetachVcsRootAction"/>
+  <bean id="removeVcsRootAction" class="jetbrains.buildServer.controllers.admin.actions.RemoveVcsRootAction"/>
+  <bean id="removeTriggerAction" class="jetbrains.buildServer.controllers.admin.actions.RemoveTriggerAction"/>
+  <bean id="removeProjectAction" class="jetbrains.buildServer.controllers.admin.actions.RemoveProjectAction"/>
+  <bean id="removeBuildTypeAction" class="jetbrains.buildServer.controllers.admin.actions.RemoveBuildTypeAction"/>
+  <bean id="removeTemplateAction" class="jetbrains.buildServer.controllers.admin.actions.RemoveTemplateAction"/>
+  <bean id="attachTemplateAction" class="jetbrains.buildServer.controllers.admin.actions.AttachTemplateAction"/>
+  <bean id="detachTemplateAction" class="jetbrains.buildServer.controllers.admin.actions.DetachTemplateAction"/>
+  <bean id="extractTemplateAction" class="jetbrains.buildServer.controllers.admin.actions.ExtractTemplateAction"/>
+  <bean id="assignRolesAction" class="jetbrains.buildServer.controllers.admin.actions.AssignRolesAction"/>
+  <bean id="removeUsersAction" class="jetbrains.buildServer.controllers.admin.actions.RemoveUsersAction"/>
+  <bean id="addRolePermissionsAction" class="jetbrains.buildServer.controllers.admin.roles.AddRolePermissionsAction"/>
+  <bean id="removeRolePermissionAction" class="jetbrains.buildServer.controllers.admin.roles.RemoveRolePermissionAction"/>
+  <bean id="includeRoleAction" class="jetbrains.buildServer.controllers.admin.roles.IncludeRoleAction"/>
+  <bean id="excludeIncludedRoleAction" class="jetbrains.buildServer.controllers.admin.roles.ExcludeIncludedRoleAction"/>
+  <bean id="deleteRoleAction" class="jetbrains.buildServer.controllers.admin.roles.DeleteRoleAction"/>
+  <bean id="createNewRoleAction" class="jetbrains.buildServer.controllers.admin.roles.CreateNewRoleAction"/>
+  <bean id="createGroupAction" class="jetbrains.buildServer.controllers.admin.groups.CreateGroupAction"/>
+  <bean id="deleteGroupAction" class="jetbrains.buildServer.controllers.admin.groups.DeleteGroupAction"/>
+  <bean id="detachGroupUsersAction" class="jetbrains.buildServer.controllers.admin.groups.DetachUsersAction"/>
+  <bean id="archiveProjectAction" class="jetbrains.buildServer.controllers.admin.actions.ArchiveProjectAction"/>
+  <bean id="makeProjectEditableAction" class="jetbrains.buildServer.controllers.admin.actions.MakeProjectEditableAction"/>
+  <bean id="makeBuildTypeEditableAction" class="jetbrains.buildServer.controllers.admin.actions.MakeBuildTypeEditableAction"/>
+  <bean id="makeBuildTypeTemplateEditableAction" class="jetbrains.buildServer.controllers.admin.actions.MakeBuildTypeTemplateEditableAction" />
+  <bean id="unarchiveProjectAction" class="jetbrains.buildServer.controllers.admin.actions.UnarchiveProjectAction"/>
+  <bean id="removeIssueProviderAction" class="jetbrains.buildServer.controllers.admin.actions.RemoveIssueProviderAction"/>
+  <bean id="enableDisableSettingAction" class="jetbrains.buildServer.controllers.admin.actions.EnableDisableParametersDescriptorAction"/>
+  <bean id="hideShowNotificationAction" class="jetbrains.buildServer.controllers.admin.actions.HealthStatusItemVisibilityAction"/>
+  <bean id="checkCanMoveAction" class="jetbrains.buildServer.controllers.admin.actions.CheckCanMoveAction"/>
+  <bean id="listBranchesAction" class="jetbrains.buildServer.controllers.admin.actions.ListBranchesAction"/>
+  <bean id="generateTokenAction" class="jetbrains.buildServer.controllers.admin.actions.GenerateTokenAction"/>
+  <bean class="jetbrains.buildServer.controllers.admin.actions.ResolvePersistErrorsAction"/>
+
+  <bean id="usersAdminPage" class="jetbrains.buildServer.controllers.admin.users.UsersAdminPage"/>
+  <bean id="groupsAdminPage" class="jetbrains.buildServer.controllers.admin.groups.GroupsAdminPage"/>
+  <bean id="rolesAdminPage" class="jetbrains.buildServer.controllers.admin.roles.RolesAdminPage"/>
+
+  <bean id="healthStatusReportPage" class="jetbrains.buildServer.controllers.admin.healthStatus.HealthStatusTab"/>
+  <bean id="healthStatusReportBeanFactory" class="jetbrains.buildServer.controllers.admin.healthStatus.HealthStatusReportBeanFactory"/>
+  <bean id="healthStatusReportController" class="jetbrains.buildServer.controllers.admin.healthStatus.HealthStatusReportController"/>
+  <bean id="healthStatusItemsListController" class="jetbrains.buildServer.controllers.admin.healthStatus.HealthStatusItemsListController"/>
+  <bean id="healthStatusReportHelper" class="jetbrains.buildServer.controllers.admin.healthStatus.HealthStatusReportHelper"/>
+  <bean id="getHealthAnalysisProgressAction" class="jetbrains.buildServer.controllers.admin.healthStatus.GetHealthAnalysisProgressAction"/>
+  <bean id="renderItemController" class="jetbrains.buildServer.controllers.healthStatus.ShowHealthStatusItemController"/>
+  <bean id="globalHealthStatusItemsController" class="jetbrains.buildServer.controllers.healthStatus.GlobalHealthStatusItemsController"/>
+  <bean id="buildTypeHealthStatusItemsController" class="jetbrains.buildServer.controllers.healthStatus.BuildTypeHealthStatusItemsController"/>
+  <bean id="projectHealthStatusItemsController" class="jetbrains.buildServer.controllers.healthStatus.ProjectHealthStatusItemsController"/>
+  <bean id="buildTypeSuggestedItemsController" class="jetbrains.buildServer.controllers.healthStatus.BuildTypeSuggestedItemsController"/>
+  <bean id="buildTypeTemplateHealthStatusItemsController" class="jetbrains.buildServer.controllers.healthStatus.BuildTypeTemplateHealthStatusItemsController"/>
+  <bean id="projectSuggestedItemsController" class="jetbrains.buildServer.controllers.healthStatus.ProjectSuggestedItemsController"/>
+  <bean id="vcsRootHealthStatusItemsController" class="jetbrains.buildServer.controllers.healthStatus.VcsRootHealthStatusItemsController"/>
+
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.FrequentCleanCheckoutPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.DatabaseHeathPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.CollationMismatchProblemPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.NewVersionPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.CriticalErrorsPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.UnusedVcsRootsPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.InvalidVcsTriggerSettingsPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.DuplicateBuildTriggerPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.InvalidScheduleTriggerSettingsPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.RedundantVcsTriggerPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.RedundantVcsRootsPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.UnusedAgentsPageExntension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.AgentUpgradeProblemsPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.HugeLogPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.LicenseIssuesPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.ReuseSnapshotDependenciesPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.BrokenArtifactDependenciesPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.BrokenSnapshotDependenciesPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.QueuedBuildAgentsPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.DiskSpacePageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.TriggeringProblemsExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.AutoCheckoutHealthPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.HeavyServerCheckoutPatchesHealthPage"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.InefficientArtifactsPublishingPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.QuietPeriodPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.NotPersistedEntitiesPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.BrokenProjectTokensPageExtension"/>
+  <bean class="jetbrains.buildServer.controllers.healthStatus.reports.SettingsPersistErrorsPage"/>
+
+  <bean class="jetbrains.buildServer.controllers.admin.projects.suggestions.AddBuildStepSuggestion"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.suggestions.AddVcsRootSuggestion"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.suggestions.UndefinedParametersSuggestion"/>
+
+  <bean id="userRolesPopupController" class="jetbrains.buildServer.controllers.admin.users.AuthorityRolesPopupController"/>
+  <bean id="groupUsersPopupController" class="jetbrains.buildServer.controllers.admin.groups.GroupUsersPopupController"/>
+  <bean id="parentGroupsPopupController" class="jetbrains.buildServer.controllers.admin.groups.ParentGroupsPopupController"/>
+  <bean id="attachToGroupsController" class="jetbrains.buildServer.controllers.admin.groups.AttachToGroupsController"/>
+  <bean id="attachUsersToGroupController" class="jetbrains.buildServer.controllers.admin.groups.AttachUsersController"/>
+  <bean id="editGroupController" class="jetbrains.buildServer.controllers.admin.groups.EditGroupController"/>
+
+  <bean id="adminCreateUserController" class="jetbrains.buildServer.controllers.admin.users.AdminCreateUserController"/>
+  <bean id="adminSubmitCreateUserController" class="jetbrains.buildServer.controllers.admin.users.AdminSubmitCreateUserController"/>
+  <bean id="adminEditUserController" class="jetbrains.buildServer.controllers.admin.users.AdminEditUserController"/>
+
+  <bean id="viewAuditLogController" class="jetbrains.buildServer.controllers.audit.ViewAuditLogController">
+    <constructor-arg index="0" ref="buildServer"/>
+    <constructor-arg index="1" ref="userModel"/>
+    <constructor-arg index="2" ref="authorizedUserInterceptor"/>
+    <property name="auditLogProvider" ref="auditLogProvider"/>
+  </bean>
+
+  <bean id="popupDialogController" class="jetbrains.buildServer.controllers.popupDialogs.impl.PopupDialogController"/>
+
+  <bean id="agentLicenseManagerController" class="jetbrains.buildServer.controllers.license.LicenseManagerController"/>
+  <bean id="showLicenseAgreementController" class="jetbrains.buildServer.controllers.license.ShowAgreementController">
+    <constructor-arg index="2" ref="licenseAgreementDispatcher"/>
+  </bean>
+  <bean id="licenseAgreementDispatcher" class="jetbrains.buildServer.controllers.license.LicenseAgreementDispatcherImpl" autowire-candidate="false"/>
+
+  <bean id="adminPermissionsUtil" class="jetbrains.buildServer.controllers.admin.AdminPermissionsUtil"/>
+  <bean id="rolesHolderFinde" class="jetbrains.buildServer.controllers.admin.RolesHolderFinder"/>
+
+  <bean id="createProjectController" class="jetbrains.buildServer.controllers.admin.projects.AdminCreateProjectController"/>
+  <bean id="createObjectFromUrlController" class="jetbrains.buildServer.controllers.admin.projects.setupFromUrl.CreateObjectFromUrlController"/>
+  <bean id="objectSetupController" class="jetbrains.buildServer.controllers.admin.projects.setupFromUrl.SetupObjectFromResourceController"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.setupFromUrl.CreateObjectMenuController"/>
+
+  <bean id="editProjectController" class="jetbrains.buildServer.controllers.admin.projects.AdminEditProjectController"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.EditProjectNavExtensionsController"/>
+  <bean id="vcsRootsTab" class="jetbrains.buildServer.controllers.admin.projects.ProjectVcsRootsTab"/>
+  <bean id="reportTabsTab" class="jetbrains.buildServer.controllers.admin.projects.ProjectReportTabsTab"/>
+  <bean id="projectParamsTab" class="jetbrains.buildServer.controllers.admin.projects.EditProjectParametersTab"/>
+  <bean id="editProjectParamsController" class="jetbrains.buildServer.controllers.admin.projects.EditProjectParametersController"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.UserParametersUpdater"/>
+
+  <bean id="projectVcsRootsController" class="jetbrains.buildServer.controllers.admin.projects.ProjectVcsRootsController"/>
+  <bean id="editVcsRootsController" class="jetbrains.buildServer.controllers.admin.projects.EditVcsRootsController"/>
+  <bean id="duplicateVcsRootsController" class="jetbrains.buildServer.controllers.admin.projects.ShowDuplicateVcsRootsController"/>
+  <bean id="createBuildTypeController" class="jetbrains.buildServer.controllers.admin.CreateBuildTypeController"/>
+  <bean id="createTemplateController" class="jetbrains.buildServer.controllers.admin.CreateTemplateController"/>
+  <bean id="checkoutRulesController" class="jetbrains.buildServer.controllers.admin.projects.CheckoutRulesController"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.AdminEditBuildTypeNavExtensionsController"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.AdminEditBuildStepsActionExtensionsController"/>
+  <bean id="editBuildController" class="jetbrains.buildServer.controllers.admin.projects.AdminEditBuildTypeController"/>
+  <bean id="editBuildTypeVcsRootsController" class="jetbrains.buildServer.controllers.admin.projects.AdminEditBuildTypeVcsRootsController"/>
+  <bean id="attachBuildTypeVcsRootsController" class="jetbrains.buildServer.controllers.admin.projects.AttachBuildTypeVcsRootsController"/>
+  <bean id="editBuildRunnersController" class="jetbrains.buildServer.controllers.admin.projects.EditMultipleRunnersController"/>
+  <bean id="editBuildFeaturesListController" class="jetbrains.buildServer.controllers.admin.projects.EditBuildFeaturesListController"/>
+  <bean id="editBuildFeaturesController" class="jetbrains.buildServer.controllers.admin.projects.AdminEditBuildFeaturesController"/>
+  <bean id="editRunTypeController" class="jetbrains.buildServer.controllers.admin.projects.AdminEditRunTypeController"/>
+  <bean id="editBuildParametersController" class="jetbrains.buildServer.controllers.admin.projects.AdminEditBuildTypeParametersController"/>
+  <bean id="editRequirementsController" class="jetbrains.buildServer.controllers.admin.projects.AdminEditRequirementsController"/>
+  <bean id="agentParametersAutocompletionController" class="jetbrains.buildServer.controllers.admin.projects.AgentParametersAutocompletionController"/>
+  <bean id="editBuildTriggersController" class="jetbrains.buildServer.controllers.admin.projects.EditBuildTriggersController"/>
+  <bean id="editBuildFailureConditionsController" class="jetbrains.buildServer.controllers.admin.projects.EditBuildFailureConditionsController"/>
+  <bean id="showTriggerParametersController" class="jetbrains.buildServer.controllers.admin.projects.triggers.ShowTriggerParametersController"/>
+  <bean id="showBuildFeatureParametersController" class="jetbrains.buildServer.controllers.admin.projects.ShowBuildFeatureParametersController"/>
+  <bean id="vcsTriggerCheckIntervalController" class="jetbrains.buildServer.controllers.admin.projects.triggers.VcsTriggerCheckIntervalController"/>
+  <bean id="triggerBranchSupportController" class="jetbrains.buildServer.controllers.admin.projects.triggers.TriggerBranchSupportsController"/>
+  <bean id="editBuildDependencyTriggerController" class="jetbrains.buildServer.controllers.admin.projects.triggers.EditFinishBuildTriggerController"/>
+  <bean id="schedulingTriggerBuildDependencyController" class="jetbrains.buildServer.controllers.admin.projects.triggers.SchedulingTriggerBuildDependencyController"/>
+  <bean id="editArtifactDependenciesController" class="jetbrains.buildServer.controllers.admin.projects.AdminEditDependenciesController"/>
+  <bean id="artifactDependenciesTableController" class="jetbrains.buildServer.controllers.admin.projects.ArtifactDelendenciesTableController"/>
+  <bean id="editArtifactDepsHelperController" class="jetbrains.buildServer.controllers.admin.projects.EditArtifactDepsHelperController"/>
+  <bean id="buildTypeVcsBrowserController" class="jetbrains.buildServer.controllers.admin.projects.BuildTypeVcsBrowserController"/>
+  <bean id="editArtifactsPopupController" class="jetbrains.buildServer.controllers.admin.projects.EditArtifactsPopupController"/>
+
+  <bean class="jetbrains.buildServer.controllers.admin.cleanup.CleanupController" id="cleanupPoliciesController"  />
+  <bean class="jetbrains.buildServer.controllers.admin.cleanup.EditCleanupRulesController" id="editCleanupRulesController"/>
+  <bean class="jetbrains.buildServer.controllers.admin.cleanup.ManualCleanupRunner" id="manualCleanupRunner"/>
+  <bean class="jetbrains.buildServer.controllers.admin.cleanup.CleanupNotificator" id="cleanupNotificator"/>
+
+  <bean id="templateUsagesPopupController" class="jetbrains.buildServer.controllers.admin.projects.TemplateUsagesPopupController"/>
+
+  <bean id="backupController" class="jetbrains.buildServer.controllers.admin.backup.BackupController"/>
+  <bean id="backupDownloadHelper" class="jetbrains.buildServer.controllers.admin.backup.BackupDownloadHelper"/>
+  <bean id="backupRunTab" class="jetbrains.buildServer.controllers.admin.backup.BackupRunTab"/>
+  <bean id="backupHistoryTab" class="jetbrains.buildServer.controllers.admin.backup.BackupHistoryTab"/>
+
+  <bean id="projectExportController" class="jetbrains.buildServer.controllers.admin.export.ProjectExportController"/>
+  <bean id="projectExportsProvider" class="jetbrains.buildServer.controllers.admin.export.ProjectExportsProvider">
+    <constructor-arg name="projectExporterFactory" ref="serverProjectExportService"/>
+    <constructor-arg name="timeService" ref="timeService"/>
+  </bean>
+  <bean id="projectExportsTab" class="jetbrains.buildServer.controllers.admin.export.ProjectExportTab"/>
+  <bean id="projectsImportController" class="jetbrains.buildServer.controllers.admin.projectsImport.ProjectsImportController"/>
+  <bean id="projectsImportUploadArchiveController" class="jetbrains.buildServer.controllers.admin.projectsImport.ProjectsImportUploadArchiveController"/>
+  <bean id="currentProjectsImport" class="jetbrains.buildServer.controllers.admin.projectsImport.CurrentProjectsImport"/>
+  <bean id="projectsImportPermissionChecker" class="jetbrains.buildServer.controllers.admin.projectsImport.ProjectsImportPermissionChecker"/>
+
+  <bean id="showRunParametersController" class="jetbrains.buildServer.controllers.admin.projects.ShowRunParametersController"/>
+  <bean id="copyBuildTypeController" class="jetbrains.buildServer.controllers.admin.projects.CopyBuildTypeController"/>
+  <bean id="copyTemplateController" class="jetbrains.buildServer.controllers.admin.projects.CopyTemplateController"/>
+  <bean id="moveBuildTypeController" class="jetbrains.buildServer.controllers.admin.projects.MoveBuildTypeController"/>
+  <bean id="moveTemplateController" class="jetbrains.buildServer.controllers.admin.projects.MoveBuildTypeTemplateController"/>
+  <bean id="copyProjectController" class="jetbrains.buildServer.controllers.admin.projects.CopyProjectController"/>
+  <bean id="moveProjectController" class="jetbrains.buildServer.controllers.admin.projects.MoveProjectController"/>
+  <bean id="showTemplateParametersController" class="jetbrains.buildServer.controllers.admin.projects.ShowTemplateParametersController"/>
+  <bean id="copyBuildStepController" class="jetbrains.buildServer.controllers.admin.projects.CopyBuildStepController"/>
+  <bean id="moveVcsRootController" class="jetbrains.buildServer.controllers.admin.projects.MoveVcsRootController"/>
+  <bean id="pauseProjectController" class="jetbrains.buildServer.controllers.admin.projects.PauseProjectController"/>
+
+  <bean id="generateExternalIdController" class="jetbrains.buildServer.controllers.admin.projects.GenerateExternalIdController"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.StandardGenerateExternalIdExtensions$BuildTypeIdGenerator"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.StandardGenerateExternalIdExtensions$ProjectIdGenerator"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.StandardGenerateExternalIdExtensions$TemplateIdGenerator"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.StandardGenerateExternalIdExtensions$VcsRootIdGenerator"/>
+
+
+  <bean id="regenerateExternalIdsController" class="jetbrains.buildServer.controllers.admin.projects.RegenerateExternalIdsController"/>
+
+  <bean id="serverConfigGeneralController" class="jetbrains.buildServer.controllers.admin.ServerConfigGeneralController">
+    <constructor-arg index="3" ref="userModel"/>
+    <constructor-arg index="5" ref="dbManager"/>
+  </bean>
+  <bean id="deleteReportTabAction" class="jetbrains.buildServer.controllers.admin.reportTabs.DeleteReportTabAction"/>
+  <bean id="createReportTabAction" class="jetbrains.buildServer.controllers.admin.reportTabs.EditReportTabAction"/>
+
+  <bean id="issueTrackersProjectPage" class="jetbrains.buildServer.controllers.admin.issues.IssueTrackerProjectPage"/>
+  <bean id="editProviderController" class="jetbrains.buildServer.controllers.admin.issues.EditProviderController"/>
+  <bean id="testConnectionController" class="jetbrains.buildServer.controllers.admin.issues.TestConnectionController"/>
+
+  <bean id="chartController" class="jetbrains.buildServer.controllers.ChartController"/>
+  <bean id="chartExportController" class="jetbrains.buildServer.controllers.ChartExportController"/>
+  <bean class="jetbrains.buildServer.web.statistics.graph.ChartProviderRegistry">
+    <constructor-arg index="3" ref="configActionsDispatcher"/>
+  </bean>
+  <bean id="showRolesDescriptionController" class="jetbrains.buildServer.controllers.user.ShowRolesDescriptionController"/>
+
+  <bean id="IdeaPluginUpdateLegacyController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    <property name="viewName" value="TeamCity-IDEAplugin.zip"/>
+  </bean>
+
+  <bean id="agentsLoadBalancer" class="jetbrains.buildServer.controllers.interceptors.AgentsLoadBalancer"/>
+  <bean id="mainServerInterceptor" class="jetbrains.buildServer.controllers.interceptors.MainServerInterceptor"/>
+
+
+  <bean id="csrfFilter" class="jetbrains.buildServer.web.CSRFFilter"/>
+  <bean id="cspfFilter" class="jetbrains.buildServer.web.ContentSecurityPolicyFilter"/>
+
+  <bean id="projectIdConverterInterceptor" class="jetbrains.buildServer.controllers.interceptors.ProjectIdConverterInterceptor"/>
+  <bean id="dependencyParametersCalculationContextFilter" class="jetbrains.buildServer.web.DependencyParametersCalculationContextFilter"/>
+
+  <bean id="calledOnceInterceptors" class="jetbrains.buildServer.controllers.interceptors.RequestInterceptors">
+    <constructor-arg index="0">
+      <list>
+        <ref bean="mainServerInterceptor"/>
+        <ref bean="projectIdConverterInterceptor"/>
+        <ref bean="authorizedUserInterceptor"/>
+        <ref bean="firstLoginInterceptor"/>
+      </list>
+    </constructor-arg>
+  </bean>
+
+  <bean id="sshKeyChooser" class="jetbrains.buildServer.controllers.admin.SshKeyChooserController"/>
+
+  <!-- disk usage -->
+  <bean class="jetbrains.buildServer.controllers.admin.diskUsage.DiskUsageTab"/>
+  <bean id="diskUsageController" class="jetbrains.buildServer.controllers.admin.diskUsage.DiskUsageController"/>
+  <bean id="diskUsageBuildsPopupController" class="jetbrains.buildServer.controllers.admin.diskUsage.DiskUsageBuildDataController"/>
+
+  <!-- build time statistics -->
+  <bean class="jetbrains.buildServer.controllers.admin.buildTime.BuildTimeTab"/>
+  <bean id="buildTimeController" class="jetbrains.buildServer.controllers.admin.buildTime.BuildTimeReportController"/>
+
+  <bean id="viewDependentArtifactsPopup" class="jetbrains.buildServer.controllers.viewLog.DependentArtifactsController"/>
+
+  <bean id="promotionGraphController" class="jetbrains.buildServer.controllers.promotionGraph.PromotionGraphController"/>
+  <bean id="promotionDetailsController" class="jetbrains.buildServer.controllers.queue.PromotionDetailsPopupController"/>
+  <bean id="simpleJspController" class="jetbrains.buildServer.controllers.SimpleJspController"/>
+
+  <bean id="parameterAutocompletionController" class="jetbrains.buildServer.controllers.admin.projects.PropertyAutocompletionController"/>
+
+  <bean id="vcsRootLinkProvider" class="jetbrains.buildServer.controllers.changes.VcsRootLinkProvider"/>
+  <bean id="buildTriggerLinkProvider" class="jetbrains.buildServer.controllers.BuildTriggerLinkProvider"/>
+  <bean id="internalErrorsLinkProvider" class="jetbrains.buildServer.controllers.InternalErrorsLinkProvider"/>
+
+  <bean id="authModulesAdminPage" class="jetbrains.buildServer.controllers.admin.AuthAdminPage"/>
+
+  <bean id="timezoneController" class="jetbrains.buildServer.controllers.TimeZoneController"/>
+
+  <bean id="fileUploadController" class="jetbrains.buildServer.controllers.FileUploadController"/>
+
+  <bean id="internalMessageTreeViewFilter" class="jetbrains.buildServer.controllers.viewLog.tree.filters.impl.AllMessageFilter"/>
+  <bean id="importantMessageFilter" class="jetbrains.buildServer.controllers.viewLog.tree.filters.impl.ImportantMessageFilter"/>
+  <bean id="errorMessageFilter" class="jetbrains.buildServer.controllers.viewLog.tree.filters.impl.ErrorMessageFilter"/>
+
+  <bean id="jdkChooserController" class="jetbrains.buildServer.controllers.admin.JDKChooserController"/>
+
+  <bean id="runtimeErrorController" class="jetbrains.buildServer.web.RuntimeErrorController"/>
+
+  <bean id="authTestController" class="jetbrains.buildServer.controllers.AuthTestController"/>
+
+  <bean id="urlMapping" class="jetbrains.spring.web.UrlMapping" lazy-init="true">
+    <property name="interceptors">
+      <list>
+        <ref bean="agentsLoadBalancer"/>
+        <ref bean="calledOnceInterceptors"/>
+        <ref bean="pageExtensionInterceptor"/>
+      </list>
+    </property>
+    <property name="omittingPrefixes">
+      <list>
+        <value>/httpAuth/</value>
+        <value>/guestAuth/</value>
+      </list>
+    </property>
+    <property name="urlMap">
+      <map><!-- often used controllers -->
+        <entry key="/" value-ref="overviewController"/>
+        <entry key="/ajax.html" value-ref="ajaxController"/>
+        <entry key="/subscriptions.html" value-ref="subscriptionsController"/>
+        <entry key="/app/subscriptions" value-ref="atmosphereFacade"/>
+
+        <entry key="/res/**" value-ref="pageResourceCompressor"/>
+
+        <entry key="/overview.html" value-ref="overviewController"/>
+        <entry key="/project.html" value-ref="projectController"/>
+        <entry key="/changes.html" value-ref="changesController"/>
+        <entry key="/changeExpandedView.html" value-ref="changeExpandedViewController"/>
+        <entry key="/RPC2" value-ref="xmlRpcController"/>
+        <entry key="/app/agents/v1/**" value-ref="agentPollingProtocolController"/>
+        <entry key="/app/agents/protocols" value-ref="agentProtocolsController"/>
+        <entry key="/runtimeError.html" value-ref="runtimeErrorController"/>
+
+        <entry key="/agents.html" value-ref="agentsController"/>
+        <entry key="/viewLog.html" value-ref="viewLogController"/>
+        <entry key="/viewQueued.html" value-ref="viewQueuedController"/>
+        <entry key="/viewQueuedPersonal.html" value-ref="viewQueuedPersonalController"/>
+        <entry key="/failedTestText.html" value-ref="failedTestTextController"/>
+        <entry key="/firstFailedInfo.html" value-ref="firstFailedInfoController"/>
+        <entry key="/viewType.html" value-ref="buildTypeController"/>
+        <entry key="/viewChain.html" value-ref="buildChainController"/>
+        <entry key="/viewChainChanges.html" value-ref="buildChainChangesController"/>
+        <entry key="/viewChainProblems.html" value-ref="buildChainProblemsController"/>
+        <entry key="/showCompatibleAgents.html" value-ref="showCompatibleAgentsController"/>
+        <entry key="/willRunOnAgent.html" value-ref="willRunOnAgentController"/>
+        <entry key="/buildResultsSummary.html" value-ref="buildResultsSummaryController"/>
+        <entry key="/changesPopup.html" value-ref="changesPopupController"/>
+        <entry key="/changesPopupTab.html" value-ref="changesPopupTabController"/>
+        <entry key="/filesPopup.html" value-ref="filesPopupController"/>
+        <entry key="/carpet.html" value-ref="carpetController"/>
+        <entry key="/changesLink.html" value-ref="changesLinkController"/>
+        <entry key="/limitedPendingChangesLink.html" value-ref="limitedPendingChangesLinkController"/>
+        <entry key="/artifactsLink.html" value-ref="artifactsLinkController"/>
+        <entry key="/tagsLink.html" value-ref="tagsLinkController"/>
+        <entry key="/favoriteIcon.html" value-ref="favoriteIconController"/>
+
+        <entry key="/update/buildServerPlugin.zip" value-ref="IdeaPluginUpdateLegacyController"/>
+        <entry key="/chart.png" value-ref="chartController"/>
+        <entry key="/exportchart.html" value-ref="chartExportController"/>
+        <entry key="/downloadBuildLog.html" value-ref="downloadBuildLogController"/>
+        <entry key="/downloadRawMessageFile.html" value-ref="downloadRawMessageFileController"/>
+
+        <entry key="/get/tests/**" value-ref="downloadTestsController"/>
+        <entry key="/repository/download/**" value-ref="repositoryController"/>
+        <entry key="/repository/archive/**" value-ref="repositoryArchiveController"/>
+        <entry key="/get/file/**" value-ref="downloadController"/>
+
+        <entry key="/showAgreement.html" value-ref="showLicenseAgreementController"/>
+        <entry key="/login.html" value-ref="loginController"/>
+        <entry key="/loginSubmit.html" value-ref="loginSubmitController"/>
+        <entry key="/guestLogin.html" value-ref="guestLoginController"/>
+        <entry key="/registerUser.html" value-ref="registerUserController"/>
+        <entry key="/registerUserSubmit.html" value-ref="submitRegisterUserController"/>
+        <entry key="/setupAdmin.html" value-ref="setupAdminController"/>
+        <entry key="/setupAdminSubmit.html" value-ref="submitSetupAdminController"/>
+        <entry key="/createAdminSubmit.html" value-ref="submitCreateAdminController"/>
+        <entry key="/showBuildTupesPopup.html" value-ref="showBuildTypesPopupController"/>
+        <entry key="/userAutocompletion.html" value-ref="userAutocompletionController"/>
+        <entry key="/agents/agentsParametersReportResult.html" value-ref="agentsParametersReportController"/>
+        <entry key="/agentDetails.html" value-ref="agentDetailsController"/>
+        <entry key="/agentPools.html" value-ref="agentPoolController"/>
+        <entry key="/agentStatus.html" value-ref="showAgentStatusController"/>
+        <entry key="/promoteBuildDialog.html" value-ref="promoteBuildDialogController"/>
+        <entry key="/viewModification.html" value-ref="vcsModificationController"/>
+        <entry key="/createPatch.html" value-ref="createPatchController"/>
+        <entry key="/uploadChanges.html" value-ref="loadChangesController"/>
+        <entry key="/investigations.html" value-ref="investigationsController"/>
+        <entry key="/notificationRules.html" value-ref="editNotificationRulesController"/>
+        <entry key="/notifierSettings.html" value-ref="editNotifierSettingsController"/>
+        <entry key="/vcsSettings.html" value-ref="editVcsSettingsController"/>
+        <entry key="/systemProblems.html" value-ref="systemProblemsController"/>
+        <entry key="/allProjects.html" value-ref="viewAllProjectsController"/>
+        <entry key="/visibleProjects.html" value-ref="visibleProjectsController"/>
+        <entry key="/visibleBuildTypes.html" value-ref="visibleBuildTypesController"/>
+        <entry key="/externalStatus.html" value-ref="externalStatusController"/>
+        <entry key="/queue.html" value-ref="buildQueueController"/>
+        <entry key="/buildDistributor.html" value-ref="buildDistributorController"/>
+        <entry key="/buildGraph.html" value-ref="buildGraphController"/>
+        <entry key="/rolesDescription.html" value-ref="showRolesDescriptionController"/>
+        <entry key="/viewDependentArtifactsPopup.html" value-ref="viewDependentArtifactsPopup"/>
+        <entry key="/runCustomBuild.html" value-ref="runCustomBuildController"/>
+        <entry key="/promotionGraph.html" value-ref="promotionGraphController"/>
+        <entry key="/promoDetailsPopup.html" value-ref="promotionDetailsController"/>
+        <entry key="/diffView.html" value-ref="diffViewController"/>
+        <entry key="/comparisonFailureDiffView.html" value-ref="comparisonFailureDiffViewController"/>
+        <entry key="/showJsp.html" value-ref="simpleJspController"/>
+        <entry key="/buildChainsFilter.html" value-ref="chainsFilterController"/>
+        <entry key="/buildChainStatusChart.html" value-ref="chainStatusChartController"/>
+        <entry key="/vcsTreePopup.html" value-ref="vcsTreePopupController"/>
+        <entry key="/projectData.html" value-ref="projectDataFetcherController"/>
+        <entry key="/branchesPopup.html" value-ref="branchesPopupController"/>
+        <entry key="/tz.html" value-ref="timezoneController"/>
+        <entry key="/agentParametersAutocompletion.html" value-ref="agentParametersAutocompletionController"/>
+        <entry key="/fileUpload.html" value-ref="fileUploadController"/>
+        <entry key="/favoriteBuilds.html" value-ref="favoriteBuildsController"/>
+        <entry key="/authenticationTest.html" value-ref="authTestController"/>
+
+        <!-- admin area -->
+
+        <entry key="/admin/action.html" value-ref="adminActionsController"/>
+        <entry key="/admin/authorityRolesPopup.html" value-ref="userRolesPopupController"/>
+        <entry key="/admin/groupUsersPopup.html" value-ref="groupUsersPopupController"/>
+        <entry key="/admin/settingsDiffView.html" value-ref="settingsDiffViewController"/>
+        <entry key="/admin/parentGroupsPopup.html" value-ref="parentGroupsPopupController"/>
+        <entry key="/admin/createUser.html" value-ref="adminCreateUserController"/>
+        <entry key="/admin/vcsSettings.html" value-ref="editVcsSettingsController"/>
+        <entry key="/admin/createUserSubmit.html" value-ref="adminSubmitCreateUserController"/>
+        <entry key="/admin/audit.html" value-ref="viewAuditLogController"/>
+        <entry key="/admin/licenses.html" value-ref="agentLicenseManagerController"/>
+        <entry key="/admin/perUsageLicenseDataController.html" value-ref="perUsageLicenseDataController"/>
+        <entry key="/admin/createProject.html" value-ref="createProjectController"/>
+        <entry key="/admin/createObjectFromUrl.html" value-ref="createObjectFromUrlController"/>
+        <entry key="/admin/objectSetup.html" value-ref="objectSetupController"/>
+        <entry key="/admin/repositoryControls.html" value-ref="repositoryControlsController"/>
+        <entry key="/admin/editProject.html" value-ref="editProjectController"/>
+        <entry key="/admin/projectVcsRoots.html" value-ref="projectVcsRootsController"/>
+        <entry key="/admin/editVcsRoot.html" value-ref="editVcsRootsController"/>
+        <entry key="/admin/duplicateVcsRoots.html" value-ref="duplicateVcsRootsController"/>
+        <entry key="/admin/checkoutRulesSetup.html" value-ref="checkoutRulesController"/>
+        <entry key="/admin/createBuildType.html" value-ref="createBuildTypeController"/>
+        <entry key="/admin/createTemplate.html" value-ref="createTemplateController"/>
+        <entry key="/admin/showTemplateParams.html" value-ref="showTemplateParametersController"/>
+        <entry key="/admin/editBuildTypeVcsRoots.html" value-ref="editBuildTypeVcsRootsController"/>
+        <entry key="/admin/attachBuildTypeVcsRoots.html" value-ref="attachBuildTypeVcsRootsController"/>
+        <entry key="/admin/editBuild.html" value-ref="editBuildController"/>
+        <entry key="/admin/editRunType.html" value-ref="editRunTypeController"/>
+        <entry key="/admin/editBuildRunners.html" value-ref="editBuildRunnersController"/>
+        <entry key="/admin/editBuildFeatures.html" value-ref="editBuildFeaturesController"/>
+        <entry key="/admin/editBuildFeaturesList.html" value-ref="editBuildFeaturesListController"/>
+        <entry key="/admin/editBuildParams.html" value-ref="editBuildParametersController"/>
+        <entry key="/admin/editRequirements.html" value-ref="editRequirementsController"/>
+        <entry key="/admin/parameterAutocompletion.html" value-ref="parameterAutocompletionController"/>
+        <entry key="/admin/editTriggers.html" value-ref="editBuildTriggersController"/>
+        <entry key="/admin/editBuildFailureConditions.html" value-ref="editBuildFailureConditionsController"/>
+        <entry key="/admin/showTriggerParams.html" value-ref="showTriggerParametersController"/>
+        <entry key="/admin/showFeatureParams.html" value-ref="showBuildFeatureParametersController"/>
+        <entry key="/admin/triggers/editBuildDependencyTrigger.html" value-ref="editBuildDependencyTriggerController"/>
+        <entry key="/admin/triggers/schedulingTriggerBuildDependency.html" value-ref="schedulingTriggerBuildDependencyController"/>
+        <entry key="/admin/triggers/vcsCheckInterval.html" value-ref="vcsTriggerCheckIntervalController"/>
+        <entry key="/admin/triggers/branchSupports.html" value-ref="triggerBranchSupportController"/>
+        <entry key="/admin/jdkChooser.html" value-ref="jdkChooserController"/>
+        <entry key="/admin/discoverRunners.html" value-ref="discoverRunnersController"/>
+
+        <entry key="/admin/editDependencies.html" value-ref="editArtifactDependenciesController"/>
+        <entry key="/admin/dependenciesTable.html" value-ref="artifactDependenciesTableController"/>
+        <entry key="/admin/cleanupPolicies.html" value-ref="cleanupPoliciesController"/>
+        <entry key="/admin/editCleanupRules.html" value-ref="editCleanupRulesController"/>
+        <entry key="/admin/diskUsage/diskUsage.html" value-ref="diskUsageController"/>
+        <entry key="/admin/buildTime/buildTime.html" value-ref="buildTimeController"/>
+        <entry key="/admin/diskUsage/diskUsageBuildsStats.html" value-ref="diskUsageBuildsPopupController"/>
+        <entry key="/admin/backupPage.html" value-ref="backupController"/>
+        <entry key="/admin/projectsImport.html" value-ref="projectsImportController"/>
+        <entry key="/admin/projectsImportUpload.html" value-ref="projectsImportUploadArchiveController"/>
+        <entry key="/admin/runnerParams.html" value-ref="showRunParametersController"/>
+        <entry key="/admin/copyBuildType.html" value-ref="copyBuildTypeController"/>
+        <entry key="/admin/copyTemplate.html" value-ref="copyTemplateController"/>
+        <entry key="/admin/copyBuildStep.html" value-ref="copyBuildStepController"/>
+        <entry key="/admin/moveBuildType.html" value-ref="moveBuildTypeController"/>
+        <entry key="/admin/moveTemplate.html" value-ref="moveTemplateController"/>
+        <entry key="/admin/copyProject.html" value-ref="copyProjectController"/>
+        <entry key="/admin/moveProject.html" value-ref="moveProjectController"/>
+        <entry key="/admin/pauseProject.html" value-ref="pauseProjectController"/>
+        <entry key="/admin/moveVcsRoot.html" value-ref="moveVcsRootController"/>
+        <entry key="/admin/serverConfigGeneral.html" value-ref="serverConfigGeneralController"/>
+        <entry key="/admin/iprReparse.html" value-ref="iprReparseController"/>
+        <entry key="/admin/attachToGroups.html" value-ref="attachToGroupsController"/>
+        <entry key="/admin/attachUsersToGroup.html" value-ref="attachUsersToGroupController"/>
+        <entry key="/admin/editGroup.html" value-ref="editGroupController"/>
+        <entry key="/admin/templateUsagesPopup.html" value-ref="templateUsagesPopupController"/>
+        <entry key="/admin/sskKeyChooser.html" value-ref="sshKeyChooser"/>
+        <entry key="/admin/versionedSettings.html" value-ref="versionedSettingsController"/>
+        <entry key="/admin/versionedSettingsActions.html" value-ref="versionedSettingsActionsController"/>
+        <entry key="/admin/testMode.html" value-ref="testServerModeController"/>
+      </map>
+    </property>
+
+    <property name="mappings">
+      <props> <!-- controllers requiring lazy initialization -->
+        <prop key="/action.html">actionController</prop>
+      </props>
+    </property>
+  </bean>
+
+  <bean id="commonsMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+  <bean id="multipartResolver" class="jetbrains.spring.web.TeamCityMultipartResolver"/>
+
+  <bean id="authorizationFunctions" class="jetbrains.buildServer.web.functions.auth.AuthorizationFunctions"/>
+  <bean id="userFunctions" class="jetbrains.buildServer.web.functions.user.UserFunctions"/>
+
+  <bean id="iprSettingsPreloader" class="jetbrains.buildServer.controllers.admin.ipr.IprSettingsPreloader"/>
+  <bean id="iprReparseController" class="jetbrains.buildServer.controllers.admin.ipr.IprReparseController">
+    <constructor-arg ref="iprProjectManager"/>
+    <constructor-arg ref="buildServer"/>
+  </bean>
+
+  <bean id="buildPopupController" class="jetbrains.buildServer.controllers.viewLog.BuildPopupController"/>
+  <bean id="serverStatistics" class="jetbrains.buildServer.controllers.ServerStatistics"/>
+
+  <bean id="jspServletFactory" class="jetbrains.spring.web.TeamCityJSPServletFactoryImpl"/>
+  <bean id="jspManager" class="jetbrains.spring.web.JspManager"/>
+  <bean class="jetbrains.spring.web.JspController"/>
+
+  <bean class="jetbrains.buildServer.controllers.admin.projects.EditBuildTypeFormFactory"/>
+
+  <bean class="jetbrains.buildServer.web.systemProblems.LinkProviderManagerImpl"/>
+
+  <bean class="jetbrains.buildServer.controllers.agent.AgentDetailsFormFactory"/>
+  <bean class="jetbrains.buildServer.controllers.vcs.UnifiedDiffController"/>
+
+  <bean class="jetbrains.buildServer.serverSide.impl.agent.AgentFileManagerCache"/>
+  <bean id="agentFileManager" class="jetbrains.buildServer.serverSide.impl.agent.AgentFileManagerImpl"/>
+  <bean class="jetbrains.buildServer.controllers.agent.UploadOnServerController"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentLogsViewsController"/>
+  <bean class="jetbrains.buildServer.controllers.agent.AgentLogsDownloadController"/>
+
+  <bean id="webAccessService" class="jetbrains.buildServer.web.WebAccessService"/>
+
+  <bean class="jetbrains.buildServer.serverSide.impl.RemoteAgentConnectionFactoryImpl"/>
+
+  <bean class="jetbrains.buildServer.controllers.PageBeforeContentPagePlaceController"/>
+
+  <!-- parameters rendering -->
+  <bean class="jetbrains.buildServer.controllers.parameters.ParameterManager"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.ParameterViewController"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.ParameterSpecController"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.EditParametersSpecController"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.ParameterContextFactory"/>
+
+
+  <!-- parameters v2 -->
+  <bean class="jetbrains.buildServer.controllers.parameters.test.ParametersTestController"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.embed.ParametersBeanController"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.embed.ParametersViewBeanFactory"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.embed.EmbeddedParameterViewController"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.embed.EmbeddedParametersSubmitController"/>
+
+  <!-- parameters spec providers aka plugins -->
+  <bean class="jetbrains.buildServer.controllers.parameters.types.TextFieldParameterType"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.types.CheckboxFieldParameterType"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.types.SelectParameterType"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.types.EnumParameterType"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.types.IntegerFieldParameterType"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.types.MultiselectFieldParameterType"/>
+  <bean class="jetbrains.buildServer.controllers.parameters.types.PasswordFieldParameterType"/>
+
+  <bean id="promoteBuildDialogController" class="jetbrains.buildServer.controllers.viewLog.PromoteBuildDialogController"/>
+
+  <bean class="jetbrains.buildServer.controllers.actions.UpdateBuildMetedataAction"/>
+
+
+  <!-- compatibility view -->
+  <bean class="jetbrains.buildServer.controllers.compatibility.BuildCompatibilityModelFactory"/>
+  <bean class="jetbrains.buildServer.controllers.compatibility.BuildCompatibilityController"/>
+  <bean class="jetbrains.buildServer.web.impl.ServerSummaryImpl"/>
+
+  <bean id="discoverRunnersController" class="jetbrains.buildServer.controllers.admin.projects.DiscoveredRunnersController"/>
+
+  <bean class="jetbrains.buildServer.controllers.admin.projects.setupFromUrl.SetupObjectFromVcsUrlExtension"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.setupFromUrl.SetupObjectFromVcsUrlController"/>
+  <bean class="jetbrains.buildServer.controllers.admin.projects.util.CheckoutRulesValidator"/>
+
+  <bean id="repositoryControlsController" class="jetbrains.buildServer.controllers.admin.projects.RepositoryControlsController"/>
+
+  <!-- Server push -->
+  <bean class="jetbrains.buildServer.push.impl.WebSocketFeature"/>
+  <bean class="jetbrains.buildServer.push.impl.atmosphere.AtmosphereLivenessChecker"/>
+
+  <bean class="jetbrains.buildServer.push.impl.healthReport.ConfigureProxyServerForWebsocketReport"/>
+  <bean class="jetbrains.buildServer.push.impl.healthReport.BioConnectorHealthReport"/>
+  <bean class="jetbrains.buildServer.push.impl.healthReport.WebSocketHealthReportCategoryHolder"/>
+
+  <bean id="failedWebsocketRequestCollector" class="jetbrains.buildServer.push.impl.atmosphere.FailedWebSocketRequestsCollector"/>
+
+  <bean class="jetbrains.buildServer.push.impl.DefaultTopicsRegistry"/>
+
+  <bean id="atmosphereConfig" class="jetbrains.buildServer.push.impl.atmosphere.AtmosphereFrameworkSpringConfig"/>
+  <bean id="atmosphereFacade" class="jetbrains.buildServer.push.impl.atmosphere.AtmosphereController"/>
+
+  <bean class="jetbrains.buildServer.push.notificator.ServerStatisticsNotificator"/>
+  <bean class="jetbrains.buildServer.push.notificator.RunningBuildsNotificator"/>
+  <bean class="jetbrains.buildServer.push.notificator.EventTrackerNotificator"/>
+
+  <bean class="jetbrains.buildServer.controllers.DiskUsageAjaxController"/>
+
+  <!--<bean class="jetbrains.buildServer.controllers.graph.ImportChainController"/>-->
+
+
+  <!--These controllers are left only for backward compatibility. See javadoc.-->
+  <bean id="eventTrackerController" class="jetbrains.buildServer.controllers.obsolete.EventTrackerController"/>
+  <bean id="teamCityStatsController" class="jetbrains.buildServer.controllers.obsolete.TeamCityStatsController"/>
+  <bean id="getRunningBuildsAction" class="jetbrains.buildServer.controllers.obsolete.GetRunningBuildsAction"/>
+
+  <!-- Add simple postprocessing to build log -->
+  <bean class="jetbrains.buildServer.web.buildlog.LogMessageEscapeProcessor"/>
+  <bean class="jetbrains.buildServer.web.buildlog.LogMessageURLsProcessor"/>
+  <bean class="jetbrains.buildServer.web.buildlog.LogMessageAnsiColorsProcessor"/>
+  <bean class="jetbrains.buildServer.web.buildlog.LogMessageStackTraceProcessor"/>
+  <bean class="jetbrains.buildServer.web.buildlog.LogMessageMsgLinkProcessor"/>
+
+  <!-- Storage customisation -->
+  <bean class="jetbrains.buildServer.serverSide.storage.ArtifactsStorageSettingsTab"/>
+  <bean class="jetbrains.buildServer.serverSide.storage.ArtifactsStorageParamsController"/>
+  <bean class="jetbrains.buildServer.serverSide.storage.ArtifactsStorageSettingsController"/>
+  <bean class="jetbrains.buildServer.serverSide.storage.ArtifactsStorageSettingsUsagesController"/>
+
+  <bean id="pageResourceCompressor" class="jetbrains.buildServer.controllers.PageResourceCompressorImpl"/>
+
+  <bean id="uiConfigPersister" class="jetbrains.buildServer.controllers.UIConfigsPersister"/>
+
+  <bean class="jetbrains.buildServer.controllers.admin.NodesConfigurationAdminPage"/>
+
+  <bean class="jetbrains.buildServer.web.statistics.graph.GraphCustomSettingsMapper"/>
+
+  <bean class="jetbrains.buildServer.web.jsp.JspPrecompilerConfigurator"/>
+
+  <bean id="testServerModeController" class="jetbrains.buildServer.web.TestServerModeController"/>
+  <bean id="perUsageLicenseDataController" class="jetbrains.buildServer.serverSide.impl.serverStatistics.PerUsageLicenseDataController"/>
+
+  <bean class="jetbrains.buildServer.web.proxyProblems.ProxyServerConfigurationCheckController"/>
+  <bean class="jetbrains.buildServer.web.proxyProblems.ProxyConfigurationProblemsHealthReport"/>
+</beans>

@@ -1,0 +1,11 @@
+[2017-09-22 22:17:16,635]   INFO - r.maven.remote.MavenServerImpl - Starting maven server with following arguments: [teamcity-mavenServer] 
+[2017-09-22 22:17:16,930]   INFO - r.maven.remote.MavenServerImpl - Successfully created registry using port [52464] 
+[2017-09-22 22:17:16,931]   INFO - r.maven.remote.MavenServerImpl - Successfully bound Maven Server to name: [teamcity-mavenServer] 
+[2017-09-22 22:17:21,941]   INFO - r.maven.remote.MavenServerImpl - using name of running JVM: [65522@navisbook.local] 
+[2017-09-22 22:17:21,942]   INFO - r.maven.remote.MavenServerImpl - Printed following string to output: [65522/52464] 
+[2017-09-24 19:27:02,666]   INFO - r.maven.remote.MavenServerImpl - Starting maven server with following arguments: [teamcity-mavenServer] 
+[2017-09-24 19:27:02,821]   INFO - r.maven.remote.MavenServerImpl - Successfully created registry using port [51702] 
+[2017-09-24 19:27:02,822]   INFO - r.maven.remote.MavenServerImpl - Successfully bound Maven Server to name: [teamcity-mavenServer] 
+[2017-09-24 19:27:07,830]   INFO - r.maven.remote.MavenServerImpl - using name of running JVM: [6719@navisbook.local] 
+[2017-09-24 19:27:07,831]   INFO - r.maven.remote.MavenServerImpl - Printed following string to output: [6719/51702] 
+[2017-09-27 21:33:19,099]   INFO - r.maven.remote.MavenServerImpl - The JVM is shutting down. 

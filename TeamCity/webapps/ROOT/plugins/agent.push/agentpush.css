@@ -1,0 +1,65 @@
+div.createPresetFormDialog,
+div.installPresetFormDialog {
+    width: 40em;
+}
+
+div.createPresetFormDialog table .textProperty,
+div.installPresetFormDialog table .textProperty {
+    width: 23em;
+}
+
+div.createPresetFormDialog table select,
+div.installPresetFormDialog table select {
+    width: 23.4em;
+}
+
+div.createPresetFormDialog span.error,
+div.installPresetFormDialog span.error,
+div.createPresetFormDialog span.smallNote,
+div.installPresetFormDialog span.smallNote {
+    margin-left: 0;
+}
+
+div.createPresetFormDialog table,
+div.installPresetFormDialog table {
+    width: 100%
+}
+
+div.createPresetFormDialog table th,
+div.installPresetFormDialog table th {
+    vertical-align: top;
+    text-align: left;
+}
+
+div.createPresetFormDialog table.runnerFormTable th label,
+div.installPresetFormDialog table.runnerFormTable th label {
+    display: block;
+    width: 10em;
+    vertical-align: top;
+    text-align: left;
+}
+
+table.agentpushSettings {
+    width: 50%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+table.agentpushSettings tr.header {
+    background-color: #f5f5f5;
+}
+
+table.agentpushSettings td, table.agentpushSettings th {
+    padding: 3px 3px 3px 3px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    text-align: left;
+}
+
+.agentpushLog .errorMessage {
+    color: red;
+}
+
+.agentpushLog .warningMessage {
+    color: #C47003;
+}

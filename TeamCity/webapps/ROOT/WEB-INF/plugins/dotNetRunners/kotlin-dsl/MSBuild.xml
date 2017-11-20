@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="MSBuild" generateDslJar="true">
+  <class name="MSBuildStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/MSBuild) running MSBuild script
+    </description>
+  </class>
+  <function name="msBuild">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/MSBuild) running MSBuild script
+      @see MSBuildStep
+    </description>
+  </function>
+  <params>
+    <param name="teamcity.build.workingDir" dslName="workingDir">
+      <description>
+        [Build working directory](https://confluence.jetbrains.com/display/TCDL/Build+Working+Directory) for ant script,
+        specify it if it is different from the [checkout directory](https://confluence.jetbrains.com/display/TCDL/Build+Checkout+Directory).
+      </description>
+    </param>
+    <param name="build-file-path" dslName="path">
+      <description>
+        A path to the solution to be built relative to the build [checkout directory](https://confluence.jetbrains.com/display/TCDL/Build+Checkout+Directory)
+      </description>
+    </param>
+    <param name="msbuild_version" dslName="version" type="MSBuildVersion">
+      <description>
+        MSBuild version to use
+        @see MSBuildVersion
+      </description>
+    </param>
+    <param name="toolsVersion" type="MSBuildToolsVersion">
+      <description>
+        A version of tools to be used to compile (equivalent to the /toolsversion: commandline argument).
+        @see MSBuildToolsVersion
+      </description>
+    </param>
+    <param name="run-platform" dslName="platform" type="Platform">
+      <description>
+        A required platform bitness
+        @see Platform
+      </description>
+    </param>
+    <param name="targets">
+      <description>
+        Space- or comma-separated list of MSBuild targets to execute
+      </description>
+    </param>
+    <param name="runnerArgs" dslName="args">
+      <description>
+        Additional command line parameters for MSBuild
+      </description>
+    </param>
+    <param name="teamcity.tests.runRiskGroupTestsFirst" dslName="reduceTestFeedback" type="boolean" trueValue="recentlyFailed" falseValue="">
+      <description>
+        Whether TeamCity should run recently failed tests first to reduce test feedback
+      </description>
+    </param>
+  </params>
+  <types>
+    <enum name="Platform">
+      <description>
+        A required platform bitness
+      </description>
+      <option name="x86" value="x86">
+        <description>
+          Require a 32-bit platform
+        </description>
+      </option>
+      <option name="x64" value="x64">
+        <description>
+          Require a 64-bit platform
+        </description>
+      </option>
+    </enum>
+    <enum name="MSBuildVersion">
+      <description>MSBuild version</description>
+      <option name="V15_0" value="15.0">
+        <description>Microsoft Build Tools 2017</description>
+      </option>
+      <option name="V14_0" value="14.0">
+        <description>Microsoft Build Tools 2015</description>
+      </option>
+      <option name="V12_0" value="12.0">
+        <description>Microsoft Build Tools 2013</description>
+      </option>
+      <option name="V4_5" value="4.5">
+        <description>Microsoft .NET Framework 4.5</description>
+      </option>
+      <option name="V4_0" value="4.0">
+        <description>Microsoft .NET Framework 4.0</description>
+      </option>
+      <option name="V3_5" value="3.5">
+        <description>Microsoft .NET Framework 3.5</description>
+      </option>
+      <option name="V2_0" value="2.0">
+        <description>Microsoft .NET Framework 2.0</description>
+      </option>
+      <option name="MONO_v4_5" value="mono_4.5">
+        <description>Mono xbuild 4.5</description>
+      </option>
+      <option name="MONO_v4_0" value="mono_4.0">
+        <description>Mono xbuild 4.0</description>
+      </option>
+      <option name="MONO_v3_5" value="mono_3.5">
+        <description>Mono xbuild 3.5</description>
+      </option>
+      <option name="MONO_v2_0" value="mono">
+        <description>Mono xbuild 2.0</description>
+      </option>
+    </enum>
+    <enum name="MSBuildToolsVersion">
+      <description>MSBuild ToolsVersion</description>
+      <option name="V15_0" value="15.0" />
+      <option name="V14_0" value="14.0" />
+      <option name="V12_0" value="12.0" />
+      <option name="V4_0" value="4.0" />
+      <option name="V3_5" value="3.5" />
+      <option name="V2_0" value="2.0" />
+      <option name="NONE" value="none" />
+    </enum>
+  </types>
+</dsl-extension>

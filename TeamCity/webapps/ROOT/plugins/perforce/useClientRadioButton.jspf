@@ -1,0 +1,5 @@
+<th>
+  <label onclick="p4.useClient('${toFocus}')">
+    <props:radioButtonProperty name="use-client" value="${myValue}" checked="${propertiesBean.properties['use-client'] == myValue}" onclick="p4.useClient('${toFocus}')"/>
+    ${myTitle}: <l:star/></label><bs:help file="Perforce" anchor="${myHelpAnchor}"/>
+</th>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="trigger" type="mavenSnapshotDependencyTrigger" generateDslJar="true">
+  <class name="MavenSnapshotDependencyTrigger">
+    <description>
+      A [trigger](https://confluence.jetbrains.com/display/TCDL/Configuring+Maven+Triggers#ConfiguringMavenTriggers-MavenSnapshotDependencyTrigger)
+      running builds when there is a modification of the snapshot dependency content in the remote repository.
+    </description>
+  </class>
+  <function name="mavenSnapshot">
+    <description>
+      Adds a [trigger](https://confluence.jetbrains.com/display/TCDL/Configuring+Maven+Triggers#ConfiguringMavenTriggers-MavenSnapshotDependencyTrigger)
+      running builds when there is a modification of the snapshot dependency content in the remote repository.
+      @see MavenSnapshotDependencyTrigger
+    </description>
+  </function>
+  <params>
+    <param name="skipIfRunning" type="boolean">
+      <description>Do not trigger a build if currently running builds can produce this artifact</description>
+    </param>
+  </params>
+</dsl-extension>

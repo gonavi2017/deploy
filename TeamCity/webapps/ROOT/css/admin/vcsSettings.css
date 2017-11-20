@@ -1,0 +1,46 @@
+.editVcsRootPage {
+  float: left;
+  width: 70%;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+.vcsSettings .runnerFormTable {
+  margin-bottom: 2em;
+}
+
+table.saveVcsRootOptions {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+}
+
+table.saveVcsRootOptions td {
+  padding: 5px;
+}
+
+#sidebarAdmin {
+  width: 25%;
+}
+
+#duplicateVcsRootsDialog {
+  width: 50em;
+}
+
+table.duplicateVcsRootsTable tr td {
+  padding: 4px;
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+}
+
+table.duplicateVcsRootsTable tr td.last {
+  border-bottom: none;
+}
+
+.listRepositoriesControls {
+  white-space: nowrap;
+}
+
+.listRepositoriesControls .tc-icon {
+  margin-top: 0.2em;
+}

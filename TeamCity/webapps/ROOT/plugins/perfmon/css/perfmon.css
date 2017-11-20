@@ -1,0 +1,78 @@
+#perfmon {
+}
+
+#perfmon td {
+  vertical-align: top;
+  padding: 0;
+}
+
+#perfmon .rightBar {
+  padding: 2px 0 0 20px;
+}
+
+#buildStages {
+  margin-top: 20px;
+}
+
+#buildStages ul {
+  margin: 0;
+}
+
+#buildLogDiv {
+  margin: 20px 0 0 12px;
+}
+
+#legend {
+  padding: 10px;
+}
+
+#legendHint {
+  color: #888888;
+}
+
+.legend-item__label {
+  cursor: pointer;
+}
+
+.legend-item__checkbox {
+  display: none;
+}
+
+.color-bullet {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px 0 0;
+  border-radius: 10px;
+  line-height: 100%;
+}
+
+.color-bullet:after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  display: block;
+  border-radius: 8px;
+  margin: 1px 0 0 1px;
+}
+
+.legend-item__checkbox:checked ~ .color-bullet:after  {
+  display: none;
+}
+
+.ua-ie8-below .legend-item__checkbox[checked='checked'] ~ .color-bullet:after {
+  display: none;
+}
+
+.cpu .color-bullet {
+  background-color: #CB4B4B;
+}
+
+.disk .color-bullet {
+  background-color: #EDC240;
+}
+
+.memory .color-bullet {
+  background-color: #AFD8F8;
+}

@@ -1,0 +1,174 @@
+/*
+ * Referenced from testHistoryExtension.jsp
+ */
+
+#flakyTestContent .blockHeader.innerHeader {
+  font-weight: inherit;
+}
+
+#flakyTestContent .dark .blockHeader.innerHeader {
+  background-color: inherit;
+  border-bottom: 0px;
+  color: inherit;
+}
+
+table.analysis > tbody > tr > td {
+  /*
+   * Make padding consistent with the immediate children of other collapsible
+   * blocks on the same page.
+   */
+  padding: 10px;
+}
+
+table.testName {
+  height: 100%;
+  width: 100%
+}
+
+tr.testName {
+  height: 100%;
+}
+
+/*
+ * Changes link in changesLinkFullInner.tag: "John Doe (1)"
+ *
+ * In main.css, white-space is set to normal, which causes wrapping in Chrome.
+ */
+td.changes span.pc .resultsLink {
+  white-space: nowrap !important;
+}
+
+span.preserveWhiteSpace {
+  white-space: pre;
+}
+
+span.counter {
+  font-weight: bold;
+}
+
+td.testName table.testName tr.testName td.testName {
+  width: 100%;
+}
+
+.testName td.statistics {
+  width: 50%;
+  vertical-align: top;
+  padding-right: 0.5em;
+}
+
+table.testName td.statistics table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.testName div.statistics {
+  margin-bottom: 0.4em;
+}
+
+div.thick {
+  padding: 2px;
+}
+
+div.thin {
+  padding: 0px;
+}
+
+.testName .statistics .title {
+  text-align: center;
+}
+
+.testName .statistics .content {
+  background-color: #ffffff;
+  padding: 0;
+}
+
+.testName .statistics .content th {
+  text-align: left;
+  white-space: nowrap;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.testName .statistics .content td {
+  white-space: nowrap;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.testName .statistics .zero {
+  opacity: 0.5;
+
+  -webkit-transition: opacity 0.1s linear; /* Chrome 4+, Safari 3.1+ */
+  -moz-transition: opacity 0.1s linear;    /* Mozilla Firefox 4+ */
+  /*noinspection CssUnknownProperty*/
+  -ms-transition: opacity 0.1s linear;     /* MSIE 9.x */
+  -o-transition: opacity 0.1s linear;      /* Opera 10.5+ */
+  transition: opacity 0.1s linear;         /* Mozilla Firefox 16+, Opera 12.1+, Chrome 26+, Safari 6.1+, MSIE 10+ */
+}
+
+.testName .statistics .zero:hover {
+  opacity: 1.0;
+}
+
+div.light, table.light th {
+  color: inherit;
+  background-color: #e3e9ef;
+}
+
+div.dark {
+  color: #ffffff;
+  background-color: #abb1c4;
+}
+
+table.thick tr.footer {
+  border-top: 2px solid;
+}
+
+table.borderBottom tr.footer {
+  border-top: 3px double;
+}
+
+table.light tr.footer {
+  border-color: #e3e9ef;
+}
+
+table.analysis table.dark tr.footer {
+  border-color: #abb1c4;
+}
+
+table.analysis table.dark td {
+  color: #151515;
+}
+
+table.flakyReason {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #e4e4e4;
+  white-space: nowrap;
+  min-width: 500px;
+  margin-top: 5px;
+}
+
+table.testStatus {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  display: inline-table;
+  vertical-align: bottom;
+}
+
+td.differentStatusAtSameVcsChange, td.testStatus {
+  padding: 0px;
+}
+
+span.preserveWhiteSpace {
+  white-space: pre;
+}
+
+span.inaccessible {
+  /*
+   * Consistent with ".successMessage".
+   */
+  background-color: #ffffcc;
+}

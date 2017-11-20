@@ -1,0 +1,143 @@
+/*
+ *
+ *  * Copyright 2000-2014 JetBrains s.r.o.
+ *  *
+ *  * Licensed under the Apache License, Version 2.0 (the "License");
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *
+ *  * http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  * Unless required by applicable law or agreed to in writing, software
+ *  * distributed under the License is distributed on an "AS IS" BASIS,
+ *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and
+ *  * limitations under the License.
+ *
+ */
+.hidden {
+    display: none!important;
+}
+
+.section-header {
+    margin: 13px 0 13px 8px;
+}
+
+.settings {
+    outline: none;
+}
+
+.settings.settings_error {
+    border-color: #aa1111;
+}
+
+.buttonsWrapper {
+  margin-top: 1em;
+}
+
+.buttonsWrapper .error {
+  margin-left: 0;
+}
+
+.options-loader {
+  display: inline-block;
+  padding-left: 4px;
+}
+
+/* Add/edit dialog */
+#VMWareImageDialog {
+    width: 570px;
+}
+
+#VMWareImageDialog .message-wrapper {
+    position: absolute;
+    top: 48px;
+    width: 100%;
+}
+#VMWareImageDialog .message {
+    opacity: 1;
+}
+
+#VMWareImageDialog .message_hidden {
+    display: none;
+    opacity: 0;
+}
+
+#VMWareImageDialog .message .icon-refresh {
+    margin-right: 6px;
+}
+
+#VMWareImageDialog .runnerFormTable th {
+    padding-left: 0;
+}
+
+#VMWareImageDialog .modalDialogBody {
+    padding-top: 20px;
+}
+
+#VMWareImageDialog .behaviour__switch_checkbox {
+    margin-left: 26px;
+}
+
+#VMWareImageDialog .grayNote {
+    margin-left: 20px;
+}
+
+#VMWareImageDialog .disabled {
+    color: #888;
+}
+/* Images Table */
+
+.imagesOuterWrapper {
+    padding-left: 8px;
+}
+.imagesTableWrapper {
+    margin-bottom: 0.5em;
+}
+
+.imagesTableRow:hover .highlight {
+    background-color: #ffffcc;
+    color: #25419d;
+    cursor: pointer;
+}
+
+.imageName {
+    white-space: nowrap;
+}
+
+.settings .remove,
+.edit {
+    width: 5%;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.settings .maxInstances,
+.settings .maxInstances.name {
+    width: 80px;
+    max-width: 80px;
+    padding: 1px 6px;
+    text-align: center;
+}
+
+.sourceIcon {
+    display: inline-block;
+    border-radius: 100%;
+    background-color: #4477ff;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.sourceIcon_unknown {
+    background-color: #e5e5e5;
+}
+
+.sourceIcon_error {
+    background-color: #aa1111;
+}

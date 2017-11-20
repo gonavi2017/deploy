@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="simpleRunner" generateDslJar="true" applicable="params['use.custom.script'] == 'true'">
+  <class name="ScriptBuildStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/Command+Line) running a script with the specified content
+    </description>
+  </class>
+  <function name="script">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/Command+Line) running a script with the specified content
+      @see ScriptBuildStep
+    </description>
+  </function>
+  <init>
+    <param name="use.custom.script" value="true"/>
+  </init>
+  <params>
+    <param name="teamcity.build.workingDir" dslName="workingDir">
+      <description>
+        [Build working directory](https://confluence.jetbrains.com/display/TCDL/Build+Working+Directory) for script,
+        specify it if it is different from the [checkout directory](https://confluence.jetbrains.com/display/TCDL/Build+Checkout+Directory).
+      </description>
+    </param>
+    <param name="script.content" dslName="scriptContent">
+      <description>
+        Content of the script to run
+      </description>
+    </param>
+  </params>
+</dsl-extension>

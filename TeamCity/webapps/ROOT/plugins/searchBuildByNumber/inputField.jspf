@@ -1,0 +1,7 @@
+<input class="quickSearchQuery"
+       id="searchField"
+       value="<c:out value="${query}"/>"
+       type="text"
+       autocomplete="off"
+       />
+<a href="#" onclick="BS.Search.go(false, $j(this).prev('.quickSearchQuery'))" class="quickSearchButton" title="Search"><i class="icon-search"></i></a>

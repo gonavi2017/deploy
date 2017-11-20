@@ -1,0 +1,38 @@
+<ext:defineExtensionTab placeId="<%=PlaceId.CHANGE_DETAILS_TAB%>"/>
+<div id="changeDetailsTabs" class="simpleTabs"></div>
+<div id="helperSection" class="actionBar clearfix"></div>
+<div class="vcsModificationTabContainer">
+  <div class="clr"></div>
+  <c:set var="refreshUrl"><bs:vcsModificationUrl change="${modification}"
+                                                 buildTypeId="${null}"
+                                                 extension="${extensionTab}"/></c:set>
+  <bs:refreshable containerId="viewModificationContainerId" pageUrl="${refreshUrl}${refreshAddon}">
+    <ext:includeExtension extension="${extensionTab}"/>
+  </bs:refreshable>
+</div>
+
+<script type="text/javascript">
+  (function() {
+    var tabs = new TabbedPane();
+  <ext:forEachTab placeId="<%=PlaceId.CHANGE_DETAILS_TAB%>">
+  <c:set var="url"><bs:vcsModificationUrl change="${modification}" buildTypeId="${buildTypeId}" extension="${extension}"/>${refreshAddon}</c:set>
+    tabs.addTab('${extension.tabId}', {
+      caption:'<bs:forJs>${extension.tabTitle}</bs:forJs>',
+      url:'${url}'
+    });
+  </ext:forEachTab>
+    tabs.setActiveCaption('${extensionTab.tabId}');
+    tabs.showIn('changeDetailsTabs');
+  })();
+
+  BS.fixHeader = function() {
+    var header = jQuery("#viewModificationContainerId .changeHeader");
+    if (header.length) {
+      jQuery('#helperSection').html("").append(header);
+      BS.jQueryDropdown($('buildTypeId_changed'));
+    } else {
+      jQuery('#helperSection').hide();
+    }
+  };
+  BS.fixHeader();
+</script>

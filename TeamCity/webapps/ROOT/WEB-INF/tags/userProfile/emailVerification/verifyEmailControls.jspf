@@ -1,0 +1,36 @@
+<c:set var="editEmailVerificationStatusBean" value="${profileForm.extensions['editEmailVerificationStatusBean']}"/>
+<%--@elvariable id="editEmailVerificationStatusBean" type="jetbrains.buildServer.controllers.emailVerification.EmailVerificationEditBean"--%>
+
+<bs:linkScript>/js/bs/emailVerification.js</bs:linkScript>
+<style type="text/css">
+  .general-property .textField:not([name='email']) {
+    margin-right: 67px;
+  }
+</style>
+<c:choose>
+  <c:when test="${not editEmailVerificationStatusBean.verified}">
+      <a class="verifyLink activeVerifyLink" href="#" onclick="BS.UserEmailVerifier.sendVerificationEmail(); return false" title="Send verification email">Verify</a>
+      <span class="verifyLink notValidEmail grey" title="Set a valid email to verify" style="display: none;">not a valid email</span>
+      <span class="verifyLink notSavedEmail grey" title="Save changes to verify" style="display: none;">not saved</span>
+      <span class="verifyLink sendingEmail" style="display: none;"></span>
+      <forms:progressRing id="emailVerificationProgress" className="progressRingInline" style="display: none;" progressTitle="Sending verification email..."/>
+  </c:when>
+
+  <c:otherwise>
+    <span class="verified"><span class="icon-ok"></span>&nbsp;Verified</span>
+  </c:otherwise>
+</c:choose>
+
+<script type="text/javascript">
+
+  BS.UserEmailVerifier.init(${profileForm.editee.id}, ${editEmailVerificationStatusBean.currentEmailAddressIsValid});
+
+  BS.UpdatePersonalProfileForm.subscribeToModifiedChange(function(modified) {
+    BS.UserEmailVerifier.onModifiedChange(modified);
+  });
+
+  BS.AdminUpdateUserForm.subscribeToModifiedChange(function(modified) {
+    BS.UserEmailVerifier.onModifiedChange(modified);
+  });
+
+</script>

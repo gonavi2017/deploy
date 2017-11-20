@@ -1,0 +1,93 @@
+<table class="borderBottom pluginsTable">
+  <thead>
+  <tr>
+    <th class="header" style="min-width:33%;">Plugin Name</th>
+    <th class="header" style="width:15%;">Version</th>
+    <th class="header" style="width:20%;">Vendor</th>
+    <th class="header">Home Path</th>
+  </tr>
+  </thead>
+  <tbody>
+  <c:forEach var="plugin" items="${plugins}">
+    <tr>
+      <td>
+        <c:set var="plugin_messages_popup_id" value="plugin_${util:forJSIdentifier(plugin.name)}_messages_popup"/>
+        <c:set var="message_type" value="${(plugin.maximumMessageType != null) ? plugin.maximumMessageType.name().toLowerCase() : ''}"/>
+        <div class="<c:if test="${not plugin.enabled}">plugin-disabled</c:if>">
+          <c:if test="${message_type == 'warning'}">
+            <c:set var="plugin_message">
+              <c:out value="${plugin.messagesBarText}"/><c:if test="${plugin.messageBarHelp != null}"><bs:help file="${plugin.messageBarHelp}"/></c:if>
+              <c:if test="${plugin.hasDetails}">(<a href="#" id="${plugin_messages_popup_id}_messages_popup_link"
+                onclick="BS.Plugins.toggleProblem('${plugin_messages_popup_id}', this); return false">view details</a>)</c:if>
+            </c:set>
+            <i onmouseover="BS.Tooltip.showMessageAtCursor(event, {shift:{x:5,y:10}}, '<bs:escapeForJs forHTMLAttribute="true" text="${plugin_message}"/>');"
+               onmouseout="BS.Tooltip.hidePopup();"
+               class="tc-icon icon16 tc-icon_attention tc-icon_attention_yellow"></i>
+          </c:if>
+        <c:choose>
+          <c:when test="${not empty plugin.pluginUrl}">
+            <a href="${plugin.pluginUrl}" target="_blank" title="Open plugin site"><c:out value="${plugin.name}"/></a>
+          </c:when>
+          <c:otherwise> <c:out value="${plugin.name}"/> </c:otherwise>
+        </c:choose>
+
+        <c:if test="${not empty plugin.description}">
+          <div class="smallNote">${plugin.description}</div>
+        </c:if>
+        </div>
+
+        <c:if test="${not empty plugin.messages}">
+          <c:if test="${message_type != 'warning'}">
+            <div class="pluginMessageBar pluginMessageBar__${message_type}" onclick="Event.stop(event)">
+              <c:out value="${plugin.messagesBarText}"/>
+              <c:if test="${plugin.messageBarHelp != null}"><bs:help file="${plugin.messageBarHelp}"/></c:if>
+              <c:if test="${plugin.hasDetails}">(<a href="#" id="${plugin_messages_popup_id}_messages_popup_link"
+                onclick="BS.Plugins.toggleProblem('${plugin_messages_popup_id}', this); return false">view details</a>)</c:if>
+            </div>
+          </c:if>
+          <c:if test="${plugin.hasDetails}">
+            <div class="popupDiv" style="display:none;" id="${plugin_messages_popup_id}">
+              <div class="systemProblemsContainer">
+                <c:forEach var="message" items="${plugin.messages}" varStatus="status">
+                  <div class="systemProblem pluginMessage__${message.type.toString().toLowerCase()}">
+                    <span class="problemMessage mono"><l:br val="${message.message}"/></span>
+                    <c:if test="${not empty message.error}">
+                      <c:set var="detailsId" value="details:${plugin_messages_popup_id}:${status.index}"/>
+                      <br/>
+                      <c:if test="${plugin.messages.size() != 1}">
+                        <a href="#" onclick="
+                            $('${detailsId}').toggle();
+                            this.innerHTML = BS.Util.visible('${detailsId}') ? 'Hide stacktrace' : 'Show stacktrace &raquo;';
+                            return false;
+                            ">Show stacktrace &raquo;</a>
+                      </c:if>
+                      <div id="${detailsId}" style="${(plugin.messages.size() != 1)?'display:none;':''}" class="problemDetails mono custom-scroll"><l:br
+                          val="${util:stackTrace(message.error)}"/></div>
+                    </c:if>
+                  </div>
+                </c:forEach>
+              </div>
+            </div>
+          </c:if>
+        </c:if>
+      </td>
+      <td>
+        <c:out value="${plugin.version}"/>
+      </td>
+      <td>
+        <c:choose>
+          <c:when test="${empty plugin.vendorUrl}">
+            <c:out value="${plugin.vendorName}"/>
+          </c:when>
+          <c:otherwise>
+            <a href="${plugin.vendorUrl}" target="_blank" title="Visit vendor site"><c:out value="${plugin.vendorName}"/></a>
+          </c:otherwise>
+        </c:choose>
+      </td>
+      <td>
+        <c:out value="${plugin.pluginRoot}"/>
+      </td>
+    </tr>
+  </c:forEach>
+  </tbody>
+</table>

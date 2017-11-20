@@ -1,0 +1,2 @@
+Sep 27, 2017 9:33:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'buildServer'

@@ -1,0 +1,12 @@
+<div id="buildRowPopupTemplate" style="display: none">
+  <li>
+    <a href="javascript://" <bs:iconLinkStyle icon="copy buildLogPopupLink copy2Clipboard"/>
+       data-clipboard-id="data_msg_##MSG_ID##"
+       data-strip-tags="true"
+    >Copy message text</a></li>
+
+  <c:url var="buildLogUrl" value="/viewLog.html?tab=buildLog&logTab=tree&filter=debug&expand=all&buildId=${buildData.buildId}&_focus=##MSG_ID##"/>
+  <li>
+    <a href="${buildLogUrl}" <bs:iconLinkStyle icon="build-log buildLogPopupLink copy2Clipboard js-url-copy"/>
+       data-clipboard-text="##HREF##" onclick="return false;">Copy message link</a></li>
+</div>

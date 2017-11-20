@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+  <description>Flaky Test Detector functions library</description>
+  <display-name>Flaky Test Detector functions</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>ftd</short-name>
+  <uri>/WEB-INF/functions/flaky-test-detector</uri>
+
+  <function>
+    <description><![CDATA[
+      Returns <code>true</code> if the test specified by <code>testNameId</code>
+      is flaky, <code>false</code> otherwise.
+    ]]></description>
+    <name>isFlaky</name>
+    <function-class>jetbrains.buildServer.web.functions.flakyTestDetector.FlakyTestDetectorFunctions</function-class>
+    <function-signature>boolean isFlaky(long)</function-signature>
+  </function>
+
+  <function>
+    <description><![CDATA[
+      Returns the flaky reasons (in a plain text format, separated with
+      the delimiter) for a given test, or <code>null</code> if the test is not
+      flaky.
+    ]]></description>
+    <name>getFlakyReasonsStringified</name>
+    <function-class>jetbrains.buildServer.web.functions.flakyTestDetector.FlakyTestDetectorFunctions</function-class>
+    <function-signature>java.lang.String getFlakyReasonsStringified(long,java.lang.CharSequence)</function-signature>
+  </function>
+
+  <function>
+    <description><![CDATA[
+      Returns the flaky reasons for a given test, or a zero-length array if the
+      test is not flaky.
+    ]]></description>
+    <name>getFlakyReasons</name>
+    <function-class>jetbrains.buildServer.web.functions.flakyTestDetector.FlakyTestDetectorFunctions</function-class>
+    <function-signature>java.lang.String[] getFlakyReasons(long)</function-signature>
+  </function>
+</taglib>

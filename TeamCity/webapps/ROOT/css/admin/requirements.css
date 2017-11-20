@@ -1,0 +1,52 @@
+@import url("params.css");
+
+p.note {
+  padding-top: 0;
+}
+
+span#editLink {
+  display: none;
+}
+
+div.editRequirementLink {
+  background: url("../../img/add.png") no-repeat;
+  padding-left: 1em;
+}
+
+.editRequirement {
+  padding-top: 1em;
+  padding-bottom: 2em;
+  padding-left: 2.5em;
+}
+
+label.editRequirementLabel {
+  float: left;
+  width: 10em;
+}
+
+table.requirementsActions {
+  border-collapse: collapse;
+}
+
+ul.definedInList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#inheritedParamName {
+  margin-left: 10em;
+  padding-left: 0;
+}
+
+.settings td.type {
+  width: 5%;
+  padding-left: 1em;
+  text-align: right;
+  border-right: none;
+}
+
+td.moreActions {
+  padding-top: 0;
+  padding-left: 2em;
+}

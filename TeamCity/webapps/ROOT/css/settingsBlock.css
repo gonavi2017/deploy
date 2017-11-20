@@ -1,0 +1,42 @@
+/* ----------------------------------- Style for settingsBlock.tag (used on the My Settings page, Create/Edit User page and Usage Statistics page)  */
+.settingsBlock {
+  background: none;
+  padding: 2px;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.settingsBlock .settingsBlockTitle {
+  padding: 0;
+  font: normal 150% Trebuchet MS, Verdana, Tahoma, Arial, sans-serif;
+  margin-bottom: 1em;
+}
+
+.settingsBlock .settingsBlockContent {
+  /*display: inline-block;*/
+  padding: 0;
+  margin-bottom: 1em;
+}
+
+.settingsBlockContent .general-property {
+  margin: 0 0 1em;
+}
+
+#usageStatisticsContent .settingsBlock {
+  border-bottom: none;
+}
+
+#usageStatisticsContent .settingsBlock .settingsBlockTitle {
+  background: #f5f5f5;
+  padding: 0.5em 0.4em;
+  margin-bottom: 0.3em;
+}
+
+#usageStatisticsContent .settingsBlock .settingsBlockContent {
+  margin-bottom: 0;
+  padding: 0 0.6em;
+}
+
+#usageStatisticsContent table.borderBottom td {
+  border-bottom: 1px solid #f5f5f5
+}

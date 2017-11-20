@@ -1,0 +1,57 @@
+#dayOfWeek {
+  width: 9em;
+}
+
+#schedulingPolicy {
+  width: 15em;
+}
+
+#quietPeriodModeTable {
+  width: 100%;
+}
+#quietPeriodModeTable td {
+  padding: 2px 2px 2px 6px;
+}
+
+#checkIntervalWarning .smallNoteAttention {
+  margin-top: 5px;
+}
+
+.buildTriggersTable__first-column {
+  width: 30%;
+}
+
+.editTriggerDialog .error {
+  margin-left: 0;
+}
+
+#triggerNameSelector {
+  width: 95%;
+}
+
+.group-checkins-wrapper {
+  padding: 0.5em 0 0 1.5em;
+}
+
+.date-and-time-conditions ._label {
+  width: 9em;
+  min-width: 9em;
+  max-width: 9em;
+}
+
+.cron-policy-wrapper {
+  padding-right: 0;
+}
+
+.cron-policy-wrapper .cron-field {
+  width: 13%;
+  padding: 0 0 0 2px;
+}
+
+.cron-field .disableBuildTypeParams {
+  width: 5em;
+}
+
+.cron-field .smallNote {
+  font-size: 85%;
+}

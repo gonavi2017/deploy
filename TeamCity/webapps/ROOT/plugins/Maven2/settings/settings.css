@@ -1,0 +1,20 @@
+#mavenSettings .fileBrowse {
+  width: 100%;
+}
+
+#mavenSettings .headMessage {
+  margin-top: 0;
+}
+
+.fileBrowse div.usages {
+  background-color: #ffffcc;
+  margin: 5px 0;
+  padding: 1px 6px;
+  display: inline-block;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.fileBrowse div.usages span.pc {
+  padding: 0;
+}

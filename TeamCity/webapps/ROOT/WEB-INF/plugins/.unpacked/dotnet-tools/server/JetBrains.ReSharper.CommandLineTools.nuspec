@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata minClientVersion="2.14">
+    <id>JetBrains.ReSharper.CommandLineTools</id>
+    <version>2017.1.20170407.131846</version>
+    <title>JetBrains ReSharper Command Line Tools 2017.1.1</title>
+    <authors>JetBrains</authors>
+    <owners>JetBrains</owners>
+    <licenseUrl>https://www.jetbrains.com/resharper/buy/</licenseUrl>
+    <projectUrl>http://www.jetbrains.com/resharper/features/command-line.html</projectUrl>
+    <iconUrl>https://resharper-plugins.jetbrains.com/Content/Images/packageReSharper.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <developmentDependency>true</developmentDependency>
+    <description>Standalone command line tools that enable running ReSharper inspections outside of Visual Studio</description>
+    <copyright>JetBrains</copyright>
+  </metadata>
+</package>

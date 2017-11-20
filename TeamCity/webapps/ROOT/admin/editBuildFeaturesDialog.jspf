@@ -1,0 +1,38 @@
+<bs:executeOnce id="editBuildFeaturesDialog">
+<c:url var="action" value="/admin/editBuildFeaturesList.html"/>
+<bs:modalDialog formId="buildFeatures" title="Add Build Feature" action="${action}"
+                closeCommand="BS.BuildFeatureDialog.close()" saveCommand="BS.BuildFeatureDialog.save()">
+
+  <table class="runnerFormTable" style="width: 99%;">
+    <tr>
+      <td>
+        <select name="featureTypeSelector" id="featureTypeSelector" style="width: 96%;" onchange="BS.BuildFeatureDialog.onTypeChange(this)">
+        </select><forms:saving id="loadParamsProgress" className="progressRingInline"/>
+        <div class="error" id="errorBuildFeatureExists" style="margin-left: 0;"></div>
+        <select id="featureTypeOptionsData" style="display:none;">
+          <option value="">-- Please choose a build feature --</option>
+          <c:forEach items="${buildForm.buildFeaturesBean.availableBuildFeatures}" var="buildFeature">
+            <option value="${buildFeature.type}" data-feature-place="${buildFeature.placeToShow}"><c:out value="${buildFeature.displayName}"/></option>
+          </c:forEach>
+        </select>
+      </td>
+    </tr>
+  </table>
+
+  <div id="featureParams"></div>
+
+  <div class="popupSaveButtonsBlock" id="featureSaveButtonsBlock" style="display: none;">
+    <forms:submit id="submitBuildFeatureId" label="Save"/>
+    <span id="editBuildFeatureAdditionalButtons"></span>
+    <forms:cancel onclick="BS.BuildFeatureDialog.close()"/>
+    <forms:saving id="saveFeatureProgress"/>
+    <input type="hidden" name="publicKey" id="publicKey" value="${buildForm.publicKey}"/>
+    <input type="hidden" name="id" value="${buildForm.settingsId}"/>
+    <input type="hidden" name="featureType" value=""/>
+    <input type="hidden" name="featureId" value=""/>
+    <input type="hidden" name="featurePlace" value="" />
+    <input type="hidden" name="messagePrefix" value="${param['messagePrefix']}" />
+  </div>
+  <script>$j("span#editBuildFeatureAdditionalButtons").empty();</script>
+</bs:modalDialog>
+</bs:executeOnce>

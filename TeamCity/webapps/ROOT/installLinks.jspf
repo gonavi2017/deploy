@@ -1,0 +1,7 @@
+<ul>
+  <li><a href="<c:url value='/update/agentInstaller.exe'/>">MS Windows Installer</a></li>
+  <li><a href="<c:url value='/update/buildAgent.zip'/>">Zip file distribution</a> for manual installation
+    (unzip the file, specify the build agent's properties and run the executable file).
+  </li>
+</ul>
+<p>See our <a target="_blank" href="<bs:helpUrlPrefix/>/Setting+up+and+Running+Additional+Build+Agents">documentation</a> for details.</p>

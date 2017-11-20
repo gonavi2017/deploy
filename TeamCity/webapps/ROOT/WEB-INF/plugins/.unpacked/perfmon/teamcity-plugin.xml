@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:shemas-jetbrains-com:teamcity-plugin-v1-xml">
+  <info>
+    <name>perfmon</name>
+    <display-name>Performance Monitor</display-name>
+    <version>47070</version>
+    <description>This plugin collects various performance related metrics during the build and publishes them as artifacts when build finishes.</description>
+    <vendor>
+      <name>JetBrains, s.r.o</name>
+      <url>http://www.jetbrains.com</url>
+    </vendor>
+  </info>
+  <deployment use-separate-classloader="false" />
+</teamcity-plugin>

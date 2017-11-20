@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="VisualStudioTest" generateDslJar="true" applicable="params['vstest_engine'] == 'VSTest'">
+  <class name="VSTestStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/Visual+Studio+Tests) running Visual Studio Tests
+    </description>
+  </class>
+  <init>
+    <param name="mstest_enable" value="checked" />
+    <param name="dotNetTestRunner.Type" value="GenericProcess" />
+    <param name="vstest_engine" value="VSTest" />
+  </init>
+  <function name="vstest">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/Visual+Studio+Tests) running Visual Studio Tests
+      @see VisualStudioTest
+    </description>
+  </function>
+  <params>
+    <param name="vstest_runner_path" dslName="vstestPath">
+      <description>
+        A path to test engine. TeamCity detects test engine installation on the agent,
+        to run the detected engine use the following paths:
+
+        * VSTest 2017 - "%teamcity.dotnet.vstest.15.0%"
+        * VSTest 2015 - "%teamcity.dotnet.vstest.14.0%"
+        * VSTest 2013 - "%teamcity.dotnet.vstest.12.0%"
+        * VSTest 2012 - "%teamcity.dotnet.vstest.11.0%"
+
+        Or specify a custom path to the test engine on a build agent machine.
+      </description>
+    </param>
+    <param name="vstest_include" dslName="includeTestFileNames">
+      <description>
+        Newline-separated list of assemblies to be included in test run.
+        [Wildcards](https://confluence.jetbrains.com/display/TCDL/Wildcards) are supported.
+      </description>
+    </param>
+    <param name="vstest_exclude" dslName="excludeTestFileNames">
+      <description>
+        Newline-separated list of assemblies to be excluded from test run.
+        [Wildcards](https://confluence.jetbrains.com/display/TCDL/Wildcards) are supported.
+      </description>
+    </param>
+    <param name="vstest_runsettings" dslName="runSettings">
+      <description>
+        A path to run settings configuration file
+      </description>
+    </param>
+    <param name="vstest_platform" dslName="platform" type="Platform">
+      Required platform bitness
+      @see Platform
+    </param>
+    <param name="vstest_framework" dslName="targetFramework" type="TargetFramework">
+      <description>
+        Target .NET Framework version to be used for test execution
+        @see TargetFramework
+      </description>
+    </param>
+    <param name="vstest_test_names" dslName="testNames">
+      <description>
+        Newline-separated list of test names. If empty, all tests will be executed.
+        Cannot be used together with testCaseFilter.
+        @see testCaseFilter
+      </description>
+    </param>
+    <param name="vstest_test_case_filter" dslName="testCaseFilter">
+      <description>
+        A regular expression selecting tests to run.
+        Cannot be used together with testNames.
+        @see testNames
+      </description>
+    </param>
+    <param name="vstest_in_isolation" dslName="runInIsolation" type="boolean" trueValue="true" falseValue="">
+      <description>
+        Whether TeamCity should run tests in an isolated process
+      </description>
+    </param>
+    <param name="vstest_detect_team_city_logger" dslName="realTimeTestReporting" type="boolean" trueValue="true" falseValue="">
+      <description>
+        Whether TeamCity should use a [custom test logger](https://confluence.jetbrains.com/display/TCDL/Visual+Studio+Tests#VisualStudioTests-Customtestlogger)
+        for real-time reporting.
+      </description>
+    </param>
+    <param name="vstest_cmdline" dslName="args">
+      <description>
+        Additional parameters to add to the command line for VSTest
+      </description>
+    </param>
+  </params>
+  <types>
+    <enum name="Platform">
+      <description>Platform bitness</description>
+      <option name="x86" value="x86"/>
+      <option name="x64" value="x64"/>
+    </enum>
+    <enum name="TargetFramework">
+      <description>
+        Target .NET Framework
+      </description>
+      <option name="DEFAULT" value="default">
+        <description>
+          Vstest.console will select the target framework automatically
+        </description>
+      </option>
+      <option name="Framework45" value="Framework45"/>
+      <option name="Framework40" value="Framework40"/>
+      <option name="Framework35" value="Framework35"/>
+    </enum>
+  </types>
+</dsl-extension>

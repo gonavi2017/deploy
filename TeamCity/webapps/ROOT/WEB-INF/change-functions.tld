@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+  <description>TeamCity Change-related functions library</description>
+  <display-name>TeamCity Change-related functions</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>change</short-name>
+  <uri>/WEB-INF/functions/change</uri>
+
+  <function>
+      <description>
+        Returns true if change is vcs change
+      </description>
+      <name>isVcsModification</name>
+      <function-class>jetbrains.buildServer.web.functions.change.ChangeFunctions</function-class>
+      <function-signature>boolean isVcsModification(jetbrains.buildServer.serverSide.ChangeDescriptor)</function-signature>
+    </function>
+
+  <function>
+    <description>
+      Returns true if change is from snapshot dependency build
+    </description>
+    <name>isSnapshotDependencyModification</name>
+    <function-class>jetbrains.buildServer.web.functions.change.ChangeFunctions</function-class>
+    <function-signature>boolean isSnapshotDependencyModification(jetbrains.buildServer.serverSide.ChangeDescriptor)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if modification is from subrepo
+    </description>
+    <name>isSubrepoChange</name>
+    <function-class>jetbrains.buildServer.web.functions.change.ChangeFunctions</function-class>
+    <function-signature>boolean isSubrepoChange(jetbrains.buildServer.vcs.SVcsModification)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns true if change is Artifact Dependency change
+    </description>
+    <name>isArtifactDependencyModification</name>
+    <function-class>jetbrains.buildServer.web.functions.change.ChangeFunctions</function-class>
+    <function-signature>boolean isArtifactDependencyModification(jetbrains.buildServer.serverSide.ChangeDescriptor)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns number of included files
+    </description>
+    <name>getNumberOfIncludedFiles</name>
+    <function-class>jetbrains.buildServer.web.functions.change.ChangeFunctions</function-class>
+    <function-signature>int getNumberOfIncludedFiles(java.util.List)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns number of included files
+    </description>
+    <name>getNumberOfIncludedFilesByBuild</name>
+    <function-class>jetbrains.buildServer.web.functions.change.ChangeFunctions</function-class>
+    <function-signature>int getNumberOfIncludedFiles(jetbrains.buildServer.vcs.SVcsModification, jetbrains.buildServer.serverSide.SBuild)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns number of included files
+    </description>
+    <name>getNumberOfIncludedFilesByBuildType</name>
+    <function-class>jetbrains.buildServer.web.functions.change.ChangeFunctions</function-class>
+    <function-signature>int getNumberOfIncludedFiles(jetbrains.buildServer.vcs.SVcsModification, jetbrains.buildServer.serverSide.SBuildType)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns number of files included by checkout rules
+    </description>
+    <name>getNumberOfIncludedFilesByRules</name>
+    <function-class>jetbrains.buildServer.web.functions.change.ChangeFunctions</function-class>
+    <function-signature>int getNumberOfIncludedFiles(jetbrains.buildServer.vcs.SVcsModification,jetbrains.buildServer.vcs.CheckoutRules)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns snapshot dependency change link descriptor
+    </description>
+    <name>getSnapDepLink</name>
+    <function-class>jetbrains.buildServer.web.functions.change.ChangeFunctions</function-class>
+    <function-signature>jetbrains.buildServer.web.functions.change.SnapDepChangeLink getSnapDepLink(jetbrains.buildServer.serverSide.ChangeDescriptor)</function-signature>
+  </function>
+</taglib>

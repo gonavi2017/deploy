@@ -1,0 +1,30 @@
+<%-- included from testHistoryExtension.jsp --%>
+<%@ include file="/include.jsp"%>
+
+<%--@elvariable id="flakyTest" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.TestInfo"--%>
+<c:set var="flakyReasons" value="${flakyTest.flakyReasons}"/>
+<%--@elvariable id="flakyReasons" type="java.util.List<jetbrains.buildServer.serverSide.flakyTestDetector.opendata.FlakyReason>"--%>
+<c:choose>
+  <c:when test="${fn:length(flakyReasons) == 1}">
+    <div class="flakyReason">
+      <c:forEach var="flakyReason" items="${flakyReasons}">
+        <div>
+          <bs:changeRequest key="flakyReason" value="${flakyReason}">
+            <jsp:include page="flakyReason_${flakyReason['class'].simpleName}.jsp"/>
+          </bs:changeRequest>
+        </div>
+      </c:forEach>
+    </div>
+  </c:when>
+  <c:otherwise>
+    <ul class="flakyReason">
+      <c:forEach var="flakyReason" items="${flakyReasons}">
+        <li>
+          <bs:changeRequest key="flakyReason" value="${flakyReason}">
+            <jsp:include page="flakyReason_${flakyReason['class'].simpleName}.jsp"/>
+          </bs:changeRequest>
+        </li>
+      </c:forEach>
+    </ul>
+  </c:otherwise>
+</c:choose>

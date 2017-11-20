@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildFeature" type="JetBrains.FileContentReplacer" generateDslJar="true">
+  <class name="FileContentReplacer">
+    <description>
+      A [build feature](https://confluence.jetbrains.com/display/TCDL/File+Content+Replacer) which processes text files by performing regular expressions
+    </description>
+  </class>
+  <function name="replaceContent">
+    <description>
+      Adds a [build feature](https://confluence.jetbrains.com/display/TCDL/File+Content+Replacer) which processes text files by performing regular expressions
+      @see FileContentReplacer
+    </description>
+  </function>
+  <params>
+    <param name="teamcity.file.content.replacer.wildcards" dslName="fileRules">
+      <description>
+        Comma- or newline-separated set of rules in the form of ```+|-:[path relative to the checkout directory]```,
+        wildcards are supported
+      </description>
+    </param>
+    <param name="teamcity.file.content.replacer.pattern" dslName="pattern">
+      <description>
+        Pattern to search for, either in the [regular expression]
+        [java.util.regex.Pattern] (default) or in the [fixed strings]
+        [RegexMode.FIXED_STRINGS] format, depending on the [regexMode].
+      </description>
+    </param>
+    <param name="teamcity.file.content.replacer.pattern.case.sensitive" dslName="caseSensitivePattern" type="boolean" trueValue="true" falseValue="false">
+      <description>
+        Whether the search should be case-sensitive. Enabled by default.
+
+        A value of ```false``` sets [CASE_INSENSITIVE]
+        [java.util.regex.Pattern.CASE_INSENSITIVE] and [UNICODE_CASE]
+        [java.util.regex.Pattern.UNICODE_CASE] flags.
+
+        Set to ```false``` for case-insensitive languages (e.g. _Visual Basic_).
+      </description>
+    </param>
+    <param name="teamcity.file.content.replacer.regexMode"
+           dslName="regexMode"
+           type="RegexMode">
+      <description>
+        <![CDATA[Controls the way the search pattern and the replacement text
+        are interpreted. The default is [RegexMode.REGEX]. Set to
+        [RegexMode.FIXED_STRINGS] to perform a _fixed strings_ search.
+
+        @since 2017.1]]>
+      </description>
+    </param>
+    <param name="teamcity.file.content.replacer.replacement" dslName="replacement">
+      <description>
+        Replacement text.
+
+        In [REGEX][RegexMode.REGEX] [mode][regexMode], **```$N```** sequence
+        references **```N```**-th capturing group. All backslashes (**```\```**)
+        and dollar signs (**```$```**) without a special meaning should be
+        quoted (as **```\\```** and **```\$```**, respectively).
+
+        In [REGEX_MIXED][RegexMode.REGEX_MIXED] and [FIXED_STRINGS]
+        [RegexMode.FIXED_STRINGS] modes, backslashes (**```\```**) and dollar
+        signs (**```$```**) have no special meaning.
+      </description>
+    </param>
+    <param name="teamcity.file.content.replacer.file.encoding" dslName="encoding" type="FileEncoding">
+      <description>
+        A file encoding to use
+        @see FileEncoding
+        @see customEncodingName
+      </description>
+    </param>
+    <param name="teamcity.file.content.replacer.file.encoding.custom" dslName="customEncodingName">
+      <description>
+        A name of the custom encoding to use, works when encoding is set to FileEncoding.CUSTOM
+        @see encoding
+      </description>
+    </param>
+  </params>
+  <types>
+    <enum name="FileEncoding">
+      <description>
+        File Encoding
+      </description>
+      <option name="AUTODETECT" value="autodetect">
+        <description>File encoding is automatically detected</description>
+      </option>
+      <option name="ASCII" value="US-ASCII">
+        <description>The 'US-ASCII' encoding</description>
+      </option>
+      <option name="UTF_8" value="UTF-8">
+        <description>The 'UTF-8' encoding</description>
+      </option>
+      <option name="UTF_16BE" value="UTF-16BE">
+        <description>The 'UTF-16BE' encoding</description>
+      </option>
+      <option name="UTF_16LE" value="UTF-16LE">
+        <description>The 'UTF-16LE' encoding</description>
+      </option>
+      <option name="CUSTOM" value="custom">
+        <description>A custom encoding, the encoding name should be specified in the customEncodingName</description>
+      </option>
+    </enum>
+    <enum name="RegexMode">
+      <description>
+        <![CDATA[Controls the way the search pattern and the replacement text
+        are interpreted.
+
+        @since 2017.1]]>
+      </description>
+      <option name="FIXED_STRINGS">
+        <description>
+          <![CDATA[Treat both the search pattern and the replacement text as
+          fixed strings, similarly to ```grep -F|--fixed-strings```.
+
+          [LITERAL][java.util.regex.Pattern.LITERAL] mode is on.
+
+          Equivalent to un-checking the **Regex** box in the _File Content
+          Replacer_ UI.]]>
+        </description>
+      </option>
+      <option name="REGEX">
+        <description>
+          <![CDATA[Treat both the search pattern and the replacement text as
+          regular expressions. Trailing ```\``` or single ```$``` characters
+          are not allowed in the replacement text.
+
+          [MULTILINE][java.util.regex.Pattern.MULTILINE] mode is on by default.
+
+          Equivalent to checking the **Regex** box in the _File Content
+          Replacer_ UI.
+
+          This is the only mode in _TeamCity_ 9.1 and 10.0 and the default one
+          since 2017.1.]]>
+        </description>
+      </option>
+      <option name="REGEX_MIXED">
+        <description>
+          <![CDATA[Treat the search pattern as a regular expression (similarly
+          to [REGEX]), but [quote][java.util.regex.Matcher.quoteReplacement] the
+          replacement text (as in [FIXED_STRINGS] mode). ```\``` and ```$```
+          characters have no special meaning.
+
+          [MULTILINE][java.util.regex.Pattern.MULTILINE] mode is on by default.
+
+          Useful if the replacement text contains ```%build.parameters%``` which
+          may be expanded to an arbitrary value.
+
+          This mode is not available via the _TeamCity_ UI.]]>
+        </description>
+      </option>
+    </enum>
+  </types>
+</dsl-extension>

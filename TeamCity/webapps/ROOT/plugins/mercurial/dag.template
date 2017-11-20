@@ -1,0 +1,2 @@
+changeset = '{node|short} {parents}\n'
+parent = '{node|short} '

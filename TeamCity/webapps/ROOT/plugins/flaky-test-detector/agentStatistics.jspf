@@ -1,0 +1,43 @@
+<%-- included from testHistoryExtension.jsp --%>
+<%@ include file="/include-internal.jsp"%>
+
+<%--@elvariable id="agentType" type="boolean"--%>
+<%--@elvariable id="indent" type="boolean"--%>
+<c:set var="agentType" value="${empty agentType ? false : agentType}"/>
+<c:set var="indent" value="${empty indent ? false : indent}"/>
+
+<%--@elvariable id="agent" type="jetbrains.buildServer.serverSide.flakyTestDetector.opendata.AgentWithRate"--%>
+<c:if test="${not empty agent}">
+  <c:set var="flipRate" value="${agent.flipRate}"/>
+  <c:set var="failureRate" value="${agent.failureRate}"/>
+  <tr class="${flipRate.value eq 0 and failureRate.value eq 0 ? "zero" : ""}">
+    <td>
+      <c:if test="${indent}">
+        <span class="icon icon16"></span>
+      </c:if>
+      <c:choose>
+
+        <c:when test="${agentType}">
+          <%--@elvariable id="flakyAgentTypes" type="java.util.Map<java.lang.Integer,jetbrains.buildServer.serverSide.agentTypes.SAgentType>"--%>
+          <c:set var="sAgentType" value="${flakyAgentTypes[agent.typeId]}"/>
+          <%@ include file="agentTypeDetails.jspf"%>
+        </c:when>
+
+        <c:otherwise>
+          <%--@elvariable id="flakyAgents" type="java.util.Map<jetbrains.buildServer.serverSide.flakyTestDetector.opendata.AgentInfo,jetbrains.buildServer.serverSide.BuildAgentEx>"--%>
+          <c:set var="sAgent" value="${flakyAgents[agent]}"/>
+          <c:set var="osIconVisible" value="${!indent}"/>
+          <%@ include file="agentDetails.jspf"%>
+        </c:otherwise>
+
+      </c:choose>
+    </td>
+    <c:set var="eventRate" value="${flipRate}"/>
+    <%@ include file="eventRate.jspf"%>
+    <c:set var="eventRate" value="${failureRate}"/>
+    <%@ include file="eventRate.jspf"%>
+    <td class="numeric">
+      ${agent.invocationCount}
+    </td>
+  </tr>
+</c:if>

@@ -1,0 +1,20 @@
+<et:subscribeOnProjectEvents projectId="${buildType.projectId}">
+  <jsp:attribute name="eventNames">
+    PROJECT_REMOVED
+    PROJECT_RESTORED
+    PROJECT_PERSISTED
+    PROJECT_ARCHIVED
+    PROJECT_DEARCHIVED
+  </jsp:attribute>
+  <jsp:attribute name="eventHandler">
+    BS.reload();
+  </jsp:attribute>
+</et:subscribeOnProjectEvents>
+<et:subscribeOnBuildTypeEvents buildTypeId="${buildType.buildTypeId}">
+  <jsp:attribute name="eventNames">
+    BUILD_TYPE_UNREGISTERED
+  </jsp:attribute>
+  <jsp:attribute name="eventHandler">
+    BS.reload();
+  </jsp:attribute>
+</et:subscribeOnBuildTypeEvents>

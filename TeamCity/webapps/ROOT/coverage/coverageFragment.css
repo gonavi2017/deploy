@@ -1,0 +1,71 @@
+#coverageSummary p {
+  margin-bottom: 0.4em;
+}
+
+#coverageSummary table {
+  border-collapse: collapse;
+}
+
+#coverageSummary td {
+  padding: 3px 0;
+}
+
+#coverageSummary span {
+  float: left;
+}
+
+#coverageSummary .label {
+  width: 6em;
+  padding-right: 0.5em;
+  cursor: default;
+}
+
+#coverageSummary .barBorder, #coverageSummary .barBorder span  {
+  font-size: 1em;
+}
+
+#coverageSummary .barBorder {
+  position: relative;
+  width: 8em;
+  height: 1.3em;
+  margin: 0;
+  border: 1px solid #42AA52;
+  border-left-width: 4px;
+}
+
+#coverageSummary .barBorder span {
+  background-color: #42AA52;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  padding: 0;
+  text-align: left;
+  color: #eee;
+}
+
+#coverageSummary .absValues {
+  margin: 0 3em 0 .5em;
+  color: #606060;
+}
+
+#coverageSummary .spacer {
+  width: 8em;
+  margin-left: 1em;
+  font-size: 1em;
+  text-align: left;
+}
+
+#coverageSummary .fullReportLink {
+  margin-top: 1em;
+}
+
+#coverageSummary span.red {
+  color: red;
+}
+
+#coverageSummary span.green {
+  color: #42AA52;
+}

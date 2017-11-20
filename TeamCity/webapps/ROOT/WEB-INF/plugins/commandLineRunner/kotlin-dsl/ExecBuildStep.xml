@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsl-extension kind="buildStep" type="simpleRunner" generateDslJar="true" applicable="empty(params['use.custom.script'])">
+  <class name="ExecBuildStep">
+    <description>
+      A [build step](https://confluence.jetbrains.com/display/TCDL/Command+Line) running the specified executable with given arguments
+    </description>
+  </class>
+  <function name="exec">
+    <description>
+      Adds a [build step](https://confluence.jetbrains.com/display/TCDL/Command+Line) running the specified executable with given arguments
+      @see ExecBuildStep
+    </description>
+  </function>
+  <init>
+    <param name="use.custom.script" value=""/>
+  </init>
+  <params>
+    <param name="teamcity.build.workingDir" dslName="workingDir">
+      <description>
+        [Build working directory](https://confluence.jetbrains.com/display/TCDL/Build+Working+Directory) for the executable,
+        specify it if it is different from the [checkout directory](https://confluence.jetbrains.com/display/TCDL/Build+Checkout+Directory).
+      </description>
+    </param>
+    <param name="command.executable" dslName="path">
+      <description>
+        A path to executable
+      </description>
+    </param>
+    <param name="command.parameters" dslName="arguments">
+      <description>
+        A space-separated arguments list for the executable
+      </description>
+    </param>
+  </params>
+</dsl-extension>

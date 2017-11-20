@@ -1,0 +1,38 @@
+.layeredGraph {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layeredGraph .depNode,
+.layeredGraph .fakeNode {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layeredGraph .depNode {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 3px 2px 3px 7px;
+  margin: 0 0 5px 0;
+  min-width: 9em;
+  font-size: 90%;
+}
+
+.layeredGraph .fakeNode {
+  height: 1px;
+  width: 0;
+}
+
+.layeredGraph .buildConf {
+  padding-right: 16px;
+}
+
+.layeredGraph .buildConfRun {
+  padding-right: 80px;
+}
+
+.invisible {
+  visibility: hidden;
+}

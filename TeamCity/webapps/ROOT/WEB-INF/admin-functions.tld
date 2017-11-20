@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+  <description>TeamCity administration-related functions library</description>
+  <display-name>TeamCity administration-related functions</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>admfn</short-name>
+  <uri>/WEB-INF/functions/admin</uri>
+
+  <function>
+    <description>
+      Returns settingsId which can be used in various places in template editing pages
+    </description>
+    <name>getTemplateSettingsId</name>
+    <function-class>jetbrains.buildServer.web.functions.admin.AdminFunctions</function-class>
+    <function-signature>String getTemplateSettingsId(jetbrains.buildServer.serverSide.BuildTypeTemplate)</function-signature>
+  </function>
+
+  <function>
+    <description>
+      Returns settingsId which can be used in various places in build type editing pages
+    </description>
+    <name>getBuildTypeSettingsId</name>
+    <function-class>jetbrains.buildServer.web.functions.admin.AdminFunctions</function-class>
+    <function-signature>String getBuildTypeSettingsId(jetbrains.buildServer.serverSide.SBuildType)</function-signature>
+  </function>
+
+  <function>
+    <name>isBranchSpecDefined</name>
+    <description>true if at least one vcs root in build configuration or its dependencies has VCS root with non empty branch spec</description>
+    <function-class>jetbrains.buildServer.web.functions.admin.AdminFunctions</function-class>
+    <function-signature>boolean isBranchSpecDefined(jetbrains.buildServer.serverSide.SBuildType)</function-signature>
+  </function>
+</taglib>

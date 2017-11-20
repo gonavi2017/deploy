@@ -1,0 +1,179 @@
+/* Search form */
+#userPanel .search {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  margin-left: 6px;
+}
+
+#searchResultsDiv .search {
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+input.quickSearchQuery {
+  width: 100%;
+  height: 1.8em;
+  font-size: 1em;
+  padding-top: 0;
+  padding-right: 20px;
+  font-family: sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  outline: none;
+}
+
+.quickSearchButton {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  *top: 6px;
+}
+
+.quickSearchButton:hover {
+  text-decoration: none;
+}
+
+.quickSearchButton .icon-search {
+  color: #999;
+}
+
+/* Search results */
+.quickSearchResultsHeader {
+  background-color: #f5f5f5;
+  padding: .2em .2em .2em 10px;
+}
+
+.quickSearchResultsHeader .quickSearchQuery {
+  width: 50em;
+}
+
+.quickSearchResultsHeader .inputDiv {
+  padding-top: 10px;
+}
+
+.quickSearchResultsHeader .resultsCount {
+  margin: 5px 0;
+}
+
+.searcherror {
+  padding: 10px 0 10px 10px;
+  color: #F00;
+}
+
+.viewAllResults {
+  display: none;
+}
+
+.closeSearchPopup {
+  display: none;
+}
+
+#searchResultsDiv span.highlight {
+  background-color: #ffc;
+}
+
+.searchResultContainer {
+  margin: 0 5px;
+}
+
+table.searchResult {
+  width: 100%;
+}
+
+.searchResult td {
+  vertical-align: top;
+  padding: 5px;
+}
+
+.searchResult td.artifacts {
+  width: 90px;
+}
+
+.searchResult td.changes {
+  width: 120px;
+}
+
+.searchResult td.startDate {
+  width: 90px;
+}
+
+.searchResult .secondLine td {
+  border-bottom: 1px solid #ccc;
+  padding-top: 0;
+  font-size: 90%;
+}
+
+.domain {
+  margin-left: 0;
+}
+
+.explanation {
+  padding-left: 25px !important;
+  color: gray;
+}
+
+.explanationDetails {
+  float: right;
+  white-space: nowrap;
+}
+
+.searchInfo {
+  width: 150px;
+  margin: 5px 5px -5px;
+}
+
+.searchInfo dl {
+  margin-top: 0;
+}
+
+.searchInfo dd {
+  margin-left: 0.5em;
+}
+
+#searchIndexUpdating {
+  font-weight: bold;
+}
+
+/* Search results in a popup */
+#searchResultsPopup {
+  overflow: auto;
+  max-width: 80em;
+  padding: 0;
+}
+
+.popupMode {
+  width: 850px;
+  padding: 0;
+}
+
+.gt1200 .popupMode {
+  width: 1000px;
+}
+
+.popupMode .viewAllResults {
+  display: block;
+  margin-top: 1em;
+  padding: .1em 10px;
+  font-size: 85%;
+  background-color: #f5f5f5;
+}
+
+.popupMode .quickSearchResultsHeader {
+  border-bottom: 1px solid #ccc;
+}
+
+.popupMode .quickSearchResultsHeader .quickSearchQuery {
+  display: none;
+}
+
+.popupMode .closeSearchPopup {
+  float: right;
+  margin-right: .5em;
+  font-size: 85%;
+}
+
+.popupMode0 {
+  width: 300px !important;
+}

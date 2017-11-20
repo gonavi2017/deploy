@@ -1,0 +1,50 @@
+<c:choose>
+  <c:when test="${empty currentUsages[file] and empty currentTemplateUsages[file]}">
+    <div>Settings file is not used</div>
+  </c:when>
+  <c:otherwise>
+    <div>
+      Settings file is used in
+      <c:if test="${not empty currentUsages[file]}">
+        <bs:simplePopup controlId="msbtu_${util:forJSIdentifier(currentProject.externalId)}_${util:forJSIdentifier(file)}"
+                        linkOpensPopup="false" popup_options="shift: {x: -100, y: 20}">
+                <jsp:attribute name="content">
+            <ul class="menuList">
+              <c:forEach items="${currentUsages[file]}" var="bt">
+                <l:li>
+                  <span style="white-space: nowrap">
+                    <bs:buildTypeLink buildType="${bt}"><bs:out value="${bt.extendedFullName}"/></bs:buildTypeLink>
+                  </span>
+                </l:li>
+              </c:forEach>
+            </ul>
+                </jsp:attribute>
+          <jsp:body>${fn:length(currentUsages[file])} build configuration<bs:s val="${fn:length(currentUsages[file])}"/></jsp:body>
+        </bs:simplePopup>
+      </c:if>
+      <c:if test="${not empty currentTemplateUsages[file]}">
+        <c:if test="${not empty currentUsages[file]}"> and </c:if>
+        <bs:simplePopup controlId="msbttu_${util:forJSIdentifier(currentProject.externalId)}_${util:forJSIdentifier(file)}"
+                        linkOpensPopup="false" popup_options="shift: {x: -100, y: 20}">
+                  <jsp:attribute name="content">
+                    <div>
+                      <ul class="menuList">
+                        <c:forEach items="${currentTemplateUsages[file]}" var="template">
+                          <authz:authorize projectId="${template.project.projectId}" allPermissions="EDIT_PROJECT">
+                          <jsp:attribute name="ifAccessGranted">
+                            <l:li><admin:editTemplateLink templateId="${template.externalId}"><c:out value="${template.fullName}"/></admin:editTemplateLink></l:li>
+                          </jsp:attribute>
+                          <jsp:attribute name="ifAccessDenied">
+                            <l:li><c:out value="${template.fullName}"/></l:li>
+                          </jsp:attribute>
+                          </authz:authorize>
+                        </c:forEach>
+                      </ul>
+                    </div>
+                  </jsp:attribute>
+          <jsp:body>${fn:length(currentTemplateUsages[file])} template<bs:s val="${fn:length(currentTemplateUsages[file])}"/></jsp:body>
+        </bs:simplePopup>
+      </c:if>
+    </div>
+  </c:otherwise>
+</c:choose>

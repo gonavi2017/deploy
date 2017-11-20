@@ -1,0 +1,7 @@
+<%@ page import="jetbrains.buildServer.serverSide.impl.cleanup.HistoryRetentionPolicy" %>
+<c:forEach items="${ownCleanupPolicies}" var="policy" varStatus="policyI">
+  ${policy.cleanupLevel}:<c:set var="entries" value='<%=((HistoryRetentionPolicy)jspContext.getAttribute("policy")).getParameters().entrySet()%>'/>
+  { <c:forEach items="${entries}" var="e" varStatus="paramPos"
+    >'${e.key}' : '<bs:escapeForJs text="${e.value}" forHTMLAttribute="true"/>'<c:if test="${not paramPos.last}">,</c:if
+    ></c:forEach> }<c:if test="${not policyI.last}">,</c:if>
+</c:forEach>

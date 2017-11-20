@@ -1,0 +1,1 @@
+<span class="mandatoryAsterix" title="Mandatory field">*</span>
